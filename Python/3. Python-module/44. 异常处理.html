@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>44. 异常处理 | MSG</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="在追寻技术的同时享受生活">
+    
+    <link rel="preload" href="/assets/css/0.styles.e4d8b86b.css" as="style"><link rel="preload" href="/assets/js/app.d65bef42.js" as="script"><link rel="preload" href="/assets/js/2.2249178e.js" as="script"><link rel="preload" href="/assets/js/108.c637743a.js" as="script"><link rel="prefetch" href="/assets/js/10.4785e2e5.js"><link rel="prefetch" href="/assets/js/100.33fceff2.js"><link rel="prefetch" href="/assets/js/101.62e1e5d4.js"><link rel="prefetch" href="/assets/js/102.8551fe71.js"><link rel="prefetch" href="/assets/js/103.47754d79.js"><link rel="prefetch" href="/assets/js/104.4adf114f.js"><link rel="prefetch" href="/assets/js/105.6206a08a.js"><link rel="prefetch" href="/assets/js/106.1c4561f3.js"><link rel="prefetch" href="/assets/js/107.e1531a5a.js"><link rel="prefetch" href="/assets/js/109.3f150913.js"><link rel="prefetch" href="/assets/js/11.bd8ec7a6.js"><link rel="prefetch" href="/assets/js/110.088c1ac3.js"><link rel="prefetch" href="/assets/js/111.66d8d491.js"><link rel="prefetch" href="/assets/js/112.231663ee.js"><link rel="prefetch" href="/assets/js/113.a38bc531.js"><link rel="prefetch" href="/assets/js/114.e165daea.js"><link rel="prefetch" href="/assets/js/115.994b087a.js"><link rel="prefetch" href="/assets/js/116.ea3cfdfb.js"><link rel="prefetch" href="/assets/js/117.7be5e4f3.js"><link rel="prefetch" href="/assets/js/118.ebb58ddb.js"><link rel="prefetch" href="/assets/js/119.90018646.js"><link rel="prefetch" href="/assets/js/12.0d8f43df.js"><link rel="prefetch" href="/assets/js/120.bb5be863.js"><link rel="prefetch" href="/assets/js/121.3d1db670.js"><link rel="prefetch" href="/assets/js/122.d29ed1b2.js"><link rel="prefetch" href="/assets/js/123.38cc4704.js"><link rel="prefetch" href="/assets/js/124.cc8549d4.js"><link rel="prefetch" href="/assets/js/125.6ee3e9c8.js"><link rel="prefetch" href="/assets/js/126.48710eba.js"><link rel="prefetch" href="/assets/js/127.d7a1fd83.js"><link rel="prefetch" href="/assets/js/128.e5017f6b.js"><link rel="prefetch" href="/assets/js/129.4c33e121.js"><link rel="prefetch" href="/assets/js/13.2dbde7aa.js"><link rel="prefetch" href="/assets/js/130.cda66247.js"><link rel="prefetch" href="/assets/js/131.ad76f669.js"><link rel="prefetch" href="/assets/js/132.aca88758.js"><link rel="prefetch" href="/assets/js/133.a1cf5903.js"><link rel="prefetch" href="/assets/js/134.b1386377.js"><link rel="prefetch" href="/assets/js/135.94edcf53.js"><link rel="prefetch" href="/assets/js/136.24be4170.js"><link rel="prefetch" href="/assets/js/137.db57772e.js"><link rel="prefetch" href="/assets/js/138.dc67bcaa.js"><link rel="prefetch" href="/assets/js/139.5453d1f6.js"><link rel="prefetch" href="/assets/js/14.2187dbf4.js"><link rel="prefetch" href="/assets/js/140.938e5c07.js"><link rel="prefetch" href="/assets/js/141.99c7cf2c.js"><link rel="prefetch" href="/assets/js/142.428e3958.js"><link rel="prefetch" href="/assets/js/143.68b01530.js"><link rel="prefetch" href="/assets/js/144.f67389cc.js"><link rel="prefetch" href="/assets/js/145.d952a130.js"><link rel="prefetch" href="/assets/js/146.b933dcad.js"><link rel="prefetch" href="/assets/js/147.2d8e4c0a.js"><link rel="prefetch" href="/assets/js/148.6d76ac94.js"><link rel="prefetch" href="/assets/js/149.6b4d6378.js"><link rel="prefetch" href="/assets/js/15.a53b356c.js"><link rel="prefetch" href="/assets/js/150.5bf39cb4.js"><link rel="prefetch" href="/assets/js/151.17af677c.js"><link rel="prefetch" href="/assets/js/152.7f1c2792.js"><link rel="prefetch" href="/assets/js/153.98dd0727.js"><link rel="prefetch" href="/assets/js/154.eb44bf23.js"><link rel="prefetch" href="/assets/js/155.5a9840ea.js"><link rel="prefetch" href="/assets/js/156.7ba01fd0.js"><link rel="prefetch" href="/assets/js/157.2296a048.js"><link rel="prefetch" href="/assets/js/158.6bb1f699.js"><link rel="prefetch" href="/assets/js/159.073bb8df.js"><link rel="prefetch" href="/assets/js/16.cef7bf44.js"><link rel="prefetch" href="/assets/js/160.25a837f9.js"><link rel="prefetch" href="/assets/js/161.93d886a1.js"><link rel="prefetch" href="/assets/js/162.5d2714b2.js"><link rel="prefetch" href="/assets/js/17.96f36904.js"><link rel="prefetch" href="/assets/js/18.fd04b310.js"><link rel="prefetch" href="/assets/js/19.3e1377d1.js"><link rel="prefetch" href="/assets/js/20.ac195ac8.js"><link rel="prefetch" href="/assets/js/21.c2d7729c.js"><link rel="prefetch" href="/assets/js/22.dd8c621b.js"><link rel="prefetch" href="/assets/js/23.ad7d0350.js"><link rel="prefetch" href="/assets/js/24.8559c4c3.js"><link rel="prefetch" href="/assets/js/25.783a8116.js"><link rel="prefetch" href="/assets/js/26.25e0e459.js"><link rel="prefetch" href="/assets/js/27.c0616e2a.js"><link rel="prefetch" href="/assets/js/28.30656c2e.js"><link rel="prefetch" href="/assets/js/29.2be5114c.js"><link rel="prefetch" href="/assets/js/3.be8c8f3b.js"><link rel="prefetch" href="/assets/js/30.230a74a7.js"><link rel="prefetch" href="/assets/js/31.760f46ad.js"><link rel="prefetch" href="/assets/js/32.c9533fef.js"><link rel="prefetch" href="/assets/js/33.dcacfb38.js"><link rel="prefetch" href="/assets/js/34.4370a466.js"><link rel="prefetch" href="/assets/js/35.bf299eea.js"><link rel="prefetch" href="/assets/js/36.336e435a.js"><link rel="prefetch" href="/assets/js/37.1d1d2eea.js"><link rel="prefetch" href="/assets/js/38.0d58b7d0.js"><link rel="prefetch" href="/assets/js/39.d43564ba.js"><link rel="prefetch" href="/assets/js/4.4a6cb970.js"><link rel="prefetch" href="/assets/js/40.bc4e4bde.js"><link rel="prefetch" href="/assets/js/41.b71231a5.js"><link rel="prefetch" href="/assets/js/42.9d46f400.js"><link rel="prefetch" href="/assets/js/43.50c5be69.js"><link rel="prefetch" href="/assets/js/44.60406e7f.js"><link rel="prefetch" href="/assets/js/45.ec3569ae.js"><link rel="prefetch" href="/assets/js/46.1bd3ce7b.js"><link rel="prefetch" href="/assets/js/47.1e1b5326.js"><link rel="prefetch" href="/assets/js/48.64c631ea.js"><link rel="prefetch" href="/assets/js/49.b4abacd8.js"><link rel="prefetch" href="/assets/js/5.e6d0b165.js"><link rel="prefetch" href="/assets/js/50.c3e320c0.js"><link rel="prefetch" href="/assets/js/51.5ec7fb8c.js"><link rel="prefetch" href="/assets/js/52.2d234f86.js"><link rel="prefetch" href="/assets/js/53.f3b69623.js"><link rel="prefetch" href="/assets/js/54.c85ff450.js"><link rel="prefetch" href="/assets/js/55.b07597b5.js"><link rel="prefetch" href="/assets/js/56.444129cf.js"><link rel="prefetch" href="/assets/js/57.df1329ba.js"><link rel="prefetch" href="/assets/js/58.5afb51cf.js"><link rel="prefetch" href="/assets/js/59.d98936d9.js"><link rel="prefetch" href="/assets/js/6.809376cd.js"><link rel="prefetch" href="/assets/js/60.02813ecf.js"><link rel="prefetch" href="/assets/js/61.37a4812d.js"><link rel="prefetch" href="/assets/js/62.5da94048.js"><link rel="prefetch" href="/assets/js/63.8e2c2bca.js"><link rel="prefetch" href="/assets/js/64.d290398f.js"><link rel="prefetch" href="/assets/js/65.44e28313.js"><link rel="prefetch" href="/assets/js/66.9acf0206.js"><link rel="prefetch" href="/assets/js/67.85688aa2.js"><link rel="prefetch" href="/assets/js/68.45bda7fc.js"><link rel="prefetch" href="/assets/js/69.9074feb0.js"><link rel="prefetch" href="/assets/js/7.5d7bce6e.js"><link rel="prefetch" href="/assets/js/70.b4cd2ddc.js"><link rel="prefetch" href="/assets/js/71.53219b13.js"><link rel="prefetch" href="/assets/js/72.af2a7290.js"><link rel="prefetch" href="/assets/js/73.c28fc506.js"><link rel="prefetch" href="/assets/js/74.64c81a90.js"><link rel="prefetch" href="/assets/js/75.05191ece.js"><link rel="prefetch" href="/assets/js/76.f516d464.js"><link rel="prefetch" href="/assets/js/77.c345180b.js"><link rel="prefetch" href="/assets/js/78.4a09d0ba.js"><link rel="prefetch" href="/assets/js/79.65f41bcf.js"><link rel="prefetch" href="/assets/js/8.f6cfdc07.js"><link rel="prefetch" href="/assets/js/80.b77151f3.js"><link rel="prefetch" href="/assets/js/81.824fa371.js"><link rel="prefetch" href="/assets/js/82.3f91c09b.js"><link rel="prefetch" href="/assets/js/83.9539f074.js"><link rel="prefetch" href="/assets/js/84.dd89f1de.js"><link rel="prefetch" href="/assets/js/85.15210b99.js"><link rel="prefetch" href="/assets/js/86.e14553e1.js"><link rel="prefetch" href="/assets/js/87.6dc95177.js"><link rel="prefetch" href="/assets/js/88.09c5e890.js"><link rel="prefetch" href="/assets/js/89.0d61f4d0.js"><link rel="prefetch" href="/assets/js/9.759f1986.js"><link rel="prefetch" href="/assets/js/90.a9b14d80.js"><link rel="prefetch" href="/assets/js/91.1a4aabe2.js"><link rel="prefetch" href="/assets/js/92.12070bdb.js"><link rel="prefetch" href="/assets/js/93.b5dc76d0.js"><link rel="prefetch" href="/assets/js/94.690498a6.js"><link rel="prefetch" href="/assets/js/95.b17961e6.js"><link rel="prefetch" href="/assets/js/96.a2f06f3e.js"><link rel="prefetch" href="/assets/js/97.64ef6721.js"><link rel="prefetch" href="/assets/js/98.443eba26.js"><link rel="prefetch" href="/assets/js/99.b6ba7c3a.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.e4d8b86b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">MSG</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Python文档" class="dropdown-title"><span class="title">Python文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="Python文档" class="mobile-dropdown-title"><span class="title">Python文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Python/1.Python-Basics/" class="nav-link">
+  Python-基础
+</a></li><li class="dropdown-item"><!----> <a href="/Python/2. Python-object/" class="nav-link">
+  Python-面向对象
+</a></li><li class="dropdown-item"><!----> <a href="/Python/3. Python-module/" class="nav-link">
+  Python-模块与包
+</a></li><li class="dropdown-item"><!----> <a href="/Python/4. Python-network/" class="nav-link">
+  Python-网络
+</a></li><li class="dropdown-item"><!----> <a href="/Python/5. Python-frontend/" class="nav-link">
+  Python-前端
+</a></li><li class="dropdown-item"><!----> <a href="/Python/6. Python-MySQL/" class="nav-link">
+  Python-数据库
+</a></li><li class="dropdown-item"><!----> <a href="/Python/7. Python-Django/" class="nav-link">
+  Python-Django
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="容器文档" class="dropdown-title"><span class="title">容器文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="容器文档" class="mobile-dropdown-title"><span class="title">容器文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Container/docker/" class="nav-link">
+  docker文檔
+</a></li><li class="dropdown-item"><!----> <a href="/Container/Kubernetes/" class="nav-link">
+  Kubernetes文檔
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="GO文档" class="dropdown-title"><span class="title">GO文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="GO文档" class="mobile-dropdown-title"><span class="title">GO文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/GO/basics/" class="nav-link">
+  GO快速入门
+</a></li><li class="dropdown-item"><!----> <a href="/GO/module/" class="nav-link">
+  GO标准库/GO模块
+</a></li></ul></div></div><div class="nav-item"><a href="https://www.linux91.cn/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  博客
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Python文档" class="dropdown-title"><span class="title">Python文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="Python文档" class="mobile-dropdown-title"><span class="title">Python文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Python/1.Python-Basics/" class="nav-link">
+  Python-基础
+</a></li><li class="dropdown-item"><!----> <a href="/Python/2. Python-object/" class="nav-link">
+  Python-面向对象
+</a></li><li class="dropdown-item"><!----> <a href="/Python/3. Python-module/" class="nav-link">
+  Python-模块与包
+</a></li><li class="dropdown-item"><!----> <a href="/Python/4. Python-network/" class="nav-link">
+  Python-网络
+</a></li><li class="dropdown-item"><!----> <a href="/Python/5. Python-frontend/" class="nav-link">
+  Python-前端
+</a></li><li class="dropdown-item"><!----> <a href="/Python/6. Python-MySQL/" class="nav-link">
+  Python-数据库
+</a></li><li class="dropdown-item"><!----> <a href="/Python/7. Python-Django/" class="nav-link">
+  Python-Django
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="容器文档" class="dropdown-title"><span class="title">容器文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="容器文档" class="mobile-dropdown-title"><span class="title">容器文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Container/docker/" class="nav-link">
+  docker文檔
+</a></li><li class="dropdown-item"><!----> <a href="/Container/Kubernetes/" class="nav-link">
+  Kubernetes文檔
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="GO文档" class="dropdown-title"><span class="title">GO文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="GO文档" class="mobile-dropdown-title"><span class="title">GO文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/GO/basics/" class="nav-link">
+  GO快速入门
+</a></li><li class="dropdown-item"><!----> <a href="/GO/module/" class="nav-link">
+  GO标准库/GO模块
+</a></li></ul></div></div><div class="nav-item"><a href="https://www.linux91.cn/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  博客
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Python-模块与包</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/Python/3.%20Python-module/" aria-current="page" class="sidebar-link">介绍</a></li><li><a href="/Python/3. Python-module/30. 模块的初始.html" class="sidebar-link">30. 模块的初始</a></li><li><a href="/Python/3. Python-module/31. 模块的进阶.html" class="sidebar-link">31. 模块的进阶</a></li><li><a href="/Python/3. Python-module/32. 包.html" class="sidebar-link">32. 包</a></li><li><a href="/Python/3. Python-module/33. 模块动态方式.html" class="sidebar-link">33. 模块动态方式</a></li><li><a href="/Python/3. Python-module/34. 正则表达式.html" class="sidebar-link">34. 正则表达式</a></li><li><a href="/Python/3. Python-module/35. re模块 - 正则匹配模块.html" class="sidebar-link">35. re模块 - 正则匹配模块</a></li><li><a href="/Python/3. Python-module/36. random模块 - 随机模块.html" class="sidebar-link">36. random模块 - 随机模块</a></li><li><a href="/Python/3. Python-module/37. time模块 - 时间模块.html" class="sidebar-link">37. time模块 - 时间模块</a></li><li><a href="/Python/3. Python-module/38. sys模块 - python解释器交互模块.html" class="sidebar-link">38. sys模块 - python解释器交互模块</a></li><li><a href="/Python/3. Python-module/39. os模块 - 系统交互模块.html" class="sidebar-link">39. os模块 - 系统交互模块</a></li><li><a href="/Python/3. Python-module/40. 序列化模块，json、pickle、shelve.html" class="sidebar-link">40. 序列化模块，json、pickle、shelve</a></li><li><a href="/Python/3. Python-module/41. hashlib模块 - 加密算法模块(摘要算法).html" class="sidebar-link">41. hashlib模块 - 加密算法模块(摘要算法)</a></li><li><a href="/Python/3. Python-module/42. configparser模块 - java配置文件模块.html" class="sidebar-link">42. configparser模块 - java配置文件模块</a></li><li><a href="/Python/3. Python-module/43. logging模块 - 日志模块.html" class="sidebar-link">43. logging模块 - 日志模块</a></li><li><a href="/Python/3. Python-module/44. 异常处理.html" class="active sidebar-link">44. 异常处理</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/Python/3. Python-module/44. 异常处理.html#异常信息" class="sidebar-link">异常信息</a></li><li class="sidebar-sub-header"><a href="/Python/3. Python-module/44. 异常处理.html#简单的异常处理" class="sidebar-link">简单的异常处理</a></li><li class="sidebar-sub-header"><a href="/Python/3. Python-module/44. 异常处理.html#多分支异常处理" class="sidebar-link">多分支异常处理</a></li><li class="sidebar-sub-header"><a href="/Python/3. Python-module/44. 异常处理.html#万能异常" class="sidebar-link">万能异常</a></li><li class="sidebar-sub-header"><a href="/Python/3. Python-module/44. 异常处理.html#万能异常和其他分支合作" class="sidebar-link">万能异常和其他分支合作</a></li><li class="sidebar-sub-header"><a href="/Python/3. Python-module/44. 异常处理.html#异常处理的其他机制" class="sidebar-link">异常处理的其他机制</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/Python/3. Python-module/44. 异常处理.html#else" class="sidebar-link">else</a></li><li class="sidebar-sub-header"><a href="/Python/3. Python-module/44. 异常处理.html#finally" class="sidebar-link">finally</a></li><li class="sidebar-sub-header"><a href="/Python/3. Python-module/44. 异常处理.html#异常处理的执行顺序" class="sidebar-link">异常处理的执行顺序</a></li></ul></li><li class="sidebar-sub-header"><a href="/Python/3. Python-module/44. 异常处理.html#主动抛异常" class="sidebar-link">主动抛异常</a></li><li class="sidebar-sub-header"><a href="/Python/3. Python-module/44. 异常处理.html#自定义异常" class="sidebar-link">自定义异常</a></li><li class="sidebar-sub-header"><a href="/Python/3. Python-module/44. 异常处理.html#断言" class="sidebar-link">断言</a></li><li class="sidebar-sub-header"><a href="/Python/3. Python-module/44. 异常处理.html#异常处理总结" class="sidebar-link">异常处理总结</a></li></ul></li><li><a href="/Python/3. Python-module/45. collections模块的双端对列.html" class="sidebar-link">45. collections模块的双端对列</a></li><li><a href="/Python/3. Python-module/46. math数字模块.html" class="sidebar-link">46. math数字模块</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="_44-异常处理"><a href="#_44-异常处理" class="header-anchor">#</a> 44. 异常处理</h1> <h1 id="异常处理"><a href="#异常处理" class="header-anchor">#</a> 异常处理</h1> <p>异常：一旦程序中发生了异常，那么程序就立刻停止，不继续执行下去</p> <p>异常分为：异常跟错误</p> <ol><li>异常：Iteration 异常  在执行代码的过程中引发的异常</li> <li>错误：Error  语法错误   比较明显的错误 在编译代码阶段就能检测出来</li></ol> <h2 id="异常信息"><a href="#异常信息" class="header-anchor">#</a> 异常信息</h2> <p><strong>常见的异常信息</strong></p> <ol><li>AttributeError：试图访问一个对象没有的树形，比如foo.x，但是foo没有属性x</li> <li>IOError： 输入/输出异常；基本上是无法打开文件</li> <li>ImportError： 无法引入模块或包；基本上是路径问题或名称错误</li> <li>IndentationError： 语法错误（的子类） ；代码没有正确对齐</li> <li>IndexError ：下标索引超出序列边界，比如当x只有三个元素，却试图访问x[5]</li> <li>KeyError： 试图访问字典里不存在的键</li> <li>KeyboardInterrupt： Ctrl+C被按下</li> <li>NameError： 使用一个还未被赋予对象的变量</li> <li>SyntaxError： Python代码非法，代码不能编译(个人认为这是语法错误，写错了）</li> <li>TypeError： 传入对象类型与要求的不符合</li> <li>UnboundLocalError： 试图访问一个还未被设置的局部变量，基本上是由于另有一个同名的全局变量，
+导致你以为正在访问它</li> <li>ValueError： 传入一个调用者不期望的值，即使值的类型是正确的</li></ol> <p><strong>异常信息</strong></p> <p>这里就只说异常的名字，如果想了解，自行官网文档</p> <table><thead><tr><th style="text-align:center;">异常名</th> <th style="text-align:center;">异常名</th> <th style="text-align:center;">异常名</th></tr></thead> <tbody><tr><td style="text-align:center;">ArithmeticError</td> <td style="text-align:center;">IndentationError</td> <td style="text-align:center;">StandardError</td></tr> <tr><td style="text-align:center;">AssertionError</td> <td style="text-align:center;">IndexError</td> <td style="text-align:center;">StopIteration</td></tr> <tr><td style="text-align:center;">AttributeError</td> <td style="text-align:center;">IOError</td> <td style="text-align:center;">SyntaxError</td></tr> <tr><td style="text-align:center;">BaseException</td> <td style="text-align:center;">KeyboardInterrupt</td> <td style="text-align:center;">SyntaxWarning</td></tr> <tr><td style="text-align:center;">BufferError</td> <td style="text-align:center;">KeyError</td> <td style="text-align:center;">SystemError</td></tr> <tr><td style="text-align:center;">BytesWarning</td> <td style="text-align:center;">LookupError</td> <td style="text-align:center;">SystemExit</td></tr> <tr><td style="text-align:center;">DeprecationWarning</td> <td style="text-align:center;">MemoryError</td> <td style="text-align:center;">TabError</td></tr> <tr><td style="text-align:center;">EnvironmentError</td> <td style="text-align:center;">NameError</td> <td style="text-align:center;">TypeError</td></tr> <tr><td style="text-align:center;">EOFError</td> <td style="text-align:center;">NotImplementedError</td> <td style="text-align:center;">UnboundLocalError</td></tr> <tr><td style="text-align:center;">Exception</td> <td style="text-align:center;">OSError</td> <td style="text-align:center;">UnicodeDecodeError</td></tr> <tr><td style="text-align:center;">FloatingPointError</td> <td style="text-align:center;">OverflowError</td> <td style="text-align:center;">UnicodeEncodeError</td></tr> <tr><td style="text-align:center;">FutureWarning</td> <td style="text-align:center;">PendingDeprecationWarning</td> <td style="text-align:center;">UnicodeError</td></tr> <tr><td style="text-align:center;">GeneratorExit</td> <td style="text-align:center;">ReferenceError</td> <td style="text-align:center;">UnicodeTranslateError</td></tr> <tr><td style="text-align:center;">ImportError</td> <td style="text-align:center;">RuntimeError</td> <td style="text-align:center;">UnicodeWarning</td></tr> <tr><td style="text-align:center;">ImportWarning</td> <td style="text-align:center;">RuntimeWarning</td> <td style="text-align:center;">UserWarning</td></tr> <tr><td style="text-align:center;">Warning</td> <td style="text-align:center;">ValueError</td> <td style="text-align:center;">ZeroDivisionError</td></tr></tbody></table> <h2 id="简单的异常处理"><a href="#简单的异常处理" class="header-anchor">#</a> 简单的异常处理</h2> <div class="language-python extra-class"><pre class="language-python"><code>so <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">&quot;查看&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;删除&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;增加&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;修改&quot;</span><span class="token punctuation">]</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">enumerate</span><span class="token punctuation">(</span>so<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>i<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>i<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">try</span><span class="token punctuation">:</span>
+    user <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">&quot;》》》：&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>so<span class="token punctuation">[</span>user<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">except</span> ValueError<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;请输入一个数字&quot;</span><span class="token punctuation">)</span>
+    
+执行结果：
+<span class="token number">1</span> 查看
+<span class="token number">2</span> 删除
+<span class="token number">3</span> 增加
+<span class="token number">4</span> 修改
+》》》：a
+请输入一个数字
+
+<span class="token comment">## 这种异常处理：能够处理用户输入时，非数字的情况下，如果在外面在加个循环，报错后，在让用户输入，这样子，用户体验会相对更好</span>
+</code></pre></div><h2 id="多分支异常处理"><a href="#多分支异常处理" class="header-anchor">#</a> 多分支异常处理</h2> <div class="language-python extra-class"><pre class="language-python"><code>so <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">&quot;查看&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;删除&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;增加&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;修改&quot;</span><span class="token punctuation">]</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">enumerate</span><span class="token punctuation">(</span>so<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>i<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>i<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">try</span><span class="token punctuation">:</span>
+    user <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">&quot;》》》：&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>so<span class="token punctuation">[</span>user<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">except</span> ValueError<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;请输入一个数字&quot;</span><span class="token punctuation">)</span>
+<span class="token keyword">except</span> IndexError<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'您输入的数字无效'</span><span class="token punctuation">)</span>
+    
+执行结果：
+<span class="token number">1</span> 查看
+<span class="token number">2</span> 删除
+<span class="token number">3</span> 增加
+<span class="token number">4</span> 修改
+》》》：<span class="token number">6</span>
+您输入的数字无效
+》》》：a
+请输入一个数字
+
+<span class="token comment">## 这样子，如果输入超范围的数字的报错，也截下来，转成自己输出的话，提高用户体验</span>
+</code></pre></div><h2 id="万能异常"><a href="#万能异常" class="header-anchor">#</a> 万能异常</h2> <div class="language-python extra-class"><pre class="language-python"><code>so <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">&quot;查看&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;删除&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;增加&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;修改&quot;</span><span class="token punctuation">]</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">enumerate</span><span class="token punctuation">(</span>so<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>i<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>i<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">try</span><span class="token punctuation">:</span>
+    user <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">&quot;》》》：&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>so<span class="token punctuation">[</span>user<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">except</span> Exception<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;您输入有误。。。。。&quot;</span><span class="token punctuation">)</span>
+    
+执行结果：
+<span class="token number">1</span> 查看
+<span class="token number">2</span> 删除
+<span class="token number">3</span> 增加
+<span class="token number">4</span> 修改
+》》》：<span class="token number">6</span>
+您输入有误。。。。。
+
+<span class="token comment">## 万能异常：Exception，Exception是所有异常的父类，可以说每个异常都是一个类，但异常的类都继承Exception，所以Exception能处理几乎所有的异常</span>
+</code></pre></div><h2 id="万能异常和其他分支合作"><a href="#万能异常和其他分支合作" class="header-anchor">#</a> 万能异常和其他分支合作</h2> <p>注意：万能异常和其他分支合作，万能异常永远要放在所有except 异常的最后</p> <div class="language-python extra-class"><pre class="language-python"><code>so <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">&quot;查看&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;删除&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;增加&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;修改&quot;</span><span class="token punctuation">]</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">enumerate</span><span class="token punctuation">(</span>so<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>i<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>i<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">while</span> <span class="token number">1</span><span class="token punctuation">:</span>
+    <span class="token keyword">try</span><span class="token punctuation">:</span>
+        user <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">&quot;》》》：&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>so<span class="token punctuation">[</span>user<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token keyword">except</span> ValueError<span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;请输入一个数字&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">except</span> Exception<span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;您输入有误。。。。。&quot;</span><span class="token punctuation">)</span>
+        
+执行结果：
+<span class="token number">1</span> 查看
+<span class="token number">2</span> 删除
+<span class="token number">3</span> 增加
+<span class="token number">4</span> 修改
+》》》：a
+请输入一个数字
+》》》：<span class="token number">6</span>
+您输入有误。。。。。
+</code></pre></div><p>为什么万能异常在放在其他异常的后面，这就要说到异常处理顺序</p> <p>异常处理顺序：能 if判断 一样，一旦执行匹配到，就会立刻跳到匹配到的，不会在匹配接下来的</p> <p>如果万能异常放在最上面，那下面还写不写异常有什么区别吗</p> <h2 id="异常处理的其他机制"><a href="#异常处理的其他机制" class="header-anchor">#</a> 异常处理的其他机制</h2> <h3 id="else"><a href="#else" class="header-anchor">#</a> else</h3> <p>try中的代码正常执行 没有异常的时候会执行else中的代码</p> <div class="language-python extra-class"><pre class="language-python"><code>so <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">&quot;查看&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;删除&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;增加&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;修改&quot;</span><span class="token punctuation">]</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">enumerate</span><span class="token punctuation">(</span>so<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>i<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>i<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">while</span> <span class="token number">1</span><span class="token punctuation">:</span>
+    <span class="token keyword">try</span><span class="token punctuation">:</span>
+        user <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">&quot;》》》：&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>so<span class="token punctuation">[</span>user<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token keyword">except</span> ValueError<span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;请输入一个数字&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">except</span> Exception<span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;您输入有误。。。。。&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;执行了%s功能&quot;</span><span class="token operator">%</span>so<span class="token punctuation">[</span>user<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+        
+执行结果：
+<span class="token number">1</span> 查看
+<span class="token number">2</span> 删除
+<span class="token number">3</span> 增加
+<span class="token number">4</span> 修改
+》》》：<span class="token number">1</span>
+查看
+执行了查看功能
+</code></pre></div><h3 id="finally"><a href="#finally" class="header-anchor">#</a> finally</h3> <p>无论try如何都会执行，无论在try中报的错，没有截到，程序要自动停止，finally还是会执行的</p> <p>一般用处：操作系统资源归还的工作方面</p> <div class="language-python extra-class"><pre class="language-python"><code>so <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">&quot;查看&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;删除&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;增加&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;修改&quot;</span><span class="token punctuation">]</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">enumerate</span><span class="token punctuation">(</span>so<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>i<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>i<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">while</span> <span class="token number">1</span><span class="token punctuation">:</span>
+    <span class="token keyword">try</span><span class="token punctuation">:</span>
+        user <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">&quot;》》》：&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>so<span class="token punctuation">[</span>user<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token keyword">except</span> ValueError<span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;请输入一个数字&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;执行了%s功能&quot;</span><span class="token operator">%</span>so<span class="token punctuation">[</span>user<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token keyword">finally</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;无论try如何都会执行&quot;</span><span class="token punctuation">)</span>
+        
+执行结果：
+<span class="token number">1</span> 查看
+<span class="token number">2</span> 删除
+<span class="token number">3</span> 增加
+<span class="token number">4</span> 修改
+》》》：<span class="token number">6</span>
+无论<span class="token keyword">try</span>如何都会执行
+IndexError<span class="token punctuation">:</span> <span class="token builtin">list</span> index out of <span class="token builtin">range</span>
+    
+<span class="token comment">## 就算是报错了，finally还是会执行</span>
+</code></pre></div><h3 id="异常处理的执行顺序"><a href="#异常处理的执行顺序" class="header-anchor">#</a> 异常处理的执行顺序</h3> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">try</span><span class="token punctuation">:</span>
+<span class="token keyword">except</span><span class="token punctuation">:</span>
+
+<span class="token keyword">try</span><span class="token punctuation">:</span>
+<span class="token keyword">except</span><span class="token punctuation">:</span>
+<span class="token keyword">else</span><span class="token punctuation">:</span>
+    
+<span class="token keyword">try</span><span class="token punctuation">:</span>
+<span class="token keyword">except</span><span class="token punctuation">:</span>
+<span class="token keyword">else</span><span class="token punctuation">:</span>
+<span class="token keyword">finally</span><span class="token punctuation">:</span>
+
+<span class="token keyword">try</span><span class="token punctuation">:</span>
+<span class="token keyword">except</span><span class="token punctuation">:</span>
+<span class="token keyword">finally</span><span class="token punctuation">:</span>
+
+<span class="token keyword">try</span><span class="token punctuation">:</span>
+<span class="token keyword">finally</span><span class="token punctuation">:</span>
+</code></pre></div><h2 id="主动抛异常"><a href="#主动抛异常" class="header-anchor">#</a> 主动抛异常</h2> <p>raise 如果不指定抛出的错误，默认抛出截到的错误</p> <p>注意：raise 指定抛出的错误只能是定义好的错误</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token comment">## raise 默认抛出截到的错误</span>
+so <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">&quot;查看&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;删除&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;增加&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;修改&quot;</span><span class="token punctuation">]</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">enumerate</span><span class="token punctuation">(</span>so<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>i<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>i<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">while</span> <span class="token number">1</span><span class="token punctuation">:</span>
+    <span class="token keyword">try</span><span class="token punctuation">:</span>
+        user <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">&quot;》》》：&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>so<span class="token punctuation">[</span>user<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token keyword">except</span> ValueError<span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;请输入一个数字&quot;</span><span class="token punctuation">)</span>
+        <span class="token keyword">raise</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;执行了%s功能&quot;</span><span class="token operator">%</span>so<span class="token punctuation">[</span>user<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+        
+执行结果：
+<span class="token number">1</span> 查看
+<span class="token number">2</span> 删除
+<span class="token number">3</span> 增加
+<span class="token number">4</span> 修改
+》》》：a
+请输入一个数字
+ValueError<span class="token punctuation">:</span> invalid literal <span class="token keyword">for</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">with</span> base <span class="token number">10</span><span class="token punctuation">:</span> <span class="token string">'a'</span>
+        
+        
+<span class="token comment">## raise 指定抛出错误</span>
+so <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">&quot;查看&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;删除&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;增加&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;修改&quot;</span><span class="token punctuation">]</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">enumerate</span><span class="token punctuation">(</span>so<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>i<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>i<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">while</span> <span class="token number">1</span><span class="token punctuation">:</span>
+    <span class="token keyword">try</span><span class="token punctuation">:</span>
+        user <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">&quot;》》》：&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>so<span class="token punctuation">[</span>user<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token keyword">except</span> ValueError<span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;请输入一个数字&quot;</span><span class="token punctuation">)</span>
+        <span class="token keyword">raise</span> IndentationError
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;执行了%s功能&quot;</span><span class="token operator">%</span>so<span class="token punctuation">[</span>user<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+        
+执行结果：
+<span class="token number">1</span> 查看
+<span class="token number">2</span> 删除
+<span class="token number">3</span> 增加
+<span class="token number">4</span> 修改
+》》》：a
+请输入一个数字
+IndentationError<span class="token punctuation">:</span> <span class="token boolean">None</span>
+  
+
+<span class="token comment">## 直接抛出</span>
+<span class="token keyword">raise</span> IndentationError
+
+执行结果：
+IndentationError<span class="token punctuation">:</span> <span class="token boolean">None</span>
+</code></pre></div><h2 id="自定义异常"><a href="#自定义异常" class="header-anchor">#</a> 自定义异常</h2> <p>格式：class 名称(Exception)：Exception是所有异常错误类的父类</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token comment">## 简单使用</span>
+<span class="token keyword">class</span> <span class="token class-name">Customerror</span><span class="token punctuation">(</span>Exception<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">pass</span>
+<span class="token keyword">raise</span> Customerror
+
+执行结果：
+    <span class="token keyword">raise</span> Customerror
+__main__<span class="token punctuation">.</span>Customerror
+
+<span class="token comment">## 指定报错信息</span>
+<span class="token keyword">class</span> <span class="token class-name">Customerror</span><span class="token punctuation">(</span>Exception<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>msg<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>msg <span class="token operator">=</span> msg
+
+<span class="token keyword">raise</span> Customerror<span class="token punctuation">(</span><span class="token string">&quot;这是我自定义的异常错误&quot;</span><span class="token punctuation">)</span>
+
+执行结果：
+<span class="token keyword">raise</span> Customerror<span class="token punctuation">(</span><span class="token string">&quot;这是我自定义的异常错误&quot;</span><span class="token punctuation">)</span>
+__main__<span class="token punctuation">.</span>Customerror<span class="token punctuation">:</span> 这是我自定义的异常错误
+<span class="token comment">## 想要自定义错误信息，就必须要有__init__这个方法跟msg这个参数的存在，参数名可自定义</span>
+</code></pre></div><h2 id="断言"><a href="#断言" class="header-anchor">#</a> 断言</h2> <p>断言很简单：</p> <p>断言是以布尔值为准，简单说，断言为True，接着执行下面的代码，断言为False，报错停止，不执行下面的代码</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token comment">## 断言为True</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token number">11</span><span class="token punctuation">)</span>
+<span class="token keyword">assert</span> <span class="token boolean">True</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token number">12</span><span class="token punctuation">)</span>
+
+执行结果：
+<span class="token number">11</span>
+<span class="token number">12</span>
+
+<span class="token comment">## 断言为False</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token number">11</span><span class="token punctuation">)</span>
+<span class="token keyword">assert</span> <span class="token boolean">False</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token number">12</span><span class="token punctuation">)</span>
+
+执行结果：
+<span class="token number">11</span>
+<span class="token keyword">assert</span> <span class="token boolean">False</span>
+AssertionError
+</code></pre></div><h2 id="异常处理总结"><a href="#异常处理总结" class="header-anchor">#</a> 异常处理总结</h2> <ol><li>尽量少用异常处理</li> <li>能通过逻辑规避的应该代码逻辑规避掉</li> <li>应该对某一句/几句话来进行处理</li></ol></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/Python/3. Python-module/43. logging模块 - 日志模块.html" class="prev">
+        43. logging模块 - 日志模块
+      </a></span> <span class="next"><a href="/Python/3. Python-module/45. collections模块的双端对列.html">
+        45. collections模块的双端对列
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.d65bef42.js" defer></script><script src="/assets/js/2.2249178e.js" defer></script><script src="/assets/js/108.c637743a.js" defer></script>
+  </body>
+</html>

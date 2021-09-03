@@ -1,0 +1,1422 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>2. Kubernetes1.14集群部署 - 二进制 | MSG</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="在追寻技术的同时享受生活">
+    
+    <link rel="preload" href="/assets/css/0.styles.e4d8b86b.css" as="style"><link rel="preload" href="/assets/js/app.d65bef42.js" as="script"><link rel="preload" href="/assets/js/2.2249178e.js" as="script"><link rel="preload" href="/assets/js/8.f6cfdc07.js" as="script"><link rel="prefetch" href="/assets/js/10.4785e2e5.js"><link rel="prefetch" href="/assets/js/100.33fceff2.js"><link rel="prefetch" href="/assets/js/101.62e1e5d4.js"><link rel="prefetch" href="/assets/js/102.8551fe71.js"><link rel="prefetch" href="/assets/js/103.47754d79.js"><link rel="prefetch" href="/assets/js/104.4adf114f.js"><link rel="prefetch" href="/assets/js/105.6206a08a.js"><link rel="prefetch" href="/assets/js/106.1c4561f3.js"><link rel="prefetch" href="/assets/js/107.e1531a5a.js"><link rel="prefetch" href="/assets/js/108.c637743a.js"><link rel="prefetch" href="/assets/js/109.3f150913.js"><link rel="prefetch" href="/assets/js/11.bd8ec7a6.js"><link rel="prefetch" href="/assets/js/110.088c1ac3.js"><link rel="prefetch" href="/assets/js/111.66d8d491.js"><link rel="prefetch" href="/assets/js/112.231663ee.js"><link rel="prefetch" href="/assets/js/113.a38bc531.js"><link rel="prefetch" href="/assets/js/114.e165daea.js"><link rel="prefetch" href="/assets/js/115.994b087a.js"><link rel="prefetch" href="/assets/js/116.ea3cfdfb.js"><link rel="prefetch" href="/assets/js/117.7be5e4f3.js"><link rel="prefetch" href="/assets/js/118.ebb58ddb.js"><link rel="prefetch" href="/assets/js/119.90018646.js"><link rel="prefetch" href="/assets/js/12.0d8f43df.js"><link rel="prefetch" href="/assets/js/120.bb5be863.js"><link rel="prefetch" href="/assets/js/121.3d1db670.js"><link rel="prefetch" href="/assets/js/122.d29ed1b2.js"><link rel="prefetch" href="/assets/js/123.38cc4704.js"><link rel="prefetch" href="/assets/js/124.cc8549d4.js"><link rel="prefetch" href="/assets/js/125.6ee3e9c8.js"><link rel="prefetch" href="/assets/js/126.48710eba.js"><link rel="prefetch" href="/assets/js/127.d7a1fd83.js"><link rel="prefetch" href="/assets/js/128.e5017f6b.js"><link rel="prefetch" href="/assets/js/129.4c33e121.js"><link rel="prefetch" href="/assets/js/13.2dbde7aa.js"><link rel="prefetch" href="/assets/js/130.cda66247.js"><link rel="prefetch" href="/assets/js/131.ad76f669.js"><link rel="prefetch" href="/assets/js/132.aca88758.js"><link rel="prefetch" href="/assets/js/133.a1cf5903.js"><link rel="prefetch" href="/assets/js/134.b1386377.js"><link rel="prefetch" href="/assets/js/135.94edcf53.js"><link rel="prefetch" href="/assets/js/136.24be4170.js"><link rel="prefetch" href="/assets/js/137.db57772e.js"><link rel="prefetch" href="/assets/js/138.dc67bcaa.js"><link rel="prefetch" href="/assets/js/139.5453d1f6.js"><link rel="prefetch" href="/assets/js/14.2187dbf4.js"><link rel="prefetch" href="/assets/js/140.938e5c07.js"><link rel="prefetch" href="/assets/js/141.99c7cf2c.js"><link rel="prefetch" href="/assets/js/142.428e3958.js"><link rel="prefetch" href="/assets/js/143.68b01530.js"><link rel="prefetch" href="/assets/js/144.f67389cc.js"><link rel="prefetch" href="/assets/js/145.d952a130.js"><link rel="prefetch" href="/assets/js/146.b933dcad.js"><link rel="prefetch" href="/assets/js/147.2d8e4c0a.js"><link rel="prefetch" href="/assets/js/148.6d76ac94.js"><link rel="prefetch" href="/assets/js/149.6b4d6378.js"><link rel="prefetch" href="/assets/js/15.a53b356c.js"><link rel="prefetch" href="/assets/js/150.5bf39cb4.js"><link rel="prefetch" href="/assets/js/151.17af677c.js"><link rel="prefetch" href="/assets/js/152.7f1c2792.js"><link rel="prefetch" href="/assets/js/153.98dd0727.js"><link rel="prefetch" href="/assets/js/154.eb44bf23.js"><link rel="prefetch" href="/assets/js/155.5a9840ea.js"><link rel="prefetch" href="/assets/js/156.7ba01fd0.js"><link rel="prefetch" href="/assets/js/157.2296a048.js"><link rel="prefetch" href="/assets/js/158.6bb1f699.js"><link rel="prefetch" href="/assets/js/159.073bb8df.js"><link rel="prefetch" href="/assets/js/16.cef7bf44.js"><link rel="prefetch" href="/assets/js/160.25a837f9.js"><link rel="prefetch" href="/assets/js/161.93d886a1.js"><link rel="prefetch" href="/assets/js/162.5d2714b2.js"><link rel="prefetch" href="/assets/js/17.96f36904.js"><link rel="prefetch" href="/assets/js/18.fd04b310.js"><link rel="prefetch" href="/assets/js/19.3e1377d1.js"><link rel="prefetch" href="/assets/js/20.ac195ac8.js"><link rel="prefetch" href="/assets/js/21.c2d7729c.js"><link rel="prefetch" href="/assets/js/22.dd8c621b.js"><link rel="prefetch" href="/assets/js/23.ad7d0350.js"><link rel="prefetch" href="/assets/js/24.8559c4c3.js"><link rel="prefetch" href="/assets/js/25.783a8116.js"><link rel="prefetch" href="/assets/js/26.25e0e459.js"><link rel="prefetch" href="/assets/js/27.c0616e2a.js"><link rel="prefetch" href="/assets/js/28.30656c2e.js"><link rel="prefetch" href="/assets/js/29.2be5114c.js"><link rel="prefetch" href="/assets/js/3.be8c8f3b.js"><link rel="prefetch" href="/assets/js/30.230a74a7.js"><link rel="prefetch" href="/assets/js/31.760f46ad.js"><link rel="prefetch" href="/assets/js/32.c9533fef.js"><link rel="prefetch" href="/assets/js/33.dcacfb38.js"><link rel="prefetch" href="/assets/js/34.4370a466.js"><link rel="prefetch" href="/assets/js/35.bf299eea.js"><link rel="prefetch" href="/assets/js/36.336e435a.js"><link rel="prefetch" href="/assets/js/37.1d1d2eea.js"><link rel="prefetch" href="/assets/js/38.0d58b7d0.js"><link rel="prefetch" href="/assets/js/39.d43564ba.js"><link rel="prefetch" href="/assets/js/4.4a6cb970.js"><link rel="prefetch" href="/assets/js/40.bc4e4bde.js"><link rel="prefetch" href="/assets/js/41.b71231a5.js"><link rel="prefetch" href="/assets/js/42.9d46f400.js"><link rel="prefetch" href="/assets/js/43.50c5be69.js"><link rel="prefetch" href="/assets/js/44.60406e7f.js"><link rel="prefetch" href="/assets/js/45.ec3569ae.js"><link rel="prefetch" href="/assets/js/46.1bd3ce7b.js"><link rel="prefetch" href="/assets/js/47.1e1b5326.js"><link rel="prefetch" href="/assets/js/48.64c631ea.js"><link rel="prefetch" href="/assets/js/49.b4abacd8.js"><link rel="prefetch" href="/assets/js/5.e6d0b165.js"><link rel="prefetch" href="/assets/js/50.c3e320c0.js"><link rel="prefetch" href="/assets/js/51.5ec7fb8c.js"><link rel="prefetch" href="/assets/js/52.2d234f86.js"><link rel="prefetch" href="/assets/js/53.f3b69623.js"><link rel="prefetch" href="/assets/js/54.c85ff450.js"><link rel="prefetch" href="/assets/js/55.b07597b5.js"><link rel="prefetch" href="/assets/js/56.444129cf.js"><link rel="prefetch" href="/assets/js/57.df1329ba.js"><link rel="prefetch" href="/assets/js/58.5afb51cf.js"><link rel="prefetch" href="/assets/js/59.d98936d9.js"><link rel="prefetch" href="/assets/js/6.809376cd.js"><link rel="prefetch" href="/assets/js/60.02813ecf.js"><link rel="prefetch" href="/assets/js/61.37a4812d.js"><link rel="prefetch" href="/assets/js/62.5da94048.js"><link rel="prefetch" href="/assets/js/63.8e2c2bca.js"><link rel="prefetch" href="/assets/js/64.d290398f.js"><link rel="prefetch" href="/assets/js/65.44e28313.js"><link rel="prefetch" href="/assets/js/66.9acf0206.js"><link rel="prefetch" href="/assets/js/67.85688aa2.js"><link rel="prefetch" href="/assets/js/68.45bda7fc.js"><link rel="prefetch" href="/assets/js/69.9074feb0.js"><link rel="prefetch" href="/assets/js/7.5d7bce6e.js"><link rel="prefetch" href="/assets/js/70.b4cd2ddc.js"><link rel="prefetch" href="/assets/js/71.53219b13.js"><link rel="prefetch" href="/assets/js/72.af2a7290.js"><link rel="prefetch" href="/assets/js/73.c28fc506.js"><link rel="prefetch" href="/assets/js/74.64c81a90.js"><link rel="prefetch" href="/assets/js/75.05191ece.js"><link rel="prefetch" href="/assets/js/76.f516d464.js"><link rel="prefetch" href="/assets/js/77.c345180b.js"><link rel="prefetch" href="/assets/js/78.4a09d0ba.js"><link rel="prefetch" href="/assets/js/79.65f41bcf.js"><link rel="prefetch" href="/assets/js/80.b77151f3.js"><link rel="prefetch" href="/assets/js/81.824fa371.js"><link rel="prefetch" href="/assets/js/82.3f91c09b.js"><link rel="prefetch" href="/assets/js/83.9539f074.js"><link rel="prefetch" href="/assets/js/84.dd89f1de.js"><link rel="prefetch" href="/assets/js/85.15210b99.js"><link rel="prefetch" href="/assets/js/86.e14553e1.js"><link rel="prefetch" href="/assets/js/87.6dc95177.js"><link rel="prefetch" href="/assets/js/88.09c5e890.js"><link rel="prefetch" href="/assets/js/89.0d61f4d0.js"><link rel="prefetch" href="/assets/js/9.759f1986.js"><link rel="prefetch" href="/assets/js/90.a9b14d80.js"><link rel="prefetch" href="/assets/js/91.1a4aabe2.js"><link rel="prefetch" href="/assets/js/92.12070bdb.js"><link rel="prefetch" href="/assets/js/93.b5dc76d0.js"><link rel="prefetch" href="/assets/js/94.690498a6.js"><link rel="prefetch" href="/assets/js/95.b17961e6.js"><link rel="prefetch" href="/assets/js/96.a2f06f3e.js"><link rel="prefetch" href="/assets/js/97.64ef6721.js"><link rel="prefetch" href="/assets/js/98.443eba26.js"><link rel="prefetch" href="/assets/js/99.b6ba7c3a.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.e4d8b86b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">MSG</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Python文档" class="dropdown-title"><span class="title">Python文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="Python文档" class="mobile-dropdown-title"><span class="title">Python文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Python/1.Python-Basics/" class="nav-link">
+  Python-基础
+</a></li><li class="dropdown-item"><!----> <a href="/Python/2. Python-object/" class="nav-link">
+  Python-面向对象
+</a></li><li class="dropdown-item"><!----> <a href="/Python/3. Python-module/" class="nav-link">
+  Python-模块与包
+</a></li><li class="dropdown-item"><!----> <a href="/Python/4. Python-network/" class="nav-link">
+  Python-网络
+</a></li><li class="dropdown-item"><!----> <a href="/Python/5. Python-frontend/" class="nav-link">
+  Python-前端
+</a></li><li class="dropdown-item"><!----> <a href="/Python/6. Python-MySQL/" class="nav-link">
+  Python-数据库
+</a></li><li class="dropdown-item"><!----> <a href="/Python/7. Python-Django/" class="nav-link">
+  Python-Django
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="容器文档" class="dropdown-title"><span class="title">容器文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="容器文档" class="mobile-dropdown-title"><span class="title">容器文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Container/docker/" class="nav-link">
+  docker文檔
+</a></li><li class="dropdown-item"><!----> <a href="/Container/Kubernetes/" class="nav-link router-link-active">
+  Kubernetes文檔
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="GO文档" class="dropdown-title"><span class="title">GO文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="GO文档" class="mobile-dropdown-title"><span class="title">GO文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/GO/basics/" class="nav-link">
+  GO快速入门
+</a></li><li class="dropdown-item"><!----> <a href="/GO/module/" class="nav-link">
+  GO标准库/GO模块
+</a></li></ul></div></div><div class="nav-item"><a href="https://www.linux91.cn/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  博客
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Python文档" class="dropdown-title"><span class="title">Python文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="Python文档" class="mobile-dropdown-title"><span class="title">Python文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Python/1.Python-Basics/" class="nav-link">
+  Python-基础
+</a></li><li class="dropdown-item"><!----> <a href="/Python/2. Python-object/" class="nav-link">
+  Python-面向对象
+</a></li><li class="dropdown-item"><!----> <a href="/Python/3. Python-module/" class="nav-link">
+  Python-模块与包
+</a></li><li class="dropdown-item"><!----> <a href="/Python/4. Python-network/" class="nav-link">
+  Python-网络
+</a></li><li class="dropdown-item"><!----> <a href="/Python/5. Python-frontend/" class="nav-link">
+  Python-前端
+</a></li><li class="dropdown-item"><!----> <a href="/Python/6. Python-MySQL/" class="nav-link">
+  Python-数据库
+</a></li><li class="dropdown-item"><!----> <a href="/Python/7. Python-Django/" class="nav-link">
+  Python-Django
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="容器文档" class="dropdown-title"><span class="title">容器文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="容器文档" class="mobile-dropdown-title"><span class="title">容器文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Container/docker/" class="nav-link">
+  docker文檔
+</a></li><li class="dropdown-item"><!----> <a href="/Container/Kubernetes/" class="nav-link router-link-active">
+  Kubernetes文檔
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="GO文档" class="dropdown-title"><span class="title">GO文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="GO文档" class="mobile-dropdown-title"><span class="title">GO文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/GO/basics/" class="nav-link">
+  GO快速入门
+</a></li><li class="dropdown-item"><!----> <a href="/GO/module/" class="nav-link">
+  GO标准库/GO模块
+</a></li></ul></div></div><div class="nav-item"><a href="https://www.linux91.cn/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  博客
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Kubernetes文档</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/Container/Kubernetes/" aria-current="page" class="sidebar-link">介绍</a></li><li><a href="/Container/Kubernetes/1. Kubernetes概述.html" class="sidebar-link">1. Kubernetes概述</a></li><li><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html" class="active sidebar-link">2. Kubernetes1.14集群部署 - 二进制</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#单机kubernetes平台架构" class="sidebar-link">单机Kubernetes平台架构</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#高可用kubernetes平台架构" class="sidebar-link">高可用Kubernetes平台架构</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#本文章的规划" class="sidebar-link">本文章的规划</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#单机kubernetes平台架构-2" class="sidebar-link">单机Kubernetes平台架构</a></li></ul></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#创建证书目录" class="sidebar-link">创建证书目录</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#同步时间" class="sidebar-link">同步时间</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#生成etcd需要的证书" class="sidebar-link">生成etcd需要的证书</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#进入etcd证书目录" class="sidebar-link">进入etcd证书目录</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#安装cfssl命令" class="sidebar-link">安装cfssl命令</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#编写生成ca证书的脚本" class="sidebar-link">编写生成ca证书的脚本</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#证书脚本重点注意信息" class="sidebar-link">证书脚本重点注意信息</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#使用ca-sh脚本生成ca证书" class="sidebar-link">使用ca.sh脚本生成ca证书</a></li></ul></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#生成k8s需要的证书" class="sidebar-link">生成k8s需要的证书</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#进入k8s证书目录" class="sidebar-link">进入k8s证书目录</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#编写生成证书的脚本" class="sidebar-link">编写生成证书的脚本</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#证书脚本重点注意信息-2" class="sidebar-link">证书脚本重点注意信息</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#使用k8s-sh脚本生成证书" class="sidebar-link">使用k8s.sh脚本生成证书</a></li></ul></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#etcd下载" class="sidebar-link">etcd下载</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#etcd版本" class="sidebar-link">etcd版本</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#etcd集群节点" class="sidebar-link">etcd集群节点</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#etcd主要文件" class="sidebar-link">etcd主要文件</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#_192-168-0-141机上操作" class="sidebar-link">192.168.0.141机上操作</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#进入目录并解压并进入" class="sidebar-link">进入目录并解压并进入</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#创建目录" class="sidebar-link">创建目录</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#复制文件到etcd的bin目录中" class="sidebar-link">复制文件到etcd的bin目录中</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#编写部署脚本" class="sidebar-link">编写部署脚本</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#执行脚本" class="sidebar-link">执行脚本</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#发送etcd目录中另两个节点中" class="sidebar-link">发送etcd目录中另两个节点中</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#启动" class="sidebar-link">启动</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#查看日志" class="sidebar-link">查看日志</a></li></ul></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#_192-168-0-142机上操作" class="sidebar-link">192.168.0.142机上操作</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#修改etcd配置文件" class="sidebar-link">修改etcd配置文件</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#启动-2" class="sidebar-link">启动</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#查看日志-2" class="sidebar-link">查看日志</a></li></ul></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#_192-168-0-143机上操作" class="sidebar-link">192.168.0.143机上操作</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#修改etcd配置文件-2" class="sidebar-link">修改etcd配置文件</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#启动-3" class="sidebar-link">启动</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#查看日志-3" class="sidebar-link">查看日志</a></li></ul></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#检测集群是否完整" class="sidebar-link">检测集群是否完整</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#错误总结" class="sidebar-link">错误总结</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#k8s整体分层图" class="sidebar-link">k8s整体分层图</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#node节点" class="sidebar-link">node节点</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#安装docker" class="sidebar-link">安装docker</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#安装依赖包" class="sidebar-link">安装依赖包</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#配置docker的yum源" class="sidebar-link">配置docker的yum源</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#安装docker-2" class="sidebar-link">安装docker</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#安装daoclou加速器" class="sidebar-link">安装daoclou加速器</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#启动docker" class="sidebar-link">启动docker</a></li></ul></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#kubernetes网络模型-cni" class="sidebar-link">Kubernetes网络模型（CNI）</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#kubernetes网络模型的实现" class="sidebar-link">Kubernetes网络模型的实现</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#flannel网络插件-百台下网络方案" class="sidebar-link">Flannel网络插件 - (百台下网络方案)</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#calico网络插件-上百台网络方案" class="sidebar-link">Calico网络插件 - (上百台网络方案)</a></li></ul></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#部署kubernetes网络-flannel" class="sidebar-link">部署Kubernetes网络-Flannel</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#创建一个子网写到etcd中" class="sidebar-link">创建一个子网写到etcd中</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#查看子网有没有生成" class="sidebar-link">查看子网有没有生成</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#下载flannel二进制包" class="sidebar-link">下载flannel二进制包</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#_192-168-0-142机上操作-2" class="sidebar-link">192.168.0.142机上操作</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#_192-168-0-143机上操作-2" class="sidebar-link">192.168.0.143机上操作</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#测试node节点的容器是否相通" class="sidebar-link">测试node节点的容器是否相通</a></li></ul></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#kube-apiserver组件的部署" class="sidebar-link">kube-apiserver组件的部署</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#进入目录并解压并进入-3" class="sidebar-link">进入目录并解压并进入</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#创建目录-3" class="sidebar-link">创建目录</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#复制文件到kubernetes的bin目录中-2" class="sidebar-link">复制文件到kubernetes的bin目录中</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#编写部署脚本-3" class="sidebar-link">编写部署脚本</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#生成token-csv验证文件" class="sidebar-link">生成token.csv验证文件</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#启动kube-apiserver" class="sidebar-link">启动kube-apiserver</a></li></ul></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#kube-controller-manager组件的部署" class="sidebar-link">Kube-controller-manager组件的部署</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#编写部署脚本-4" class="sidebar-link">编写部署脚本</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#执行脚本-3" class="sidebar-link">执行脚本</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#启动kube-controller-manager" class="sidebar-link">启动Kube-controller-manager</a></li></ul></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#kube-scheduler组件的部署" class="sidebar-link">kube-scheduler组件的部署</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#编写部署脚本-5" class="sidebar-link">编写部署脚本</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#执行脚本-4" class="sidebar-link">执行脚本</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#启动kube-scheduler" class="sidebar-link">启动kube-scheduler</a></li></ul></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#查看当前集群节点的状态" class="sidebar-link">查看当前集群节点的状态</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#需要部署二个组件" class="sidebar-link">需要部署二个组件</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#以下操作是在master节点上操作" class="sidebar-link">以下操作是在Master节点上操作</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#绑定到系统集群角色" class="sidebar-link">绑定到系统集群角色</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#编写生成kubeconfig文件的脚本" class="sidebar-link">编写生成kubeconfig文件的脚本</a></li></ul></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#以下操作在node节点192-168-0-142操作" class="sidebar-link">以下操作在node节点192.168.0.142操作</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#部署kubelet" class="sidebar-link">部署kubelet</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#部署kube-proxy组件" class="sidebar-link">部署kube-proxy组件</a></li></ul></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#发送配置文件目录到另一个node节点上" class="sidebar-link">发送配置文件目录到另一个Node节点上</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#以下操作在node节点192-168-0-143上操作" class="sidebar-link">以下操作在node节点192.168.0.143上操作</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#删除证书" class="sidebar-link">删除证书</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#节点授权-2" class="sidebar-link">节点授权</a></li></ul></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#创建一个nginx的服务容器" class="sidebar-link">创建一个nginx的服务容器</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#查看创建的服务容器" class="sidebar-link">查看创建的服务容器</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#扩容nginx服务容器" class="sidebar-link">扩容nginx服务容器</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#在查看创建的服务容器" class="sidebar-link">在查看创建的服务容器</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#查看容器分布在那些节点上" class="sidebar-link">查看容器分布在那些节点上</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#暴露node88端口给外部连接" class="sidebar-link">暴露node88端口给外部连接</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#查看以暴露的端口并访问" class="sidebar-link">查看以暴露的端口并访问</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#web访问" class="sidebar-link">web访问</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#授权用户可以查看日志的权限" class="sidebar-link">授权用户可以查看日志的权限</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#查看创建的服务容器并查看日志" class="sidebar-link">查看创建的服务容器并查看日志</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#新建maste节点" class="sidebar-link">新建maste节点</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#获取旧maste节点的数据" class="sidebar-link">获取旧maste节点的数据</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#创建kubectl命令文件软链接" class="sidebar-link">创建kubectl命令文件软链接</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#修改kube-apiserver的配置" class="sidebar-link">修改kube-apiserver的配置</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#启动新节点的三个组件" class="sidebar-link">启动新节点的三个组件</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#查看当前集群节点的状态-2" class="sidebar-link">查看当前集群节点的状态</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#查看运行的容器" class="sidebar-link">查看运行的容器</a></li></ul></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#在192-168-0-42搭建nginx跟keepalived" class="sidebar-link">在192.168.0.42搭建nginx跟keepalived</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#安装nginx跟keepalived" class="sidebar-link">安装nginx跟keepalived</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#修改nginx配置" class="sidebar-link">修改nginx配置</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#启动nginx" class="sidebar-link">启动nginx</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#创建nginx心跳检测脚本" class="sidebar-link">创建nginx心跳检测脚本</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#增加nginx心跳检测脚本可执行权限" class="sidebar-link">增加nginx心跳检测脚本可执行权限</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#修改keepalived配置" class="sidebar-link">修改keepalived配置</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#启动keepalived" class="sidebar-link">启动keepalived</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#查看ip" class="sidebar-link">查看IP</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#移动配置文件到192-168-0-43上" class="sidebar-link">移动配置文件到192.168.0.43上</a></li></ul></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#在192-168-0-43搭建nginx跟keepalived" class="sidebar-link">在192.168.0.43搭建nginx跟keepalived</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#安装nginx跟keepalived-2" class="sidebar-link">安装nginx跟keepalived</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#修改nginx配置-2" class="sidebar-link">修改nginx配置</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#启动nginx-2" class="sidebar-link">启动nginx</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#移动文件" class="sidebar-link">移动文件</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#增加nginx心跳检测脚本可执行权限-2" class="sidebar-link">增加nginx心跳检测脚本可执行权限</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#修改keepalived配置-2" class="sidebar-link">修改keepalived配置</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#启动keepalived-2" class="sidebar-link">启动keepalived</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#查看ip-2" class="sidebar-link">查看IP</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#测试" class="sidebar-link">测试</a></li></ul></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#配置node集群访问ip" class="sidebar-link">配置node集群访问IP</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#修改node节点的配置文件" class="sidebar-link">修改node节点的配置文件</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#重启服务" class="sidebar-link">重启服务</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#故障" class="sidebar-link">故障</a></li></ul></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#创建目录并进入" class="sidebar-link">创建目录并进入</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#生成web证书" class="sidebar-link">生成web证书</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#编写证书脚本" class="sidebar-link">编写证书脚本</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#执行脚本-7" class="sidebar-link">执行脚本</a></li></ul></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#拉取git" class="sidebar-link">拉取git</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#部署不需要修改三个文件" class="sidebar-link">部署不需要修改三个文件</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#部署需要修改的二个文件" class="sidebar-link">部署需要修改的二个文件</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#dashboard-controller-yaml" class="sidebar-link">dashboard-controller.yaml</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#dashboard-service-yaml" class="sidebar-link">dashboard-service.yaml</a></li></ul></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#查看暴露的端口跟ip" class="sidebar-link">查看暴露的端口跟IP</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#访问web界面" class="sidebar-link">访问web界面</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#创建登录令牌" class="sidebar-link">创建登录令牌</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#编写创建令牌的文件" class="sidebar-link">编写创建令牌的文件</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#部署-3" class="sidebar-link">部署</a></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#查看令牌" class="sidebar-link">查看令牌</a></li></ul></li><li class="sidebar-sub-header"><a href="/Container/Kubernetes/2. Kubernetes1.14集群部署 - 二进制.html#登录web界面" class="sidebar-link">登录web界面</a></li></ul></li><li><a href="/Container/Kubernetes/3. kubectl远程连接K8S集群.html" class="sidebar-link">3. kubectl远程连接K8S集群</a></li><li><a href="/Container/Kubernetes/4. kubectl命令行管理工具.html" class="sidebar-link">4. kubectl命令行管理工具</a></li><li><a href="/Container/Kubernetes/5. Kubernetes之yaml文件详解使用.html" class="sidebar-link">5. Kubernetes之yaml文件详解使用</a></li><li><a href="/Container/Kubernetes/6. Kubernetes之深入理解Pod对象.html" class="sidebar-link">6. Kubernetes之深入理解Pod对象</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="_2-kubernetes1-14集群部署-二进制"><a href="#_2-kubernetes1-14集群部署-二进制" class="header-anchor">#</a> 2. Kubernetes1.14集群部署 - 二进制</h1> <br> <h1 id="kubernetes集群部署步骤"><a href="#kubernetes集群部署步骤" class="header-anchor">#</a> <strong>Kubernetes集群部署步骤</strong></h1> <ol><li>官方提供的三种部署方式</li> <li>Kubernetes平台环境规划</li> <li>自签SSL证书</li> <li>Etcd数据库集群部署</li> <li>Node安装Docker</li> <li>部署Kubernetes网络</li> <li>部署Master组件</li> <li>部署Node组件</li> <li>部署一个测试示例</li> <li>部署Web UI（Dashboard）</li> <li>部署集群内部DNS解析服务（CoreDNS）</li></ol> <br> <br> <h1 id="官方提供的三种部署方式"><a href="#官方提供的三种部署方式" class="header-anchor">#</a> <strong>官方提供的三种部署方式</strong></h1> <p><strong>minikube</strong></p> <p>Minikube是一个工具，可以在本地快速运行一个单点的Kubernetes，仅用于尝试Kubernetes或日常开发的用户使用。</p> <p>部署地址：https://kubernetes.io/docs/setup/minikube/</p> <br> <p><strong>kubeadm</strong></p> <p>Kubeadm也是一个工具，提供kubeadm init和kubeadm join，用于快速部署Kubernetes集群。</p> <p>部署地址：https://kubernetes.io/docs/reference/setup-tools/kubeadm/kubeadm/</p> <br> <p><strong>二进制包</strong></p> <p>推荐，从官方下载发行版的二进制包，手动部署每个组件，组成Kubernetes集群。</p> <p>下载地址：https://github.com/kubernetes/kubernetes/releases</p> <br> <br> <h1 id="kubernetes平台环境规划"><a href="#kubernetes平台环境规划" class="header-anchor">#</a> <strong>Kubernetes平台环境规划</strong></h1> <br> <h2 id="单机kubernetes平台架构"><a href="#单机kubernetes平台架构" class="header-anchor">#</a> 单机Kubernetes平台架构</h2> <p><img src="https://s1.ax1x.com/2020/04/18/Jm0HHO.png" alt="Jm0HHO.png"></p> <br> <h2 id="高可用kubernetes平台架构"><a href="#高可用kubernetes平台架构" class="header-anchor">#</a> 高可用Kubernetes平台架构</h2> <p><img src="http://92.linux91.cn/attachment/20190319/91e19dbcaa9f4122ac5a8dd42c17bca0.png" alt="img"></p> <br> <h2 id="本文章的规划"><a href="#本文章的规划" class="header-anchor">#</a> 本文章的规划</h2> <p>目前会先构建单机Kubernetes平台架构，后面会将构建好的单机Kubernetes平台架构，扩容为高可用Kubernetes平台架构</p> <br> <h3 id="单机kubernetes平台架构-2"><a href="#单机kubernetes平台架构-2" class="header-anchor">#</a> 单机Kubernetes平台架构</h3> <ol><li>192.168.0.141--masrer
+<ol><li>4G，2P</li></ol></li> <li>192.168.0.142--nodc01
+<ol><li>4G，2P</li></ol></li> <li>192.168.0.143--nodc02
+<ol><li>4G，2P</li></ol></li></ol> <br> <br> <h1 id="自签ssl证书"><a href="#自签ssl证书" class="header-anchor">#</a> <strong>自签SSL证书</strong></h1> <p><img src="https://s1.ax1x.com/2020/04/19/JuGzuD.png" alt="JuGzuD.png"></p> <p>按着以上的证书需求图上，etcd跟k8s都需要证书</p> <p>证书就在主master机上生成</p> <br> <h2 id="创建证书目录"><a href="#创建证书目录" class="header-anchor">#</a> 创建证书目录</h2> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">mkdir</span> -p /k8s/cert/<span class="token punctuation">{</span>k8s-cert,etcd-cert<span class="token punctuation">}</span>
+<span class="token comment">## 分别创建k8s跟etcd的证书目录，分类存储</span>
+</code></pre></div> <br> <h2 id="同步时间"><a href="#同步时间" class="header-anchor">#</a> 同步时间</h2> <p>查看当前系统时间，请让系统时间保持正确</p> <div class="language-shell extra-class"><pre class="language-shell"><code>ntpdate time.windows.com
+<span class="token comment">##虚拟机的时间总是不定，所以要同步时间</span>
+
+<span class="token function">date</span> -s <span class="token string">'2019-03-24 13:09:30'</span>
+<span class="token comment">##如果同步出错，直接修改</span>
+</code></pre></div> <br> <br> <h2 id="生成etcd需要的证书"><a href="#生成etcd需要的证书" class="header-anchor">#</a> <strong>生成etcd需要的证书</strong></h2> <br> <h3 id="进入etcd证书目录"><a href="#进入etcd证书目录" class="header-anchor">#</a> 进入etcd证书目录</h3> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token builtin class-name">cd</span> /k8s/cert/etcd-cert
+</code></pre></div> <br> <h3 id="安装cfssl命令"><a href="#安装cfssl命令" class="header-anchor">#</a> 安装cfssl命令</h3> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">curl</span> -L https://pkg.cfssl.org/R1.2/cfssl_linux-amd64 -o /usr/local/bin/cfssl
+<span class="token function">curl</span> -L https://pkg.cfssl.org/R1.2/cfssljson_linux-amd64 -o /usr/local/bin/cfssljson
+<span class="token function">curl</span> -L https://pkg.cfssl.org/R1.2/cfssl-certinfo_linux-amd64 -o /usr/local/bin/cfssl-certinfo
+<span class="token function">chmod</span> +x /usr/local/bin/cfssl /usr/local/bin/cfssljson /usr/local/bin/cfssl-certinfo
+</code></pre></div> <br> <h3 id="编写生成ca证书的脚本"><a href="#编写生成ca证书的脚本" class="header-anchor">#</a> 编写生成ca证书的脚本</h3> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">vim</span> etca-ca.sh
+
+<span class="token function">cat</span> <span class="token operator">&gt;</span> ca-config.json <span class="token operator">&lt;&lt;</span><span class="token string">EOF
+{
+  &quot;signing&quot;: {
+    &quot;default&quot;: {
+      &quot;expiry&quot;: &quot;87600h&quot;
+    },
+    &quot;profiles&quot;: {
+      &quot;www&quot;: {
+         &quot;expiry&quot;: &quot;87600h&quot;,
+         &quot;usages&quot;: [
+            &quot;signing&quot;,
+            &quot;key encipherment&quot;,
+            &quot;server auth&quot;,
+            &quot;client auth&quot;
+        ]
+      }
+    }
+  }
+}
+EOF</span>
+
+<span class="token function">cat</span> <span class="token operator">&gt;</span> ca-csr.json <span class="token operator">&lt;&lt;</span><span class="token string">EOF
+{
+    &quot;CN&quot;: &quot;etcd CA&quot;,
+    &quot;key&quot;: {
+        &quot;algo&quot;: &quot;rsa&quot;,
+        &quot;size&quot;: 2048
+    },
+    &quot;names&quot;: [
+        {
+            &quot;C&quot;: &quot;CN&quot;,
+            &quot;L&quot;: &quot;Beijing&quot;,
+            &quot;ST&quot;: &quot;Beijing&quot;
+        }
+    ]
+}
+EOF</span>
+
+cfssl gencert -initca ca-csr.json <span class="token operator">|</span> cfssljson -bare ca -
+
+<span class="token comment">#-----------------------</span>
+
+<span class="token function">cat</span> <span class="token operator">&gt;</span> server-csr.json <span class="token operator">&lt;&lt;</span><span class="token string">EOF
+{
+    &quot;CN&quot;: &quot;etcd&quot;,
+    &quot;hosts&quot;: [
+    &quot;192.168.0.141&quot;,
+    &quot;192.168.0.142&quot;,
+    &quot;192.168.0.143&quot;
+    ],
+    &quot;key&quot;: {
+        &quot;algo&quot;: &quot;rsa&quot;,
+        &quot;size&quot;: 2048
+    },
+    &quot;names&quot;: [
+        {
+            &quot;C&quot;: &quot;CN&quot;,
+            &quot;L&quot;: &quot;BeiJing&quot;,
+            &quot;ST&quot;: &quot;BeiJing&quot;
+        }
+    ]
+}
+EOF</span>
+
+cfssl gencert -ca<span class="token operator">=</span>ca.pem -ca-key<span class="token operator">=</span>ca-key.pem -config<span class="token operator">=</span>ca-config.json -profile<span class="token operator">=</span>www server-csr.json <span class="token operator">|</span> cfssljson -bare server
+</code></pre></div> <br> <h3 id="证书脚本重点注意信息"><a href="#证书脚本重点注意信息" class="header-anchor">#</a> 证书脚本重点注意信息</h3> <div class="language-shell extra-class"><pre class="language-shell"><code>expiry：表示证书有效时间
+hosts：有效的IP，只要是etcd的节点IP都要写进去
+key：生成证书的算法
+names：地区
+</code></pre></div> <br> <h3 id="使用ca-sh脚本生成ca证书"><a href="#使用ca-sh脚本生成ca证书" class="header-anchor">#</a> 使用ca.sh脚本生成ca证书</h3> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">chmod</span> +x etca-ca.sh
+./etca-ca.sh
+</code></pre></div> <br> <br> <h2 id="生成k8s需要的证书"><a href="#生成k8s需要的证书" class="header-anchor">#</a> 生成k8s需要的证书</h2> <br> <h3 id="进入k8s证书目录"><a href="#进入k8s证书目录" class="header-anchor">#</a> 进入k8s证书目录</h3> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token builtin class-name">cd</span> /k8s/cert/k8s-cert/
+</code></pre></div> <br> <h3 id="编写生成证书的脚本"><a href="#编写生成证书的脚本" class="header-anchor">#</a> 编写生成证书的脚本</h3> <div class="language-java extra-class"><pre class="language-java"><code>vim k8s<span class="token punctuation">.</span>sh
+
+cat <span class="token operator">&gt;</span> ca<span class="token operator">-</span>config<span class="token punctuation">.</span>json <span class="token operator">&lt;&lt;</span>EOF
+<span class="token punctuation">{</span>
+  <span class="token string">&quot;signing&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;default&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token string">&quot;expiry&quot;</span><span class="token operator">:</span> <span class="token string">&quot;87600h&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;profiles&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token string">&quot;kubernetes&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+         <span class="token string">&quot;expiry&quot;</span><span class="token operator">:</span> <span class="token string">&quot;87600h&quot;</span><span class="token punctuation">,</span>
+         <span class="token string">&quot;usages&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token string">&quot;signing&quot;</span><span class="token punctuation">,</span>
+            <span class="token string">&quot;key encipherment&quot;</span><span class="token punctuation">,</span>
+            <span class="token string">&quot;server auth&quot;</span><span class="token punctuation">,</span>
+            <span class="token string">&quot;client auth&quot;</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+EOF
+
+cat <span class="token operator">&gt;</span> ca<span class="token operator">-</span>csr<span class="token punctuation">.</span>json <span class="token operator">&lt;&lt;</span>EOF
+<span class="token punctuation">{</span>
+    <span class="token string">&quot;CN&quot;</span><span class="token operator">:</span> <span class="token string">&quot;kubernetes&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;key&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token string">&quot;algo&quot;</span><span class="token operator">:</span> <span class="token string">&quot;rsa&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;size&quot;</span><span class="token operator">:</span> <span class="token number">2048</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;names&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            <span class="token string">&quot;C&quot;</span><span class="token operator">:</span> <span class="token string">&quot;CN&quot;</span><span class="token punctuation">,</span>
+            <span class="token string">&quot;L&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Beijing&quot;</span><span class="token punctuation">,</span>
+            <span class="token string">&quot;ST&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Beijing&quot;</span><span class="token punctuation">,</span>
+      	    <span class="token string">&quot;O&quot;</span><span class="token operator">:</span> <span class="token string">&quot;k8s&quot;</span><span class="token punctuation">,</span>
+            <span class="token string">&quot;OU&quot;</span><span class="token operator">:</span> <span class="token string">&quot;System&quot;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+EOF
+
+cfssl gencert <span class="token operator">-</span>initca ca<span class="token operator">-</span>csr<span class="token punctuation">.</span>json <span class="token operator">|</span> cfssljson <span class="token operator">-</span>bare ca <span class="token operator">-</span>
+
+#<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span>
+
+cat <span class="token operator">&gt;</span> server<span class="token operator">-</span>csr<span class="token punctuation">.</span>json <span class="token operator">&lt;&lt;</span>EOF
+<span class="token punctuation">{</span>
+    <span class="token string">&quot;CN&quot;</span><span class="token operator">:</span> <span class="token string">&quot;kubernetes&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;hosts&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token string">&quot;10.0.0.1&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;127.0.0.1&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;192.168.0.141&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;192.168.0.40&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;192.168.0.41&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;192.168.0.42&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;kubernetes&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;kubernetes.default&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;kubernetes.default.svc&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;kubernetes.default.svc.cluster&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;kubernetes.default.svc.cluster.local&quot;</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;key&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token string">&quot;algo&quot;</span><span class="token operator">:</span> <span class="token string">&quot;rsa&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;size&quot;</span><span class="token operator">:</span> <span class="token number">2048</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;names&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            <span class="token string">&quot;C&quot;</span><span class="token operator">:</span> <span class="token string">&quot;CN&quot;</span><span class="token punctuation">,</span>
+            <span class="token string">&quot;L&quot;</span><span class="token operator">:</span> <span class="token string">&quot;BeiJing&quot;</span><span class="token punctuation">,</span>
+            <span class="token string">&quot;ST&quot;</span><span class="token operator">:</span> <span class="token string">&quot;BeiJing&quot;</span><span class="token punctuation">,</span>
+            <span class="token string">&quot;O&quot;</span><span class="token operator">:</span> <span class="token string">&quot;k8s&quot;</span><span class="token punctuation">,</span>
+            <span class="token string">&quot;OU&quot;</span><span class="token operator">:</span> <span class="token string">&quot;System&quot;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+EOF
+
+cfssl gencert <span class="token operator">-</span>ca<span class="token operator">=</span>ca<span class="token punctuation">.</span>pem <span class="token operator">-</span>ca<span class="token operator">-</span>key<span class="token operator">=</span>ca<span class="token operator">-</span>key<span class="token punctuation">.</span>pem <span class="token operator">-</span>config<span class="token operator">=</span>ca<span class="token operator">-</span>config<span class="token punctuation">.</span>json <span class="token operator">-</span>profile<span class="token operator">=</span>kubernetes server<span class="token operator">-</span>csr<span class="token punctuation">.</span>json <span class="token operator">|</span> cfssljson <span class="token operator">-</span>bare server
+
+#<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span>
+
+cat <span class="token operator">&gt;</span> admin<span class="token operator">-</span>csr<span class="token punctuation">.</span>json <span class="token operator">&lt;&lt;</span>EOF
+<span class="token punctuation">{</span>
+  <span class="token string">&quot;CN&quot;</span><span class="token operator">:</span> <span class="token string">&quot;admin&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;hosts&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;key&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;algo&quot;</span><span class="token operator">:</span> <span class="token string">&quot;rsa&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;size&quot;</span><span class="token operator">:</span> <span class="token number">2048</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;names&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      <span class="token string">&quot;C&quot;</span><span class="token operator">:</span> <span class="token string">&quot;CN&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;L&quot;</span><span class="token operator">:</span> <span class="token string">&quot;BeiJing&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;ST&quot;</span><span class="token operator">:</span> <span class="token string">&quot;BeiJing&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;O&quot;</span><span class="token operator">:</span> <span class="token string">&quot;system:masters&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;OU&quot;</span><span class="token operator">:</span> <span class="token string">&quot;System&quot;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+EOF
+
+cfssl gencert <span class="token operator">-</span>ca<span class="token operator">=</span>ca<span class="token punctuation">.</span>pem <span class="token operator">-</span>ca<span class="token operator">-</span>key<span class="token operator">=</span>ca<span class="token operator">-</span>key<span class="token punctuation">.</span>pem <span class="token operator">-</span>config<span class="token operator">=</span>ca<span class="token operator">-</span>config<span class="token punctuation">.</span>json <span class="token operator">-</span>profile<span class="token operator">=</span>kubernetes admin<span class="token operator">-</span>csr<span class="token punctuation">.</span>json <span class="token operator">|</span> cfssljson <span class="token operator">-</span>bare admin
+
+#<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span>
+
+cat <span class="token operator">&gt;</span> kube<span class="token operator">-</span>proxy<span class="token operator">-</span>csr<span class="token punctuation">.</span>json <span class="token operator">&lt;&lt;</span>EOF
+<span class="token punctuation">{</span>
+  <span class="token string">&quot;CN&quot;</span><span class="token operator">:</span> <span class="token string">&quot;system:kube-proxy&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;hosts&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;key&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;algo&quot;</span><span class="token operator">:</span> <span class="token string">&quot;rsa&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;size&quot;</span><span class="token operator">:</span> <span class="token number">2048</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;names&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      <span class="token string">&quot;C&quot;</span><span class="token operator">:</span> <span class="token string">&quot;CN&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;L&quot;</span><span class="token operator">:</span> <span class="token string">&quot;BeiJing&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;ST&quot;</span><span class="token operator">:</span> <span class="token string">&quot;BeiJing&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;O&quot;</span><span class="token operator">:</span> <span class="token string">&quot;k8s&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;OU&quot;</span><span class="token operator">:</span> <span class="token string">&quot;System&quot;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+EOF
+
+cfssl gencert <span class="token operator">-</span>ca<span class="token operator">=</span>ca<span class="token punctuation">.</span>pem <span class="token operator">-</span>ca<span class="token operator">-</span>key<span class="token operator">=</span>ca<span class="token operator">-</span>key<span class="token punctuation">.</span>pem <span class="token operator">-</span>config<span class="token operator">=</span>ca<span class="token operator">-</span>config<span class="token punctuation">.</span>json <span class="token operator">-</span>profile<span class="token operator">=</span>kubernetes kube<span class="token operator">-</span>proxy<span class="token operator">-</span>csr<span class="token punctuation">.</span>json <span class="token operator">|</span> cfssljson <span class="token operator">-</span>bare kube<span class="token operator">-</span>proxy
+
+</code></pre></div> <br> <h3 id="证书脚本重点注意信息-2"><a href="#证书脚本重点注意信息-2" class="header-anchor">#</a> 证书脚本重点注意信息</h3> <div class="language-shell extra-class"><pre class="language-shell"><code>expiry：表示证书有效时间
+hosts：有效的IP，只要是master的节点IP都要写进去，为了之后的高可用，我就多加了几个IP，还有几个域名跟二个IP都不要删除，默认k8s有时会调用
+key：生成证书的算法
+names：地区，如果不熟悉最好不要修改names中的地区，因为有标记k8s
+</code></pre></div> <br> <h3 id="使用k8s-sh脚本生成证书"><a href="#使用k8s-sh脚本生成证书" class="header-anchor">#</a> 使用k8s.sh脚本生成证书</h3> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">chmod</span> +x k8s.sh
+./k8s.sh
+</code></pre></div> <br> <br> <h1 id="etcd数据库集群部署"><a href="#etcd数据库集群部署" class="header-anchor">#</a> <strong>Etcd数据库集群部署</strong></h1> <p>etcd 是一个分布式一致性k-v存储系统，可用于服务注册发现与共享配置，具有以下优点。</p> <ol><li>简单 ： 相比于晦涩难懂的paxos算法，etcd基于相对简单且易实现的raft算法实现一致性，并通过gRPC提供接口调用</li> <li>安全：支持TLS通信，并可以针对不同的用户进行对key的读写控制</li> <li>高性能：10,000 /秒的写性能</li></ol> <br> <h2 id="etcd下载"><a href="#etcd下载" class="header-anchor">#</a> etcd下载</h2> <p>https://github.com/etcd-io/etcd/releases</p> <br> <h2 id="etcd版本"><a href="#etcd版本" class="header-anchor">#</a> etcd版本</h2> <p>这边是用etcd3.3.10来部署的</p> <br> <h2 id="etcd集群节点"><a href="#etcd集群节点" class="header-anchor">#</a> etcd集群节点</h2> <ol><li>192.168.0.141</li> <li>192.168.0.142</li> <li>192.168.0.143</li></ol> <br> <h2 id="etcd主要文件"><a href="#etcd主要文件" class="header-anchor">#</a> etcd主要文件</h2> <div class="language-bash extra-class"><pre class="language-bash"><code>etcd文件 <span class="token comment">##启动etcd的主要程序</span>
+etcdctl文件  <span class="token comment">##是etcd管理客户端的命令</span>
+/var/log/messages   <span class="token comment">##日志文件</span>
+</code></pre></div> <br> <br> <h2 id="_192-168-0-141机上操作"><a href="#_192-168-0-141机上操作" class="header-anchor">#</a> <strong>192.168.0.141机上操作</strong></h2> <h3 id="进入目录并解压并进入"><a href="#进入目录并解压并进入" class="header-anchor">#</a> 进入目录并解压并进入</h3> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">mkdir</span> /k8s/soft
+<span class="token builtin class-name">cd</span> /k8s/soft
+<span class="token function">tar</span> -zxf etcd-v3.3.10-linux-amd64.tar.gz
+<span class="token builtin class-name">cd</span> etcd-v3.3.10-linux-amd64
+</code></pre></div> <br> <h3 id="创建目录"><a href="#创建目录" class="header-anchor">#</a> 创建目录</h3> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">mkdir</span> -p /usr/local/etcd/<span class="token punctuation">{</span>bin,conf,ssl<span class="token punctuation">}</span>
+<span class="token comment">## bin：存放可执行文件</span>
+<span class="token comment">## conf：存放配置文件</span>
+<span class="token comment">## ssl：存放证书文件</span>
+</code></pre></div> <br> <h3 id="复制文件到etcd的bin目录中"><a href="#复制文件到etcd的bin目录中" class="header-anchor">#</a> 复制文件到etcd的bin目录中</h3> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">cp</span> -a /k8s/soft/etcd-v3.3.10-linux-amd64/etcd* /usr/local/etcd/bin/
+</code></pre></div> <br> <p><strong>复制证书到etcd的ssh目录中</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">cp</span> -a /k8s/cert/etcd-cert/<span class="token punctuation">{</span>ca,server,server-key<span class="token punctuation">}</span>.pem /usr/local/etcd/ssl/
+</code></pre></div> <br> <h3 id="编写部署脚本"><a href="#编写部署脚本" class="header-anchor">#</a> 编写部署脚本</h3> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">vim</span> etcd.sh
+
+<span class="token comment">#!/bin/bash</span>
+<span class="token comment"># example: ./etcd.sh etcd01 192.168.1.10 etcd02=https://192.168.1.11:2380,etcd03=https://192.168.1.12:2380</span>
+
+<span class="token assign-left variable">ETCD_NAME</span><span class="token operator">=</span><span class="token variable">$1</span>
+<span class="token assign-left variable">ETCD_IP</span><span class="token operator">=</span><span class="token variable">$2</span>
+<span class="token assign-left variable">ETCD_CLUSTER</span><span class="token operator">=</span><span class="token variable">$3</span>
+
+<span class="token assign-left variable">WORK_DIR</span><span class="token operator">=</span>/usr/local/etcd
+
+<span class="token function">cat</span> <span class="token operator">&lt;&lt;</span><span class="token string">EOF<span class="token bash punctuation"> <span class="token operator">&gt;</span><span class="token variable">$WORK_DIR</span>/conf/etcd</span>
+#[Member]
+ETCD_NAME=&quot;<span class="token variable">${ETCD_NAME}</span>&quot;
+ETCD_DATA_DIR=&quot;/var/lib/etcd/default.etcd&quot;
+ETCD_LISTEN_PEER_URLS=&quot;https://<span class="token variable">${ETCD_IP}</span>:2380&quot;
+ETCD_LISTEN_CLIENT_URLS=&quot;https://<span class="token variable">${ETCD_IP}</span>:2379&quot;
+
+#[Clustering]
+ETCD_INITIAL_ADVERTISE_PEER_URLS=&quot;https://<span class="token variable">${ETCD_IP}</span>:2380&quot;
+ETCD_ADVERTISE_CLIENT_URLS=&quot;https://<span class="token variable">${ETCD_IP}</span>:2379&quot;
+ETCD_INITIAL_CLUSTER=&quot;etcd01=https://<span class="token variable">${ETCD_IP}</span>:2380,<span class="token variable">${ETCD_CLUSTER}</span>&quot;
+ETCD_INITIAL_CLUSTER_TOKEN=&quot;etcd-cluster&quot;
+ETCD_INITIAL_CLUSTER_STATE=&quot;new&quot;
+EOF</span>
+
+<span class="token function">cat</span> <span class="token operator">&lt;&lt;</span><span class="token string">EOF<span class="token bash punctuation"> <span class="token operator">&gt;</span>/usr/lib/systemd/system/etcd.service</span>
+[Unit]
+Description=Etcd Server
+After=network.target
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=notify
+EnvironmentFile=<span class="token variable">${WORK_DIR}</span>/conf/etcd
+ExecStart=<span class="token variable">${WORK_DIR}</span>/bin/etcd \
+--name=\<span class="token variable">${ETCD_NAME}</span> \
+--data-dir=\<span class="token variable">${ETCD_DATA_DIR}</span> \
+--listen-peer-urls=\<span class="token variable">${ETCD_LISTEN_PEER_URLS}</span> \
+--listen-client-urls=\<span class="token variable">${ETCD_LISTEN_CLIENT_URLS}</span>,http://127.0.0.1:2379 \
+--advertise-client-urls=\<span class="token variable">${ETCD_ADVERTISE_CLIENT_URLS}</span> \
+--initial-advertise-peer-urls=\<span class="token variable">${ETCD_INITIAL_ADVERTISE_PEER_URLS}</span> \
+--initial-cluster=\<span class="token variable">${ETCD_INITIAL_CLUSTER}</span> \
+--initial-cluster-token=\<span class="token variable">${ETCD_INITIAL_CLUSTER_TOKEN}</span> \
+--initial-cluster-state=new \
+--cert-file=<span class="token variable">${WORK_DIR}</span>/ssl/server.pem \
+--key-file=<span class="token variable">${WORK_DIR}</span>/ssl/server-key.pem \
+--peer-cert-file=<span class="token variable">${WORK_DIR}</span>/ssl/server.pem \
+--peer-key-file=<span class="token variable">${WORK_DIR}</span>/ssl/server-key.pem \
+--trusted-ca-file=<span class="token variable">${WORK_DIR}</span>/ssl/ca.pem \
+--peer-trusted-ca-file=<span class="token variable">${WORK_DIR}</span>/ssl/ca.pem
+Restart=on-failure
+LimitNOFILE=65536
+
+[Install]
+WantedBy=multi-user.target
+EOF</span>
+
+systemctl daemon-reload
+systemctl <span class="token builtin class-name">enable</span> etcd
+systemctl restart etcd
+</code></pre></div> <br> <h3 id="执行脚本"><a href="#执行脚本" class="header-anchor">#</a> 执行脚本</h3> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">chmod</span> +x etcd.sh
+./etcd.sh etcd01 <span class="token number">192.168</span>.0.141 <span class="token assign-left variable">etcd02</span><span class="token operator">=</span>https://192.168.0.142:2380,etcd03<span class="token operator">=</span>https://192.168.0.143:2380
+
+<span class="token comment">## etcd01代表节点名，跟IP，后面代表其他节点的IP</span>
+<span class="token comment">## 端口在上面生成脚本配置</span>
+	<span class="token comment">## 2380端口：集群通信端口</span>
+	<span class="token comment">## 2379端口：数据端口</span>
+</code></pre></div> <br> <h3 id="发送etcd目录中另两个节点中"><a href="#发送etcd目录中另两个节点中" class="header-anchor">#</a> 发送etcd目录中另两个节点中</h3> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">scp</span> -r /usr/local/etcd/ root@192.168.0.143:/usr/local/
+<span class="token function">scp</span> -r /usr/local/etcd/ root@192.168.0.142:/usr/local/
+<span class="token function">scp</span> /usr/lib/systemd/system/etcd.service root@192.168.0.142:/usr/lib/systemd/system/
+<span class="token function">scp</span> /usr/lib/systemd/system/etcd.service root@192.168.0.143:/usr/lib/systemd/system/
+</code></pre></div> <br> <h3 id="启动"><a href="#启动" class="header-anchor">#</a> 启动</h3> <div class="language-bash extra-class"><pre class="language-bash"><code>systemctl daemon-reload
+systemctl <span class="token builtin class-name">enable</span> etcd
+systemctl start etcd
+</code></pre></div> <br> <h3 id="查看日志"><a href="#查看日志" class="header-anchor">#</a> 查看日志</h3> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">tail</span> -100f /var/log/messages
+<span class="token comment">##会发现日志一直在输出找不到另外二个节点，剩下的就把另外二个节点启动就行了</span>
+</code></pre></div> <br> <br> <h2 id="_192-168-0-142机上操作"><a href="#_192-168-0-142机上操作" class="header-anchor">#</a> <strong>192.168.0.142机上操作</strong></h2> <h3 id="修改etcd配置文件"><a href="#修改etcd配置文件" class="header-anchor">#</a> 修改etcd配置文件</h3> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">vim</span> /usr/local/etcd/conf/etcd
+
+<span class="token comment">#[Member]</span>
+<span class="token assign-left variable">ETCD_NAME</span><span class="token operator">=</span><span class="token string">&quot;etcd02&quot;</span>
+<span class="token assign-left variable">ETCD_DATA_DIR</span><span class="token operator">=</span><span class="token string">&quot;/var/lib/etcd/default.etcd&quot;</span>
+<span class="token assign-left variable">ETCD_LISTEN_PEER_URLS</span><span class="token operator">=</span><span class="token string">&quot;https://192.168.0.142:2380&quot;</span>
+<span class="token assign-left variable">ETCD_LISTEN_CLIENT_URLS</span><span class="token operator">=</span><span class="token string">&quot;https://192.168.0.142:2379&quot;</span>
+
+<span class="token comment">#[Clustering]</span>
+<span class="token assign-left variable">ETCD_INITIAL_ADVERTISE_PEER_URLS</span><span class="token operator">=</span><span class="token string">&quot;https://192.168.0.142:2380&quot;</span>
+<span class="token assign-left variable">ETCD_ADVERTISE_CLIENT_URLS</span><span class="token operator">=</span><span class="token string">&quot;https://192.168.0.142:2379&quot;</span>
+<span class="token assign-left variable">ETCD_INITIAL_CLUSTER</span><span class="token operator">=</span><span class="token string">&quot;etcd01=https://192.168.0.141:2380,etcd02=https://192.168.0.142:2380,etcd03=https://192.168.0.143:2380&quot;</span>
+<span class="token assign-left variable">ETCD_INITIAL_CLUSTER_TOKEN</span><span class="token operator">=</span><span class="token string">&quot;etcd-cluster&quot;</span>
+<span class="token assign-left variable">ETCD_INITIAL_CLUSTER_STATE</span><span class="token operator">=</span><span class="token string">&quot;new&quot;</span>
+
+<span class="token comment">##除了最后第三行，把节点名跟IP修改成当前节点中IP，最后第三行的不用修改，是用于配置集群</span>
+</code></pre></div> <br> <h3 id="启动-2"><a href="#启动-2" class="header-anchor">#</a> 启动</h3> <div class="language-bash extra-class"><pre class="language-bash"><code>systemctl daemon-reload
+systemctl <span class="token builtin class-name">enable</span> etcd
+systemctl start etcd
+</code></pre></div> <br> <h3 id="查看日志-2"><a href="#查看日志-2" class="header-anchor">#</a> 查看日志</h3> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">tail</span> -100f /var/log/messages
+<span class="token comment">##会发现日志一直在输出找不到另外二个节点，剩下的就把另外二个节点启动就行了</span>
+</code></pre></div> <br> <br> <h2 id="_192-168-0-143机上操作"><a href="#_192-168-0-143机上操作" class="header-anchor">#</a> <strong>192.168.0.143机上操作</strong></h2> <h3 id="修改etcd配置文件-2"><a href="#修改etcd配置文件-2" class="header-anchor">#</a> 修改etcd配置文件</h3> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">vim</span> /usr/local/etcd/conf/etcd
+
+<span class="token comment">#[Member]</span>
+<span class="token assign-left variable">ETCD_NAME</span><span class="token operator">=</span><span class="token string">&quot;etcd03&quot;</span>
+<span class="token assign-left variable">ETCD_DATA_DIR</span><span class="token operator">=</span><span class="token string">&quot;/var/lib/etcd/default.etcd&quot;</span>
+<span class="token assign-left variable">ETCD_LISTEN_PEER_URLS</span><span class="token operator">=</span><span class="token string">&quot;https://192.168.0.143:2380&quot;</span>
+<span class="token assign-left variable">ETCD_LISTEN_CLIENT_URLS</span><span class="token operator">=</span><span class="token string">&quot;https://192.168.0.143:2379&quot;</span>
+
+<span class="token comment">#[Clustering]</span>
+<span class="token assign-left variable">ETCD_INITIAL_ADVERTISE_PEER_URLS</span><span class="token operator">=</span><span class="token string">&quot;https://192.168.0.143:2380&quot;</span>
+<span class="token assign-left variable">ETCD_ADVERTISE_CLIENT_URLS</span><span class="token operator">=</span><span class="token string">&quot;https://192.168.0.143:2379&quot;</span>
+<span class="token assign-left variable">ETCD_INITIAL_CLUSTER</span><span class="token operator">=</span><span class="token string">&quot;etcd01=https://192.168.0.141:2380,etcd02=https://192.168.0.142:2380,etcd03=https://192.168.0.143:2380&quot;</span>
+<span class="token assign-left variable">ETCD_INITIAL_CLUSTER_TOKEN</span><span class="token operator">=</span><span class="token string">&quot;etcd-cluster&quot;</span>
+<span class="token assign-left variable">ETCD_INITIAL_CLUSTER_STATE</span><span class="token operator">=</span><span class="token string">&quot;new&quot;</span>
+
+<span class="token comment">##除了最后第三行，把节点名跟IP修改成当前节点中IP，最后第三行的不用修改，是用于配置集群</span>
+</code></pre></div> <br> <h3 id="启动-3"><a href="#启动-3" class="header-anchor">#</a> 启动</h3> <div class="language-shell extra-class"><pre class="language-shell"><code>systemctl daemon-reload
+systemctl <span class="token builtin class-name">enable</span> etcd
+systemctl start etcd
+</code></pre></div> <br> <h3 id="查看日志-3"><a href="#查看日志-3" class="header-anchor">#</a> 查看日志</h3> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">tail</span> -100f /var/log/messages
+<span class="token comment">##会发现日志一直在输出找不到另外二个节点，剩下的就把另外二个节点启动就行了</span>
+</code></pre></div> <br> <h2 id="检测集群是否完整"><a href="#检测集群是否完整" class="header-anchor">#</a> 检测集群是否完整</h2> <div class="language-shell extra-class"><pre class="language-shell"><code>/usr/local/etcd/bin/etcdctl --ca-file<span class="token operator">=</span>/usr/local/etcd/ssl/ca.pem --cert-file<span class="token operator">=</span>/usr/local/etcd/ssl/server.pem --key-file<span class="token operator">=</span>/usr/local/etcd/ssl/server-key.pem --endpoints<span class="token operator">=</span><span class="token string">&quot;https://192.168.0.141:2379,https://192.168.0.142,https://192.168.0.143:2379&quot;</span> cluster-health
+
+
+结果：
+member 4744090d32d62b14 is healthy: got healthy result from https://192.168.0.142:2379
+member cad5c53fd12ea4d7 is healthy: got healthy result from https://192.168.0.143:2379
+member ff44f0163fd2a515 is healthy: got healthy result from https://192.168.0.141:2379
+cluster is healthy
+</code></pre></div> <br> <h2 id="错误总结"><a href="#错误总结" class="header-anchor">#</a> 错误总结</h2> <p>遇到过一个错误，启动一个节点，主节点一直报该节点证书错误，到最后发现是服务器时间不对，把时间修改回来就可以了</p> <br> <br> <h1 id="node安装docker"><a href="#node安装docker" class="header-anchor">#</a> <strong>Node安装Docker</strong></h1> <p>在node节点中安装docker</p> <br> <h2 id="k8s整体分层图"><a href="#k8s整体分层图" class="header-anchor">#</a> k8s整体分层图</h2> <p><a href="https://imgchr.com/i/Ju0i1s" target="_blank" rel="noopener noreferrer"><img src="https://s1.ax1x.com/2020/04/19/Ju0i1s.png" alt="Ju0i1s.png"><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <br> <h2 id="node节点"><a href="#node节点" class="header-anchor">#</a> node节点</h2> <ol><li>192.168.0.142</li> <li>192.168.0.143</li></ol> <br> <h2 id="安装docker"><a href="#安装docker" class="header-anchor">#</a> <strong>安装docker</strong></h2> <p>以下的步骤请在node的所有节点上操作</p> <br> <h3 id="安装依赖包"><a href="#安装依赖包" class="header-anchor">#</a> 安装依赖包</h3> <div class="language-shell extra-class"><pre class="language-shell"><code>yum <span class="token function">install</span> -y yum-utils device-mapper-persistent-data lvm2
+</code></pre></div> <br> <h3 id="配置docker的yum源"><a href="#配置docker的yum源" class="header-anchor">#</a> 配置docker的yum源</h3> <p>需要配置docker官方的yum源来保证拉取的是官方最新的安装包</p> <div class="language-shell extra-class"><pre class="language-shell"><code>yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+</code></pre></div> <br> <h3 id="安装docker-2"><a href="#安装docker-2" class="header-anchor">#</a> 安装docker</h3> <div class="language-shell extra-class"><pre class="language-shell"><code>yum -y <span class="token function">install</span> docker-ce
+</code></pre></div> <br> <h3 id="安装daoclou加速器"><a href="#安装daoclou加速器" class="header-anchor">#</a> 安装daoclou加速器</h3> <p>网址：<a href="http://www.daocloud.io/mirror" target="_blank" rel="noopener noreferrer">www.daocloud.io/mirror<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">curl</span> -sSL https://get.daocloud.io/daotools/set_mirror.sh <span class="token operator">|</span> <span class="token function">sh</span> -s http://f1361db2.m.daocloud.io
+
+<span class="token comment">##如果报错，很有可能是本机的时间不同步当前时间，安装的，是在/etc/docker/daemon.json文件中，这个文件是docker默认读取的文件</span>
+</code></pre></div> <br> <h3 id="启动docker"><a href="#启动docker" class="header-anchor">#</a> 启动docker</h3> <div class="language-shell extra-class"><pre class="language-shell"><code>systemctl start docker
+</code></pre></div> <br> <br> <h1 id="部署kubernetes网络"><a href="#部署kubernetes网络" class="header-anchor">#</a> <strong>部署Kubernetes网络</strong></h1> <br> <h2 id="kubernetes网络模型-cni"><a href="#kubernetes网络模型-cni" class="header-anchor">#</a> Kubernetes网络模型（CNI）</h2> <ol><li>Container Network Interface(CNI)：
+<ol><li>容器网络接口，Google和CoreOS主导。</li></ol></li> <li>Kubernetes网络模型设计基本要求：
+<ol><li>一个Pod一个IP</li> <li>每个Pod独立IP，Pod内所有容器共享网络（同一个IP）</li> <li>所有容器都可以与所有其他容器通信</li> <li>所有节点都可以与所有容器通信</li></ol></li></ol> <br> <h2 id="kubernetes网络模型的实现"><a href="#kubernetes网络模型的实现" class="header-anchor">#</a> <strong>Kubernetes网络模型的实现</strong></h2> <p>主要是由以下几种技术实现</p> <p><img src="https://s1.ax1x.com/2020/04/19/Ju0w3d.png" alt="Ju0w3d.png"></p> <p>一般企业中常用的就是Flannel跟Calico以及contiv</p> <br> <h3 id="flannel网络插件-百台下网络方案"><a href="#flannel网络插件-百台下网络方案" class="header-anchor">#</a> Flannel网络插件 - (百台下网络方案)</h3> <ol><li>Flannel是CoreOS团队针对Kubernetes设计的一个网络规划服务，简单来说，它的功能是让集群中的不同节点主机创建的Docker容器都具有全集群唯一的虚拟IP地址。</li> <li>在默认的Docker配置中，每个节点上的Docker服务会分别负责所在节点容器的IP分配。这样导致的一个问题是，不同节点上容器可能获得相同的内外IP地址。并使这些容器之间能够之间通过IP地址相互找到，也就是相互ping通。</li> <li>Flannel的设计目的就是为集群中的所有节点重新规划IP地址的使用规则，从而使得不同节点上的容器能够获得“同属一个内网”且”不重复的”IP地址，并让属于不同节点上的容器能够直接通过内网IP通信。</li> <li>Flannel实质上是一种“覆盖网络(overlaynetwork)”，也就是将TCP数据包装在另一种网络包里面进行路由转发和通信，目前已经支持udp、vxlan、host-gw、aws-vpc、gce和alloc路由等数据转发方式，默认的节点间数据通信方式是UDP转发</li></ol> <p><img src="https://s1.ax1x.com/2020/04/19/Ju0sDP.png" alt="Ju0sDP.png"></p> <br> <h3 id="calico网络插件-上百台网络方案"><a href="#calico网络插件-上百台网络方案" class="header-anchor">#</a> Calico网络插件 - (上百台网络方案)</h3> <ol><li>Calico是一个纯3层的数据中心网络方案，而且无缝集成像OpenStack这种IaaS云架构，能够提供可控的VM、容器、裸机之间的IP通信。Calico不使用重叠网络比如flannel和libnetwork重叠网络驱动，它是一个纯三层的方法，使用虚拟路由代替虚拟交换，每一台虚拟路由通过BGP协议传播可达信息（路由）到剩余数据中心。</li> <li>Calico在每一个计算节点利用Linux Kernel实现了一个高效的vRouter来负责数据转发，而每个vRouter通过BGP协议负责把自己上运行的workload的路由信息像整个Calico网络内传播——小规模部署可以直接互联，大规模下可通过指定的BGP route reflector来完成。</li> <li>Calico节点组网可以直接利用数据中心的网络结构（无论是L2或者L3），不需要额外的NAT，隧道或者Overlay Network。</li> <li>Calico基于iptables还提供了丰富而灵活的网络Policy，保证通过各个节点上的ACLs来提供Workload的多租户隔离、安全组以及其他可达性限制等功能。</li></ol> <p><a href="https://imgchr.com/i/Ju04vn" target="_blank" rel="noopener noreferrer"><img src="https://s1.ax1x.com/2020/04/19/Ju04vn.png" alt="Ju04vn.png"><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <br> <h2 id="部署kubernetes网络-flannel"><a href="#部署kubernetes网络-flannel" class="header-anchor">#</a> <strong>部署Kubernetes网络-Flannel</strong></h2> <p>这里网络模型选择的是Flannel模型，因Flannel使用起来相比Calico简单中，但是Flannel一般用于集群机器百台内的网络模型，超过百台建议使用Calico</p> <p>Flannel也是官方推荐的网络模型</p> <p>Overlay Network：覆盖网络，在基础网络上叠加的一种虚拟网络技术模式，该网络中的主机通过虚拟链路连接起来。
+Flannel：是Overlay网络的一种，也是将源数据包封装在另一种网络包里面进行路由转发和通信，目前已经支持UDP、<strong>VXLAN</strong>、<strong>Host-GW</strong>、AWS VPC和GCE路由等数据转发方式。</p> <br> <h3 id="创建一个子网写到etcd中"><a href="#创建一个子网写到etcd中" class="header-anchor">#</a> 创建一个子网写到etcd中</h3> <div class="language-shell extra-class"><pre class="language-shell"><code>/usr/local/etcd/bin/etcdctl --ca-file<span class="token operator">=</span>/usr/local/etcd/ssl/ca.pem --cert-file<span class="token operator">=</span>/usr/local/etcd/ssl/server.pem --key-file<span class="token operator">=</span>/usr/local/etcd/ssl/server-key.pem --endpoints<span class="token operator">=</span><span class="token string">&quot;https://192.168.0.141:2379,https://192.168.0.142:2379,https://192.168.0.143:2379&quot;</span> <span class="token builtin class-name">set</span> /coreos.com/network/config <span class="token string">'{ &quot;Network&quot;: &quot;172.17.0.0/16&quot;, &quot;Backend&quot;: {&quot;Type&quot;: &quot;vxlan&quot;}}'</span>
+
+<span class="token comment">## set 创建一个子网</span>
+    <span class="token comment">## Network：分配给docker的网段</span>
+    <span class="token comment">## Backend：使用flannel网络模式中那个数据转发方式</span>
+        <span class="token comment">## 全局域网通信建议使用：Host-GW</span>
+        <span class="token comment">## 多网络通信建议使用：VXLAN</span>
+</code></pre></div> <br> <h3 id="查看子网有没有生成"><a href="#查看子网有没有生成" class="header-anchor">#</a> 查看子网有没有生成</h3> <div class="language-bash extra-class"><pre class="language-bash"><code>/usr/local/etcd/bin/etcdctl --ca-file<span class="token operator">=</span>/usr/local/etcd/ssh/ca.pem --cert-file<span class="token operator">=</span>/usr/local/etcd/ssh/server.pem --key-file<span class="token operator">=</span>/usr/local/etcd/ssh/server-key.pem --endpoints<span class="token operator">=</span><span class="token string">&quot;https://192.168.0.141:2379,https://192.168.0.142:2379,https://192.168.0.143:2379&quot;</span> get /coreos.com/network/config
+
+结果：
+<span class="token punctuation">{</span> <span class="token string">&quot;Network&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;172.17.0.0/16&quot;</span>, <span class="token string">&quot;Backend&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span><span class="token string">&quot;Type&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;vxlan&quot;</span><span class="token punctuation">}</span><span class="token punctuation">}</span>
+</code></pre></div> <br> <h3 id="下载flannel二进制包"><a href="#下载flannel二进制包" class="header-anchor">#</a> 下载flannel二进制包</h3> <p>https://github.com/coreos/flannel/releases</p> <ol><li>在master节点也是可以部署flannel网络的，不过是可选的</li> <li>需要在node节点上部署：
+<ol><li>192.168.0.142</li> <li>192.168.0.143</li></ol></li></ol> <br> <br> <h3 id="_192-168-0-142机上操作-2"><a href="#_192-168-0-142机上操作-2" class="header-anchor">#</a> <strong>192.168.0.142机上操作</strong></h3> <h4 id="进入目录并解压并进入-2"><a href="#进入目录并解压并进入-2" class="header-anchor">#</a> 进入目录并解压并进入</h4> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">mkdir</span> /k8s
+<span class="token builtin class-name">cd</span> /k8s/
+<span class="token function">tar</span> -zxf flannel-v0.10.0-linux-amd64.tar.gz
+</code></pre></div> <br> <h4 id="创建目录-2"><a href="#创建目录-2" class="header-anchor">#</a> 创建目录</h4> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">mkdir</span> -p /usr/local/kubernetes/<span class="token punctuation">{</span>bin,conf,ssl<span class="token punctuation">}</span>
+</code></pre></div> <br> <h4 id="复制文件到kubernetes的bin目录中"><a href="#复制文件到kubernetes的bin目录中" class="header-anchor">#</a> 复制文件到kubernetes的bin目录中</h4> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">cp</span> flanneld mk-docker-opts.sh /usr/local/kubernetes/bin/
+</code></pre></div> <br> <h4 id="编写部署脚本-2"><a href="#编写部署脚本-2" class="header-anchor">#</a> 编写部署脚本</h4> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">vim</span> flanneld.sh
+
+<span class="token comment">#!/bin/bash</span>
+
+<span class="token assign-left variable">ETCD_ENDPOINTS</span><span class="token operator">=</span><span class="token variable">${1<span class="token operator">:-</span>&quot;http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>127.0.0.1<span class="token operator">:</span>2379&quot;}</span>
+
+<span class="token function">cat</span> <span class="token operator">&lt;&lt;</span><span class="token string">EOF<span class="token bash punctuation"> <span class="token operator">&gt;</span>/usr/local/kubernetes/conf/flanneld</span>
+
+FLANNEL_OPTIONS=&quot;--etcd-endpoints=<span class="token variable">${ETCD_ENDPOINTS}</span> \
+-etcd-cafile=/usr/local/etcd/ssl/ca.pem \
+-etcd-certfile=/usr/local/etcd/ssl/server.pem \
+-etcd-keyfile=/usr/local/etcd/ssl/server-key.pem&quot;
+
+EOF</span>
+
+<span class="token function">cat</span> <span class="token operator">&lt;&lt;</span><span class="token string">EOF<span class="token bash punctuation"> <span class="token operator">&gt;</span>/usr/lib/systemd/system/flanneld.service</span>
+[Unit]
+Description=Flanneld overlay address etcd agent
+After=network-online.target network.target
+Before=docker.service
+
+[Service]
+Type=notify
+EnvironmentFile=/usr/local/kubernetes/conf/flanneld
+ExecStart=/usr/local/kubernetes/bin/flanneld --ip-masq \<span class="token variable">$FLANNEL_OPTIONS</span>
+ExecStartPost=/usr/local/kubernetes/bin/mk-docker-opts.sh -k DOCKER_NETWORK_OPTIONS -d /run/flannel/subnet.env
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+
+EOF</span>
+
+<span class="token function">cat</span> <span class="token operator">&lt;&lt;</span><span class="token string">EOF<span class="token bash punctuation"> <span class="token operator">&gt;</span>/usr/lib/systemd/system/docker.service</span>
+
+[Unit]
+Description=Docker Application Container Engine
+Documentation=https://docs.docker.com
+After=network-online.target firewalld.service
+Wants=network-online.target
+
+[Service]
+Type=notify
+EnvironmentFile=/run/flannel/subnet.env
+ExecStart=/usr/bin/dockerd \<span class="token variable">$DOCKER_NETWORK_OPTIONS</span>
+ExecReload=/bin/kill -s HUP \<span class="token variable">$MAINPID</span>
+LimitNOFILE=infinity
+LimitNPROC=infinity
+LimitCORE=infinity
+TimeoutStartSec=0
+Delegate=yes
+KillMode=process
+Restart=on-failure
+StartLimitBurst=3
+StartLimitInterval=60s
+
+[Install]
+WantedBy=multi-user.target
+
+EOF</span>
+
+systemctl daemon-reload
+systemctl <span class="token builtin class-name">enable</span> flanneld
+systemctl restart flanneld
+systemctl restart docker
+    
+    
+<span class="token comment">## /run/flannel/：这个目录存放着刚才创建的子网相关文件</span>
+</code></pre></div> <br> <h4 id="执行脚本-2"><a href="#执行脚本-2" class="header-anchor">#</a> 执行脚本</h4> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">chmod</span> +x flanneld.sh
+./flanneld.sh https://192.168.0.141:2379,https://192.168.0.142:2379,https://192.168.0.143:2379
+
+<span class="token comment">##执行脚本时要带有etcd集群的IP</span>
+</code></pre></div> <br> <h4 id="执行脚本后会生成三个配置文件"><a href="#执行脚本后会生成三个配置文件" class="header-anchor">#</a> 执行脚本后会生成三个配置文件</h4> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">cat</span> /usr/local/kubernetes/conf/flanneld
+
+<span class="token assign-left variable">FLANNEL_OPTIONS</span><span class="token operator">=</span><span class="token string">&quot;--etcd-endpoints=https://192.168.0.141:2379,https://192.168.0.142:2379,https://192.168.0.143:2379 -etcd-cafile=/usr/local/etcd/ssl/ca.pem -etcd-certfile=/usr/local/etcd/ssl/server.pem -etcd-keyfile=/usr/local/etcd/ssl/server-key.pem&quot;</span>
+
+
+<span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span>
+
+
+<span class="token function">cat</span> /usr/lib/systemd/system/flanneld.service
+
+<span class="token punctuation">[</span>Unit<span class="token punctuation">]</span>
+<span class="token assign-left variable">Description</span><span class="token operator">=</span>Flanneld overlay address etcd agent
+<span class="token assign-left variable">After</span><span class="token operator">=</span>network-online.target network.target
+<span class="token assign-left variable">Before</span><span class="token operator">=</span>docker.service
+
+<span class="token punctuation">[</span>Service<span class="token punctuation">]</span>
+<span class="token assign-left variable">Type</span><span class="token operator">=</span>notify
+<span class="token assign-left variable">EnvironmentFile</span><span class="token operator">=</span>/usr/local/kubernetes/conf/flanneld
+<span class="token assign-left variable">ExecStart</span><span class="token operator">=</span>/usr/local/kubernetes/bin/flanneld --ip-masq <span class="token variable">$FLANNEL_OPTIONS</span>
+<span class="token assign-left variable">ExecStartPost</span><span class="token operator">=</span>/usr/local/kubernetes/bin/mk-docker-opts.sh -k DOCKER_NETWORK_OPTIONS -d /run/flannel/subnet.env
+<span class="token assign-left variable">Restart</span><span class="token operator">=</span>on-failure
+
+<span class="token punctuation">[</span>Install<span class="token punctuation">]</span>
+<span class="token assign-left variable">WantedBy</span><span class="token operator">=</span>multi-user.target
+
+
+<span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span>
+
+
+<span class="token function">cat</span> /usr/lib/systemd/system/docker.service
+
+<span class="token punctuation">[</span>Unit<span class="token punctuation">]</span>
+<span class="token assign-left variable">Description</span><span class="token operator">=</span>Docker Application Container Engine
+<span class="token assign-left variable">Documentation</span><span class="token operator">=</span>https://docs.docker.com
+<span class="token assign-left variable">After</span><span class="token operator">=</span>network-online.target firewalld.service
+<span class="token assign-left variable">Wants</span><span class="token operator">=</span>network-online.target
+
+<span class="token punctuation">[</span>Service<span class="token punctuation">]</span>
+<span class="token assign-left variable">Type</span><span class="token operator">=</span>notify
+<span class="token assign-left variable">EnvironmentFile</span><span class="token operator">=</span>/run/flannel/subnet.env
+<span class="token assign-left variable">ExecStart</span><span class="token operator">=</span>/usr/bin/dockerd <span class="token variable">$DOCKER_NETWORK_OPTIONS</span>
+<span class="token assign-left variable">ExecReload</span><span class="token operator">=</span>/bin/kill -s HUP <span class="token variable">$MAINPID</span>
+<span class="token assign-left variable">LimitNOFILE</span><span class="token operator">=</span>infinity
+<span class="token assign-left variable">LimitNPROC</span><span class="token operator">=</span>infinity
+<span class="token assign-left variable">LimitCORE</span><span class="token operator">=</span>infinity
+<span class="token assign-left variable">TimeoutStartSec</span><span class="token operator">=</span><span class="token number">0</span>
+<span class="token assign-left variable">Delegate</span><span class="token operator">=</span>yes
+<span class="token assign-left variable">KillMode</span><span class="token operator">=</span>process
+<span class="token assign-left variable">Restart</span><span class="token operator">=</span>on-failure
+<span class="token assign-left variable">StartLimitBurst</span><span class="token operator">=</span><span class="token number">3</span>
+<span class="token assign-left variable">StartLimitInterval</span><span class="token operator">=</span>60s
+
+<span class="token punctuation">[</span>Install<span class="token punctuation">]</span>
+<span class="token assign-left variable">WantedBy</span><span class="token operator">=</span>multi-user.target
+</code></pre></div> <br> <h4 id="启动flanneld网络"><a href="#启动flanneld网络" class="header-anchor">#</a> 启动flanneld网络</h4> <div class="language-shell extra-class"><pre class="language-shell"><code>systemctl daemon-reload
+systemctl <span class="token builtin class-name">enable</span> flanneld
+systemctl start flanneld
+systemctl restart docker
+</code></pre></div> <br> <h4 id="查看docker是否是用flanneld网络"><a href="#查看docker是否是用flanneld网络" class="header-anchor">#</a> 查看docker是否是用flanneld网络</h4> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">ifconfig</span>
+
+docker0: <span class="token assign-left variable">flags</span><span class="token operator">=</span><span class="token number">409</span><span class="token operator"><span class="token file-descriptor important">9</span>&lt;</span>UP,BROADCAST,MULTICAST<span class="token operator">&gt;</span>  mtu <span class="token number">1500</span>
+        inet <span class="token number">172.17</span>.56.1  netmask <span class="token number">255.255</span>.255.0  broadcast <span class="token number">172.17</span>.56.255
+        ether 02:42:15:ef:ba:64  txqueuelen <span class="token number">0</span>  <span class="token punctuation">(</span>Ethernet<span class="token punctuation">)</span>
+        RX packets <span class="token number">0</span>  bytes <span class="token number">0</span> <span class="token punctuation">(</span><span class="token number">0.0</span> B<span class="token punctuation">)</span>
+        RX errors <span class="token number">0</span>  dropped <span class="token number">0</span>  overruns <span class="token number">0</span>  frame <span class="token number">0</span>
+        TX packets <span class="token number">0</span>  bytes <span class="token number">0</span> <span class="token punctuation">(</span><span class="token number">0.0</span> B<span class="token punctuation">)</span>
+        TX errors <span class="token number">0</span>  dropped <span class="token number">0</span> overruns <span class="token number">0</span>  carrier <span class="token number">0</span>  collisions <span class="token number">0</span>
+
+flannel.1: <span class="token assign-left variable">flags</span><span class="token operator">=</span><span class="token number">416</span><span class="token operator"><span class="token file-descriptor important">3</span>&lt;</span>UP,BROADCAST,RUNNING,MULTICAST<span class="token operator">&gt;</span>  mtu <span class="token number">1450</span>
+        inet <span class="token number">172.17</span>.56.0  netmask <span class="token number">255.255</span>.255.255  broadcast <span class="token number">0.0</span>.0.0
+        inet6 fe80::9ce8:8eff:fe50:a1b7  prefixlen <span class="token number">64</span>  scopeid 0x20
+        ether 9e:e8:8e:50:a1:b7  txqueuelen <span class="token number">0</span>  <span class="token punctuation">(</span>Ethernet<span class="token punctuation">)</span>
+        RX packets <span class="token number">0</span>  bytes <span class="token number">0</span> <span class="token punctuation">(</span><span class="token number">0.0</span> B<span class="token punctuation">)</span>
+        RX errors <span class="token number">0</span>  dropped <span class="token number">0</span>  overruns <span class="token number">0</span>  frame <span class="token number">0</span>
+        TX packets <span class="token number">0</span>  bytes <span class="token number">0</span> <span class="token punctuation">(</span><span class="token number">0.0</span> B<span class="token punctuation">)</span>
+        TX errors <span class="token number">0</span>  dropped <span class="token number">7</span> overruns <span class="token number">0</span>  carrier <span class="token number">0</span>  collisions <span class="token number">0</span>
+
+<span class="token comment">##docker0的网卡跟flannel.1的网卡是在同一网段上，就证明docker使用了flanneld网络</span>
+</code></pre></div> <br> <h4 id="发送flannel到另一个node中"><a href="#发送flannel到另一个node中" class="header-anchor">#</a> 发送flannel到另一个node中</h4> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">scp</span> -r /usr/local/kubernetes/ root@192.168.0.143:/usr/local/
+<span class="token function">scp</span> /usr/lib/systemd/system/<span class="token punctuation">{</span>docker,flanneld<span class="token punctuation">}</span>.service root@192.168.0.143:/usr/lib/systemd/system/
+</code></pre></div> <br> <br> <h3 id="_192-168-0-143机上操作-2"><a href="#_192-168-0-143机上操作-2" class="header-anchor">#</a> <strong>192.168.0.143机上操作</strong></h3> <p>在192.168.0.143上直接启动不用修改配置</p> <br> <h4 id="启动flanneld网络-2"><a href="#启动flanneld网络-2" class="header-anchor">#</a> 启动flanneld网络</h4> <div class="language-shell extra-class"><pre class="language-shell"><code>systemctl daemon-reload
+systemctl <span class="token builtin class-name">enable</span> flanneld
+systemctl start flanneld
+systemctl restart docker
+</code></pre></div> <br> <h4 id="查看docker是否是用flanneld网络-2"><a href="#查看docker是否是用flanneld网络-2" class="header-anchor">#</a> 查看docker是否是用flanneld网络</h4> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">ifconfig</span>
+
+docker0: <span class="token assign-left variable">flags</span><span class="token operator">=</span><span class="token number">409</span><span class="token operator"><span class="token file-descriptor important">9</span>&lt;</span>UP,BROADCAST,MULTICAST<span class="token operator">&gt;</span>  mtu <span class="token number">1500</span>
+        inet <span class="token number">172.17</span>.10.1  netmask <span class="token number">255.255</span>.255.0  broadcast <span class="token number">172.17</span>.10.255
+        ether 02:42:c2:c3:04:f9  txqueuelen <span class="token number">0</span>  <span class="token punctuation">(</span>Ethernet<span class="token punctuation">)</span>
+        RX packets <span class="token number">0</span>  bytes <span class="token number">0</span> <span class="token punctuation">(</span><span class="token number">0.0</span> B<span class="token punctuation">)</span>
+        RX errors <span class="token number">0</span>  dropped <span class="token number">0</span>  overruns <span class="token number">0</span>  frame <span class="token number">0</span>
+        TX packets <span class="token number">0</span>  bytes <span class="token number">0</span> <span class="token punctuation">(</span><span class="token number">0.0</span> B<span class="token punctuation">)</span>
+        TX errors <span class="token number">0</span>  dropped <span class="token number">0</span> overruns <span class="token number">0</span>  carrier <span class="token number">0</span>  collisions <span class="token number">0</span>
+
+flannel.1: <span class="token assign-left variable">flags</span><span class="token operator">=</span><span class="token number">416</span><span class="token operator"><span class="token file-descriptor important">3</span>&lt;</span>UP,BROADCAST,RUNNING,MULTICAST<span class="token operator">&gt;</span>  mtu <span class="token number">1450</span>
+        inet <span class="token number">172.17</span>.10.0  netmask <span class="token number">255.255</span>.255.255  broadcast <span class="token number">0.0</span>.0.0
+        inet6 fe80::9c52:51ff:feb0:21e9  prefixlen <span class="token number">64</span>  scopeid 0x20
+        ether 9e:52:51:b0:21:e9  txqueuelen <span class="token number">0</span>  <span class="token punctuation">(</span>Ethernet<span class="token punctuation">)</span>
+        RX packets <span class="token number">0</span>  bytes <span class="token number">0</span> <span class="token punctuation">(</span><span class="token number">0.0</span> B<span class="token punctuation">)</span>
+        RX errors <span class="token number">0</span>  dropped <span class="token number">0</span>  overruns <span class="token number">0</span>  frame <span class="token number">0</span>
+        TX packets <span class="token number">0</span>  bytes <span class="token number">0</span> <span class="token punctuation">(</span><span class="token number">0.0</span> B<span class="token punctuation">)</span>
+        TX errors <span class="token number">0</span>  dropped <span class="token number">7</span> overruns <span class="token number">0</span>  carrier <span class="token number">0</span>  collisions <span class="token number">0</span>
+
+<span class="token comment">##docker0的网卡跟flannel.1的网卡是在同一网段上，就证明docker使用了flanneld网络</span>
+</code></pre></div> <br> <h3 id="测试node节点的容器是否相通"><a href="#测试node节点的容器是否相通" class="header-anchor">#</a> 测试node节点的容器是否相通</h3> <p>在二个node节点都创建一个容器，并相互ping一下</p> <div class="language-shell extra-class"><pre class="language-shell"><code>docker container run -it busybox
+<span class="token comment">##在node节点的机器上使用</span>
+
+<span class="token function">ifconfig</span>
+<span class="token comment">##查看容器中的IP</span>
+
+<span class="token function">ping</span> 容器IP
+<span class="token comment">##查看到的IP在另的node节点的容器测试一下是否相通</span>
+</code></pre></div> <br> <br> <h1 id="部署master组件"><a href="#部署master组件" class="header-anchor">#</a> <strong>部署Master组件</strong></h1> <p>在部署Kubernetes之前一定要确保etcd、flannel、docker是正常工作的，否则先解决问题再继</p> <p>需要部署三个组件</p> <ol><li>kube-apiserver</li> <li>kube-controller-manager</li> <li>kube-scheduler</li></ol> <p>下载二进制包：https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG-1.12.md 下载这个包（kubernetes-server-linux-amd64.tar.gz）就够了，包含了所需的所有组件。</p> <br> <h2 id="kube-apiserver组件的部署"><a href="#kube-apiserver组件的部署" class="header-anchor">#</a> <strong>kube-apiserver组件的部署</strong></h2> <br> <h3 id="进入目录并解压并进入-3"><a href="#进入目录并解压并进入-3" class="header-anchor">#</a> 进入目录并解压并进入</h3> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token builtin class-name">cd</span> /k8s/soft
+<span class="token function">tar</span> -zxf kubernetes-server-linux-amd64.tar.gz
+<span class="token builtin class-name">cd</span> kubernetes
+</code></pre></div> <br> <h3 id="创建目录-3"><a href="#创建目录-3" class="header-anchor">#</a> 创建目录</h3> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">mkdir</span> -p /usr/local/kubernetes/<span class="token punctuation">{</span>bin,conf,ssl,logs<span class="token punctuation">}</span>
+</code></pre></div> <br> <h3 id="复制文件到kubernetes的bin目录中-2"><a href="#复制文件到kubernetes的bin目录中-2" class="header-anchor">#</a> 复制文件到kubernetes的bin目录中</h3> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token builtin class-name">cd</span> server/bin/
+<span class="token function">cp</span> kube-apiserver kube-controller-manager kubectl kube-scheduler /usr/local/kubernetes/bin/
+<span class="token function">ln</span> -s /usr/local/kubernetes/bin/kubectl /usr/bin/
+</code></pre></div> <br> <h3 id="编写部署脚本-3"><a href="#编写部署脚本-3" class="header-anchor">#</a> 编写部署脚本</h3> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">vim</span> apiserver.sh
+
+<span class="token comment">#!/bin/bash</span>
+
+<span class="token assign-left variable">MASTER_ADDRESS</span><span class="token operator">=</span><span class="token variable">$1</span>
+<span class="token assign-left variable">ETCD_SERVERS</span><span class="token operator">=</span><span class="token variable">$2</span>
+
+<span class="token function">cat</span> <span class="token operator">&lt;&lt;</span><span class="token string">EOF<span class="token bash punctuation"> <span class="token operator">&gt;</span>/usr/local/kubernetes/conf/kube-apiserver</span>
+
+KUBE_APISERVER_OPTS=&quot;--logtostderr=false <span class="token entity" title="\\">\\</span>
+--log-dir=/usr/local/kubernetes/logs <span class="token entity" title="\\">\\</span>
+--v=4 <span class="token entity" title="\\">\\</span>
+--etcd-servers=<span class="token variable">${ETCD_SERVERS}</span> <span class="token entity" title="\\">\\</span>
+--bind-address=<span class="token variable">${MASTER_ADDRESS}</span> <span class="token entity" title="\\">\\</span>
+--secure-port=6443 <span class="token entity" title="\\">\\</span>
+--advertise-address=<span class="token variable">${MASTER_ADDRESS}</span> <span class="token entity" title="\\">\\</span>
+--allow-privileged=true <span class="token entity" title="\\">\\</span>
+--service-cluster-ip-range=10.0.0.0/24 <span class="token entity" title="\\">\\</span>
+--service-node-port-range=30000-50000 <span class="token entity" title="\\">\\</span>
+--enable-admission-plugins=NamespaceLifecycle,LimitRanger,ServiceAccount,ResourceQuota,NodeRestriction <span class="token entity" title="\\">\\</span>
+--authorization-mode=RBAC,Node <span class="token entity" title="\\">\\</span>
+--kubelet-https=true <span class="token entity" title="\\">\\</span>
+--enable-bootstrap-token-auth <span class="token entity" title="\\">\\</span>
+--token-auth-file=/usr/local/kubernetes/conf/token.csv <span class="token entity" title="\\">\\</span>
+--tls-cert-file=/usr/local/kubernetes/ssl/server.pem  <span class="token entity" title="\\">\\</span>
+--tls-private-key-file=/usr/local/kubernetes/ssl/server-key.pem <span class="token entity" title="\\">\\</span>
+--client-ca-file=/usr/local/kubernetes/ssl/ca.pem <span class="token entity" title="\\">\\</span>
+--service-account-key-file=/usr/local/kubernetes/ssl/ca-key.pem <span class="token entity" title="\\">\\</span>
+--etcd-cafile=/usr/local/etcd/ssl/ca.pem <span class="token entity" title="\\">\\</span>
+--etcd-certfile=/usr/local/etcd/ssl/server.pem <span class="token entity" title="\\">\\</span>
+--etcd-keyfile=/usr/local/etcd/ssl/server-key.pem&quot;
+
+EOF</span>
+
+<span class="token function">cat</span> <span class="token operator">&lt;&lt;</span><span class="token string">EOF<span class="token bash punctuation"> <span class="token operator">&gt;</span>/usr/lib/systemd/system/kube-apiserver.service</span>
+[Unit]
+Description=Kubernetes API Server
+Documentation=https://github.com/kubernetes/kubernetes
+
+[Service]
+EnvironmentFile=-/usr/local/kubernetes/conf/kube-apiserver
+ExecStart=/usr/local/kubernetes/bin/kube-apiserver \<span class="token variable">$KUBE_APISERVER_OPTS</span>
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+EOF</span>
+
+systemctl daemon-reload
+systemctl <span class="token builtin class-name">enable</span> kube-apiserver
+systemctl restart kube-apiserver
+
+</code></pre></div> <br> <p><strong>执行脚本</strong></p> <div class="language-java extra-class"><pre class="language-java"><code>chmod <span class="token operator">+</span>x apiserver<span class="token punctuation">.</span>sh 
+<span class="token punctuation">.</span>/apiserver<span class="token punctuation">.</span>sh <span class="token number">192.168</span><span class="token number">.0</span><span class="token number">.141</span> https<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span><span class="token number">192.168</span><span class="token number">.0</span><span class="token number">.141</span><span class="token operator">:</span><span class="token number">2379</span><span class="token punctuation">,</span>https<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span><span class="token number">192.168</span><span class="token number">.0</span><span class="token number">.142</span><span class="token operator">:</span><span class="token number">2379</span><span class="token punctuation">,</span>https<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span><span class="token number">192.168</span><span class="token number">.0</span><span class="token number">.143</span><span class="token operator">:</span><span class="token number">2379</span>
+</code></pre></div> <br> <p><strong>复制证书到kubernetes的ssh目录中</strong></p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token builtin class-name">cd</span> /k8s/cert/k8s-cert/
+<span class="token function">cp</span> ca.pem ca-key.pem server.pem server-key.pem /usr/local/kubernetes/ssl/
+</code></pre></div> <br> <h3 id="生成token-csv验证文件"><a href="#生成token-csv验证文件" class="header-anchor">#</a> 生成token.csv验证文件</h3> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">head</span> -c <span class="token number">16</span> /dev/urandom <span class="token operator">|</span> od -An -t x <span class="token operator">|</span> <span class="token function">tr</span> -d <span class="token string">' '</span>
+<span class="token comment">##生成密钥</span>
+
+<span class="token builtin class-name">echo</span> <span class="token string">'0fb61c46f8991b718eb38d27b605b008,kubelet-bootstrap,10001,&quot;system:kubelet-bootstrap&quot;'</span> <span class="token operator">&gt;</span> /usr/local/kubernetes/conf/token.csv
+    
+<span class="token comment"># 0fb61c46f8991b718eb38d27b605b008：密钥</span>
+<span class="token comment"># kubelet-bootstrap：用户</span>
+<span class="token comment"># 10001：用户组</span>
+<span class="token comment"># system:kubelet-bootstrap：加入k8s集群</span>
+</code></pre></div> <br> <h3 id="启动kube-apiserver"><a href="#启动kube-apiserver" class="header-anchor">#</a> 启动kube-apiserver</h3> <div class="language-bash extra-class"><pre class="language-bash"><code>systemctl daemon-reload
+systemctl <span class="token builtin class-name">enable</span> kube-apiserver
+systemctl start kube-apiserver
+
+端口：8080，6443
+</code></pre></div> <br> <br> <h2 id="kube-controller-manager组件的部署"><a href="#kube-controller-manager组件的部署" class="header-anchor">#</a> <strong>Kube-controller-manager组件的部署</strong></h2> <br> <h3 id="编写部署脚本-4"><a href="#编写部署脚本-4" class="header-anchor">#</a> 编写部署脚本</h3> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token builtin class-name">cd</span> /k8s/soft/kubernetes/server/bin/
+<span class="token function">vim</span> controller-manager.sh
+
+<span class="token comment">#!/bin/bash</span>
+
+<span class="token assign-left variable">MASTER_ADDRESS</span><span class="token operator">=</span><span class="token variable">$1</span>
+
+<span class="token function">cat</span> <span class="token operator">&lt;&lt;</span><span class="token string">EOF<span class="token bash punctuation"> <span class="token operator">&gt;</span>/usr/local/kubernetes/conf/kube-controller-manager</span>
+
+
+KUBE_CONTROLLER_MANAGER_OPTS=&quot;--logtostderr=false <span class="token entity" title="\\">\\</span>
+--log-dir=/usr/local/kubernetes/logs <span class="token entity" title="\\">\\</span>
+--v=4 <span class="token entity" title="\\">\\</span>
+--master=<span class="token variable">${MASTER_ADDRESS}</span>:8080 <span class="token entity" title="\\">\\</span>
+--leader-elect=true <span class="token entity" title="\\">\\</span>
+--address=127.0.0.1 <span class="token entity" title="\\">\\</span>
+--service-cluster-ip-range=10.0.0.0/24 <span class="token entity" title="\\">\\</span>
+--cluster-name=kubernetes <span class="token entity" title="\\">\\</span>
+--cluster-signing-cert-file=/usr/local/kubernetes/ssl/ca.pem <span class="token entity" title="\\">\\</span>
+--cluster-signing-key-file=/usr/local/kubernetes/ssl/ca-key.pem  <span class="token entity" title="\\">\\</span>
+--root-ca-file=/usr/local/kubernetes/ssl/ca.pem <span class="token entity" title="\\">\\</span>
+--service-account-private-key-file=/usr/local/kubernetes/ssl/ca-key.pem <span class="token entity" title="\\">\\</span>
+--experimental-cluster-signing-duration=87600h0m0s&quot;
+
+EOF</span>
+
+<span class="token function">cat</span> <span class="token operator">&lt;&lt;</span><span class="token string">EOF<span class="token bash punctuation"> <span class="token operator">&gt;</span>/usr/lib/systemd/system/kube-controller-manager.service</span>
+[Unit]
+Description=Kubernetes Controller Manager
+Documentation=https://github.com/kubernetes/kubernetes
+
+[Service]
+EnvironmentFile=-/usr/local/kubernetes/conf/kube-controller-manager
+ExecStart=/usr/local/kubernetes/bin/kube-controller-manager \<span class="token variable">$KUBE_CONTROLLER_MANAGER_OPTS</span>
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+EOF</span>
+
+systemctl daemon-reload
+systemctl <span class="token builtin class-name">enable</span> kube-controller-manager
+systemctl restart kube-controller-manager
+</code></pre></div> <br> <h3 id="执行脚本-3"><a href="#执行脚本-3" class="header-anchor">#</a> 执行脚本</h3> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">chmod</span> +x controller-manager.sh
+./controller-manager.sh <span class="token number">127.0</span>.0.1
+
+<span class="token comment">## 启动需要绑定apiserver的8080端口，所以要确定apiserver启动起来后才能启动controller-manager</span>
+</code></pre></div> <br> <h3 id="启动kube-controller-manager"><a href="#启动kube-controller-manager" class="header-anchor">#</a> 启动Kube-controller-manager</h3> <div class="language-shell extra-class"><pre class="language-shell"><code>systemctl daemon-reload
+systemctl <span class="token builtin class-name">enable</span> kube-controller-manager
+systemctl start kube-controller-manager
+</code></pre></div> <br> <br> <h2 id="kube-scheduler组件的部署"><a href="#kube-scheduler组件的部署" class="header-anchor">#</a> <strong>kube-scheduler组件的部署</strong></h2> <br> <h3 id="编写部署脚本-5"><a href="#编写部署脚本-5" class="header-anchor">#</a> 编写部署脚本</h3> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token builtin class-name">cd</span> /k8s/soft/kubernetes/server/bin/
+<span class="token function">vim</span> scheduler.sh
+
+<span class="token comment">#!/bin/bash</span>
+
+<span class="token assign-left variable">MASTER_ADDRESS</span><span class="token operator">=</span><span class="token variable">$1</span>
+
+<span class="token function">cat</span> <span class="token operator">&lt;&lt;</span><span class="token string">EOF<span class="token bash punctuation"> <span class="token operator">&gt;</span>/usr/local/kubernetes/conf/kube-scheduler</span>
+
+KUBE_SCHEDULER_OPTS=&quot;--logtostderr=false <span class="token entity" title="\\">\\</span>
+--log-dir=/usr/local/kubernetes/logs <span class="token entity" title="\\">\\</span>
+--v=4 <span class="token entity" title="\\">\\</span>
+--master=<span class="token variable">${MASTER_ADDRESS}</span>:8080 <span class="token entity" title="\\">\\</span>
+--leader-elect&quot;
+
+EOF</span>
+
+<span class="token function">cat</span> <span class="token operator">&lt;&lt;</span><span class="token string">EOF<span class="token bash punctuation"> <span class="token operator">&gt;</span>/usr/lib/systemd/system/kube-scheduler.service</span>
+[Unit]
+Description=Kubernetes Scheduler
+Documentation=https://github.com/kubernetes/kubernetes
+
+[Service]
+EnvironmentFile=-/usr/local/kubernetes/conf/kube-scheduler
+ExecStart=/usr/local/kubernetes/bin/kube-scheduler \<span class="token variable">$KUBE_SCHEDULER_OPTS</span>
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+EOF</span>
+
+systemctl daemon-reload
+systemctl <span class="token builtin class-name">enable</span> kube-scheduler
+systemctl restart kube-scheduler
+</code></pre></div> <br> <h3 id="执行脚本-4"><a href="#执行脚本-4" class="header-anchor">#</a> 执行脚本</h3> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">chmod</span> +x scheduler.sh
+./scheduler.sh <span class="token number">127.0</span>.0.1
+
+<span class="token comment">## 启动需要绑定apiserver的8080端口，所以要确定apiserver启动起来后才能启动controller-manager</span>
+</code></pre></div> <br> <h3 id="启动kube-scheduler"><a href="#启动kube-scheduler" class="header-anchor">#</a> 启动kube-scheduler</h3> <div class="language-java extra-class"><pre class="language-java"><code>systemctl daemon<span class="token operator">-</span>reload
+systemctl enable kube<span class="token operator">-</span>scheduler
+systemctl start kube<span class="token operator">-</span>scheduler
+</code></pre></div> <br> <h2 id="查看当前集群节点的状态"><a href="#查看当前集群节点的状态" class="header-anchor">#</a> 查看当前集群节点的状态</h2> <div class="language-java extra-class"><pre class="language-java"><code>kubectl get cs
+
+NAME                 STATUS    MESSAGE             ERROR
+controller<span class="token operator">-</span>manager   <span class="token class-name">Healthy</span>   ok                  
+scheduler            <span class="token class-name">Healthy</span>   ok                  
+etcd<span class="token operator">-</span><span class="token number">0</span>               <span class="token class-name">Healthy</span>   <span class="token punctuation">{</span><span class="token string">&quot;health&quot;</span><span class="token operator">:</span><span class="token string">&quot;true&quot;</span><span class="token punctuation">}</span>   
+etcd<span class="token operator">-</span><span class="token number">2</span>               <span class="token class-name">Healthy</span>   <span class="token punctuation">{</span><span class="token string">&quot;health&quot;</span><span class="token operator">:</span><span class="token string">&quot;true&quot;</span><span class="token punctuation">}</span>   
+etcd<span class="token operator">-</span><span class="token number">1</span>               <span class="token class-name">Healthy</span>   <span class="token punctuation">{</span><span class="token string">&quot;health&quot;</span><span class="token operator">:</span><span class="token string">&quot;true&quot;</span><span class="token punctuation">}</span>
+</code></pre></div> <br> <br> <h1 id="部署node组件"><a href="#部署node组件" class="header-anchor">#</a> <strong>部署Node组件</strong></h1> <p><img src="https://s1.ax1x.com/2020/04/20/JMxvhq.png" alt="JMxvhq.png"></p> <br> <h2 id="需要部署二个组件"><a href="#需要部署二个组件" class="header-anchor">#</a> 需要部署二个组件</h2> <ol><li>kubelet</li> <li>kube-proxy</li></ol> <br> <br> <h2 id="以下操作是在master节点上操作"><a href="#以下操作是在master节点上操作" class="header-anchor">#</a> <strong>以下操作是在Master节点上操作</strong></h2> <h3 id="绑定到系统集群角色"><a href="#绑定到系统集群角色" class="header-anchor">#</a> 绑定到系统集群角色</h3> <p>将kubelet-bootstrap用户绑定到系统集群角色</p> <div class="language-bash extra-class"><pre class="language-bash"><code>kubectl create clusterrolebinding kubelet-bootstrap --clusterrole<span class="token operator">=</span>system:node-bootstrapper --user<span class="token operator">=</span>kubelet-bootstrap
+
+<span class="token comment">## 为上面生成的token.csv验证文件中的用户绑定到集群角色中</span>
+</code></pre></div> <br> <h3 id="编写生成kubeconfig文件的脚本"><a href="#编写生成kubeconfig文件的脚本" class="header-anchor">#</a> 编写生成kubeconfig文件的脚本</h3> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token builtin class-name">cd</span> /k8s/soft/kubernetes/server/bin/
+<span class="token function">vim</span> kubeconfig.sh
+
+<span class="token comment">#!/bin/bash</span>
+<span class="token assign-left variable">APISERVER</span><span class="token operator">=</span><span class="token variable">$1</span>
+<span class="token assign-left variable">SSL_DIR</span><span class="token operator">=</span><span class="token variable">$2</span>
+<span class="token assign-left variable">BOOTSTRAP_TOKEN</span><span class="token operator">=</span>cd38b57ef30a4f4009fde99e9603dcb8
+
+<span class="token comment"># 创建kubelet bootstrapping kubeconfig </span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">KUBE_APISERVER</span><span class="token operator">=</span><span class="token string">&quot;https://<span class="token variable">$APISERVER</span>:6443&quot;</span>
+
+<span class="token comment"># 设置集群参数</span>
+kubectl config set-cluster kubernetes <span class="token punctuation">\</span>
+  --certificate-authority<span class="token operator">=</span><span class="token variable">$SSL_DIR</span>/ca.pem <span class="token punctuation">\</span>
+  --embed-certs<span class="token operator">=</span>true <span class="token punctuation">\</span>
+  --server<span class="token operator">=</span><span class="token variable">${KUBE_APISERVER}</span> <span class="token punctuation">\</span>
+  --kubeconfig<span class="token operator">=</span>bootstrap.kubeconfig
+
+<span class="token comment"># 设置客户端认证参数</span>
+kubectl config set-credentials kubelet-bootstrap <span class="token punctuation">\</span>
+  --token<span class="token operator">=</span><span class="token variable">${BOOTSTRAP_TOKEN}</span> <span class="token punctuation">\</span>
+  --kubeconfig<span class="token operator">=</span>bootstrap.kubeconfig
+
+<span class="token comment"># 设置上下文参数</span>
+kubectl config set-context default <span class="token punctuation">\</span>
+  --cluster<span class="token operator">=</span>kubernetes <span class="token punctuation">\</span>
+  --user<span class="token operator">=</span>kubelet-bootstrap <span class="token punctuation">\</span>
+  --kubeconfig<span class="token operator">=</span>bootstrap.kubeconfig
+
+<span class="token comment"># 设置默认上下文</span>
+kubectl config use-context default --kubeconfig<span class="token operator">=</span>bootstrap.kubeconfig
+
+<span class="token comment">#----------------------</span>
+
+<span class="token comment"># 创建kube-proxy kubeconfig文件</span>
+
+kubectl config set-cluster kubernetes <span class="token punctuation">\</span>
+  --certificate-authority<span class="token operator">=</span><span class="token variable">$SSL_DIR</span>/ca.pem <span class="token punctuation">\</span>
+  --embed-certs<span class="token operator">=</span>true <span class="token punctuation">\</span>
+  --server<span class="token operator">=</span><span class="token variable">${KUBE_APISERVER}</span> <span class="token punctuation">\</span>
+  --kubeconfig<span class="token operator">=</span>kube-proxy.kubeconfig
+
+kubectl config set-credentials kube-proxy <span class="token punctuation">\</span>
+  --client-certificate<span class="token operator">=</span><span class="token variable">$SSL_DIR</span>/kube-proxy.pem <span class="token punctuation">\</span>
+  --client-key<span class="token operator">=</span><span class="token variable">$SSL_DIR</span>/kube-proxy-key.pem <span class="token punctuation">\</span>
+  --embed-certs<span class="token operator">=</span>true <span class="token punctuation">\</span>
+  --kubeconfig<span class="token operator">=</span>kube-proxy.kubeconfig
+
+kubectl config set-context default <span class="token punctuation">\</span>
+  --cluster<span class="token operator">=</span>kubernetes <span class="token punctuation">\</span>
+  --user<span class="token operator">=</span>kube-proxy <span class="token punctuation">\</span>
+  --kubeconfig<span class="token operator">=</span>kube-proxy.kubeconfig
+
+kubectl config use-context default --kubeconfig<span class="token operator">=</span>kube-proxy.kubeconfig
+
+
+<span class="token comment">##注意：BOOTSTRAP_TOKEN这个变量是存放刚刚生成token.csv验证文件中的密钥</span>
+<span class="token comment">##这文件存放了验证apisever的验证信息，这样其它组件才有权限访问apiserve</span>
+</code></pre></div> <br> <p><strong>执行脚本</strong></p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">chmod</span> +x kubeconfig.sh 
+./kubeconfig.sh <span class="token number">192.168</span>.0.141 /k8s/cert/k8s-cert/
+
+<span class="token comment">## 第一位参数：为master节点的IP</span>
+<span class="token comment">## 第二位参数：生成k8s证书的目录</span>
+</code></pre></div> <br> <p><strong>拷贝生文件到node节点上</strong></p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token builtin class-name">cd</span> /k8s/cert/k8s-cert
+<span class="token function">scp</span> bootstrap.kubeconfig kube-proxy.kubeconfig root@192.168.0.142:/usr/local/kubernetes/conf/
+<span class="token function">scp</span> bootstrap.kubeconfig kube-proxy.kubeconfig root@192.168.0.143:/usr/local/kubernetes/conf/
+
+<span class="token builtin class-name">cd</span> /k8s/soft/kubernetes/server/bin
+<span class="token function">scp</span> kubelet kube-proxy root@192.168.0.142:/usr/local/kubernetes/bin/
+<span class="token function">scp</span> kubelet kube-proxy root@192.168.0.143:/usr/local/kubernetes/bin/
+</code></pre></div> <br> <br> <h2 id="以下操作在node节点192-168-0-142操作"><a href="#以下操作在node节点192-168-0-142操作" class="header-anchor">#</a> <strong>以下操作在node节点192.168.0.142操作</strong></h2> <br> <h3 id="部署kubelet"><a href="#部署kubelet" class="header-anchor">#</a> <strong>部署kubelet</strong></h3> <br> <h4 id="创建目录-4"><a href="#创建目录-4" class="header-anchor">#</a> 创建目录</h4> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">mkdir</span> -p /usr/local/kubernetes/<span class="token punctuation">{</span>bin,conf,ssl,logs<span class="token punctuation">}</span>
+</code></pre></div> <br> <h4 id="编写部署脚本-6"><a href="#编写部署脚本-6" class="header-anchor">#</a> 编写部署脚本</h4> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token builtin class-name">cd</span> /k8s
+<span class="token function">vim</span> kubelet.sh
+
+<span class="token comment">#!/bin/bash</span>
+
+<span class="token assign-left variable">NODE_ADDRESS</span><span class="token operator">=</span><span class="token variable">$1</span>
+<span class="token assign-left variable">DNS_SERVER_IP</span><span class="token operator">=</span><span class="token variable">${2<span class="token operator">:-</span>&quot;10.0.0.2&quot;}</span>
+
+<span class="token function">cat</span> <span class="token operator">&lt;&lt;</span><span class="token string">EOF<span class="token bash punctuation"> <span class="token operator">&gt;</span>/usr/local/kubernetes/conf/kubelet</span>
+
+KUBELET_OPTS=&quot;--logtostderr=false <span class="token entity" title="\\">\\</span>
+--log-dir=/usr/local/kubernetes/logs <span class="token entity" title="\\">\\</span>
+--v=4 <span class="token entity" title="\\">\\</span>
+--hostname-override=<span class="token variable">${NODE_ADDRESS}</span> <span class="token entity" title="\\">\\</span>
+--kubeconfig=/usr/local/kubernetes/conf/kubelet.kubeconfig <span class="token entity" title="\\">\\</span>
+--bootstrap-kubeconfig=/usr/local/kubernetes/conf/bootstrap.kubeconfig <span class="token entity" title="\\">\\</span>
+--config=/usr/local/kubernetes/conf/kubelet.config <span class="token entity" title="\\">\\</span>
+--cert-dir=//usr/local/kubernetes/ssl <span class="token entity" title="\\">\\</span>
+--pod-infra-container-image=registry.cn-hangzhou.aliyuncs.com/google-containers/pause-amd64:3.0&quot;
+
+EOF</span>
+
+<span class="token function">cat</span> <span class="token operator">&lt;&lt;</span><span class="token string">EOF<span class="token bash punctuation"> <span class="token operator">&gt;</span>/usr/local/kubernetes/conf/kubelet.config</span>
+
+kind: KubeletConfiguration
+apiVersion: kubelet.config.k8s.io/v1beta1
+address: <span class="token variable">${NODE_ADDRESS}</span>
+port: 10250
+readOnlyPort: 10255
+cgroupDriver: cgroupfs
+clusterDNS:
+- <span class="token variable">${DNS_SERVER_IP}</span> 
+clusterDomain: cluster.local.
+failSwapOn: false
+authentication:
+  anonymous:
+    enabled: true
+EOF</span>
+
+<span class="token function">cat</span> <span class="token operator">&lt;&lt;</span><span class="token string">EOF<span class="token bash punctuation"> <span class="token operator">&gt;</span>/usr/lib/systemd/system/kubelet.service</span>
+[Unit]
+Description=Kubernetes Kubelet
+After=docker.service
+Requires=docker.service
+
+[Service]
+EnvironmentFile=/usr/local/kubernetes/conf/kubelet
+ExecStart=/usr/local/kubernetes/bin/kubelet \<span class="token variable">$KUBELET_OPTS</span>
+Restart=on-failure
+KillMode=process
+
+[Install]
+WantedBy=multi-user.target
+EOF</span>
+
+systemctl daemon-reload
+systemctl <span class="token builtin class-name">enable</span> kubelet
+systemctl restart kubelet
+</code></pre></div> <br> <h4 id="执行脚本-5"><a href="#执行脚本-5" class="header-anchor">#</a> 执行脚本</h4> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">chmod</span> +x kubelet.sh
+./kubelet.sh <span class="token number">192.168</span>.0.142
+
+<span class="token comment">##当前node节点的IP</span>
+</code></pre></div> <br> <h4 id="启动kubelet"><a href="#启动kubelet" class="header-anchor">#</a> 启动kubelet</h4> <div class="language-shell extra-class"><pre class="language-shell"><code>systemctl daemon-reload
+systemctl <span class="token builtin class-name">enable</span> kubelet
+systemctl start kubelet
+</code></pre></div> <br> <h4 id="节点授权"><a href="#节点授权" class="header-anchor">#</a> 节点授权</h4> <p><strong>到Master节点给node192.168.0.142节点授权</strong></p> <div class="language-shell extra-class"><pre class="language-shell"><code>kubectl get csr
+结果：
+NAME                                                   AGE   REQUESTOR           CONDITION
+node-csr-In6C6aeHhDjMbourTBOFiWvji-ROo7njqhlDBKUeJl8   28h   kubelet-bootstrap   Pending
+<span class="token comment">##查看密钥值</span>
+
+
+kubectl certificate approve node-csr-In6C6aeHhDjMbourTBOFiWvji-ROo7njqhlDBKUeJl8
+结果：
+certificatesigningrequest.certificates.k8s.io/node-csr-In6C6aeHhDjMbourTBOFiWvji-ROo7njqhlDBKUeJl8 approved
+<span class="token comment">##通过命令给密钥值加权</span>
+
+
+kubectl get node
+结果：
+NAME            STATUS   ROLES    AGE    VERSION
+<span class="token number">192.168</span>.0.142   Ready    <span class="token operator">&lt;</span>none<span class="token operator">&gt;</span>   110m   v1.13.4
+<span class="token comment">##查看Node节点</span>
+</code></pre></div> <br> <h3 id="部署kube-proxy组件"><a href="#部署kube-proxy组件" class="header-anchor">#</a> <strong>部署kube-proxy组件</strong></h3> <br> <h4 id="编写部署脚本-7"><a href="#编写部署脚本-7" class="header-anchor">#</a> 编写部署脚本</h4> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token builtin class-name">cd</span> /k8s
+<span class="token function">vim</span> proxy.sh
+
+<span class="token comment">#!/bin/bash</span>
+
+<span class="token assign-left variable">NODE_ADDRESS</span><span class="token operator">=</span><span class="token variable">$1</span>
+
+<span class="token function">cat</span> <span class="token operator">&lt;&lt;</span><span class="token string">EOF<span class="token bash punctuation"> <span class="token operator">&gt;</span>/usr/local/kubernetes/conf/kube-proxy</span>
+
+KUBE_PROXY_OPTS=&quot;--logtostderr=false <span class="token entity" title="\\">\\</span>
+--log-dir=/usr/local/kubernetes/logs <span class="token entity" title="\\">\\</span>
+--v=4 <span class="token entity" title="\\">\\</span>
+--hostname-override=<span class="token variable">${NODE_ADDRESS}</span> <span class="token entity" title="\\">\\</span>
+--cluster-cidr=10.0.0.0/24 <span class="token entity" title="\\">\\</span>
+--proxy-mode=ipvs <span class="token entity" title="\\">\\</span>
+--kubeconfig=/usr/local/kubernetes/conf/kube-proxy.kubeconfig&quot;
+
+EOF</span>
+
+<span class="token function">cat</span> <span class="token operator">&lt;&lt;</span><span class="token string">EOF<span class="token bash punctuation"> <span class="token operator">&gt;</span>/usr/lib/systemd/system/kube-proxy.service</span>
+[Unit]
+Description=Kubernetes Proxy
+After=network.target
+
+[Service]
+EnvironmentFile=-/usr/local/kubernetes/conf/kube-proxy
+ExecStart=/usr/local/kubernetes/bin/kube-proxy \<span class="token variable">$KUBE_PROXY_OPTS</span>
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+EOF</span>
+
+systemctl daemon-reload
+systemctl <span class="token builtin class-name">enable</span> kube-proxy
+systemctl restart kube-proxy
+</code></pre></div> <br> <h4 id="执行脚本-6"><a href="#执行脚本-6" class="header-anchor">#</a> 执行脚本</h4> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">chmod</span> +x proxy.sh
+./proxy.sh <span class="token number">192.168</span>.0.142
+
+<span class="token comment">##当前node节点的IP</span>
+</code></pre></div> <br> <h4 id="启动proxy"><a href="#启动proxy" class="header-anchor">#</a> 启动proxy</h4> <div class="language-shell extra-class"><pre class="language-shell"><code>systemctl daemon-reload
+systemctl <span class="token builtin class-name">enable</span> kube-proxy
+systemctl start kube-proxy
+</code></pre></div> <br> <h2 id="发送配置文件目录到另一个node节点上"><a href="#发送配置文件目录到另一个node节点上" class="header-anchor">#</a> 发送配置文件目录到另一个Node节点上</h2> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">scp</span> -r /usr/local/kubernetes/ root@192.168.0.143:/usr/local/
+<span class="token builtin class-name">cd</span> /usr/lib/systemd/system/
+<span class="token function">scp</span> kubelet.service kube-proxy.service root@192.168.0.143:/usr/lib/systemd/system/
+</code></pre></div> <br> <br> <h2 id="以下操作在node节点192-168-0-143上操作"><a href="#以下操作在node节点192-168-0-143上操作" class="header-anchor">#</a> <strong>以下操作在node节点192.168.0.143上操作</strong></h2> <br> <h3 id="删除证书"><a href="#删除证书" class="header-anchor">#</a> 删除证书</h3> <div class="language-java extra-class"><pre class="language-java"><code>rm <span class="token operator">-</span>rf <span class="token operator">/</span>usr<span class="token operator">/</span>local<span class="token operator">/</span>kubernetes<span class="token operator">/</span>ssl<span class="token comment">/*
+</span></code></pre></div> <br> <p><strong>修改配置文件</strong></p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token builtin class-name">cd</span> /usr/local/kubernetes/conf
+
+需要修改的配置文件有以下几个
+kubelet
+kubelet.config
+kube-proxy
+
+<span class="token comment">##将这些配置文件中的192.168.0.142换成192.168.0.143</span>
+</code></pre></div> <br> <p><strong>启动</strong></p> <div class="language-shell extra-class"><pre class="language-shell"><code>systemctl daemon-reload
+systemctl <span class="token builtin class-name">enable</span> kubelet
+systemctl start kubelet
+systemctl <span class="token builtin class-name">enable</span> kube-proxy
+systemctl start kube-proxy
+</code></pre></div> <br> <h3 id="节点授权-2"><a href="#节点授权-2" class="header-anchor">#</a> 节点授权</h3> <p><strong>到Master节点给node192.168.0.143节点授权</strong></p> <div class="language-shell extra-class"><pre class="language-shell"><code>kubectl get csr
+结果：
+NAME                                                   AGE   REQUESTOR           CONDITION
+node-csr-In6C6aeHhDjMbourTBOFiWvji-ROo7njqhlDBKUeJl8   28h   kubelet-bootstrap   Approved,Issued
+node-csr-bv__TEcpxKxCGUULU-5ElHHwgTXRPdxrI7zy8nxPmog   39s   kubelet-bootstrap   Pending
+<span class="token comment">##查看密钥值，其中有一个值是192.168.0.142的</span>
+
+
+kubectl certificate approve node-csr-bv__TEcpxKxCGUULU-5ElHHwgTXRPdxrI7zy8nxPmog
+结果：
+certificatesigningrequest.certificates.k8s.io/node-csr-bv__TEcpxKxCGUULU-5ElHHwgTXRPdxrI7zy8nxPmog approved
+<span class="token comment">##通过命令给密钥值加权</span>
+
+
+kubectl get node
+结果：
+NAME            STATUS   ROLES    AGE    VERSION
+<span class="token number">192.168</span>.0.142   Ready    <span class="token operator">&lt;</span>none<span class="token operator">&gt;</span>   110m   v1.13.4
+<span class="token number">192.168</span>.0.143   Ready    <span class="token operator">&lt;</span>none<span class="token operator">&gt;</span>   17s    v1.13.4
+<span class="token comment">##查看Node节点</span>
+</code></pre></div> <br> <br> <h1 id="部署一个测试示例"><a href="#部署一个测试示例" class="header-anchor">#</a> <strong>部署一个测试示例</strong></h1> <h2 id="创建一个nginx的服务容器"><a href="#创建一个nginx的服务容器" class="header-anchor">#</a> 创建一个nginx的服务容器</h2> <div class="language-shell extra-class"><pre class="language-shell"><code>kubectl create deployment nginx --image<span class="token operator">=</span>nginx
+</code></pre></div> <br> <h2 id="查看创建的服务容器"><a href="#查看创建的服务容器" class="header-anchor">#</a> 查看创建的服务容器</h2> <div class="language-shell extra-class"><pre class="language-shell"><code>kubectl get pods
+
+NAME                   READY   STATUS    RESTARTS   AGE
+nginx-5c7588df-45gzq   <span class="token number">1</span>/1     Running   <span class="token number">0</span>          6m45s
+
+<span class="token comment">## 第一次启动Nginx, 可能会慢点，因为系统需要拉镜像</span>
+<span class="token comment">## 1/1：启动成功</span>
+<span class="token comment">## 0/1：启动中</span>
+</code></pre></div> <br> <h2 id="扩容nginx服务容器"><a href="#扩容nginx服务容器" class="header-anchor">#</a> 扩容nginx服务容器</h2> <div class="language-shell extra-class"><pre class="language-shell"><code>kubectl scale deployment nginx --replicas<span class="token operator">=</span><span class="token number">3</span>
+<span class="token comment">## 指定nginx容器数量为三个</span>
+</code></pre></div> <br> <h2 id="在查看创建的服务容器"><a href="#在查看创建的服务容器" class="header-anchor">#</a> 在查看创建的服务容器</h2> <div class="language-shell extra-class"><pre class="language-shell"><code>kubectl get pods
+
+NAME                   READY   STATUS    RESTARTS   AGE
+nginx-5c7588df-45gzq   <span class="token number">1</span>/1     Running   <span class="token number">0</span>          6m45s
+nginx-5c7588df-56gwb   <span class="token number">1</span>/1     Running   <span class="token number">0</span>          3m11s
+nginx-5c7588df-hvjlf   <span class="token number">1</span>/1     Running   <span class="token number">0</span>          3m11s
+</code></pre></div> <br> <h2 id="查看容器分布在那些节点上"><a href="#查看容器分布在那些节点上" class="header-anchor">#</a> 查看容器分布在那些节点上</h2> <div class="language-shell extra-class"><pre class="language-shell"><code>kubectl get pods -o wide
+
+NAME                   READY   STATUS    RESTARTS   AGE     IP            NODE            NOMINATED NODE   READINESS GATES
+nginx-5c7588df-45gzq   <span class="token number">1</span>/1     Running   <span class="token number">0</span>          6m59s   <span class="token number">172.17</span>.71.2   <span class="token number">192.168</span>.0.142   <span class="token operator">&lt;</span>none<span class="token operator">&gt;</span>           <span class="token operator">&lt;</span>none<span class="token operator">&gt;</span>
+nginx-5c7588df-56gwb   <span class="token number">1</span>/1     Running   <span class="token number">0</span>          3m25s   <span class="token number">172.17</span>.71.3   <span class="token number">192.168</span>.0.142   <span class="token operator">&lt;</span>none<span class="token operator">&gt;</span>           <span class="token operator">&lt;</span>none<span class="token operator">&gt;</span>
+nginx-5c7588df-hvjlf   <span class="token number">1</span>/1     Running   <span class="token number">0</span>          3m25s   <span class="token number">172.17</span>.82.2   <span class="token number">192.168</span>.0.143   <span class="token operator">&lt;</span>none<span class="token operator">&gt;</span>           <span class="token operator">&lt;</span>none<span class="token operator">&gt;</span>            
+</code></pre></div> <br> <h2 id="暴露node88端口给外部连接"><a href="#暴露node88端口给外部连接" class="header-anchor">#</a> 暴露node88端口给外部连接</h2> <div class="language-shell extra-class"><pre class="language-shell"><code>kubectl expose deployment nginx --port<span class="token operator">=</span><span class="token number">88</span> --target-port<span class="token operator">=</span><span class="token number">80</span> --type<span class="token operator">=</span>NodePort
+
+<span class="token comment">## 暴露的端口是内部连接的，外部连接是暴露的随机端口</span>
+</code></pre></div> <br> <h2 id="查看以暴露的端口并访问"><a href="#查看以暴露的端口并访问" class="header-anchor">#</a> 查看以暴露的端口并访问</h2> <div class="language-shell extra-class"><pre class="language-shell"><code>kubectl get svc
+
+NAME         TYPE        CLUSTER-IP   EXTERNAL-IP   PORT<span class="token punctuation">(</span>S<span class="token punctuation">)</span>        AGE
+kubernetes   ClusterIP   <span class="token number">10.0</span>.0.1     <span class="token operator">&lt;</span>none<span class="token operator">&gt;</span>        <span class="token number">443</span>/TCP        4h45m
+nginx        NodePort    <span class="token number">10.0</span>.0.175   <span class="token operator">&lt;</span>none<span class="token operator">&gt;</span>        <span class="token number">88</span>:32707/TCP   23s
+
+<span class="token comment">##访问随意node节点IP加随机端口(46771)</span>
+</code></pre></div> <br> <h2 id="web访问"><a href="#web访问" class="header-anchor">#</a> web访问</h2> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token comment"># 可以通过二个node节点的IP加上32707端口</span>
+<span class="token comment"># 192.168.0.142:32707</span>
+<span class="token comment"># 192.168.0.143:32707</span>
+</code></pre></div> <br> <h2 id="授权用户可以查看日志的权限"><a href="#授权用户可以查看日志的权限" class="header-anchor">#</a> 授权用户可以查看日志的权限</h2> <div class="language-shell extra-class"><pre class="language-shell"><code>kubectl create clusterrolebinding cluster-system-anonymous --clusterrole<span class="token operator">=</span>cluster-admin --user<span class="token operator">=</span>system:anonymous
+</code></pre></div> <br> <h2 id="查看创建的服务容器并查看日志"><a href="#查看创建的服务容器并查看日志" class="header-anchor">#</a> 查看创建的服务容器并查看日志</h2> <div class="language-shell extra-class"><pre class="language-shell"><code>kubectl get pods
+
+NAME                   READY   STATUS    RESTARTS   AGE
+nginx-5c7588df-45gzq   <span class="token number">1</span>/1     Running   <span class="token number">0</span>          6m45s
+nginx-5c7588df-56gwb   <span class="token number">1</span>/1     Running   <span class="token number">0</span>          3m11s
+nginx-5c7588df-hvjlf   <span class="token number">1</span>/1     Running   <span class="token number">0</span>          3m11s
+
+<span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">=</span>
+
+kubectl logs nginx-5c7588df-hvjlf
+
+<span class="token number">172.17</span>.71.0 - - <span class="token punctuation">[</span><span class="token number">20</span>/Apr/2020:07:47:26 +0000<span class="token punctuation">]</span> <span class="token string">&quot;GET / HTTP/1.1&quot;</span> <span class="token number">200</span> <span class="token number">612</span> <span class="token string">&quot;-&quot;</span> <span class="token string">&quot;curl/7.29.0&quot;</span> <span class="token string">&quot;-&quot;</span>
+<span class="token number">172.17</span>.71.0 - - <span class="token punctuation">[</span><span class="token number">20</span>/Apr/2020:07:47:52 +0000<span class="token punctuation">]</span> <span class="token string">&quot;GET / HTTP/1.1&quot;</span> <span class="token number">200</span> <span class="token number">612</span> <span class="token string">&quot;-&quot;</span> <span class="token string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36&quot;</span> <span class="token string">&quot;-&quot;</span>
+<span class="token number">2020</span>/04/20 07:47:52 <span class="token punctuation">[</span>error<span class="token punctuation">]</span> <span class="token number">6</span><span class="token comment">#6: *2 open() &quot;/usr/share/nginx/html/favicon.ico&quot; failed (2: No such file or directory), client: 172.17.71.0, server: localhost, request: &quot;GET /favicon.ico HTTP/1.1&quot;, host: &quot;192.168.0.142:32707&quot;, referrer: &quot;http://192.168.0.142:32707/&quot;</span>
+<span class="token number">172.17</span>.71.0 - - <span class="token punctuation">[</span><span class="token number">20</span>/Apr/2020:07:47:52 +0000<span class="token punctuation">]</span> <span class="token string">&quot;GET /favicon.ico HTTP/1.1&quot;</span> <span class="token number">404</span> <span class="token number">556</span> <span class="token string">&quot;http://192.168.0.142:32707/&quot;</span> <span class="token string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36&quot;</span> <span class="token string">&quot;-&quot;</span>
+<span class="token number">172.17</span>.82.1 - - <span class="token punctuation">[</span><span class="token number">20</span>/Apr/2020:07:47:56 +0000<span class="token punctuation">]</span> <span class="token string">&quot;GET / HTTP/1.1&quot;</span> <span class="token number">200</span> <span class="token number">612</span> <span class="token string">&quot;-&quot;</span> <span class="token string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36&quot;</span> <span class="token string">&quot;-&quot;</span>
+<span class="token number">172.17</span>.82.1 - - <span class="token punctuation">[</span><span class="token number">20</span>/Apr/2020:07:47:56 +0000<span class="token punctuation">]</span> <span class="token string">&quot;GET /favicon.ico HTTP/1.1&quot;</span> <span class="token number">404</span> <span class="token number">556</span> <span class="token string">&quot;http://192.168.0.143:32707/&quot;</span> <span class="token string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36&quot;</span> <span class="token string">&quot;-&quot;</span>
+<span class="token number">2020</span>/04/20 07:47:56 <span class="token punctuation">[</span>error<span class="token punctuation">]</span> <span class="token number">6</span><span class="token comment">#6: *3 open() &quot;/usr/share/nginx/html/favicon.ico&quot; failed (2: No such file or directory), client: 172.17.82.1, server: localhost, request: &quot;GET /favicon.ico HTTP/1.1&quot;, host: &quot;192.168.0.143:32707&quot;, referrer: &quot;http://192.168.0.143:32707/&quot;</span>
+</code></pre></div> <br> <br> <h1 id="高可用负载kubemetes集群"><a href="#高可用负载kubemetes集群" class="header-anchor">#</a> 高可用负载kubemetes集群</h1> <p>基于上面的kubemetes集群，在添加二台机器</p> <ol><li>192.168.0.41
+<ol><li>新的maste节点
+<ol><li>4G，2P</li></ol></li></ol></li> <li>192.168.0.42
+<ol><li>nginx节点跟keepalived节点
+<ol><li>2G，1P</li></ol></li></ol></li> <li>192.168.0.43
+<ol><li>nginx节点跟keepalived节点
+<ol><li>2G，1P</li></ol></li></ol></li></ol> <br> <br> <h2 id="新建maste节点"><a href="#新建maste节点" class="header-anchor">#</a> 新建maste节点</h2> <br> <h3 id="获取旧maste节点的数据"><a href="#获取旧maste节点的数据" class="header-anchor">#</a> 获取旧maste节点的数据</h3> <p>请到192.168.0.141机器上执行</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">scp</span> -r /usr/local/etcd/ssl/ root@192.168.0.41:/usr/local/etcd/ssl/
+<span class="token function">scp</span> -r /usr/local/kubernetes/ root@192.168.0.41:/usr/local/
+<span class="token function">scp</span> /usr/lib/systemd/system/<span class="token punctuation">{</span>kube-apiserver,kube-controller-manager,kube-scheduler<span class="token punctuation">}</span>.service root@192.168.0.41:/usr/lib/systemd/system
+</code></pre></div> <br> <h3 id="创建kubectl命令文件软链接"><a href="#创建kubectl命令文件软链接" class="header-anchor">#</a> 创建kubectl命令文件软链接</h3> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">ln</span> -s /usr/local/kubernetes/bin/kubectl /usr/bin/
+</code></pre></div> <br> <h3 id="修改kube-apiserver的配置"><a href="#修改kube-apiserver的配置" class="header-anchor">#</a> 修改kube-apiserver的配置</h3> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">vim</span> /usr/local/kubernetes/conf/kube-apiserver
+--bind-address<span class="token operator">=</span><span class="token number">192.168</span>.0.41 <span class="token punctuation">\</span>
+--advertise-address<span class="token operator">=</span><span class="token number">192.168</span>.0.41 <span class="token punctuation">\</span>
+
+<span class="token comment">## 把这二行的IP修改为当前新节点的IP</span>
+</code></pre></div> <br> <h3 id="启动新节点的三个组件"><a href="#启动新节点的三个组件" class="header-anchor">#</a> 启动新节点的三个组件</h3> <div class="language-shell extra-class"><pre class="language-shell"><code>systemctl daemon-reload
+systemctl <span class="token builtin class-name">enable</span> kube-apiserver
+systemctl <span class="token builtin class-name">enable</span> kube-controller-manager
+systemctl <span class="token builtin class-name">enable</span> kube-scheduler
+systemctl start kube-apiserver
+systemctl start kube-controller-manager
+systemctl start kube-scheduler
+
+<span class="token comment">## 先启动kube-apiserver，要保证kube-apiserver启动后才能启动其他二个节点，因为其他二个节点都是依赖kube-apiserver的8080端口</span>
+</code></pre></div> <br> <h3 id="查看当前集群节点的状态-2"><a href="#查看当前集群节点的状态-2" class="header-anchor">#</a> 查看当前集群节点的状态</h3> <div class="language-shell extra-class"><pre class="language-shell"><code>kubectl get cs
+
+NAME                 STATUS    MESSAGE             ERROR
+controller-manager   Healthy   ok                  
+scheduler            Healthy   ok                  
+etcd-1               Healthy   <span class="token punctuation">{</span><span class="token string">&quot;health&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;true&quot;</span><span class="token punctuation">}</span>   
+etcd-0               Healthy   <span class="token punctuation">{</span><span class="token string">&quot;health&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;true&quot;</span><span class="token punctuation">}</span>   
+etcd-2               Healthy   <span class="token punctuation">{</span><span class="token string">&quot;health&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;true&quot;</span><span class="token punctuation">}</span>
+</code></pre></div> <br> <h3 id="查看运行的容器"><a href="#查看运行的容器" class="header-anchor">#</a> 查看运行的容器</h3> <div class="language-shell extra-class"><pre class="language-shell"><code>kubectl get pods
+
+NAME                   READY   STATUS    RESTARTS   AGE
+nginx-5c7588df-45gzq   <span class="token number">1</span>/1     Running   <span class="token number">0</span>          156m
+nginx-5c7588df-56gwb   <span class="token number">1</span>/1     Running   <span class="token number">0</span>          153m
+nginx-5c7588df-hvjlf   <span class="token number">1</span>/1     Running   <span class="token number">0</span>          153m
+</code></pre></div> <br> <br> <h2 id="在192-168-0-42搭建nginx跟keepalived"><a href="#在192-168-0-42搭建nginx跟keepalived" class="header-anchor">#</a> 在192.168.0.42搭建nginx跟keepalived</h2> <br> <h3 id="安装nginx跟keepalived"><a href="#安装nginx跟keepalived" class="header-anchor">#</a> 安装nginx跟keepalived</h3> <div class="language-shell extra-class"><pre class="language-shell"><code>yum -y <span class="token function">install</span> nginx keepalived
+</code></pre></div> <br> <h3 id="修改nginx配置"><a href="#修改nginx配置" class="header-anchor">#</a> 修改nginx配置</h3> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">vim</span> /etc/nginx/nginx.conf
+
+stream <span class="token punctuation">{</span>
+
+   log_format  main  <span class="token string">'$remote_addr $upstream_addr - [$time_local] $status $upstream_bytes_sent'</span><span class="token punctuation">;</span>
+    access_log  /var/log/nginx/k8s-access.log  main<span class="token punctuation">;</span>
+
+    upstream k8s-apiserver <span class="token punctuation">{</span>
+        server <span class="token number">192.168</span>.0.141:6443<span class="token punctuation">;</span>
+        server <span class="token number">192.168</span>.0.41:6443<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    server <span class="token punctuation">{</span>
+        listen <span class="token number">6443</span><span class="token punctuation">;</span>
+        proxy_pass k8s-apiserver；
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">## 在http{}头上添加stream{}，stream是基于4层的负载</span>
+<span class="token comment">## access_log：是日志输出 </span>
+<span class="token comment">## server{}：是监听6443端口，如果6443端口有数据就会调用k8s-apiserver模块</span>
+<span class="token comment">## upstream{}：定义负载的模块</span>
+</code></pre></div> <br> <h3 id="启动nginx"><a href="#启动nginx" class="header-anchor">#</a> 启动nginx</h3> <div class="language-shell extra-class"><pre class="language-shell"><code>systemctl start nginx
+</code></pre></div> <br> <h3 id="创建nginx心跳检测脚本"><a href="#创建nginx心跳检测脚本" class="header-anchor">#</a> 创建nginx心跳检测脚本</h3> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">vim</span> /etc/nginx/check_nginx.sh
+
+<span class="token comment">#!/bin/bash</span>
+<span class="token assign-left variable">count</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token function">ps</span> -ef <span class="token operator">|</span><span class="token function">grep</span> nginx <span class="token operator">|</span><span class="token function">egrep</span> -cv <span class="token string">&quot;grep|<span class="token variable">$$</span>&quot;</span><span class="token variable">)</span></span>
+<span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token string">&quot;<span class="token variable">$count</span>&quot;</span> <span class="token operator">=</span> <span class="token string">&quot;0&quot;</span> <span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token keyword">then</span>
+    systemctl stop keepalived
+<span class="token keyword">fi</span>
+
+<span class="token comment">## 让keepalived自行调用</span>
+</code></pre></div> <br> <h3 id="增加nginx心跳检测脚本可执行权限"><a href="#增加nginx心跳检测脚本可执行权限" class="header-anchor">#</a> 增加nginx心跳检测脚本可执行权限</h3> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">chmod</span> +x /etc/nginx/check_nginx.sh
+</code></pre></div> <br> <h3 id="修改keepalived配置"><a href="#修改keepalived配置" class="header-anchor">#</a> 修改keepalived配置</h3> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">vim</span> /etc/keepalived/keepalived.conf
+
+<span class="token operator">!</span> Configuration File <span class="token keyword">for</span> keepalived 
+ 
+global_defs <span class="token punctuation">{</span> 
+   notification_email <span class="token punctuation">{</span> 
+     acassen@firewall.loc 
+     failover@firewall.loc 
+     sysadmin@firewall.loc 
+   <span class="token punctuation">}</span> 
+   notification_email_from Alexandre.Cassen@firewall.loc  
+   smtp_server <span class="token number">127.0</span>.0.1 
+   smtp_connect_timeout <span class="token number">30</span> 
+   router_id NGINX_MASTER 
+<span class="token punctuation">}</span> 
+
+vrrp_script check_nginx <span class="token punctuation">{</span>
+    script <span class="token string">&quot;/etc/nginx/check_nginx.sh&quot;</span>
+    interval <span class="token number">1</span> <span class="token comment">## 检测时间间隔</span>
+    weight -20 <span class="token comment">## 如果条件成立，权重-20</span>
+<span class="token punctuation">}</span>
+
+vrrp_instance VI_1 <span class="token punctuation">{</span>
+    state MASTER
+    interface eth0  <span class="token comment">## 网卡名，一定要跟当前机器的网卡名一致</span>
+    virtual_router_id <span class="token number">51</span> <span class="token comment"># VRRP 路由 ID实例，每个实例是唯一的</span>
+    priority <span class="token number">100</span>    <span class="token comment"># 优先级，备服务器设置 90</span>
+    advert_int <span class="token number">1</span>    <span class="token comment"># 指定VRRP 心跳包通告间隔时间，默认1秒</span>
+    authentication <span class="token punctuation">{</span>
+        auth_type PASS
+        auth_pass <span class="token number">1111</span>
+    <span class="token punctuation">}</span>
+    virtual_ipaddress <span class="token punctuation">{</span>
+        <span class="token number">192.168</span>.0.40/24
+    <span class="token punctuation">}</span>
+    track_script <span class="token punctuation">{</span>
+        check_nginx
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">## 把文件清空，写入上面的配置</span>
+</code></pre></div> <br> <h3 id="启动keepalived"><a href="#启动keepalived" class="header-anchor">#</a> 启动keepalived</h3> <div class="language-shell extra-class"><pre class="language-shell"><code>systemctl start keepalived
+</code></pre></div> <br> <h3 id="查看ip"><a href="#查看ip" class="header-anchor">#</a> 查看IP</h3> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">ip</span> <span class="token function">add</span>
+<span class="token number">1</span>: lo: <span class="token operator">&lt;</span>LOOPBACK,UP,LOWER_UP<span class="token operator">&gt;</span> mtu <span class="token number">65536</span> qdisc noqueue state UNKNOWN group default qlen <span class="token number">1000</span>
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet <span class="token number">127.0</span>.0.1/8 scope <span class="token function">host</span> lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope <span class="token function">host</span> 
+       valid_lft forever preferred_lft forever
+<span class="token number">2</span>: eth0: <span class="token operator">&lt;</span>BROADCAST,MULTICAST,UP,LOWER_UP<span class="token operator">&gt;</span> mtu <span class="token number">1500</span> qdisc pfifo_fast state UP group default qlen <span class="token number">1000</span>
+    link/ether 00:50:56:39:24:d1 brd ff:ff:ff:ff:ff:ff
+    inet <span class="token number">192.168</span>.0.43/24 brd <span class="token number">192.168</span>.0.255 scope global noprefixroute eth0
+       valid_lft forever preferred_lft forever
+    inet <span class="token number">192.168</span>.0.40/24 scope global secondary eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::7afa:61f2:9555:6c8e/64 scope <span class="token function">link</span> noprefixroute 
+       valid_lft forever preferred_lft forever
+</code></pre></div> <br> <h3 id="移动配置文件到192-168-0-43上"><a href="#移动配置文件到192-168-0-43上" class="header-anchor">#</a> 移动配置文件到192.168.0.43上</h3> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">scp</span> /etc/keepalived/keepalived.conf root@192.168.0.43:/root
+<span class="token function">scp</span> /etc/nginx/check_nginx.sh root@192.168.0.43:/root
+</code></pre></div> <br> <br> <h2 id="在192-168-0-43搭建nginx跟keepalived"><a href="#在192-168-0-43搭建nginx跟keepalived" class="header-anchor">#</a> 在192.168.0.43搭建nginx跟keepalived</h2> <br> <h3 id="安装nginx跟keepalived-2"><a href="#安装nginx跟keepalived-2" class="header-anchor">#</a> 安装nginx跟keepalived</h3> <div class="language-shell extra-class"><pre class="language-shell"><code>yum -y <span class="token function">install</span> nginx keepalived
+</code></pre></div> <br> <h3 id="修改nginx配置-2"><a href="#修改nginx配置-2" class="header-anchor">#</a> 修改nginx配置</h3> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">vim</span> /etc/nginx/nginx.conf
+
+stream <span class="token punctuation">{</span>
+
+   log_format  main  <span class="token string">'$remote_addr $upstream_addr - [$time_local] $status $upstream_bytes_sent'</span><span class="token punctuation">;</span>
+    access_log  /var/log/nginx/k8s-access.log  main<span class="token punctuation">;</span>
+
+    upstream k8s-apiserver <span class="token punctuation">{</span>
+        server <span class="token number">192.168</span>.0.141:6443<span class="token punctuation">;</span>
+        server <span class="token number">192.168</span>.0.41:6443<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    server <span class="token punctuation">{</span>
+        listen <span class="token number">6443</span><span class="token punctuation">;</span>
+        proxy_pass k8s-apiserver；
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">## 在http{}头上添加stream{}，stream是基于4层的负载</span>
+<span class="token comment">## access_log：是日志输出 </span>
+<span class="token comment">## server{}：是监听6443端口，如果6443端口有数据就会调用k8s-apiserver模块</span>
+<span class="token comment">## upstream{}：定义负载的模块</span>
+</code></pre></div> <br> <h3 id="启动nginx-2"><a href="#启动nginx-2" class="header-anchor">#</a> 启动nginx</h3> <div class="language-shell extra-class"><pre class="language-shell"><code>systemctl start nginx
+</code></pre></div> <br> <h3 id="移动文件"><a href="#移动文件" class="header-anchor">#</a> 移动文件</h3> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">mv</span> /root/check_nginx.sh /etc/nginx/
+<span class="token function">mv</span> /root/keepalived.conf /etc/keepalived/
+</code></pre></div> <br> <h3 id="增加nginx心跳检测脚本可执行权限-2"><a href="#增加nginx心跳检测脚本可执行权限-2" class="header-anchor">#</a> 增加nginx心跳检测脚本可执行权限</h3> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">chmod</span> +x /etc/nginx/check_nginx.sh
+</code></pre></div> <br> <h3 id="修改keepalived配置-2"><a href="#修改keepalived配置-2" class="header-anchor">#</a> 修改keepalived配置</h3> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">vim</span> /etc/keepalived/keepalived.conf
+
+state BACKUP
+priority <span class="token number">90</span>
+
+<span class="token comment">## 修改这二项</span>
+</code></pre></div> <br> <h3 id="启动keepalived-2"><a href="#启动keepalived-2" class="header-anchor">#</a> 启动keepalived</h3> <div class="language-shell extra-class"><pre class="language-shell"><code>systemctl start keepalived
+</code></pre></div> <br> <h3 id="查看ip-2"><a href="#查看ip-2" class="header-anchor">#</a> 查看IP</h3> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">ip</span> <span class="token function">add</span>
+<span class="token number">1</span>: lo: <span class="token operator">&lt;</span>LOOPBACK,UP,LOWER_UP<span class="token operator">&gt;</span> mtu <span class="token number">65536</span> qdisc noqueue state UNKNOWN group default qlen <span class="token number">1000</span>
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet <span class="token number">127.0</span>.0.1/8 scope <span class="token function">host</span> lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope <span class="token function">host</span> 
+       valid_lft forever preferred_lft forever
+<span class="token number">2</span>: eth0: <span class="token operator">&lt;</span>BROADCAST,MULTICAST,UP,LOWER_UP<span class="token operator">&gt;</span> mtu <span class="token number">1500</span> qdisc pfifo_fast state UP group default qlen <span class="token number">1000</span>
+    link/ether 00:50:56:39:24:d1 brd ff:ff:ff:ff:ff:ff
+    inet <span class="token number">192.168</span>.0.43/24 brd <span class="token number">192.168</span>.0.255 scope global noprefixroute eth0
+       valid_lft forever preferred_lft forever
+    inet <span class="token number">192.168</span>.0.40/24 scope global secondary eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::7afa:61f2:9555:6c8e/64 scope <span class="token function">link</span> noprefixroute 
+       valid_lft forever preferred_lft forever
+</code></pre></div> <br> <h3 id="测试"><a href="#测试" class="header-anchor">#</a> 测试</h3> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token comment">## 可以关闭192.168.0.42的nginx，看看192.168.0.40的VIP会不会移动到192.168.0.43的机器上</span>
+</code></pre></div> <br> <br> <h2 id="配置node集群访问ip"><a href="#配置node集群访问ip" class="header-anchor">#</a> 配置node集群访问IP</h2> <p><strong>把node节点需要访问maste节点的IP改成上面配置好的虚拟IP</strong></p> <p><strong>以下操作在二个node节点都要</strong></p> <br> <h3 id="修改node节点的配置文件"><a href="#修改node节点的配置文件" class="header-anchor">#</a> 修改node节点的配置文件</h3> <div class="language-shell extra-class"><pre class="language-shell"><code>修改有三个文件，bootstrap.kubeconfig，kubelet.kubeconfig，kube-proxy.kubeconfig
+<span class="token comment">## 把这三个文件的IP修改成虚拟IP，端口不用改，这样子node节点访问maste节点就会先经过nginx负载转发</span>
+</code></pre></div> <br> <h3 id="重启服务"><a href="#重启服务" class="header-anchor">#</a> 重启服务</h3> <div class="language-shell extra-class"><pre class="language-shell"><code>systemctl restart kubelet
+systemctl restart kube-proxy
+</code></pre></div> <br> <h3 id="故障"><a href="#故障" class="header-anchor">#</a> 故障</h3> <p>注意：在本人实践文章的可行时，报了错，最终找到原因：是因为上面虚拟IP192.168.0.40并没有加入k8s证书中，所以node不认同这个IP</p> <p>解决方案：如果是按上面的IP来部署的话，可以把nginx跟keepalived节点之一的192.168.0.42修改一下IP，并把192.168.0.42改为虚拟IP，因为在上面k8s认证的时候就只写了三个IP，其中二个都是maste节点，还有一个就是192.168.0.42这个IP</p> <p>上面k8s证书中的IP：&quot;192.168.0.141&quot;，&quot;192.168.0.41&quot;，&quot;192.168.0.42&quot;</p> <p>如果不是按上面的配置部署，那么查一下还有没有k8s证书中剩余可使用的IP，如果没有就只能重新生成证书并对老证书进行替换</p> <p>目前博客已在博文中把192.168.0.40这个IP加入证书</p> <br> <br> <h1 id="部署kubernetes的web界面"><a href="#部署kubernetes的web界面" class="header-anchor">#</a> 部署kubernetes的web界面</h1> <p>目前我就只在192.168.0.141这台机部署，如果需要负载，可以在192.168.0.41上在部署一遍，然后用nginx做负载就行了，目前就使用简单的单机web界面</p> <h2 id="创建目录并进入"><a href="#创建目录并进入" class="header-anchor">#</a> 创建目录并进入</h2> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">mkdir</span> /k8s/web
+<span class="token builtin class-name">cd</span> /k8s/web
+</code></pre></div><h2 id="生成web证书"><a href="#生成web证书" class="header-anchor">#</a> 生成web证书</h2> <h3 id="编写证书脚本"><a href="#编写证书脚本" class="header-anchor">#</a> 编写证书脚本</h3> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">vim</span> dashboard-cert.sh
+
+<span class="token function">cat</span> <span class="token operator">&gt;</span> dashboard-csr.json <span class="token operator">&lt;&lt;</span><span class="token string">EOF
+{
+    &quot;CN&quot;: &quot;Dashboard&quot;,
+    &quot;hosts&quot;: [],
+    &quot;key&quot;: {
+        &quot;algo&quot;: &quot;rsa&quot;,
+        &quot;size&quot;: 2048
+    },
+    &quot;names&quot;: [
+        {
+            &quot;C&quot;: &quot;CN&quot;,
+            &quot;L&quot;: &quot;BeiJing&quot;,
+            &quot;ST&quot;: &quot;BeiJing&quot;
+        }
+    ]
+}
+EOF</span>
+
+<span class="token assign-left variable">K8S_CA</span><span class="token operator">=</span><span class="token variable">$1</span>
+cfssl gencert -ca<span class="token operator">=</span><span class="token variable">$K8S_CA</span>/ca.pem -ca-key<span class="token operator">=</span><span class="token variable">$K8S_CA</span>/ca-key.pem -config<span class="token operator">=</span><span class="token variable">$K8S_CA</span>/ca-config.json -profile<span class="token operator">=</span>kubernetes dashboard-csr.json <span class="token operator">|</span> cfssljson -bare dashboard
+kubectl delete secret kubernetes-dashboard-certs -n kube-system
+kubectl create secret generic kubernetes-dashboard-certs --from-file<span class="token operator">=</span>./ -n kube-system
+</code></pre></div><h3 id="执行脚本-7"><a href="#执行脚本-7" class="header-anchor">#</a> 执行脚本</h3> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">bash</span> dashboard-cert.sh /k8s/cert/k8s-cert
+<span class="token number">2020</span>/04/21 <span class="token number">18</span>:04:19 <span class="token punctuation">[</span>INFO<span class="token punctuation">]</span> generate received request
+<span class="token number">2020</span>/04/21 <span class="token number">18</span>:04:19 <span class="token punctuation">[</span>INFO<span class="token punctuation">]</span> received CSR
+<span class="token number">2020</span>/04/21 <span class="token number">18</span>:04:19 <span class="token punctuation">[</span>INFO<span class="token punctuation">]</span> generating key: rsa-2048
+<span class="token number">2020</span>/04/21 <span class="token number">18</span>:04:19 <span class="token punctuation">[</span>INFO<span class="token punctuation">]</span> encoded CSR
+<span class="token number">2020</span>/04/21 <span class="token number">18</span>:04:19 <span class="token punctuation">[</span>INFO<span class="token punctuation">]</span> signed certificate with serial number <span class="token number">174470471201869135810243443026966519858501030342</span>
+<span class="token number">2020</span>/04/21 <span class="token number">18</span>:04:19 <span class="token punctuation">[</span>WARNING<span class="token punctuation">]</span> This certificate lacks a <span class="token string">&quot;hosts&quot;</span> field. This makes it unsuitable <span class="token keyword">for</span>
+websites. For <span class="token function">more</span> information see the Baseline Requirements <span class="token keyword">for</span> the Issuance and Management
+of Publicly-Trusted Certificates, v.1.1.6, from the CA/Browser Forum <span class="token punctuation">(</span>https://cabforum.org<span class="token punctuation">)</span><span class="token punctuation">;</span>
+specifically, section <span class="token number">10.2</span>.3 <span class="token punctuation">(</span><span class="token string">&quot;Information Requirements&quot;</span><span class="token punctuation">)</span>.
+secret <span class="token string">&quot;kubernetes-dashboard-certs&quot;</span> deleted
+secret/kubernetes-dashboard-certs created
+
+<span class="token comment">## 脚本会自动的替换k8s原先证书的位置</span>
+</code></pre></div><h2 id="拉取git"><a href="#拉取git" class="header-anchor">#</a> 拉取git</h2> <p>安装web界面需要的yaml文件都在git上</p> <p>地址：https://github.com/kubernetes/kubernetes/tree/master/cluster/addons/dashboard</p> <p>我这边是事先下载好</p> <p>需要的文件：dashboard-configmap.yaml  dashboard-controller.yaml  dashboard-rbac.yaml  dashboard-secret.yaml  dashboard-service.yaml</p> <h2 id="部署不需要修改三个文件"><a href="#部署不需要修改三个文件" class="header-anchor">#</a> 部署不需要修改三个文件</h2> <div class="language-shell extra-class"><pre class="language-shell"><code>kubectl apply -f dashboard-rbac.yaml
+kubectl apply -f dashboard-configmap.yaml
+kubectl apply -f dashboard-secret.yaml
+</code></pre></div><h2 id="部署需要修改的二个文件"><a href="#部署需要修改的二个文件" class="header-anchor">#</a> 部署需要修改的二个文件</h2> <h3 id="dashboard-controller-yaml"><a href="#dashboard-controller-yaml" class="header-anchor">#</a> dashboard-controller.yaml</h3> <p>需要修改下载镜像的地址，因为默认地址是官方的</p> <div class="language-shell extra-class"><pre class="language-shell"><code>mage: registry.cn-hangzhou.aliyuncs.com/google_containers/kubernetes-dashboard-amd64:v1.10.0
+
+<span class="token comment">## 修改这行配置，把镜像地址修改成阿里云的镜像仓库</span>
+
+args:
+          <span class="token comment"># PLATFORM-SPECIFIC ARGS HERE</span>
+          - --auto-generate-certificates
+          - --tls-key-file<span class="token operator">=</span>dashboard-key.pem
+          - --tls-cert-file<span class="token operator">=</span>dashboard.pe
+          
+<span class="token comment">## 增加：- --tls-key-file=dashboard-key.pem，- --tls-cert-file=dashboard.pe这二行配置，让web界面使用自己的生成的证书</span>
+</code></pre></div><h4 id="部署"><a href="#部署" class="header-anchor">#</a> 部署</h4> <div class="language-shell extra-class"><pre class="language-shell"><code>kubectl apply -f dashboard-controller.yaml
+</code></pre></div><h4 id="查看部署结果"><a href="#查看部署结果" class="header-anchor">#</a> 查看部署结果</h4> <div class="language-shell extra-class"><pre class="language-shell"><code>kubectl get pods -n kube-system
+NAME                                    READY   STATUS    RESTARTS   AGE
+kubernetes-dashboard-785f8ff65c-9h57l   <span class="token number">1</span>/1     Running   <span class="token number">0</span>          93s
+</code></pre></div><h3 id="dashboard-service-yaml"><a href="#dashboard-service-yaml" class="header-anchor">#</a> dashboard-service.yaml</h3> <p>只需要修改暴露端口</p> <div class="language-shell extra-class"><pre class="language-shell"><code>type: NodePort
+nodePort: <span class="token number">30001</span>
+</code></pre></div><h4 id="部署-2"><a href="#部署-2" class="header-anchor">#</a> 部署</h4> <div class="language-shell extra-class"><pre class="language-shell"><code>kubectl apply -f dashboard-service.yaml
+</code></pre></div><h2 id="查看暴露的端口跟ip"><a href="#查看暴露的端口跟ip" class="header-anchor">#</a> 查看暴露的端口跟IP</h2> <div class="language-shell extra-class"><pre class="language-shell"><code>kubectl get pods -n kube-system -o wide
+NAME                                    READY   STATUS    RESTARTS   AGE     IP            NODE            NOMINATED NODE   READINESS GATES
+kubernetes-dashboard-785f8ff65c-9h57l   <span class="token number">1</span>/1     Running   <span class="token number">0</span>          7m52s   <span class="token number">172.17</span>.82.3   <span class="token number">192.168</span>.0.143   <span class="token operator">&lt;</span>none<span class="token operator">&gt;</span>           <span class="token operator">&lt;</span>none<span class="token operator">&gt;</span>
+
+
+kubectl get svc -n kube-system
+NAME                   TYPE       CLUSTER-IP   EXTERNAL-IP   PORT<span class="token punctuation">(</span>S<span class="token punctuation">)</span>         AGE
+kubernetes-dashboard   NodePort   <span class="token number">10.0</span>.0.219   <span class="token operator">&lt;</span>none<span class="token operator">&gt;</span>        <span class="token number">443</span>:30001/TCP   73s
+
+<span class="token comment">## 暴露的IP为：192.168.0.143</span>
+<span class="token comment">## 暴露的端口为：30001</span>
+</code></pre></div><h2 id="访问web界面"><a href="#访问web界面" class="header-anchor">#</a> 访问web界面</h2> <div class="language-shell extra-class"><pre class="language-shell"><code>https://192.168.0.143:30001/
+
+<span class="token comment">## 需要https访问，会报证书过期，直接接受风险就行</span>
+</code></pre></div><h2 id="创建登录令牌"><a href="#创建登录令牌" class="header-anchor">#</a> 创建登录令牌</h2> <p>登录有二种登录方式，我们就选令牌的方式</p> <h3 id="编写创建令牌的文件"><a href="#编写创建令牌的文件" class="header-anchor">#</a> 编写创建令牌的文件</h3> <p>默认创建完的用户是管理员</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">vim</span> k8s-admin.yaml
+
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: dashboard-admin
+  namespace: kube-system
+---
+kind: ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1beta1
+metadata:
+  name: dashboard-admin
+subjects:
+  - kind: ServiceAccount
+    name: dashboard-admin
+    namespace: kube-system
+roleRef:
+  kind: ClusterRole
+  name: cluster-admin
+  apiGroup: rbac.authorization.k8s.io
+</code></pre></div><h3 id="部署-3"><a href="#部署-3" class="header-anchor">#</a> 部署</h3> <div class="language-shell extra-class"><pre class="language-shell"><code>kubectl apply -f k8s-admin.yaml
+</code></pre></div><h3 id="查看令牌"><a href="#查看令牌" class="header-anchor">#</a> 查看令牌</h3> <div class="language-shell extra-class"><pre class="language-shell"><code>kubectl get secret -n kube-system
+NAME                               TYPE                                  DATA   AGE
+dashboard-admin-token-5txcb        kubernetes.io/service-account-token   <span class="token number">3</span>      39s
+default-token-bctts                kubernetes.io/service-account-token   <span class="token number">3</span>      31h
+kubernetes-dashboard-certs         Opaque                                <span class="token number">0</span>      19m
+kubernetes-dashboard-key-holder    Opaque                                <span class="token number">2</span>      19m
+kubernetes-dashboard-token-t9kps   kubernetes.io/service-account-token   <span class="token number">3</span>      18m
+
+<span class="token comment">## 获取NAME值：dashboard-admin-token-5txcb</span>
+
+kubectl describe secret dashboard-admin-token-5txcb -n kube-system
+Name:         dashboard-admin-token-5txcb
+Namespace:    kube-system
+Labels:       <span class="token operator">&lt;</span>none<span class="token operator">&gt;</span>
+Annotations:  kubernetes.io/service-account.name: dashboard-admin
+              kubernetes.io/service-account.uid: 74de8530-83b5-11ea-ad90-0050563b26da
+
+Type:  kubernetes.io/service-account-token
+
+Data
+<span class="token operator">==</span><span class="token operator">==</span>
+ca.crt:     <span class="token number">1359</span> bytes
+namespace:  <span class="token number">11</span> bytes
+token:      eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJkYXNoYm9hcmQtYWRtaW4tdG9rZW4tNXR4Y2IiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC5uYW1lIjoiZGFzaGJvYXJkLWFkbWluIiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQudWlkIjoiNzRkZTg1MzAtODNiNS0xMWVhLWFkOTAtMDA1MDU2M2IyNmRhIiwic3ViIjoic3lzdGVtOnNlcnZpY2VhY2NvdW50Omt1YmUtc3lzdGVtOmRhc2hib2FyZC1hZG1pbiJ9.qn8Cb5BtNTaVYQ2q2Im61BOnHPD6LwcmGTG95Reei5gjU_P1aI6tosg9LN0Nm3ANxZxHDPJJ_wXQtqgMv4a9FILs72DcnNl5heJq3U1iUXPwbxVG-6q4cwLnQ5FPf23DhZhX_UJQaGpGYR81LpaR7-7ZJlmgmfD97YioWMdxeli4oNHMFEcTIkCR02SXqGcYjBTgAgxDuDKJJvQfCGumHp_V_Z2eP8AnRy-Snww5FHi0Ibx4p6y_AyQVHrnUccNTK-Glq6Gp3EXM7BgCL8Wykc2r8hpP5RMJ9qnbJ0jvOL_VtEChted_2yXCcQMFfg2Gbpco3mo8tApz_e0_nW_Sqg
+
+<span class="token comment">## 获取令牌值：eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJkYXNoYm9hcmQtYWRtaW4tdG9rZW4tNXR4Y2IiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC5uYW1lIjoiZGFzaGJvYXJkLWFkbWluIiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQudWlkIjoiNzRkZTg1MzAtODNiNS0xMWVhLWFkOTAtMDA1MDU2M2IyNmRhIiwic3ViIjoic3lzdGVtOnNlcnZpY2VhY2NvdW50Omt1YmUtc3lzdGVtOmRhc2hib2FyZC1hZG1pbiJ9.qn8Cb5BtNTaVYQ2q2Im61BOnHPD6LwcmGTG95Reei5gjU_P1aI6tosg9LN0Nm3ANxZxHDPJJ_wXQtqgMv4a9FILs72DcnNl5heJq3U1iUXPwbxVG-6q4cwLnQ5FPf23DhZhX_UJQaGpGYR81LpaR7-7ZJlmgmfD97YioWMdxeli4oNHMFEcTIkCR02SXqGcYjBTgAgxDuDKJJvQfCGumHp_V_Z2eP8AnRy-Snww5FHi0Ibx4p6y_AyQVHrnUccNTK-Glq6Gp3EXM7BgCL8Wykc2r8hpP5RMJ9qnbJ0jvOL_VtEChted_2yXCcQMFfg2Gbpco3mo8tApz_e0_nW_Sqg</span>
+</code></pre></div><h2 id="登录web界面"><a href="#登录web界面" class="header-anchor">#</a> 登录web界面</h2> <p><a href="https://imgchr.com/i/JGmZee" target="_blank" rel="noopener noreferrer"><img src="https://s1.ax1x.com/2020/04/21/JGmZee.png" alt="JGmZee.png"><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p><a href="https://imgchr.com/i/JGmKJI" target="_blank" rel="noopener noreferrer"><img src="https://s1.ax1x.com/2020/04/21/JGmKJI.png" alt="JGmKJI.png"><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/Container/Kubernetes/1. Kubernetes概述.html" class="prev">
+        1. Kubernetes概述
+      </a></span> <span class="next"><a href="/Container/Kubernetes/3. kubectl远程连接K8S集群.html">
+        3. kubectl远程连接K8S集群
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.d65bef42.js" defer></script><script src="/assets/js/2.2249178e.js" defer></script><script src="/assets/js/8.f6cfdc07.js" defer></script>
+  </body>
+</html>

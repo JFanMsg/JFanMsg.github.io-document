@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>31. 模块的进阶 | MSG</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="在追寻技术的同时享受生活">
+    
+    <link rel="preload" href="/assets/css/0.styles.e4d8b86b.css" as="style"><link rel="preload" href="/assets/js/app.d65bef42.js" as="script"><link rel="preload" href="/assets/js/2.2249178e.js" as="script"><link rel="preload" href="/assets/js/95.b17961e6.js" as="script"><link rel="prefetch" href="/assets/js/10.4785e2e5.js"><link rel="prefetch" href="/assets/js/100.33fceff2.js"><link rel="prefetch" href="/assets/js/101.62e1e5d4.js"><link rel="prefetch" href="/assets/js/102.8551fe71.js"><link rel="prefetch" href="/assets/js/103.47754d79.js"><link rel="prefetch" href="/assets/js/104.4adf114f.js"><link rel="prefetch" href="/assets/js/105.6206a08a.js"><link rel="prefetch" href="/assets/js/106.1c4561f3.js"><link rel="prefetch" href="/assets/js/107.e1531a5a.js"><link rel="prefetch" href="/assets/js/108.c637743a.js"><link rel="prefetch" href="/assets/js/109.3f150913.js"><link rel="prefetch" href="/assets/js/11.bd8ec7a6.js"><link rel="prefetch" href="/assets/js/110.088c1ac3.js"><link rel="prefetch" href="/assets/js/111.66d8d491.js"><link rel="prefetch" href="/assets/js/112.231663ee.js"><link rel="prefetch" href="/assets/js/113.a38bc531.js"><link rel="prefetch" href="/assets/js/114.e165daea.js"><link rel="prefetch" href="/assets/js/115.994b087a.js"><link rel="prefetch" href="/assets/js/116.ea3cfdfb.js"><link rel="prefetch" href="/assets/js/117.7be5e4f3.js"><link rel="prefetch" href="/assets/js/118.ebb58ddb.js"><link rel="prefetch" href="/assets/js/119.90018646.js"><link rel="prefetch" href="/assets/js/12.0d8f43df.js"><link rel="prefetch" href="/assets/js/120.bb5be863.js"><link rel="prefetch" href="/assets/js/121.3d1db670.js"><link rel="prefetch" href="/assets/js/122.d29ed1b2.js"><link rel="prefetch" href="/assets/js/123.38cc4704.js"><link rel="prefetch" href="/assets/js/124.cc8549d4.js"><link rel="prefetch" href="/assets/js/125.6ee3e9c8.js"><link rel="prefetch" href="/assets/js/126.48710eba.js"><link rel="prefetch" href="/assets/js/127.d7a1fd83.js"><link rel="prefetch" href="/assets/js/128.e5017f6b.js"><link rel="prefetch" href="/assets/js/129.4c33e121.js"><link rel="prefetch" href="/assets/js/13.2dbde7aa.js"><link rel="prefetch" href="/assets/js/130.cda66247.js"><link rel="prefetch" href="/assets/js/131.ad76f669.js"><link rel="prefetch" href="/assets/js/132.aca88758.js"><link rel="prefetch" href="/assets/js/133.a1cf5903.js"><link rel="prefetch" href="/assets/js/134.b1386377.js"><link rel="prefetch" href="/assets/js/135.94edcf53.js"><link rel="prefetch" href="/assets/js/136.24be4170.js"><link rel="prefetch" href="/assets/js/137.db57772e.js"><link rel="prefetch" href="/assets/js/138.dc67bcaa.js"><link rel="prefetch" href="/assets/js/139.5453d1f6.js"><link rel="prefetch" href="/assets/js/14.2187dbf4.js"><link rel="prefetch" href="/assets/js/140.938e5c07.js"><link rel="prefetch" href="/assets/js/141.99c7cf2c.js"><link rel="prefetch" href="/assets/js/142.428e3958.js"><link rel="prefetch" href="/assets/js/143.68b01530.js"><link rel="prefetch" href="/assets/js/144.f67389cc.js"><link rel="prefetch" href="/assets/js/145.d952a130.js"><link rel="prefetch" href="/assets/js/146.b933dcad.js"><link rel="prefetch" href="/assets/js/147.2d8e4c0a.js"><link rel="prefetch" href="/assets/js/148.6d76ac94.js"><link rel="prefetch" href="/assets/js/149.6b4d6378.js"><link rel="prefetch" href="/assets/js/15.a53b356c.js"><link rel="prefetch" href="/assets/js/150.5bf39cb4.js"><link rel="prefetch" href="/assets/js/151.17af677c.js"><link rel="prefetch" href="/assets/js/152.7f1c2792.js"><link rel="prefetch" href="/assets/js/153.98dd0727.js"><link rel="prefetch" href="/assets/js/154.eb44bf23.js"><link rel="prefetch" href="/assets/js/155.5a9840ea.js"><link rel="prefetch" href="/assets/js/156.7ba01fd0.js"><link rel="prefetch" href="/assets/js/157.2296a048.js"><link rel="prefetch" href="/assets/js/158.6bb1f699.js"><link rel="prefetch" href="/assets/js/159.073bb8df.js"><link rel="prefetch" href="/assets/js/16.cef7bf44.js"><link rel="prefetch" href="/assets/js/160.25a837f9.js"><link rel="prefetch" href="/assets/js/161.93d886a1.js"><link rel="prefetch" href="/assets/js/162.5d2714b2.js"><link rel="prefetch" href="/assets/js/17.96f36904.js"><link rel="prefetch" href="/assets/js/18.fd04b310.js"><link rel="prefetch" href="/assets/js/19.3e1377d1.js"><link rel="prefetch" href="/assets/js/20.ac195ac8.js"><link rel="prefetch" href="/assets/js/21.c2d7729c.js"><link rel="prefetch" href="/assets/js/22.dd8c621b.js"><link rel="prefetch" href="/assets/js/23.ad7d0350.js"><link rel="prefetch" href="/assets/js/24.8559c4c3.js"><link rel="prefetch" href="/assets/js/25.783a8116.js"><link rel="prefetch" href="/assets/js/26.25e0e459.js"><link rel="prefetch" href="/assets/js/27.c0616e2a.js"><link rel="prefetch" href="/assets/js/28.30656c2e.js"><link rel="prefetch" href="/assets/js/29.2be5114c.js"><link rel="prefetch" href="/assets/js/3.be8c8f3b.js"><link rel="prefetch" href="/assets/js/30.230a74a7.js"><link rel="prefetch" href="/assets/js/31.760f46ad.js"><link rel="prefetch" href="/assets/js/32.c9533fef.js"><link rel="prefetch" href="/assets/js/33.dcacfb38.js"><link rel="prefetch" href="/assets/js/34.4370a466.js"><link rel="prefetch" href="/assets/js/35.bf299eea.js"><link rel="prefetch" href="/assets/js/36.336e435a.js"><link rel="prefetch" href="/assets/js/37.1d1d2eea.js"><link rel="prefetch" href="/assets/js/38.0d58b7d0.js"><link rel="prefetch" href="/assets/js/39.d43564ba.js"><link rel="prefetch" href="/assets/js/4.4a6cb970.js"><link rel="prefetch" href="/assets/js/40.bc4e4bde.js"><link rel="prefetch" href="/assets/js/41.b71231a5.js"><link rel="prefetch" href="/assets/js/42.9d46f400.js"><link rel="prefetch" href="/assets/js/43.50c5be69.js"><link rel="prefetch" href="/assets/js/44.60406e7f.js"><link rel="prefetch" href="/assets/js/45.ec3569ae.js"><link rel="prefetch" href="/assets/js/46.1bd3ce7b.js"><link rel="prefetch" href="/assets/js/47.1e1b5326.js"><link rel="prefetch" href="/assets/js/48.64c631ea.js"><link rel="prefetch" href="/assets/js/49.b4abacd8.js"><link rel="prefetch" href="/assets/js/5.e6d0b165.js"><link rel="prefetch" href="/assets/js/50.c3e320c0.js"><link rel="prefetch" href="/assets/js/51.5ec7fb8c.js"><link rel="prefetch" href="/assets/js/52.2d234f86.js"><link rel="prefetch" href="/assets/js/53.f3b69623.js"><link rel="prefetch" href="/assets/js/54.c85ff450.js"><link rel="prefetch" href="/assets/js/55.b07597b5.js"><link rel="prefetch" href="/assets/js/56.444129cf.js"><link rel="prefetch" href="/assets/js/57.df1329ba.js"><link rel="prefetch" href="/assets/js/58.5afb51cf.js"><link rel="prefetch" href="/assets/js/59.d98936d9.js"><link rel="prefetch" href="/assets/js/6.809376cd.js"><link rel="prefetch" href="/assets/js/60.02813ecf.js"><link rel="prefetch" href="/assets/js/61.37a4812d.js"><link rel="prefetch" href="/assets/js/62.5da94048.js"><link rel="prefetch" href="/assets/js/63.8e2c2bca.js"><link rel="prefetch" href="/assets/js/64.d290398f.js"><link rel="prefetch" href="/assets/js/65.44e28313.js"><link rel="prefetch" href="/assets/js/66.9acf0206.js"><link rel="prefetch" href="/assets/js/67.85688aa2.js"><link rel="prefetch" href="/assets/js/68.45bda7fc.js"><link rel="prefetch" href="/assets/js/69.9074feb0.js"><link rel="prefetch" href="/assets/js/7.5d7bce6e.js"><link rel="prefetch" href="/assets/js/70.b4cd2ddc.js"><link rel="prefetch" href="/assets/js/71.53219b13.js"><link rel="prefetch" href="/assets/js/72.af2a7290.js"><link rel="prefetch" href="/assets/js/73.c28fc506.js"><link rel="prefetch" href="/assets/js/74.64c81a90.js"><link rel="prefetch" href="/assets/js/75.05191ece.js"><link rel="prefetch" href="/assets/js/76.f516d464.js"><link rel="prefetch" href="/assets/js/77.c345180b.js"><link rel="prefetch" href="/assets/js/78.4a09d0ba.js"><link rel="prefetch" href="/assets/js/79.65f41bcf.js"><link rel="prefetch" href="/assets/js/8.f6cfdc07.js"><link rel="prefetch" href="/assets/js/80.b77151f3.js"><link rel="prefetch" href="/assets/js/81.824fa371.js"><link rel="prefetch" href="/assets/js/82.3f91c09b.js"><link rel="prefetch" href="/assets/js/83.9539f074.js"><link rel="prefetch" href="/assets/js/84.dd89f1de.js"><link rel="prefetch" href="/assets/js/85.15210b99.js"><link rel="prefetch" href="/assets/js/86.e14553e1.js"><link rel="prefetch" href="/assets/js/87.6dc95177.js"><link rel="prefetch" href="/assets/js/88.09c5e890.js"><link rel="prefetch" href="/assets/js/89.0d61f4d0.js"><link rel="prefetch" href="/assets/js/9.759f1986.js"><link rel="prefetch" href="/assets/js/90.a9b14d80.js"><link rel="prefetch" href="/assets/js/91.1a4aabe2.js"><link rel="prefetch" href="/assets/js/92.12070bdb.js"><link rel="prefetch" href="/assets/js/93.b5dc76d0.js"><link rel="prefetch" href="/assets/js/94.690498a6.js"><link rel="prefetch" href="/assets/js/96.a2f06f3e.js"><link rel="prefetch" href="/assets/js/97.64ef6721.js"><link rel="prefetch" href="/assets/js/98.443eba26.js"><link rel="prefetch" href="/assets/js/99.b6ba7c3a.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.e4d8b86b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">MSG</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Python文档" class="dropdown-title"><span class="title">Python文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="Python文档" class="mobile-dropdown-title"><span class="title">Python文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Python/1.Python-Basics/" class="nav-link">
+  Python-基础
+</a></li><li class="dropdown-item"><!----> <a href="/Python/2. Python-object/" class="nav-link">
+  Python-面向对象
+</a></li><li class="dropdown-item"><!----> <a href="/Python/3. Python-module/" class="nav-link">
+  Python-模块与包
+</a></li><li class="dropdown-item"><!----> <a href="/Python/4. Python-network/" class="nav-link">
+  Python-网络
+</a></li><li class="dropdown-item"><!----> <a href="/Python/5. Python-frontend/" class="nav-link">
+  Python-前端
+</a></li><li class="dropdown-item"><!----> <a href="/Python/6. Python-MySQL/" class="nav-link">
+  Python-数据库
+</a></li><li class="dropdown-item"><!----> <a href="/Python/7. Python-Django/" class="nav-link">
+  Python-Django
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="容器文档" class="dropdown-title"><span class="title">容器文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="容器文档" class="mobile-dropdown-title"><span class="title">容器文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Container/docker/" class="nav-link">
+  docker文檔
+</a></li><li class="dropdown-item"><!----> <a href="/Container/Kubernetes/" class="nav-link">
+  Kubernetes文檔
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="GO文档" class="dropdown-title"><span class="title">GO文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="GO文档" class="mobile-dropdown-title"><span class="title">GO文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/GO/basics/" class="nav-link">
+  GO快速入门
+</a></li><li class="dropdown-item"><!----> <a href="/GO/module/" class="nav-link">
+  GO标准库/GO模块
+</a></li></ul></div></div><div class="nav-item"><a href="https://www.linux91.cn/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  博客
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Python文档" class="dropdown-title"><span class="title">Python文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="Python文档" class="mobile-dropdown-title"><span class="title">Python文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Python/1.Python-Basics/" class="nav-link">
+  Python-基础
+</a></li><li class="dropdown-item"><!----> <a href="/Python/2. Python-object/" class="nav-link">
+  Python-面向对象
+</a></li><li class="dropdown-item"><!----> <a href="/Python/3. Python-module/" class="nav-link">
+  Python-模块与包
+</a></li><li class="dropdown-item"><!----> <a href="/Python/4. Python-network/" class="nav-link">
+  Python-网络
+</a></li><li class="dropdown-item"><!----> <a href="/Python/5. Python-frontend/" class="nav-link">
+  Python-前端
+</a></li><li class="dropdown-item"><!----> <a href="/Python/6. Python-MySQL/" class="nav-link">
+  Python-数据库
+</a></li><li class="dropdown-item"><!----> <a href="/Python/7. Python-Django/" class="nav-link">
+  Python-Django
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="容器文档" class="dropdown-title"><span class="title">容器文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="容器文档" class="mobile-dropdown-title"><span class="title">容器文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Container/docker/" class="nav-link">
+  docker文檔
+</a></li><li class="dropdown-item"><!----> <a href="/Container/Kubernetes/" class="nav-link">
+  Kubernetes文檔
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="GO文档" class="dropdown-title"><span class="title">GO文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="GO文档" class="mobile-dropdown-title"><span class="title">GO文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/GO/basics/" class="nav-link">
+  GO快速入门
+</a></li><li class="dropdown-item"><!----> <a href="/GO/module/" class="nav-link">
+  GO标准库/GO模块
+</a></li></ul></div></div><div class="nav-item"><a href="https://www.linux91.cn/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  博客
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Python-模块与包</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/Python/3.%20Python-module/" aria-current="page" class="sidebar-link">介绍</a></li><li><a href="/Python/3. Python-module/30. 模块的初始.html" class="sidebar-link">30. 模块的初始</a></li><li><a href="/Python/3. Python-module/31. 模块的进阶.html" class="active sidebar-link">31. 模块的进阶</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/Python/3. Python-module/31. 模块的进阶.html#模块文件" class="sidebar-link">模块文件</a></li><li class="sidebar-sub-header"><a href="/Python/3. Python-module/31. 模块的进阶.html#导入单对象" class="sidebar-link">导入单对象</a></li><li class="sidebar-sub-header"><a href="/Python/3. Python-module/31. 模块的进阶.html#导入多对象" class="sidebar-link">导入多对象</a></li><li class="sidebar-sub-header"><a href="/Python/3. Python-module/31. 模块的进阶.html#导入单对象时更名" class="sidebar-link">导入单对象时更名</a></li><li class="sidebar-sub-header"><a href="/Python/3. Python-module/31. 模块的进阶.html#导入多对象时更名" class="sidebar-link">导入多对象时更名</a></li><li class="sidebar-sub-header"><a href="/Python/3. Python-module/31. 模块的进阶.html#符号" class="sidebar-link">* 符号</a></li><li class="sidebar-sub-header"><a href="/Python/3. Python-module/31. 模块的进阶.html#add-的使用" class="sidebar-link">_add_的使用</a></li><li class="sidebar-sub-header"><a href="/Python/3. Python-module/31. 模块的进阶.html#name-判断是否在当前文件中执行" class="sidebar-link">_name_ ：判断是否在当前文件中执行</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/Python/3. Python-module/31. 模块的进阶.html#让模块文件有些代码只能在当地执行" class="sidebar-link">让模块文件有些代码只能在当地执行</a></li></ul></li><li class="sidebar-sub-header"><a href="/Python/3. Python-module/31. 模块的进阶.html#使用另一个方式" class="sidebar-link">使用另一个方式</a></li><li class="sidebar-sub-header"><a href="/Python/3. Python-module/31. 模块的进阶.html#使用importlib模块强制更新模块" class="sidebar-link">使用importlib模块强制更新模块</a></li></ul></li><li><a href="/Python/3. Python-module/32. 包.html" class="sidebar-link">32. 包</a></li><li><a href="/Python/3. Python-module/33. 模块动态方式.html" class="sidebar-link">33. 模块动态方式</a></li><li><a href="/Python/3. Python-module/34. 正则表达式.html" class="sidebar-link">34. 正则表达式</a></li><li><a href="/Python/3. Python-module/35. re模块 - 正则匹配模块.html" class="sidebar-link">35. re模块 - 正则匹配模块</a></li><li><a href="/Python/3. Python-module/36. random模块 - 随机模块.html" class="sidebar-link">36. random模块 - 随机模块</a></li><li><a href="/Python/3. Python-module/37. time模块 - 时间模块.html" class="sidebar-link">37. time模块 - 时间模块</a></li><li><a href="/Python/3. Python-module/38. sys模块 - python解释器交互模块.html" class="sidebar-link">38. sys模块 - python解释器交互模块</a></li><li><a href="/Python/3. Python-module/39. os模块 - 系统交互模块.html" class="sidebar-link">39. os模块 - 系统交互模块</a></li><li><a href="/Python/3. Python-module/40. 序列化模块，json、pickle、shelve.html" class="sidebar-link">40. 序列化模块，json、pickle、shelve</a></li><li><a href="/Python/3. Python-module/41. hashlib模块 - 加密算法模块(摘要算法).html" class="sidebar-link">41. hashlib模块 - 加密算法模块(摘要算法)</a></li><li><a href="/Python/3. Python-module/42. configparser模块 - java配置文件模块.html" class="sidebar-link">42. configparser模块 - java配置文件模块</a></li><li><a href="/Python/3. Python-module/43. logging模块 - 日志模块.html" class="sidebar-link">43. logging模块 - 日志模块</a></li><li><a href="/Python/3. Python-module/44. 异常处理.html" class="sidebar-link">44. 异常处理</a></li><li><a href="/Python/3. Python-module/45. collections模块的双端对列.html" class="sidebar-link">45. collections模块的双端对列</a></li><li><a href="/Python/3. Python-module/46. math数字模块.html" class="sidebar-link">46. math数字模块</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="_31-模块的进阶"><a href="#_31-模块的进阶" class="header-anchor">#</a> 31. 模块的进阶</h1> <br> <h1 id="from导入"><a href="#from导入" class="header-anchor">#</a> from导入</h1> <p>from可以在模块中导入指定的模块属性(对象)、也就是说把指定的模块的对象导入到当前空间来</p> <p>使用格式：</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> 模块名 <span class="token keyword">import</span> 导入的对象名
+</code></pre></div><br> <h2 id="模块文件"><a href="#模块文件" class="header-anchor">#</a> 模块文件</h2> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;这是一个自定义模块中的打印输出&quot;</span><span class="token punctuation">)</span>
+
+name <span class="token operator">=</span> <span class="token string">&quot;这是一个自定义模块中的变量&quot;</span>
+
+<span class="token keyword">def</span> <span class="token function">inso</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;这是一个自定义模块中的函数&quot;</span><span class="token punctuation">)</span>
+</code></pre></div><br> <h2 id="导入单对象"><a href="#导入单对象" class="header-anchor">#</a> 导入单对象</h2> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> so_msg <span class="token keyword">import</span> inso
+inso<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+执行结果：
+这是一个自定义模块中的打印输出
+这是一个自定义模块中的函数
+</code></pre></div><br> <h2 id="导入多对象"><a href="#导入多对象" class="header-anchor">#</a> 导入多对象</h2> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> so_msg <span class="token keyword">import</span> inso<span class="token punctuation">,</span>name
+inso<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span>
+
+执行结果：
+这是一个自定义模块中的打印输出
+这是一个自定义模块中的函数
+这是一个自定义模块中的变量
+</code></pre></div><br> <h2 id="导入单对象时更名"><a href="#导入单对象时更名" class="header-anchor">#</a> 导入单对象时更名</h2> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> so_msg <span class="token keyword">import</span> inso <span class="token keyword">as</span> s
+s<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+执行结果：
+这是一个自定义模块中的打印输出
+这是一个自定义模块中的函数
+</code></pre></div><br> <h2 id="导入多对象时更名"><a href="#导入多对象时更名" class="header-anchor">#</a> 导入多对象时更名</h2> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> so_msg <span class="token keyword">import</span> inso <span class="token keyword">as</span> s<span class="token punctuation">,</span> name <span class="token keyword">as</span> nm
+s<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>nm<span class="token punctuation">)</span>
+
+执行结果：
+这是一个自定义模块中的打印输出
+这是一个自定义模块中的函数
+这是一个自定义模块中的变量
+</code></pre></div><br> <h2 id="符号"><a href="#符号" class="header-anchor">#</a> * 符号</h2> <p>*符号：代表导入模块中的所有对象</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> so_msg <span class="token keyword">import</span> <span class="token operator">*</span>
+inso<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span>
+
+执行结果：
+这是一个自定义模块中的打印输出
+这是一个自定义模块中的函数
+这是一个自定义模块中的变量
+</code></pre></div><br> <h2 id="add-的使用"><a href="#add-的使用" class="header-anchor">#</a> __add__的使用</h2> <p><strong>add</strong>：用于模块文件，让模块文件限制 用 * 符号导入模块有多少变量，只是限制 * 符号</p> <p>注意：<strong>add</strong> 必须要用 中括号 [ ] ，允许用 * 的对象要用字符串类型输入</p> <p><strong>模块文件</strong></p> <div class="language-python extra-class"><pre class="language-python"><code>__all__ <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'inso'</span><span class="token punctuation">]</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;这是一个自定义模块中的打印输出&quot;</span><span class="token punctuation">)</span>
+
+name <span class="token operator">=</span> <span class="token string">&quot;这是一个自定义模块中的变量&quot;</span>
+
+<span class="token keyword">def</span> <span class="token function">inso</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;这是一个自定义模块中的函数&quot;</span><span class="token punctuation">)</span>
+</code></pre></div><p><strong>py执行文件</strong></p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> so_msg <span class="token keyword">import</span> <span class="token operator">*</span>
+inso<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span>
+
+执行结果：
+这是一个自定义模块中的函数
+NameError<span class="token punctuation">:</span> name <span class="token string">'name'</span> <span class="token keyword">is</span> <span class="token keyword">not</span> defined
+</code></pre></div><br> <h1 id="把模块当成脚本执行"><a href="#把模块当成脚本执行" class="header-anchor">#</a> 把模块当成脚本执行</h1> <p>python执行有二种模式：脚本执行跟模块执行</p> <p><strong>模块执行</strong></p> <ol><li>import</li> <li><strong>import</strong></li> <li>from ... import</li></ol> <p><strong>脚本执行</strong></p> <ol><li>在pycharm中右键执行</li> <li>在linux中，python 文件名 执行</li> <li>等等</li></ol> <br> <h2 id="name-判断是否在当前文件中执行"><a href="#name-判断是否在当前文件中执行" class="header-anchor">#</a> <strong>name</strong> ：判断是否在当前文件中执行</h2> <p>先来看看__name__的执行效果</p> <p><strong>在模块当前执行</strong></p> <div class="language-python extra-class"><pre class="language-python"><code>name <span class="token operator">=</span> <span class="token string">&quot;这是一个自定义模块中的变量1&quot;</span>
+
+<span class="token keyword">def</span> <span class="token function">inso</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;这是一个自定义模块中的函数&quot;</span><span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>__name__<span class="token punctuation">)</span>
+
+执行结果：
+__main__
+</code></pre></div><p><strong>在py文件中导入模块执行</strong></p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> so_msg <span class="token keyword">import</span> <span class="token operator">*</span>
+
+执行结果：
+so_msg
+</code></pre></div><p>到这里有没有发现什么规律，__name__函数在模块的脚本执行返回的是&quot;<strong>main</strong>&quot;，在另一个文件以模块导入的方式执行返回的是文件名&quot;so_msg&quot;，所以可以用这个__name__来判断是否是当前文件执行</p> <br> <h3 id="让模块文件有些代码只能在当地执行"><a href="#让模块文件有些代码只能在当地执行" class="header-anchor">#</a> 让模块文件有些代码只能在当地执行</h3> <p>使用__name__函数来进行判断，如果是当前文件就执行，如果不是当前文件就不执行</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token comment">##模块文件</span>
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">&quot;__main__&quot;</span><span class="token punctuation">:</span><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;你好&quot;</span><span class="token punctuation">)</span>
+name <span class="token operator">=</span> <span class="token string">&quot;这是一个自定义模块中的变量1&quot;</span>
+<span class="token keyword">def</span> <span class="token function">inso</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;这是一个自定义模块中的函数&quot;</span><span class="token punctuation">)</span>
+    
+<span class="token comment">##py文件</span>
+<span class="token keyword">from</span> so_msg <span class="token keyword">import</span> <span class="token operator">*</span>
+inso<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span>
+
+执行结果：
+这是一个自定义模块中的函数
+这是一个自定义模块中的变量<span class="token number">1</span>
+</code></pre></div><p>这样子就可以让模块的一些执行输出，不会在导入模块的时候自动执行，也可以让模块文件能够脚本化，能当成模块文件，也能当成脚本文件</p> <p>还可以这样理解：在编写py文件的时候，所有不在函数和类中封装的内容都应该写在，if <strong>name</strong> == '<strong>main</strong>':这里</p> <br> <h1 id="反射在模块中的补充"><a href="#反射在模块中的补充" class="header-anchor">#</a> 反射在模块中的补充</h1> <p>在反射中，是不是说过sys模块中的modules[&quot;<strong>main</strong>&quot;]，获取当前文件的内存地址</p> <p>在这里在补充一点，sys模块中的modules[&quot;<strong>main</strong>&quot;]，无论是在模块中执行还是用于py文件执行都是显示当前执行空间的内存地址</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token comment">## 模块文件执行</span>
+<span class="token keyword">import</span> sys
+<span class="token keyword">print</span><span class="token punctuation">(</span>sys<span class="token punctuation">.</span>modules<span class="token punctuation">[</span><span class="token string">&quot;__main__&quot;</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+执行结果：
+<span class="token operator">&lt;</span>module <span class="token string">'__main__'</span> <span class="token keyword">from</span> <span class="token string">'D:/python/PyCharm资源/one/模块/so_msg.py'</span><span class="token operator">&gt;</span>
+
+<span class="token comment">## py文件执行</span>
+<span class="token keyword">from</span> so_msg <span class="token keyword">import</span> <span class="token operator">*</span>
+
+执行结果：
+<span class="token operator">&lt;</span>module <span class="token string">'__main__'</span> <span class="token keyword">from</span> <span class="token string">'D:/python/PyCharm资源/one/模块/模块初始.py'</span><span class="token operator">&gt;</span>
+</code></pre></div><p>有没有发现什么，为什么sys模块中的modules[&quot;<strong>main</strong>&quot;]，是在模块文件中的，在py文件中执行的结果竟然是py文件的内存地址。</p> <p>这里强调一点，sys模块中的modules[&quot;<strong>main</strong>&quot;]，得到的结果来源于当前那个空间执行的py文件内存地址</p> <p>那这样不是模块中不能使用反射了吗，因为反射的时候可以会用到sys模块中的modules[&quot;<strong>main</strong>&quot;]，来获取当前文件的内存地址，如果自己这样用，那么这个模块文件导入到另一个文件的时候，那反射还能正常用吗！！！</p> <br> <h2 id="使用另一个方式"><a href="#使用另一个方式" class="header-anchor">#</a> 使用另一个方式</h2> <p>把sys模块中的modules[&quot;<strong>main</strong>&quot;]中的__main__ 换成自己的__name__函数，因为modules出的值都会出于这文件关联的所有文件内存地址，__name__就是代表当前空间执行的文件的内存，其他文件都是以 {文件名:内存地址} 这种方式存储的，这样子使用__name__无论是在模块当前中执行也可以获取模块的内存地址，还是在Py文件导入模块的时候执行也可以获取模块的内存地址，这样子模块的反射就可以正常使用了</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token comment">##模块文件</span>
+<span class="token keyword">import</span> sys
+name <span class="token operator">=</span> <span class="token string">&quot;这是一个自定义模块中的变量1&quot;</span>
+<span class="token keyword">def</span> <span class="token function">inso</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;这是一个自定义模块中的函数&quot;</span><span class="token punctuation">)</span>
+<span class="token builtin">getattr</span><span class="token punctuation">(</span>sys<span class="token punctuation">.</span>modules<span class="token punctuation">[</span>__name__<span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token string">&quot;inso&quot;</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">getattr</span><span class="token punctuation">(</span>sys<span class="token punctuation">.</span>modules<span class="token punctuation">[</span>__name__<span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token string">&quot;name&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment">##py文件</span>
+<span class="token keyword">from</span> so_msg <span class="token keyword">import</span> <span class="token operator">*</span>
+
+执行结果：
+这是一个自定义模块中的函数
+这是一个自定义模块中的变量<span class="token number">1</span>
+</code></pre></div><p>​	这样反射在模块文件中也可以正常使用，这样子也可以让模块文件当成脚本文件执行</p> <br> <h1 id="pyc编译文件"><a href="#pyc编译文件" class="header-anchor">#</a> pyc编译文件</h1> <p>当python执行import 模块名 时，就会在当前目录下的__pycache__中生成一个编译好的文件</p> <p>如果__pycache__不存在，会默认创建的</p> <p>为什么要编译生成呢，python执行时，其实也是在编译文件，只是编译存放在内存</p> <p>但是模块呢，在Python认为模块是一个常用又不常修改的py文件，那么他就有一个机制，执行的时候会把编译文件存放在指定的目录中，等下次执行调用模块的时候就可以直接调用这个文件，就不用重新编译模块文件了</p> <p>这样到以后做比较大的项目的时候，会有效的提升代码的执行顺序</p> <p>那么如果模块文件被修改了呢，放心，Python会自动的重新生成编译文件覆盖过去</p> <p>注意：提高的代码效率是指代码中模块的导入效率，并不是代码的其它效率</p> <br> <h1 id="重新加载模块"><a href="#重新加载模块" class="header-anchor">#</a> 重新加载模块</h1> <p>在py文件执行的时候，修改了已经导入的模块内容，是不生效的</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token comment">## 模块文件</span>
+<span class="token keyword">def</span> <span class="token function">inso</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;这是一个自定义模块中的函数1&quot;</span><span class="token punctuation">)</span>
+    
+<span class="token comment">## Py文件</span>
+<span class="token keyword">import</span> time
+<span class="token keyword">from</span> so_msg <span class="token keyword">import</span> <span class="token operator">*</span>
+inso<span class="token punctuation">(</span><span class="token punctuation">)</span>
+time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>
+inso<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+执行结果：
+这是一个自定义模块中的函数
+这是一个自定义模块中的函数
+
+<span class="token comment">## 当Py文件执行到time.sleep(5)的时候，就会停留5秒后在执行，这时候去修改模块文件的代码，可以看看等5秒后执行的是不是修改后的内容</span>
+</code></pre></div><p>那为什么不会生效呢，因为python执行时会把所有的包含模块的编译放在内存上，你修改的只是硬盘中的模块代码，又不是内存中编译好的内容，怎么可能会生效</p> <br> <h2 id="使用importlib模块强制更新模块"><a href="#使用importlib模块强制更新模块" class="header-anchor">#</a> 使用importlib模块强制更新模块</h2> <p>这个超级超级不建议使用</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token comment">## 模块文件</span>
+<span class="token keyword">def</span> <span class="token function">inso</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;这是一个自定义模块中的函数&quot;</span><span class="token punctuation">)</span>
+    
+<span class="token comment">## py文件</span>
+<span class="token keyword">import</span> time
+<span class="token keyword">import</span> importlib
+<span class="token keyword">import</span> so_msg
+so_msg<span class="token punctuation">.</span>inso<span class="token punctuation">(</span><span class="token punctuation">)</span>
+time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>
+importlib<span class="token punctuation">.</span><span class="token builtin">reload</span><span class="token punctuation">(</span>so_msg<span class="token punctuation">)</span>
+so_msg<span class="token punctuation">.</span>inso<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+执行结果：
+这是一个自定义模块中的函数
+这是一个自定义模块中的函数<span class="token number">1</span>
+</code></pre></div><br> <h1 id="模块的循环导入"><a href="#模块的循环导入" class="header-anchor">#</a> 模块的循环导入</h1> <p>模块的循环导入，只有一个原则：不允许使用</p> <p>python中模块是无法做到循环相互导入的。</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token comment"># 模块文件：so_msg</span>
+<span class="token keyword">import</span> msg
+<span class="token keyword">def</span> <span class="token function">inso</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;这是一个自定义模块中的函数1&quot;</span><span class="token punctuation">)</span>
+    
+<span class="token comment"># Py执行文件：msg</span>
+<span class="token keyword">import</span> so_msg
+so_msg<span class="token punctuation">.</span>inso<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+执行结果：
+AttributeError<span class="token punctuation">:</span> module <span class="token string">'so_msg'</span> has no attribute <span class="token string">'inso'</span>
+</code></pre></div><p>为什么会提示找不到so_msg，因为so_msg文件执行是导入so_msg模块，从而执行so_msg模块文件，so_msg模块文件又从头开始执行，第一行代码就是导入msg模块，那么又会回来msg文件中从头开始执行，这时import msg，还会不会执行！！！</p> <p>答案是不会，因为这模块文件已经编译导入内存中，Python会自动检测，如果发现导入过一次就不会在执行导入操作，那这样子，就到了执行代码环节</p> <p>为什么会找不到，执行so_msg.inso()，那么在so_msg模块中的inso()函数会执行到没，没执行到那怎么找得到</p> <p>所以在这建议永远不要写循环的模块架构</p> <br> <br></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/Python/3. Python-module/30. 模块的初始.html" class="prev">
+        30. 模块的初始
+      </a></span> <span class="next"><a href="/Python/3. Python-module/32. 包.html">
+        32. 包
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.d65bef42.js" defer></script><script src="/assets/js/2.2249178e.js" defer></script><script src="/assets/js/95.b17961e6.js" defer></script>
+  </body>
+</html>

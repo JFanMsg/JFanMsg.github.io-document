@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>27. 对象、类方法、静态方法 | MSG</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="在追寻技术的同时享受生活">
+    
+    <link rel="preload" href="/assets/css/0.styles.e4d8b86b.css" as="style"><link rel="preload" href="/assets/js/app.d65bef42.js" as="script"><link rel="preload" href="/assets/js/2.2249178e.js" as="script"><link rel="preload" href="/assets/js/87.6dc95177.js" as="script"><link rel="prefetch" href="/assets/js/10.4785e2e5.js"><link rel="prefetch" href="/assets/js/100.33fceff2.js"><link rel="prefetch" href="/assets/js/101.62e1e5d4.js"><link rel="prefetch" href="/assets/js/102.8551fe71.js"><link rel="prefetch" href="/assets/js/103.47754d79.js"><link rel="prefetch" href="/assets/js/104.4adf114f.js"><link rel="prefetch" href="/assets/js/105.6206a08a.js"><link rel="prefetch" href="/assets/js/106.1c4561f3.js"><link rel="prefetch" href="/assets/js/107.e1531a5a.js"><link rel="prefetch" href="/assets/js/108.c637743a.js"><link rel="prefetch" href="/assets/js/109.3f150913.js"><link rel="prefetch" href="/assets/js/11.bd8ec7a6.js"><link rel="prefetch" href="/assets/js/110.088c1ac3.js"><link rel="prefetch" href="/assets/js/111.66d8d491.js"><link rel="prefetch" href="/assets/js/112.231663ee.js"><link rel="prefetch" href="/assets/js/113.a38bc531.js"><link rel="prefetch" href="/assets/js/114.e165daea.js"><link rel="prefetch" href="/assets/js/115.994b087a.js"><link rel="prefetch" href="/assets/js/116.ea3cfdfb.js"><link rel="prefetch" href="/assets/js/117.7be5e4f3.js"><link rel="prefetch" href="/assets/js/118.ebb58ddb.js"><link rel="prefetch" href="/assets/js/119.90018646.js"><link rel="prefetch" href="/assets/js/12.0d8f43df.js"><link rel="prefetch" href="/assets/js/120.bb5be863.js"><link rel="prefetch" href="/assets/js/121.3d1db670.js"><link rel="prefetch" href="/assets/js/122.d29ed1b2.js"><link rel="prefetch" href="/assets/js/123.38cc4704.js"><link rel="prefetch" href="/assets/js/124.cc8549d4.js"><link rel="prefetch" href="/assets/js/125.6ee3e9c8.js"><link rel="prefetch" href="/assets/js/126.48710eba.js"><link rel="prefetch" href="/assets/js/127.d7a1fd83.js"><link rel="prefetch" href="/assets/js/128.e5017f6b.js"><link rel="prefetch" href="/assets/js/129.4c33e121.js"><link rel="prefetch" href="/assets/js/13.2dbde7aa.js"><link rel="prefetch" href="/assets/js/130.cda66247.js"><link rel="prefetch" href="/assets/js/131.ad76f669.js"><link rel="prefetch" href="/assets/js/132.aca88758.js"><link rel="prefetch" href="/assets/js/133.a1cf5903.js"><link rel="prefetch" href="/assets/js/134.b1386377.js"><link rel="prefetch" href="/assets/js/135.94edcf53.js"><link rel="prefetch" href="/assets/js/136.24be4170.js"><link rel="prefetch" href="/assets/js/137.db57772e.js"><link rel="prefetch" href="/assets/js/138.dc67bcaa.js"><link rel="prefetch" href="/assets/js/139.5453d1f6.js"><link rel="prefetch" href="/assets/js/14.2187dbf4.js"><link rel="prefetch" href="/assets/js/140.938e5c07.js"><link rel="prefetch" href="/assets/js/141.99c7cf2c.js"><link rel="prefetch" href="/assets/js/142.428e3958.js"><link rel="prefetch" href="/assets/js/143.68b01530.js"><link rel="prefetch" href="/assets/js/144.f67389cc.js"><link rel="prefetch" href="/assets/js/145.d952a130.js"><link rel="prefetch" href="/assets/js/146.b933dcad.js"><link rel="prefetch" href="/assets/js/147.2d8e4c0a.js"><link rel="prefetch" href="/assets/js/148.6d76ac94.js"><link rel="prefetch" href="/assets/js/149.6b4d6378.js"><link rel="prefetch" href="/assets/js/15.a53b356c.js"><link rel="prefetch" href="/assets/js/150.5bf39cb4.js"><link rel="prefetch" href="/assets/js/151.17af677c.js"><link rel="prefetch" href="/assets/js/152.7f1c2792.js"><link rel="prefetch" href="/assets/js/153.98dd0727.js"><link rel="prefetch" href="/assets/js/154.eb44bf23.js"><link rel="prefetch" href="/assets/js/155.5a9840ea.js"><link rel="prefetch" href="/assets/js/156.7ba01fd0.js"><link rel="prefetch" href="/assets/js/157.2296a048.js"><link rel="prefetch" href="/assets/js/158.6bb1f699.js"><link rel="prefetch" href="/assets/js/159.073bb8df.js"><link rel="prefetch" href="/assets/js/16.cef7bf44.js"><link rel="prefetch" href="/assets/js/160.25a837f9.js"><link rel="prefetch" href="/assets/js/161.93d886a1.js"><link rel="prefetch" href="/assets/js/162.5d2714b2.js"><link rel="prefetch" href="/assets/js/17.96f36904.js"><link rel="prefetch" href="/assets/js/18.fd04b310.js"><link rel="prefetch" href="/assets/js/19.3e1377d1.js"><link rel="prefetch" href="/assets/js/20.ac195ac8.js"><link rel="prefetch" href="/assets/js/21.c2d7729c.js"><link rel="prefetch" href="/assets/js/22.dd8c621b.js"><link rel="prefetch" href="/assets/js/23.ad7d0350.js"><link rel="prefetch" href="/assets/js/24.8559c4c3.js"><link rel="prefetch" href="/assets/js/25.783a8116.js"><link rel="prefetch" href="/assets/js/26.25e0e459.js"><link rel="prefetch" href="/assets/js/27.c0616e2a.js"><link rel="prefetch" href="/assets/js/28.30656c2e.js"><link rel="prefetch" href="/assets/js/29.2be5114c.js"><link rel="prefetch" href="/assets/js/3.be8c8f3b.js"><link rel="prefetch" href="/assets/js/30.230a74a7.js"><link rel="prefetch" href="/assets/js/31.760f46ad.js"><link rel="prefetch" href="/assets/js/32.c9533fef.js"><link rel="prefetch" href="/assets/js/33.dcacfb38.js"><link rel="prefetch" href="/assets/js/34.4370a466.js"><link rel="prefetch" href="/assets/js/35.bf299eea.js"><link rel="prefetch" href="/assets/js/36.336e435a.js"><link rel="prefetch" href="/assets/js/37.1d1d2eea.js"><link rel="prefetch" href="/assets/js/38.0d58b7d0.js"><link rel="prefetch" href="/assets/js/39.d43564ba.js"><link rel="prefetch" href="/assets/js/4.4a6cb970.js"><link rel="prefetch" href="/assets/js/40.bc4e4bde.js"><link rel="prefetch" href="/assets/js/41.b71231a5.js"><link rel="prefetch" href="/assets/js/42.9d46f400.js"><link rel="prefetch" href="/assets/js/43.50c5be69.js"><link rel="prefetch" href="/assets/js/44.60406e7f.js"><link rel="prefetch" href="/assets/js/45.ec3569ae.js"><link rel="prefetch" href="/assets/js/46.1bd3ce7b.js"><link rel="prefetch" href="/assets/js/47.1e1b5326.js"><link rel="prefetch" href="/assets/js/48.64c631ea.js"><link rel="prefetch" href="/assets/js/49.b4abacd8.js"><link rel="prefetch" href="/assets/js/5.e6d0b165.js"><link rel="prefetch" href="/assets/js/50.c3e320c0.js"><link rel="prefetch" href="/assets/js/51.5ec7fb8c.js"><link rel="prefetch" href="/assets/js/52.2d234f86.js"><link rel="prefetch" href="/assets/js/53.f3b69623.js"><link rel="prefetch" href="/assets/js/54.c85ff450.js"><link rel="prefetch" href="/assets/js/55.b07597b5.js"><link rel="prefetch" href="/assets/js/56.444129cf.js"><link rel="prefetch" href="/assets/js/57.df1329ba.js"><link rel="prefetch" href="/assets/js/58.5afb51cf.js"><link rel="prefetch" href="/assets/js/59.d98936d9.js"><link rel="prefetch" href="/assets/js/6.809376cd.js"><link rel="prefetch" href="/assets/js/60.02813ecf.js"><link rel="prefetch" href="/assets/js/61.37a4812d.js"><link rel="prefetch" href="/assets/js/62.5da94048.js"><link rel="prefetch" href="/assets/js/63.8e2c2bca.js"><link rel="prefetch" href="/assets/js/64.d290398f.js"><link rel="prefetch" href="/assets/js/65.44e28313.js"><link rel="prefetch" href="/assets/js/66.9acf0206.js"><link rel="prefetch" href="/assets/js/67.85688aa2.js"><link rel="prefetch" href="/assets/js/68.45bda7fc.js"><link rel="prefetch" href="/assets/js/69.9074feb0.js"><link rel="prefetch" href="/assets/js/7.5d7bce6e.js"><link rel="prefetch" href="/assets/js/70.b4cd2ddc.js"><link rel="prefetch" href="/assets/js/71.53219b13.js"><link rel="prefetch" href="/assets/js/72.af2a7290.js"><link rel="prefetch" href="/assets/js/73.c28fc506.js"><link rel="prefetch" href="/assets/js/74.64c81a90.js"><link rel="prefetch" href="/assets/js/75.05191ece.js"><link rel="prefetch" href="/assets/js/76.f516d464.js"><link rel="prefetch" href="/assets/js/77.c345180b.js"><link rel="prefetch" href="/assets/js/78.4a09d0ba.js"><link rel="prefetch" href="/assets/js/79.65f41bcf.js"><link rel="prefetch" href="/assets/js/8.f6cfdc07.js"><link rel="prefetch" href="/assets/js/80.b77151f3.js"><link rel="prefetch" href="/assets/js/81.824fa371.js"><link rel="prefetch" href="/assets/js/82.3f91c09b.js"><link rel="prefetch" href="/assets/js/83.9539f074.js"><link rel="prefetch" href="/assets/js/84.dd89f1de.js"><link rel="prefetch" href="/assets/js/85.15210b99.js"><link rel="prefetch" href="/assets/js/86.e14553e1.js"><link rel="prefetch" href="/assets/js/88.09c5e890.js"><link rel="prefetch" href="/assets/js/89.0d61f4d0.js"><link rel="prefetch" href="/assets/js/9.759f1986.js"><link rel="prefetch" href="/assets/js/90.a9b14d80.js"><link rel="prefetch" href="/assets/js/91.1a4aabe2.js"><link rel="prefetch" href="/assets/js/92.12070bdb.js"><link rel="prefetch" href="/assets/js/93.b5dc76d0.js"><link rel="prefetch" href="/assets/js/94.690498a6.js"><link rel="prefetch" href="/assets/js/95.b17961e6.js"><link rel="prefetch" href="/assets/js/96.a2f06f3e.js"><link rel="prefetch" href="/assets/js/97.64ef6721.js"><link rel="prefetch" href="/assets/js/98.443eba26.js"><link rel="prefetch" href="/assets/js/99.b6ba7c3a.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.e4d8b86b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">MSG</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Python文档" class="dropdown-title"><span class="title">Python文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="Python文档" class="mobile-dropdown-title"><span class="title">Python文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Python/1.Python-Basics/" class="nav-link">
+  Python-基础
+</a></li><li class="dropdown-item"><!----> <a href="/Python/2. Python-object/" class="nav-link">
+  Python-面向对象
+</a></li><li class="dropdown-item"><!----> <a href="/Python/3. Python-module/" class="nav-link">
+  Python-模块与包
+</a></li><li class="dropdown-item"><!----> <a href="/Python/4. Python-network/" class="nav-link">
+  Python-网络
+</a></li><li class="dropdown-item"><!----> <a href="/Python/5. Python-frontend/" class="nav-link">
+  Python-前端
+</a></li><li class="dropdown-item"><!----> <a href="/Python/6. Python-MySQL/" class="nav-link">
+  Python-数据库
+</a></li><li class="dropdown-item"><!----> <a href="/Python/7. Python-Django/" class="nav-link">
+  Python-Django
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="容器文档" class="dropdown-title"><span class="title">容器文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="容器文档" class="mobile-dropdown-title"><span class="title">容器文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Container/docker/" class="nav-link">
+  docker文檔
+</a></li><li class="dropdown-item"><!----> <a href="/Container/Kubernetes/" class="nav-link">
+  Kubernetes文檔
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="GO文档" class="dropdown-title"><span class="title">GO文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="GO文档" class="mobile-dropdown-title"><span class="title">GO文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/GO/basics/" class="nav-link">
+  GO快速入门
+</a></li><li class="dropdown-item"><!----> <a href="/GO/module/" class="nav-link">
+  GO标准库/GO模块
+</a></li></ul></div></div><div class="nav-item"><a href="https://www.linux91.cn/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  博客
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Python文档" class="dropdown-title"><span class="title">Python文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="Python文档" class="mobile-dropdown-title"><span class="title">Python文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Python/1.Python-Basics/" class="nav-link">
+  Python-基础
+</a></li><li class="dropdown-item"><!----> <a href="/Python/2. Python-object/" class="nav-link">
+  Python-面向对象
+</a></li><li class="dropdown-item"><!----> <a href="/Python/3. Python-module/" class="nav-link">
+  Python-模块与包
+</a></li><li class="dropdown-item"><!----> <a href="/Python/4. Python-network/" class="nav-link">
+  Python-网络
+</a></li><li class="dropdown-item"><!----> <a href="/Python/5. Python-frontend/" class="nav-link">
+  Python-前端
+</a></li><li class="dropdown-item"><!----> <a href="/Python/6. Python-MySQL/" class="nav-link">
+  Python-数据库
+</a></li><li class="dropdown-item"><!----> <a href="/Python/7. Python-Django/" class="nav-link">
+  Python-Django
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="容器文档" class="dropdown-title"><span class="title">容器文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="容器文档" class="mobile-dropdown-title"><span class="title">容器文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Container/docker/" class="nav-link">
+  docker文檔
+</a></li><li class="dropdown-item"><!----> <a href="/Container/Kubernetes/" class="nav-link">
+  Kubernetes文檔
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="GO文档" class="dropdown-title"><span class="title">GO文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="GO文档" class="mobile-dropdown-title"><span class="title">GO文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/GO/basics/" class="nav-link">
+  GO快速入门
+</a></li><li class="dropdown-item"><!----> <a href="/GO/module/" class="nav-link">
+  GO标准库/GO模块
+</a></li></ul></div></div><div class="nav-item"><a href="https://www.linux91.cn/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  博客
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Python-面向对象</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/Python/2.%20Python-object/" aria-current="page" class="sidebar-link">介绍</a></li><li><a href="/Python/2. Python-object/23. 面向对象初始.html" class="sidebar-link">23. 面向对象初始</a></li><li><a href="/Python/2. Python-object/24. 对象、类名称空间，组合.html" class="sidebar-link">24. 对象、类名称空间，组合</a></li><li><a href="/Python/2. Python-object/25. 继承.html" class="sidebar-link">25. 继承</a></li><li><a href="/Python/2. Python-object/26. 抽象,接口类、多态、鸭子类型、封装.html" class="sidebar-link">26. 抽象,接口类、多态、鸭子类型、封装</a></li><li><a href="/Python/2. Python-object/27. 对象、类方法、静态方法.html" class="active sidebar-link">27. 对象、类方法、静态方法</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/Python/2. Python-object/27. 对象、类方法、静态方法.html#属性初始-属性三部曲" class="sidebar-link">属性初始 - 属性三部曲</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/Python/2. Python-object/27. 对象、类方法、静态方法.html#来一个简单的伪装属性-property" class="sidebar-link">来一个简单的伪装属性 - (@property)</a></li><li class="sidebar-sub-header"><a href="/Python/2. Python-object/27. 对象、类方法、静态方法.html#属性拥有修改功能-方法名-setter" class="sidebar-link">属性拥有修改功能 - (@方法名.setter)</a></li><li class="sidebar-sub-header"><a href="/Python/2. Python-object/27. 对象、类方法、静态方法.html#属性拥有删除功能-方法名-deleter" class="sidebar-link">属性拥有删除功能 - (@方法名.deleter)</a></li></ul></li><li class="sidebar-sub-header"><a href="/Python/2. Python-object/27. 对象、类方法、静态方法.html#类方法的应用场景-类方法三部曲" class="sidebar-link">类方法的应用场景 - 类方法三部曲</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/Python/2. Python-object/27. 对象、类方法、静态方法.html#类中方法没有对象参与的类" class="sidebar-link">类中方法没有对象参与的类</a></li><li class="sidebar-sub-header"><a href="/Python/2. Python-object/27. 对象、类方法、静态方法.html#对类中的静态变量进行修改用类方法" class="sidebar-link">对类中的静态变量进行修改用类方法</a></li><li class="sidebar-sub-header"><a href="/Python/2. Python-object/27. 对象、类方法、静态方法.html#继承中-父类得到子类的类空间" class="sidebar-link">继承中，父类得到子类的类空间</a></li></ul></li></ul></li><li><a href="/Python/2. Python-object/28. 反射.html" class="sidebar-link">28. 反射</a></li><li><a href="/Python/2. Python-object/28.1 练习题.html" class="sidebar-link">28.1 练习题</a></li><li><a href="/Python/2. Python-object/29. 内置方法.html" class="sidebar-link">29. 内置方法</a></li><li><a href="/Python/2. Python-object/30. 内置函数-面向对象.html" class="sidebar-link">30. 内置函数-面向对象</a></li><li><a href="/Python/2. Python-object/31. 面向对象总结 .html" class="sidebar-link">31. 面向对象总结</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="_27-对象、类方法、静态方法"><a href="#_27-对象、类方法、静态方法" class="header-anchor">#</a> 27. 对象、类方法、静态方法</h1> <br> <h1 id="属性"><a href="#属性" class="header-anchor">#</a> 属性</h1> <p>属性：将一个方法(函数)伪装成一个属性，在代码的级别上并没有本质的提升，但是可以让代码能够变得更合理</p> <p>伪装后的属性也能拥有正常属性的删改查，但是需要我们做一些代码操作</p> <br> <h2 id="属性初始-属性三部曲"><a href="#属性初始-属性三部曲" class="header-anchor">#</a> 属性初始 - 属性三部曲</h2> <p>有什么地方需要呢，一般来说在静态变量是不能赋值动态运算跟动态代码的，这时就可以用一个方法来接收，在用属性伪装来属性， 调用就跟正常的静态变量差不多</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token decorator annotation punctuation">@property</span>  <span class="token comment"># 可以把方法伪装成属性</span>
+@方法名<span class="token punctuation">.</span>setter  <span class="token comment"># 修改，可以让方法类似于属性一样拥有修改功能，简单来说就是一旦执行修改操作，Python会默认定位执行setter下的方法</span>
+@方法名<span class="token punctuation">.</span>deleter  <span class="token comment">#删除，可以让方法类似于属性一样拥有删除功能，简单来说就是一旦执行删除操作，Python会默认定位执行deleter下的方法</span>
+</code></pre></div><br> <h3 id="来一个简单的伪装属性-property"><a href="#来一个简单的伪装属性-property" class="header-anchor">#</a> 来一个简单的伪装属性 - (@property)</h3> <p>计算人体的BMT值，算法：体重（kg）÷身高^2（m）</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">class</span> <span class="token class-name">Steward</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>name<span class="token punctuation">,</span>weight<span class="token punctuation">,</span>height<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;小服务系统目前只支持计算BMT值&quot;</span><span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>name <span class="token operator">=</span> name
+        self<span class="token punctuation">.</span>__weight <span class="token operator">=</span> weight
+        self<span class="token punctuation">.</span>__height <span class="token operator">=</span> height
+
+    <span class="token decorator annotation punctuation">@property</span>
+    <span class="token keyword">def</span> <span class="token function">BMT</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;您的BMI值：%s ,请注意保重身体，小凡的服务到此结束。。。。。。&quot;</span> <span class="token operator">%</span> <span class="token punctuation">(</span>self<span class="token punctuation">.</span>__weight<span class="token operator">/</span>self<span class="token punctuation">.</span>__height<span class="token operator">**</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token triple-quoted-string string">&quot;&quot;&quot;
+        成人的BMI数值：
+            过轻：低于18.5
+            正常：18.5-23.9
+            过重：24-27
+            肥胖：28-32
+            非常肥胖, 高于32
+        &quot;&quot;&quot;</span><span class="token punctuation">)</span>
+weight <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">&quot;请输入您的体重(kg)：&quot;</span><span class="token punctuation">)</span>
+height <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">&quot;请输入您的身高(M)：&quot;</span><span class="token punctuation">)</span>
+s1 <span class="token operator">=</span> Steward<span class="token punctuation">(</span><span class="token string">&quot;江凡&quot;</span><span class="token punctuation">,</span><span class="token builtin">int</span><span class="token punctuation">(</span>weight<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token builtin">float</span><span class="token punctuation">(</span>height<span class="token punctuation">)</span><span class="token punctuation">)</span>
+s1<span class="token punctuation">.</span>BMT
+</code></pre></div><p>​	以上程序，整体设为小服务系统，肯定不止只有一个BMT运算服务，所以BMT运算服务需要用一个方法来实现，这样子	需要调用BMT这方法就需要调用方法一样，这样子不行，加上@property，就可以把方法伪装成为属性，这样子这个方	法要想被调用，就只能通过类似调用属性的代码去调用他</p> <br> <h3 id="属性拥有修改功能-方法名-setter"><a href="#属性拥有修改功能-方法名-setter" class="header-anchor">#</a> 属性拥有修改功能 - (@方法名.setter)</h3> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">class</span> <span class="token class-name">age</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>name<span class="token punctuation">,</span>age<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>name <span class="token operator">=</span> name
+        self<span class="token punctuation">.</span>__age <span class="token operator">=</span> age
+
+    <span class="token decorator annotation punctuation">@property</span>
+    <span class="token keyword">def</span> <span class="token function">age</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>__age<span class="token punctuation">)</span>
+
+    <span class="token decorator annotation punctuation">@age<span class="token punctuation">.</span>setter</span>
+    <span class="token keyword">def</span> <span class="token function">age</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>age<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>__age <span class="token operator">=</span> age
+
+a1 <span class="token operator">=</span> age<span class="token punctuation">(</span><span class="token string">&quot;江凡&quot;</span><span class="token punctuation">,</span><span class="token number">22</span><span class="token punctuation">)</span>
+a1<span class="token punctuation">.</span>age
+a1<span class="token punctuation">.</span>age <span class="token operator">=</span> <span class="token string">&quot;12&quot;</span>
+a1<span class="token punctuation">.</span>age
+</code></pre></div><p>​	通过@age.setter，会发现，伪装的属性可以被修改，不过这样的修改还很基础，不够完善</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">class</span> <span class="token class-name">age</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>name<span class="token punctuation">,</span>age<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>name <span class="token operator">=</span> name
+        self<span class="token punctuation">.</span>__age <span class="token operator">=</span> age
+
+    <span class="token decorator annotation punctuation">@property</span>
+    <span class="token keyword">def</span> <span class="token function">age</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>__age<span class="token punctuation">)</span>
+
+    <span class="token decorator annotation punctuation">@age<span class="token punctuation">.</span>setter</span>
+    <span class="token keyword">def</span> <span class="token function">age</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>age<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> <span class="token builtin">type</span><span class="token punctuation">(</span>age<span class="token punctuation">)</span> <span class="token keyword">is</span> <span class="token builtin">int</span><span class="token punctuation">:</span>
+            self<span class="token punctuation">.</span>__age <span class="token operator">=</span> age
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;输入的数据，数据类型不是int类型&quot;</span><span class="token punctuation">)</span>
+
+
+a1 <span class="token operator">=</span> age<span class="token punctuation">(</span><span class="token string">&quot;江凡&quot;</span><span class="token punctuation">,</span><span class="token number">22</span><span class="token punctuation">)</span>
+a1<span class="token punctuation">.</span>age
+a1<span class="token punctuation">.</span>age <span class="token operator">=</span> <span class="token number">12</span>
+a1<span class="token punctuation">.</span>age
+</code></pre></div><p>​	上面的代码，修改方法部分加了一点判断，判断想更新的数值是不是int类型的</p> <br> <h3 id="属性拥有删除功能-方法名-deleter"><a href="#属性拥有删除功能-方法名-deleter" class="header-anchor">#</a> 属性拥有删除功能 - (@方法名.deleter)</h3> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">class</span> <span class="token class-name">age</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>name<span class="token punctuation">,</span>age<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>name <span class="token operator">=</span> name
+        self<span class="token punctuation">.</span>__age <span class="token operator">=</span> age
+
+    <span class="token decorator annotation punctuation">@property</span>
+    <span class="token keyword">def</span> <span class="token function">age</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>__age<span class="token punctuation">)</span>
+
+    <span class="token decorator annotation punctuation">@age<span class="token punctuation">.</span>setter</span>
+    <span class="token keyword">def</span> <span class="token function">age</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>age<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> <span class="token builtin">type</span><span class="token punctuation">(</span>age<span class="token punctuation">)</span> <span class="token keyword">is</span> <span class="token builtin">int</span><span class="token punctuation">:</span>
+            self<span class="token punctuation">.</span>__age <span class="token operator">=</span> age
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;输入的数据，数据类型不是int类型&quot;</span><span class="token punctuation">)</span>
+
+    <span class="token decorator annotation punctuation">@age<span class="token punctuation">.</span>deleter</span>
+    <span class="token keyword">def</span> <span class="token function">age</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">del</span> self<span class="token punctuation">.</span>__age
+
+a1 <span class="token operator">=</span> age<span class="token punctuation">(</span><span class="token string">&quot;江凡&quot;</span><span class="token punctuation">,</span><span class="token number">22</span><span class="token punctuation">)</span>
+<span class="token keyword">del</span> a1<span class="token punctuation">.</span>age
+a1<span class="token punctuation">.</span>age
+</code></pre></div><br> <br> <h1 id="类方法"><a href="#类方法" class="header-anchor">#</a> 类方法</h1> <p>类方法：通过类名调用的方法，类方法中第一个参数名称跟普通方法的self一样，有个名称(cls)，在调用类方法的时候，Python会自动将类空间地址传给cls</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">class</span> <span class="token class-name">a</span><span class="token punctuation">:</span>
+
+    <span class="token decorator annotation punctuation">@classmethod</span>
+    <span class="token keyword">def</span> <span class="token function">so</span><span class="token punctuation">(</span>cls<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>cls<span class="token punctuation">)</span>
+        
+a<span class="token punctuation">.</span>so<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+执行结果：
+<span class="token operator">&lt;</span><span class="token keyword">class</span> <span class="token string">'__main__.a'</span><span class="token operator">&gt;</span>
+</code></pre></div><br> <h2 id="类方法的应用场景-类方法三部曲"><a href="#类方法的应用场景-类方法三部曲" class="header-anchor">#</a> 类方法的应用场景 - 类方法三部曲</h2> <br> <h3 id="类中方法没有对象参与的类"><a href="#类中方法没有对象参与的类" class="header-anchor">#</a> 类中方法没有对象参与的类</h3> <p>在类中有些方法不需要对象参与的就可以使用类方法</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">class</span> <span class="token class-name">a</span><span class="token punctuation">:</span>
+    name <span class="token operator">=</span> <span class="token string">&quot;江凡&quot;</span>
+    age <span class="token operator">=</span> <span class="token string">&quot;22&quot;</span>
+
+    <span class="token decorator annotation punctuation">@classmethod</span>
+    <span class="token keyword">def</span> <span class="token function">so</span><span class="token punctuation">(</span>cls<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;姓名：%s ，年龄：%s&quot;</span> <span class="token operator">%</span><span class="token punctuation">(</span>cls<span class="token punctuation">.</span>name<span class="token punctuation">,</span>cls<span class="token punctuation">.</span>age<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+a<span class="token punctuation">.</span>so<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><p>​	以上实例，在不用实例化的情况下，可以使用类方法</p> <br> <h3 id="对类中的静态变量进行修改用类方法"><a href="#对类中的静态变量进行修改用类方法" class="header-anchor">#</a> 对类中的静态变量进行修改用类方法</h3> <p>如果需要对类中的静态变量进行修改的话，也可以使用类方法</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">class</span> <span class="token class-name">a</span><span class="token punctuation">:</span>
+    name <span class="token operator">=</span> <span class="token string">&quot;江凡&quot;</span>
+    age <span class="token operator">=</span> <span class="token string">&quot;22&quot;</span>
+
+    <span class="token decorator annotation punctuation">@classmethod</span>
+    <span class="token keyword">def</span> <span class="token function">so</span><span class="token punctuation">(</span>cls<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        cls<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">&quot;江先生&quot;</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>cls<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+
+a<span class="token punctuation">.</span>so<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+
+执行结果：
+江先生
+江先生
+</code></pre></div><br> <h3 id="继承中-父类得到子类的类空间"><a href="#继承中-父类得到子类的类空间" class="header-anchor">#</a> 继承中，父类得到子类的类空间</h3> <p>在继承中，如果想要父类能调用子类的类空间一切对象的话，就可以使用类方法</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">class</span> <span class="token class-name">a</span><span class="token punctuation">:</span>
+    <span class="token decorator annotation punctuation">@classmethod</span>
+    <span class="token keyword">def</span> <span class="token function">so</span><span class="token punctuation">(</span>cls<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;姓名：%s ，年龄：%s&quot;</span> <span class="token operator">%</span><span class="token punctuation">(</span>cls<span class="token punctuation">.</span>name<span class="token punctuation">,</span>cls<span class="token punctuation">.</span>age<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword">class</span> <span class="token class-name">b</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    name <span class="token operator">=</span> <span class="token string">&quot;江凡&quot;</span>
+    age <span class="token operator">=</span> <span class="token string">&quot;22&quot;</span>
+
+b<span class="token punctuation">.</span>so<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+执行结果：
+姓名：江凡 ，年龄：<span class="token number">22</span>
+</code></pre></div><p>​	在以上实例中，执行b.so()，子类中没有，去父类找，父类有，父类中的cls参数是子类的类空间地址</p> <br> <br> <h1 id="静态方法"><a href="#静态方法" class="header-anchor">#</a> 静态方法</h1> <p>静态方法跟直接外面写函数没有什么区别，但是最大的区别就是归类</p> <p>可以提升代码的复用性，能增加代码的清晰度</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">class</span> <span class="token class-name">so</span><span class="token punctuation">:</span>
+    <span class="token decorator annotation punctuation">@staticmethod</span>
+    <span class="token keyword">def</span> <span class="token function">a</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;这是一个静态方法&quot;</span><span class="token punctuation">)</span>
+
+    <span class="token decorator annotation punctuation">@staticmethod</span>
+    <span class="token keyword">def</span> <span class="token function">b</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;这是一个静态方法&quot;</span><span class="token punctuation">)</span>
+
+    <span class="token decorator annotation punctuation">@staticmethod</span>
+    <span class="token keyword">def</span> <span class="token function">c</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;这是一个静态方法&quot;</span><span class="token punctuation">)</span>
+
+so<span class="token punctuation">.</span>a<span class="token punctuation">(</span><span class="token punctuation">)</span>
+so<span class="token punctuation">.</span>b<span class="token punctuation">(</span><span class="token punctuation">)</span>
+so<span class="token punctuation">.</span>c<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+执行结果：
+这是一个静态方法
+这是一个静态方法
+这是一个静态方法
+</code></pre></div><p>​	以上实例，静态方法可以用于归类存放，把功能或作用差不多的归类到一个类中</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">class</span> <span class="token class-name">str</span><span class="token punctuation">(</span><span class="token builtin">object</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&quot;&quot;&quot;
+    str(object='') -&gt; str
+    str(bytes_or_buffer[, encoding[, errors]]) -&gt; str
+    
+    Create a new string object from the given object. If encoding or
+    errors is specified, then the object must expose a data buffer
+    that will be decoded using the given encoding and error handler.
+    Otherwise, returns the result of object.__str__() (if defined)
+    or repr(object).
+    encoding defaults to sys.getdefaultencoding().
+    errors defaults to 'strict'.
+    &quot;&quot;&quot;</span>
+    <span class="token keyword">def</span> <span class="token function">capitalize</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment"># real signature unknown; restored from __doc__</span>
+        <span class="token triple-quoted-string string">&quot;&quot;&quot;
+        S.capitalize() -&gt; str
+        
+        Return a capitalized version of S, i.e. make the first character
+        have upper case and the rest lower case.
+        &quot;&quot;&quot;</span>
+        <span class="token keyword">return</span> <span class="token string">&quot;&quot;</span>
+
+    <span class="token keyword">def</span> <span class="token function">casefold</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment"># real signature unknown; restored from __doc__</span>
+        <span class="token string">&quot;&quot;</span>&quot;
+        S<span class="token punctuation">.</span>casefold<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">str</span>
+。。。。。。
+。。。。。。
+。。。。。。
+</code></pre></div><p>​	以上实例，上面代码是从str的详细文档中获取一小部分的，但是大概可以看出，str是一个主类，下面分部的都是str的	功能，从这样也可以看出来，有效的分类归类可以明显的提高代码的可读性</p> <br> <br></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/Python/2. Python-object/26. 抽象,接口类、多态、鸭子类型、封装.html" class="prev">
+        26. 抽象,接口类、多态、鸭子类型、封装
+      </a></span> <span class="next"><a href="/Python/2. Python-object/28. 反射.html">
+        28. 反射
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.d65bef42.js" defer></script><script src="/assets/js/2.2249178e.js" defer></script><script src="/assets/js/87.6dc95177.js" defer></script>
+  </body>
+</html>

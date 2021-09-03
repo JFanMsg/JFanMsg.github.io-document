@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>输出输入 - fmt包 | MSG</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="在追寻技术的同时享受生活">
+    
+    <link rel="preload" href="/assets/css/0.styles.e4d8b86b.css" as="style"><link rel="preload" href="/assets/js/app.d65bef42.js" as="script"><link rel="preload" href="/assets/js/2.2249178e.js" as="script"><link rel="preload" href="/assets/js/57.df1329ba.js" as="script"><link rel="prefetch" href="/assets/js/10.4785e2e5.js"><link rel="prefetch" href="/assets/js/100.33fceff2.js"><link rel="prefetch" href="/assets/js/101.62e1e5d4.js"><link rel="prefetch" href="/assets/js/102.8551fe71.js"><link rel="prefetch" href="/assets/js/103.47754d79.js"><link rel="prefetch" href="/assets/js/104.4adf114f.js"><link rel="prefetch" href="/assets/js/105.6206a08a.js"><link rel="prefetch" href="/assets/js/106.1c4561f3.js"><link rel="prefetch" href="/assets/js/107.e1531a5a.js"><link rel="prefetch" href="/assets/js/108.c637743a.js"><link rel="prefetch" href="/assets/js/109.3f150913.js"><link rel="prefetch" href="/assets/js/11.bd8ec7a6.js"><link rel="prefetch" href="/assets/js/110.088c1ac3.js"><link rel="prefetch" href="/assets/js/111.66d8d491.js"><link rel="prefetch" href="/assets/js/112.231663ee.js"><link rel="prefetch" href="/assets/js/113.a38bc531.js"><link rel="prefetch" href="/assets/js/114.e165daea.js"><link rel="prefetch" href="/assets/js/115.994b087a.js"><link rel="prefetch" href="/assets/js/116.ea3cfdfb.js"><link rel="prefetch" href="/assets/js/117.7be5e4f3.js"><link rel="prefetch" href="/assets/js/118.ebb58ddb.js"><link rel="prefetch" href="/assets/js/119.90018646.js"><link rel="prefetch" href="/assets/js/12.0d8f43df.js"><link rel="prefetch" href="/assets/js/120.bb5be863.js"><link rel="prefetch" href="/assets/js/121.3d1db670.js"><link rel="prefetch" href="/assets/js/122.d29ed1b2.js"><link rel="prefetch" href="/assets/js/123.38cc4704.js"><link rel="prefetch" href="/assets/js/124.cc8549d4.js"><link rel="prefetch" href="/assets/js/125.6ee3e9c8.js"><link rel="prefetch" href="/assets/js/126.48710eba.js"><link rel="prefetch" href="/assets/js/127.d7a1fd83.js"><link rel="prefetch" href="/assets/js/128.e5017f6b.js"><link rel="prefetch" href="/assets/js/129.4c33e121.js"><link rel="prefetch" href="/assets/js/13.2dbde7aa.js"><link rel="prefetch" href="/assets/js/130.cda66247.js"><link rel="prefetch" href="/assets/js/131.ad76f669.js"><link rel="prefetch" href="/assets/js/132.aca88758.js"><link rel="prefetch" href="/assets/js/133.a1cf5903.js"><link rel="prefetch" href="/assets/js/134.b1386377.js"><link rel="prefetch" href="/assets/js/135.94edcf53.js"><link rel="prefetch" href="/assets/js/136.24be4170.js"><link rel="prefetch" href="/assets/js/137.db57772e.js"><link rel="prefetch" href="/assets/js/138.dc67bcaa.js"><link rel="prefetch" href="/assets/js/139.5453d1f6.js"><link rel="prefetch" href="/assets/js/14.2187dbf4.js"><link rel="prefetch" href="/assets/js/140.938e5c07.js"><link rel="prefetch" href="/assets/js/141.99c7cf2c.js"><link rel="prefetch" href="/assets/js/142.428e3958.js"><link rel="prefetch" href="/assets/js/143.68b01530.js"><link rel="prefetch" href="/assets/js/144.f67389cc.js"><link rel="prefetch" href="/assets/js/145.d952a130.js"><link rel="prefetch" href="/assets/js/146.b933dcad.js"><link rel="prefetch" href="/assets/js/147.2d8e4c0a.js"><link rel="prefetch" href="/assets/js/148.6d76ac94.js"><link rel="prefetch" href="/assets/js/149.6b4d6378.js"><link rel="prefetch" href="/assets/js/15.a53b356c.js"><link rel="prefetch" href="/assets/js/150.5bf39cb4.js"><link rel="prefetch" href="/assets/js/151.17af677c.js"><link rel="prefetch" href="/assets/js/152.7f1c2792.js"><link rel="prefetch" href="/assets/js/153.98dd0727.js"><link rel="prefetch" href="/assets/js/154.eb44bf23.js"><link rel="prefetch" href="/assets/js/155.5a9840ea.js"><link rel="prefetch" href="/assets/js/156.7ba01fd0.js"><link rel="prefetch" href="/assets/js/157.2296a048.js"><link rel="prefetch" href="/assets/js/158.6bb1f699.js"><link rel="prefetch" href="/assets/js/159.073bb8df.js"><link rel="prefetch" href="/assets/js/16.cef7bf44.js"><link rel="prefetch" href="/assets/js/160.25a837f9.js"><link rel="prefetch" href="/assets/js/161.93d886a1.js"><link rel="prefetch" href="/assets/js/162.5d2714b2.js"><link rel="prefetch" href="/assets/js/17.96f36904.js"><link rel="prefetch" href="/assets/js/18.fd04b310.js"><link rel="prefetch" href="/assets/js/19.3e1377d1.js"><link rel="prefetch" href="/assets/js/20.ac195ac8.js"><link rel="prefetch" href="/assets/js/21.c2d7729c.js"><link rel="prefetch" href="/assets/js/22.dd8c621b.js"><link rel="prefetch" href="/assets/js/23.ad7d0350.js"><link rel="prefetch" href="/assets/js/24.8559c4c3.js"><link rel="prefetch" href="/assets/js/25.783a8116.js"><link rel="prefetch" href="/assets/js/26.25e0e459.js"><link rel="prefetch" href="/assets/js/27.c0616e2a.js"><link rel="prefetch" href="/assets/js/28.30656c2e.js"><link rel="prefetch" href="/assets/js/29.2be5114c.js"><link rel="prefetch" href="/assets/js/3.be8c8f3b.js"><link rel="prefetch" href="/assets/js/30.230a74a7.js"><link rel="prefetch" href="/assets/js/31.760f46ad.js"><link rel="prefetch" href="/assets/js/32.c9533fef.js"><link rel="prefetch" href="/assets/js/33.dcacfb38.js"><link rel="prefetch" href="/assets/js/34.4370a466.js"><link rel="prefetch" href="/assets/js/35.bf299eea.js"><link rel="prefetch" href="/assets/js/36.336e435a.js"><link rel="prefetch" href="/assets/js/37.1d1d2eea.js"><link rel="prefetch" href="/assets/js/38.0d58b7d0.js"><link rel="prefetch" href="/assets/js/39.d43564ba.js"><link rel="prefetch" href="/assets/js/4.4a6cb970.js"><link rel="prefetch" href="/assets/js/40.bc4e4bde.js"><link rel="prefetch" href="/assets/js/41.b71231a5.js"><link rel="prefetch" href="/assets/js/42.9d46f400.js"><link rel="prefetch" href="/assets/js/43.50c5be69.js"><link rel="prefetch" href="/assets/js/44.60406e7f.js"><link rel="prefetch" href="/assets/js/45.ec3569ae.js"><link rel="prefetch" href="/assets/js/46.1bd3ce7b.js"><link rel="prefetch" href="/assets/js/47.1e1b5326.js"><link rel="prefetch" href="/assets/js/48.64c631ea.js"><link rel="prefetch" href="/assets/js/49.b4abacd8.js"><link rel="prefetch" href="/assets/js/5.e6d0b165.js"><link rel="prefetch" href="/assets/js/50.c3e320c0.js"><link rel="prefetch" href="/assets/js/51.5ec7fb8c.js"><link rel="prefetch" href="/assets/js/52.2d234f86.js"><link rel="prefetch" href="/assets/js/53.f3b69623.js"><link rel="prefetch" href="/assets/js/54.c85ff450.js"><link rel="prefetch" href="/assets/js/55.b07597b5.js"><link rel="prefetch" href="/assets/js/56.444129cf.js"><link rel="prefetch" href="/assets/js/58.5afb51cf.js"><link rel="prefetch" href="/assets/js/59.d98936d9.js"><link rel="prefetch" href="/assets/js/6.809376cd.js"><link rel="prefetch" href="/assets/js/60.02813ecf.js"><link rel="prefetch" href="/assets/js/61.37a4812d.js"><link rel="prefetch" href="/assets/js/62.5da94048.js"><link rel="prefetch" href="/assets/js/63.8e2c2bca.js"><link rel="prefetch" href="/assets/js/64.d290398f.js"><link rel="prefetch" href="/assets/js/65.44e28313.js"><link rel="prefetch" href="/assets/js/66.9acf0206.js"><link rel="prefetch" href="/assets/js/67.85688aa2.js"><link rel="prefetch" href="/assets/js/68.45bda7fc.js"><link rel="prefetch" href="/assets/js/69.9074feb0.js"><link rel="prefetch" href="/assets/js/7.5d7bce6e.js"><link rel="prefetch" href="/assets/js/70.b4cd2ddc.js"><link rel="prefetch" href="/assets/js/71.53219b13.js"><link rel="prefetch" href="/assets/js/72.af2a7290.js"><link rel="prefetch" href="/assets/js/73.c28fc506.js"><link rel="prefetch" href="/assets/js/74.64c81a90.js"><link rel="prefetch" href="/assets/js/75.05191ece.js"><link rel="prefetch" href="/assets/js/76.f516d464.js"><link rel="prefetch" href="/assets/js/77.c345180b.js"><link rel="prefetch" href="/assets/js/78.4a09d0ba.js"><link rel="prefetch" href="/assets/js/79.65f41bcf.js"><link rel="prefetch" href="/assets/js/8.f6cfdc07.js"><link rel="prefetch" href="/assets/js/80.b77151f3.js"><link rel="prefetch" href="/assets/js/81.824fa371.js"><link rel="prefetch" href="/assets/js/82.3f91c09b.js"><link rel="prefetch" href="/assets/js/83.9539f074.js"><link rel="prefetch" href="/assets/js/84.dd89f1de.js"><link rel="prefetch" href="/assets/js/85.15210b99.js"><link rel="prefetch" href="/assets/js/86.e14553e1.js"><link rel="prefetch" href="/assets/js/87.6dc95177.js"><link rel="prefetch" href="/assets/js/88.09c5e890.js"><link rel="prefetch" href="/assets/js/89.0d61f4d0.js"><link rel="prefetch" href="/assets/js/9.759f1986.js"><link rel="prefetch" href="/assets/js/90.a9b14d80.js"><link rel="prefetch" href="/assets/js/91.1a4aabe2.js"><link rel="prefetch" href="/assets/js/92.12070bdb.js"><link rel="prefetch" href="/assets/js/93.b5dc76d0.js"><link rel="prefetch" href="/assets/js/94.690498a6.js"><link rel="prefetch" href="/assets/js/95.b17961e6.js"><link rel="prefetch" href="/assets/js/96.a2f06f3e.js"><link rel="prefetch" href="/assets/js/97.64ef6721.js"><link rel="prefetch" href="/assets/js/98.443eba26.js"><link rel="prefetch" href="/assets/js/99.b6ba7c3a.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.e4d8b86b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">MSG</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Python文档" class="dropdown-title"><span class="title">Python文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="Python文档" class="mobile-dropdown-title"><span class="title">Python文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Python/1.Python-Basics/" class="nav-link">
+  Python-基础
+</a></li><li class="dropdown-item"><!----> <a href="/Python/2. Python-object/" class="nav-link">
+  Python-面向对象
+</a></li><li class="dropdown-item"><!----> <a href="/Python/3. Python-module/" class="nav-link">
+  Python-模块与包
+</a></li><li class="dropdown-item"><!----> <a href="/Python/4. Python-network/" class="nav-link">
+  Python-网络
+</a></li><li class="dropdown-item"><!----> <a href="/Python/5. Python-frontend/" class="nav-link">
+  Python-前端
+</a></li><li class="dropdown-item"><!----> <a href="/Python/6. Python-MySQL/" class="nav-link">
+  Python-数据库
+</a></li><li class="dropdown-item"><!----> <a href="/Python/7. Python-Django/" class="nav-link">
+  Python-Django
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="容器文档" class="dropdown-title"><span class="title">容器文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="容器文档" class="mobile-dropdown-title"><span class="title">容器文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Container/docker/" class="nav-link">
+  docker文檔
+</a></li><li class="dropdown-item"><!----> <a href="/Container/Kubernetes/" class="nav-link">
+  Kubernetes文檔
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="GO文档" class="dropdown-title"><span class="title">GO文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="GO文档" class="mobile-dropdown-title"><span class="title">GO文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/GO/basics/" class="nav-link">
+  GO快速入门
+</a></li><li class="dropdown-item"><!----> <a href="/GO/module/" class="nav-link router-link-active">
+  GO标准库/GO模块
+</a></li></ul></div></div><div class="nav-item"><a href="https://www.linux91.cn/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  博客
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Python文档" class="dropdown-title"><span class="title">Python文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="Python文档" class="mobile-dropdown-title"><span class="title">Python文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Python/1.Python-Basics/" class="nav-link">
+  Python-基础
+</a></li><li class="dropdown-item"><!----> <a href="/Python/2. Python-object/" class="nav-link">
+  Python-面向对象
+</a></li><li class="dropdown-item"><!----> <a href="/Python/3. Python-module/" class="nav-link">
+  Python-模块与包
+</a></li><li class="dropdown-item"><!----> <a href="/Python/4. Python-network/" class="nav-link">
+  Python-网络
+</a></li><li class="dropdown-item"><!----> <a href="/Python/5. Python-frontend/" class="nav-link">
+  Python-前端
+</a></li><li class="dropdown-item"><!----> <a href="/Python/6. Python-MySQL/" class="nav-link">
+  Python-数据库
+</a></li><li class="dropdown-item"><!----> <a href="/Python/7. Python-Django/" class="nav-link">
+  Python-Django
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="容器文档" class="dropdown-title"><span class="title">容器文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="容器文档" class="mobile-dropdown-title"><span class="title">容器文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Container/docker/" class="nav-link">
+  docker文檔
+</a></li><li class="dropdown-item"><!----> <a href="/Container/Kubernetes/" class="nav-link">
+  Kubernetes文檔
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="GO文档" class="dropdown-title"><span class="title">GO文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="GO文档" class="mobile-dropdown-title"><span class="title">GO文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/GO/basics/" class="nav-link">
+  GO快速入门
+</a></li><li class="dropdown-item"><!----> <a href="/GO/module/" class="nav-link router-link-active">
+  GO标准库/GO模块
+</a></li></ul></div></div><div class="nav-item"><a href="https://www.linux91.cn/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  博客
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>GO标准库/GO模块</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/GO/module/" aria-current="page" class="sidebar-link">介绍</a></li><li><a href="/GO/module/http - nethttp包.html" class="sidebar-link">http - net/http包</a></li><li><a href="/GO/module/math-基本数学函数-.-不用.html" class="sidebar-link">math-基本数学函数-.-不用</a></li><li><a href="/GO/module/命令行参数分析-flag包.html" class="sidebar-link">命令行参数分析-flag包</a></li><li><a href="/GO/module/字符串操作 - strings包.html" class="sidebar-link">字符串操作 - strings包</a></li><li><a href="/GO/module/并发 - Context包.html" class="sidebar-link">并发 - Context包</a></li><li><a href="/GO/module/库大全.html" class="sidebar-link">库大全</a></li><li><a href="/GO/module/数据类型转换.html" class="sidebar-link">数据类型转换</a></li><li><a href="/GO/module/文本操作 - unicode.html" class="sidebar-link">文本操作 - unicode</a></li><li><a href="/GO/module/日志 - log包.html" class="sidebar-link">日志 - log包</a></li><li><a href="/GO/module/时间 - Local时区.html" class="sidebar-link">时间 -  Local时区</a></li><li><a href="/GO/module/时间 - time.html" class="sidebar-link">时间 -  time</a></li><li><a href="/GO/module/时间 - 定时器.html" class="sidebar-link">时间 - 定时器</a></li><li><a href="/GO/module/输出输入 - fmt包.html" class="active sidebar-link">输出输入 - fmt包</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/GO/module/输出输入 - fmt包.html#普通占位符" class="sidebar-link">普通占位符</a></li><li class="sidebar-sub-header"><a href="/GO/module/输出输入 - fmt包.html#布尔占位符" class="sidebar-link">布尔占位符</a></li><li class="sidebar-sub-header"><a href="/GO/module/输出输入 - fmt包.html#整数占位符" class="sidebar-link">整数占位符</a></li><li class="sidebar-sub-header"><a href="/GO/module/输出输入 - fmt包.html#浮点数和复数的组成部分-实部和虚部" class="sidebar-link">浮点数和复数的组成部分(实部和虚部)</a></li><li class="sidebar-sub-header"><a href="/GO/module/输出输入 - fmt包.html#字符串与字节切片" class="sidebar-link">字符串与字节切片</a></li><li class="sidebar-sub-header"><a href="/GO/module/输出输入 - fmt包.html#指针" class="sidebar-link">指针</a></li><li class="sidebar-sub-header"><a href="/GO/module/输出输入 - fmt包.html#宽度标识符-浮点数重要" class="sidebar-link">宽度标识符 - 浮点数重要</a></li><li class="sidebar-sub-header"><a href="/GO/module/输出输入 - fmt包.html#其它标记" class="sidebar-link">其它标记</a></li><li class="sidebar-sub-header"><a href="/GO/module/输出输入 - fmt包.html#注意事项" class="sidebar-link">注意事项</a></li><li class="sidebar-sub-header"><a href="/GO/module/输出输入 - fmt包.html#scan" class="sidebar-link">Scan</a></li><li class="sidebar-sub-header"><a href="/GO/module/输出输入 - fmt包.html#scanf" class="sidebar-link">Scanf</a></li><li class="sidebar-sub-header"><a href="/GO/module/输出输入 - fmt包.html#scanln" class="sidebar-link">Scanln</a></li><li class="sidebar-sub-header"><a href="/GO/module/输出输入 - fmt包.html#额外别类型的输入函数" class="sidebar-link">额外别类型的输入函数</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/GO/module/输出输入 - fmt包.html#bufio-newreader" class="sidebar-link">bufio.NewReader</a></li><li class="sidebar-sub-header"><a href="/GO/module/输出输入 - fmt包.html#fscan系列" class="sidebar-link">Fscan系列</a></li><li class="sidebar-sub-header"><a href="/GO/module/输出输入 - fmt包.html#sscan系列" class="sidebar-link">Sscan系列</a></li></ul></li></ul></li><li><a href="/GO/module/输出输入 - IO包.html" class="sidebar-link">输出输入 -  IO包</a></li><li><a href="/GO/module/输出输入 - 缓存IO包-bufio - 原文.html" class="sidebar-link">输出输入 - 缓存IO包-bufio - 原文</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="输出输入-fmt包"><a href="#输出输入-fmt包" class="header-anchor">#</a> 输出输入 - fmt包</h1> <h1 id="占位符"><a href="#占位符" class="header-anchor">#</a> 占位符</h1> <h2 id="普通占位符"><a href="#普通占位符" class="header-anchor">#</a> 普通占位符</h2> <table><thead><tr><th>占位符</th> <th>说明</th> <th>举例</th> <th>输出</th></tr></thead> <tbody><tr><td>%v</td> <td>相应值的默认格式。</td> <td>Printf(“%v”, people)</td> <td>{sujing}，</td></tr> <tr><td>%+v</td> <td>打印结构体时，会添加字段名</td> <td>Printf(“%+v”, people)</td> <td>{Name:sujing}</td></tr> <tr><td>%#v</td> <td>相应值的Go语法表示</td> <td>Printf(“#v”, people)</td> <td>main.Human{Name:”sujing”}</td></tr> <tr><td>%T</td> <td>相应值的类型的Go语法表示</td> <td>Printf(“%T”, people)</td> <td>main.Human</td></tr> <tr><td>%%</td> <td>字面上的百分号，并非值的占位符</td> <td>Printf(“%%”)</td> <td>%</td></tr></tbody></table> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;fmt&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;%v\n&quot;</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;%v\n&quot;</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span>
+	o <span class="token operator">:=</span> <span class="token keyword">struct</span><span class="token punctuation">{</span> name <span class="token builtin">string</span> <span class="token punctuation">}</span><span class="token punctuation">{</span><span class="token string">&quot;msg&quot;</span><span class="token punctuation">}</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;%v\n&quot;</span><span class="token punctuation">,</span> o<span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;%#v\n&quot;</span><span class="token punctuation">,</span> o<span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;%T\n&quot;</span><span class="token punctuation">,</span> o<span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;100%%\n&quot;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 结果：</span>
+<span class="token number">100</span>
+<span class="token boolean">false</span>
+<span class="token punctuation">{</span>msg<span class="token punctuation">}</span>
+<span class="token keyword">struct</span> <span class="token punctuation">{</span> name <span class="token builtin">string</span> <span class="token punctuation">}</span><span class="token punctuation">{</span>name<span class="token punctuation">:</span><span class="token string">&quot;msg&quot;</span><span class="token punctuation">}</span>
+<span class="token keyword">struct</span> <span class="token punctuation">{</span> name <span class="token builtin">string</span> <span class="token punctuation">}</span>
+<span class="token number">100</span><span class="token operator">%</span>
+</code></pre></div><h2 id="布尔占位符"><a href="#布尔占位符" class="header-anchor">#</a> 布尔占位符</h2> <table><thead><tr><th>占位符</th> <th>说明</th> <th>举例</th> <th>输出</th></tr></thead> <tbody><tr><td>%t</td> <td>true  或 false。</td> <td>Printf(“%t”,  true)</td> <td>TRUE</td></tr></tbody></table> <h2 id="整数占位符"><a href="#整数占位符" class="header-anchor">#</a> 整数占位符</h2> <table><thead><tr><th>占位符</th> <th>说明</th> <th>举例</th> <th>输出</th></tr></thead> <tbody><tr><td>%b</td> <td>二进制表示</td> <td>Printf(“%b”, 5)</td> <td>101</td></tr> <tr><td>%c</td> <td>相应Unicode码点所表示的字符</td> <td>Printf(“%c”, 0x4E2D)</td> <td>中</td></tr> <tr><td>%d</td> <td>十进制表示</td> <td>Printf(“%d”, 0x12)</td> <td>18</td></tr> <tr><td>%o</td> <td>八进制表示</td> <td>Printf(“%d”, 10)</td> <td>12</td></tr> <tr><td>%q</td> <td>单引号围绕的字符字面值，由Go语法安全地转义</td> <td>Printf(“%q”, 0x4E2D)</td> <td>‘中’</td></tr> <tr><td>%x</td> <td>十六进制表示，字母形式为小写 a-f</td> <td>Printf(“%x”, 13)</td> <td>d</td></tr> <tr><td>%X</td> <td>十六进制表示，字母形式为大写 A-F</td> <td>Printf(“%x”, 13)</td> <td>D</td></tr> <tr><td>%U</td> <td>Unicode格式：U+1234，等同于 “U+%04X”</td> <td>Printf(“%U”, 0x4E2D)</td> <td>U+4E2D</td></tr></tbody></table> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;fmt&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	n <span class="token operator">:=</span> <span class="token number">65</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;%b\n&quot;</span><span class="token punctuation">,</span> n<span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;%c\n&quot;</span><span class="token punctuation">,</span> n<span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;%d\n&quot;</span><span class="token punctuation">,</span> n<span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;%o\n&quot;</span><span class="token punctuation">,</span> n<span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;%x\n&quot;</span><span class="token punctuation">,</span> n<span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;%X\n&quot;</span><span class="token punctuation">,</span> n<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 结果：</span>
+<span class="token number">1000001</span>
+A
+<span class="token number">65</span>
+<span class="token number">101</span>
+<span class="token number">41</span>
+<span class="token number">41</span>
+</code></pre></div><h2 id="浮点数和复数的组成部分-实部和虚部"><a href="#浮点数和复数的组成部分-实部和虚部" class="header-anchor">#</a> 浮点数和复数的组成部分(实部和虚部)</h2> <table><thead><tr><th>占位符</th> <th>说明</th> <th>举例</th> <th>输出</th></tr></thead> <tbody><tr><td>%b</td> <td>无小数部分的，指数为二的幂的科学计数法，与  strconv.FormatFloat 的 ‘b’ 转换格式一致。例如 -123456p-78</td> <td></td> <td></td></tr> <tr><td>%e</td> <td>科学计数法，例如 -1234.456e+78</td> <td>Printf(“%e”, 10.2)</td> <td>1.02E+01</td></tr> <tr><td>%E</td> <td>科学计数法，例如 -1234.456E+78</td> <td>Printf(“%e”, 10.2)</td> <td>1.02E+01</td></tr> <tr><td>%f</td> <td>有小数点而无指数，例如 123.456</td> <td>Printf(“%f”, 10.2)</td> <td>10.2</td></tr> <tr><td>%g</td> <td>根据情况选择 %e 或 %f 以产生更紧凑的（无末尾的0）</td> <td>输出 Printf(“%g”, 10.20)</td> <td>10.2</td></tr> <tr><td>%G</td> <td>根据情况选择 %E 或 %f 以产生更紧凑的（无末尾的0）</td> <td>输出 Printf(“%G”, 10.20+2i)</td> <td>(10.2+2i)</td></tr></tbody></table> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;fmt&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	f <span class="token operator">:=</span> <span class="token number">12.34</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;%b\n&quot;</span><span class="token punctuation">,</span> f<span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;%e\n&quot;</span><span class="token punctuation">,</span> f<span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;%E\n&quot;</span><span class="token punctuation">,</span> f<span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;%f\n&quot;</span><span class="token punctuation">,</span> f<span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;%g\n&quot;</span><span class="token punctuation">,</span> f<span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;%G\n&quot;</span><span class="token punctuation">,</span> f<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 结果：</span>
+<span class="token number">6946802425218990</span>p<span class="token operator">-</span><span class="token number">49</span>
+<span class="token number">1.234000e+01</span>
+<span class="token number">1.234000E+01</span>
+<span class="token number">12.340000</span>
+<span class="token number">12.34</span>
+<span class="token number">12.34</span>
+</code></pre></div><h2 id="字符串与字节切片"><a href="#字符串与字节切片" class="header-anchor">#</a> 字符串与字节切片</h2> <table><thead><tr><th>占位符</th> <th>说明</th> <th>举例</th> <th>输出</th></tr></thead> <tbody><tr><td>%s</td> <td>输出字符串表示（string类型或[]byte)</td> <td>Printf(“%s”, []byte(“Go语言”))</td> <td>Go语言</td></tr> <tr><td>%q</td> <td>双引号围绕的字符串，由Go语法安全地转义</td> <td>Printf(“%q”, “Go语言”)</td> <td>“Go语言”</td></tr> <tr><td>%x</td> <td>十六进制，小写字母，每字节两个字符</td> <td>Printf(“%x”, “golang”)</td> <td>676f6c616e67</td></tr> <tr><td>%X</td> <td>十六进制，大写字母，每字节两个字符</td> <td>Printf(“%X”, “golang”)</td> <td>676F6C616E67</td></tr></tbody></table> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;fmt&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	s <span class="token operator">:=</span> <span class="token string">&quot;msg&quot;</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;%s\n&quot;</span><span class="token punctuation">,</span> s<span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;%q\n&quot;</span><span class="token punctuation">,</span> s<span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;%x\n&quot;</span><span class="token punctuation">,</span> s<span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;%X\n&quot;</span><span class="token punctuation">,</span> s<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 结果：</span>
+msg
+<span class="token string">&quot;msg&quot;</span>
+<span class="token number">6</span>d7367
+<span class="token number">6</span>D7367
+</code></pre></div><h2 id="指针"><a href="#指针" class="header-anchor">#</a> 指针</h2> <table><thead><tr><th>占位符</th> <th>说明</th> <th>举例</th> <th>输出</th></tr></thead> <tbody><tr><td>%p</td> <td>十六进制表示，前缀  0x</td> <td>Printf(“%p”,  &amp;people)</td> <td>0x4f57f0</td></tr></tbody></table> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;fmt&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	a <span class="token operator">:=</span> <span class="token number">18</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;%p\n&quot;</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>a<span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;%#p\n&quot;</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>a<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 结果：</span>
+<span class="token number">0xc0000120a0</span>
+c0000120a0
+</code></pre></div><h2 id="宽度标识符-浮点数重要"><a href="#宽度标识符-浮点数重要" class="header-anchor">#</a> 宽度标识符 - 浮点数重要</h2> <table><thead><tr><th>占位符</th> <th>说明</th></tr></thead> <tbody><tr><td>%f</td> <td>默认宽度，默认精度</td></tr> <tr><td>%9f</td> <td>宽度9，默认精度</td></tr> <tr><td>%.2f</td> <td>默认宽度，精度2</td></tr> <tr><td>%9.2f</td> <td>宽度9，精度2</td></tr> <tr><td>%9.f</td> <td>宽度9，精度0</td></tr></tbody></table> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;fmt&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	n <span class="token operator">:=</span> <span class="token number">88.88</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;%f\n&quot;</span><span class="token punctuation">,</span> n<span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;%9f\n&quot;</span><span class="token punctuation">,</span> n<span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;%.2f\n&quot;</span><span class="token punctuation">,</span> n<span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;%9.2f\n&quot;</span><span class="token punctuation">,</span> n<span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;%9.f\n&quot;</span><span class="token punctuation">,</span> n<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 结果：</span>
+<span class="token number">88.880000</span>
+<span class="token number">88.880000</span>
+<span class="token number">88.88</span>
+    <span class="token number">88.88</span>
+       <span class="token number">89</span>
+</code></pre></div><h2 id="其它标记"><a href="#其它标记" class="header-anchor">#</a> 其它标记</h2> <table><thead><tr><th>占位符</th> <th>说明</th> <th>举例</th> <th>输出</th></tr></thead> <tbody><tr><td>+</td> <td>总打印数值的正负号；对于%q（%+q）保证只输出ASCII编码的字符。</td> <td>Printf(“%+q”, “中文”) “\u4e2d\u6587”</td> <td></td></tr> <tr><td>-</td> <td>在右侧而非左侧填充空格（左对齐该区域）</td> <td></td> <td></td></tr> <tr><td>#</td> <td>备用格式：为八进制添加前导 0（%#o）为十六进制添加前导 0x（%#x）或 0X（%#X），为 %p（%#p）去掉前导  0x；如果可能的话，%q（%#q）会打印原始 （即反引号围绕的）字符串；如果是可打印字符，%U（%#U）会写出该字符的Unicode 编码形式（如字符 x  会被打印成 U+0078 ‘x’）。</td> <td>Printf(“%#U”, ‘中’)</td> <td>U+4E2D</td></tr> <tr><td>’ ‘</td> <td>(空格)为数值中省略的正负号留出空白（% d）；</td> <td>以十六进制（% x, % X）打印字符串或切片时，在字节之间用空格隔开</td> <td></td></tr> <tr><td>0</td> <td>填充前导的0而非空格；对于数字，这会将填充移到正负号之后</td> <td></td> <td></td></tr></tbody></table> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;fmt&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	s <span class="token operator">:=</span> <span class="token string">&quot;msg&quot;</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;%s\n&quot;</span><span class="token punctuation">,</span> s<span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;%5s\n&quot;</span><span class="token punctuation">,</span> s<span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;%-5s\n&quot;</span><span class="token punctuation">,</span> s<span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;%5.7s\n&quot;</span><span class="token punctuation">,</span> s<span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;%-5.7s\n&quot;</span><span class="token punctuation">,</span> s<span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;%5.2s\n&quot;</span><span class="token punctuation">,</span> s<span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;%05s\n&quot;</span><span class="token punctuation">,</span> s<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 结果：</span>
+msg
+  msg
+msg
+  msg
+msg
+   ms
+<span class="token number">00</span>msg
+</code></pre></div><h2 id="注意事项"><a href="#注意事项" class="header-anchor">#</a> 注意事项</h2> <p>golang没有 ‘%u’ 点位符，若整数为无符号类型，默认就会被打印成无符号的。</p> <p>宽度与精度的控制格式以Unicode码点为单位。宽度为该数值占用区域的最小宽度；精度为小数点之后的位数。
+操作数的类型为int时，宽度与精度都可用字符 ‘*’ 表示。</p> <p>对于 %g/%G 而言，精度为所有数字的总数，例如：123.45，%.4g 会打印123.5，（而 %6.2f 会打印123.45）。</p> <p>%e 和 %f 的默认精度为6</p> <p>对大多数的数值类型而言，宽度为输出的最小字符数，如果必要的话会为已格式化的形式填充空格。</p> <p>而以字符串类型，精度为输出的最大字符数，如果必要的话会直接截断。</p> <h1 id="print函数-标准输出"><a href="#print函数-标准输出" class="header-anchor">#</a> Print函数 - 标准输出</h1> <p>Print系列函数会将内容输出到系统的标准输出：</p> <ol><li>Print函数直接输出内容，</li> <li>Printf函数支持格式化输出字符串，</li> <li>Println函数会在输出内容的结尾添加一个换行符。</li></ol> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">Print</span><span class="token punctuation">(</span>a <span class="token operator">...</span><span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">(</span>n <span class="token builtin">int</span><span class="token punctuation">,</span> err <span class="token builtin">error</span><span class="token punctuation">)</span>
+<span class="token keyword">func</span> <span class="token function">Printf</span><span class="token punctuation">(</span>format <span class="token builtin">string</span><span class="token punctuation">,</span> a <span class="token operator">...</span><span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">(</span>n <span class="token builtin">int</span><span class="token punctuation">,</span> err <span class="token builtin">error</span><span class="token punctuation">)</span>
+<span class="token keyword">func</span> <span class="token function">Println</span><span class="token punctuation">(</span>a <span class="token operator">...</span><span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">(</span>n <span class="token builtin">int</span><span class="token punctuation">,</span> err <span class="token builtin">error</span><span class="token punctuation">)</span>
+</code></pre></div><p><strong>实例</strong></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Print</span><span class="token punctuation">(</span><span class="token string">&quot;您好。&quot;</span><span class="token punctuation">)</span>
+    name <span class="token operator">:=</span> <span class="token string">&quot;msg&quot;</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;我是：%s\n&quot;</span><span class="token punctuation">,</span> name<span class="token punctuation">)</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;大家好&quot;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 结果：</span>
+您好。我是：msg
+大家好
+</code></pre></div><h1 id="fprint函数-输出到io-writer中"><a href="#fprint函数-输出到io-writer中" class="header-anchor">#</a> Fprint函数 - 输出到io.writer中</h1> <p>Fprint系列函数会将内容输出到一个io.Writer接口类型的变量w中，我们通常用这个函数往文件中写入内容</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">Fprint</span><span class="token punctuation">(</span>w io<span class="token punctuation">.</span>Writer<span class="token punctuation">,</span> a <span class="token operator">...</span><span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">(</span>n <span class="token builtin">int</span><span class="token punctuation">,</span> err <span class="token builtin">error</span><span class="token punctuation">)</span>
+<span class="token keyword">func</span> <span class="token function">Fprintf</span><span class="token punctuation">(</span>w io<span class="token punctuation">.</span>Writer<span class="token punctuation">,</span> format <span class="token builtin">string</span><span class="token punctuation">,</span> a <span class="token operator">...</span><span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">(</span>n <span class="token builtin">int</span><span class="token punctuation">,</span> err <span class="token builtin">error</span><span class="token punctuation">)</span>
+<span class="token keyword">func</span> <span class="token function">Fprintln</span><span class="token punctuation">(</span>w io<span class="token punctuation">.</span>Writer<span class="token punctuation">,</span> a <span class="token operator">...</span><span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">(</span>n <span class="token builtin">int</span><span class="token punctuation">,</span> err <span class="token builtin">error</span><span class="token punctuation">)</span>
+</code></pre></div><p><strong>实例</strong></p> <p>只要满足io.Writer接口的类型都支持写入。</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token comment">// 向标准输出写入内容</span>
+fmt<span class="token punctuation">.</span><span class="token function">Fprintln</span><span class="token punctuation">(</span>os<span class="token punctuation">.</span>Stdout<span class="token punctuation">,</span> <span class="token string">&quot;向标准输出写入内容&quot;</span><span class="token punctuation">)</span>
+fileObj<span class="token punctuation">,</span> err <span class="token operator">:=</span> os<span class="token punctuation">.</span><span class="token function">OpenFile</span><span class="token punctuation">(</span><span class="token string">&quot;./xx.txt&quot;</span><span class="token punctuation">,</span> os<span class="token punctuation">.</span>O_CREATE<span class="token operator">|</span>os<span class="token punctuation">.</span>O_WRONLY<span class="token operator">|</span>os<span class="token punctuation">.</span>O_APPEND<span class="token punctuation">,</span> <span class="token number">0644</span><span class="token punctuation">)</span>
+<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;打开文件出错，err:&quot;</span><span class="token punctuation">,</span> err<span class="token punctuation">)</span>
+    <span class="token keyword">return</span>
+<span class="token punctuation">}</span>
+name <span class="token operator">:=</span> <span class="token string">&quot;msg&quot;</span>
+<span class="token comment">// 向打开的文件句柄中写入内容</span>
+fmt<span class="token punctuation">.</span><span class="token function">Fprintf</span><span class="token punctuation">(</span>fileObj<span class="token punctuation">,</span> <span class="token string">&quot;往文件中写如信息：%s&quot;</span><span class="token punctuation">,</span> name<span class="token punctuation">)</span>
+</code></pre></div><h1 id="sprint函数-生成自定义字符串"><a href="#sprint函数-生成自定义字符串" class="header-anchor">#</a> Sprint函数 - 生成自定义字符串</h1> <p>Sprint系列函数会把传入的数据生成并返回一个字符串。</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">Sprint</span><span class="token punctuation">(</span>a <span class="token operator">...</span><span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token builtin">string</span>
+<span class="token keyword">func</span> <span class="token function">Sprintf</span><span class="token punctuation">(</span>format <span class="token builtin">string</span><span class="token punctuation">,</span> a <span class="token operator">...</span><span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token builtin">string</span>
+<span class="token keyword">func</span> <span class="token function">Sprintln</span><span class="token punctuation">(</span>a <span class="token operator">...</span><span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token builtin">string</span>
+</code></pre></div><p><strong>实例</strong></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;fmt&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	s1 <span class="token operator">:=</span> fmt<span class="token punctuation">.</span><span class="token function">Sprint</span><span class="token punctuation">(</span><span class="token string">&quot;msg&quot;</span><span class="token punctuation">)</span>
+	name <span class="token operator">:=</span> <span class="token string">&quot;msg&quot;</span>
+	age <span class="token operator">:=</span> <span class="token number">18</span>
+	s2 <span class="token operator">:=</span> fmt<span class="token punctuation">.</span><span class="token function">Sprintf</span><span class="token punctuation">(</span><span class="token string">&quot;name:%s,age:%d&quot;</span><span class="token punctuation">,</span> name<span class="token punctuation">,</span> age<span class="token punctuation">)</span>
+	s3 <span class="token operator">:=</span> fmt<span class="token punctuation">.</span><span class="token function">Sprintln</span><span class="token punctuation">(</span><span class="token string">&quot;msg&quot;</span><span class="token punctuation">)</span> <span class="token comment">// Sprintln带换行</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>s1<span class="token punctuation">,</span> s3<span class="token punctuation">,</span> s2<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 结果：</span>
+msg msg
+ name<span class="token punctuation">:</span>msg<span class="token punctuation">,</span>age<span class="token punctuation">:</span><span class="token number">18</span>
+</code></pre></div><h1 id="errorf-错误输出"><a href="#errorf-错误输出" class="header-anchor">#</a> Errorf - 错误输出</h1> <p>Errorf函数根据format参数生成格式化字符串并返回一个包含该字符串的错误。</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">Errorf</span><span class="token punctuation">(</span>format <span class="token builtin">string</span><span class="token punctuation">,</span> a <span class="token operator">...</span><span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token builtin">error</span>
+</code></pre></div><p><strong>实例</strong></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;fmt&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	err <span class="token operator">:=</span> fmt<span class="token punctuation">.</span><span class="token function">Errorf</span><span class="token punctuation">(</span><span class="token string">&quot;这是一个错误&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">//结果：</span>
+这是一个错误
+</code></pre></div><h1 id="scan函数-获取输入"><a href="#scan函数-获取输入" class="header-anchor">#</a> Scan函数 - 获取输入</h1> <h2 id="scan"><a href="#scan" class="header-anchor">#</a> Scan</h2> <ol><li>Scan从标准输入扫描文本，读取由空白符分隔的值保存到传递给本函数的参数中，换行符视为空白符。</li> <li>本函数返回成功扫描的数据个数和遇到的任何错误。如果读取的数据个数比提供的参数少，会返回一个错误报告原因</li></ol> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">Scan</span><span class="token punctuation">(</span>a <span class="token operator">...</span><span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">(</span>n <span class="token builtin">int</span><span class="token punctuation">,</span> err <span class="token builtin">error</span><span class="token punctuation">)</span>
+</code></pre></div><p><strong>实例</strong></p> <p>将上面的代码编译后在终端执行，在终端依次输入msg、22和false使用空格分隔或换行分隔</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;fmt&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">var</span> <span class="token punctuation">(</span>
+		name    <span class="token builtin">string</span>
+		age     <span class="token builtin">int</span>
+		married <span class="token builtin">bool</span>
+	<span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Scan</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>name<span class="token punctuation">,</span> <span class="token operator">&amp;</span>age<span class="token punctuation">,</span> <span class="token operator">&amp;</span>married<span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;扫描结果 name:%s age:%d married:%t \n&quot;</span><span class="token punctuation">,</span> name<span class="token punctuation">,</span> age<span class="token punctuation">,</span> married<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 结果：</span>
+msg
+<span class="token number">23</span>
+<span class="token boolean">false</span>
+扫描结果 name<span class="token punctuation">:</span>msg age<span class="token punctuation">:</span><span class="token number">23</span> married<span class="token punctuation">:</span><span class="token boolean">false</span>
+</code></pre></div><h2 id="scanf"><a href="#scanf" class="header-anchor">#</a> Scanf</h2> <ol><li>Scanf从标准输入扫描文本，根据format参数指定的格式去读取由空白符分隔的值保存到传递给本函数的参数中。</li> <li>本函数返回成功扫描的数据个数和遇到的任何错误</li></ol> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">Scanf</span><span class="token punctuation">(</span>format <span class="token builtin">string</span><span class="token punctuation">,</span> a <span class="token operator">...</span><span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">(</span>n <span class="token builtin">int</span><span class="token punctuation">,</span> err <span class="token builtin">error</span><span class="token punctuation">)</span>
+</code></pre></div><p><strong>实例</strong></p> <p>fmt.Scanf不同于fmt.Scan简单的以空格作为输入数据的分隔符，fmt.Scanf为输入数据指定了具体的输入内容格式，只有按照格式输入数据才会被扫描并存入对应变量。</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;fmt&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">var</span> <span class="token punctuation">(</span>
+		name    <span class="token builtin">string</span>
+		age     <span class="token builtin">int</span>
+		married <span class="token builtin">bool</span>
+	<span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Scanf</span><span class="token punctuation">(</span><span class="token string">&quot;1:%s 2:%d 3:%t&quot;</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>name<span class="token punctuation">,</span> <span class="token operator">&amp;</span>age<span class="token punctuation">,</span> <span class="token operator">&amp;</span>married<span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;扫描结果 name:%s age:%d married:%t \n&quot;</span><span class="token punctuation">,</span> name<span class="token punctuation">,</span> age<span class="token punctuation">,</span> married<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+
+<span class="token comment">// 结果：</span>
+<span class="token number">1</span><span class="token punctuation">:</span>msg <span class="token number">2</span><span class="token punctuation">:</span><span class="token number">23</span> <span class="token number">3</span><span class="token punctuation">:</span><span class="token boolean">false</span>
+扫描结果 name<span class="token punctuation">:</span>msg age<span class="token punctuation">:</span><span class="token number">23</span> married<span class="token punctuation">:</span><span class="token boolean">false</span>
+</code></pre></div><h2 id="scanln"><a href="#scanln" class="header-anchor">#</a> Scanln</h2> <ol><li>Scanln类似Scan，它在遇到换行时才停止扫描。最后一个数据后面必须有换行或者到达结束位置。</li> <li>本函数返回成功扫描的数据个数和遇到的任何错误</li></ol> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">Scanln</span><span class="token punctuation">(</span>a <span class="token operator">...</span><span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">(</span>n <span class="token builtin">int</span><span class="token punctuation">,</span> err <span class="token builtin">error</span><span class="token punctuation">)</span>
+</code></pre></div><p><strong>实例</strong></p> <p>Scanln遇到回车就结束。</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;fmt&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">var</span> <span class="token punctuation">(</span>
+		name    <span class="token builtin">string</span>
+		age     <span class="token builtin">int</span>
+		married <span class="token builtin">bool</span>
+	<span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Scanln</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>name<span class="token punctuation">,</span> <span class="token operator">&amp;</span>age<span class="token punctuation">,</span> <span class="token operator">&amp;</span>married<span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;扫描结果 name:%s age:%d married:%t \n&quot;</span><span class="token punctuation">,</span> name<span class="token punctuation">,</span> age<span class="token punctuation">,</span> married<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+
+<span class="token comment">// 结果：</span>
+<span class="token punctuation">.</span>\test<span class="token punctuation">.</span>exe
+msg
+扫描结果 name<span class="token punctuation">:</span>msg age<span class="token punctuation">:</span><span class="token number">0</span> married<span class="token punctuation">:</span><span class="token boolean">false</span>
+
+<span class="token punctuation">.</span>\test<span class="token punctuation">.</span>exe
+msg <span class="token number">23</span> <span class="token boolean">true</span>
+扫描结果 name<span class="token punctuation">:</span>msg age<span class="token punctuation">:</span><span class="token number">23</span> married<span class="token punctuation">:</span><span class="token boolean">true</span>
+</code></pre></div><h2 id="额外别类型的输入函数"><a href="#额外别类型的输入函数" class="header-anchor">#</a> 额外别类型的输入函数</h2> <h3 id="bufio-newreader"><a href="#bufio-newreader" class="header-anchor">#</a> bufio.NewReader</h3> <p>有时候我们想完整获取输入的内容，而输入的内容可能包含空格，这种情况下可以使用bufio包来实现。示例代码如下：</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">bufioDemo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    reader <span class="token operator">:=</span> bufio<span class="token punctuation">.</span><span class="token function">NewReader</span><span class="token punctuation">(</span>os<span class="token punctuation">.</span>Stdin<span class="token punctuation">)</span> <span class="token comment">// 从标准输入生成读对象</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Print</span><span class="token punctuation">(</span><span class="token string">&quot;请输入内容：&quot;</span><span class="token punctuation">)</span>
+    text<span class="token punctuation">,</span> <span class="token boolean">_</span> <span class="token operator">:=</span> reader<span class="token punctuation">.</span><span class="token function">ReadString</span><span class="token punctuation">(</span><span class="token string">'\n'</span><span class="token punctuation">)</span> <span class="token comment">// 读到换行</span>
+    text <span class="token operator">=</span> strings<span class="token punctuation">.</span><span class="token function">TrimSpace</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;%#v\n&quot;</span><span class="token punctuation">,</span> text<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="fscan系列"><a href="#fscan系列" class="header-anchor">#</a> Fscan系列</h3> <p>这几个函数功能分别类似于fmt.Scan、fmt.Scanf、fmt.Scanln三个函数，只不过它们不是从标准输入中读取数据而是从io.Reader中读取数据。</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">Fscan</span><span class="token punctuation">(</span>r io<span class="token punctuation">.</span>Reader<span class="token punctuation">,</span> a <span class="token operator">...</span><span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">(</span>n <span class="token builtin">int</span><span class="token punctuation">,</span> err <span class="token builtin">error</span><span class="token punctuation">)</span>
+<span class="token keyword">func</span> <span class="token function">Fscanln</span><span class="token punctuation">(</span>r io<span class="token punctuation">.</span>Reader<span class="token punctuation">,</span> a <span class="token operator">...</span><span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">(</span>n <span class="token builtin">int</span><span class="token punctuation">,</span> err <span class="token builtin">error</span><span class="token punctuation">)</span>
+<span class="token keyword">func</span> <span class="token function">Fscanf</span><span class="token punctuation">(</span>r io<span class="token punctuation">.</span>Reader<span class="token punctuation">,</span> format <span class="token builtin">string</span><span class="token punctuation">,</span> a <span class="token operator">...</span><span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">(</span>n <span class="token builtin">int</span><span class="token punctuation">,</span> err <span class="token builtin">error</span><span class="token punctuation">)</span>
+</code></pre></div><h3 id="sscan系列"><a href="#sscan系列" class="header-anchor">#</a> Sscan系列</h3> <p>这几个函数功能分别类似于fmt.Scan、fmt.Scanf、fmt.Scanln三个函数，只不过它们不是从标准输入中读取数据而是从指定字符串中读取数据。</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">Sscan</span><span class="token punctuation">(</span>str <span class="token builtin">string</span><span class="token punctuation">,</span> a <span class="token operator">...</span><span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">(</span>n <span class="token builtin">int</span><span class="token punctuation">,</span> err <span class="token builtin">error</span><span class="token punctuation">)</span>
+<span class="token keyword">func</span> <span class="token function">Sscanln</span><span class="token punctuation">(</span>str <span class="token builtin">string</span><span class="token punctuation">,</span> a <span class="token operator">...</span><span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">(</span>n <span class="token builtin">int</span><span class="token punctuation">,</span> err <span class="token builtin">error</span><span class="token punctuation">)</span>
+<span class="token keyword">func</span> <span class="token function">Sscanf</span><span class="token punctuation">(</span>str <span class="token builtin">string</span><span class="token punctuation">,</span> format <span class="token builtin">string</span><span class="token punctuation">,</span> a <span class="token operator">...</span><span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">(</span>n <span class="token builtin">int</span><span class="token punctuation">,</span> err <span class="token builtin">error</span><span class="token punctuation">)</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/GO/module/时间 - 定时器.html" class="prev">
+        时间 - 定时器
+      </a></span> <span class="next"><a href="/GO/module/输出输入 - IO包.html">
+        输出输入 -  IO包
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.d65bef42.js" defer></script><script src="/assets/js/2.2249178e.js" defer></script><script src="/assets/js/57.df1329ba.js" defer></script>
+  </body>
+</html>

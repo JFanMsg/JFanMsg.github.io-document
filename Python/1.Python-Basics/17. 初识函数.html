@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>17. 初识函数 | MSG</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="在追寻技术的同时享受生活">
+    
+    <link rel="preload" href="/assets/css/0.styles.e4d8b86b.css" as="style"><link rel="preload" href="/assets/js/app.d65bef42.js" as="script"><link rel="preload" href="/assets/js/2.2249178e.js" as="script"><link rel="preload" href="/assets/js/67.85688aa2.js" as="script"><link rel="prefetch" href="/assets/js/10.4785e2e5.js"><link rel="prefetch" href="/assets/js/100.33fceff2.js"><link rel="prefetch" href="/assets/js/101.62e1e5d4.js"><link rel="prefetch" href="/assets/js/102.8551fe71.js"><link rel="prefetch" href="/assets/js/103.47754d79.js"><link rel="prefetch" href="/assets/js/104.4adf114f.js"><link rel="prefetch" href="/assets/js/105.6206a08a.js"><link rel="prefetch" href="/assets/js/106.1c4561f3.js"><link rel="prefetch" href="/assets/js/107.e1531a5a.js"><link rel="prefetch" href="/assets/js/108.c637743a.js"><link rel="prefetch" href="/assets/js/109.3f150913.js"><link rel="prefetch" href="/assets/js/11.bd8ec7a6.js"><link rel="prefetch" href="/assets/js/110.088c1ac3.js"><link rel="prefetch" href="/assets/js/111.66d8d491.js"><link rel="prefetch" href="/assets/js/112.231663ee.js"><link rel="prefetch" href="/assets/js/113.a38bc531.js"><link rel="prefetch" href="/assets/js/114.e165daea.js"><link rel="prefetch" href="/assets/js/115.994b087a.js"><link rel="prefetch" href="/assets/js/116.ea3cfdfb.js"><link rel="prefetch" href="/assets/js/117.7be5e4f3.js"><link rel="prefetch" href="/assets/js/118.ebb58ddb.js"><link rel="prefetch" href="/assets/js/119.90018646.js"><link rel="prefetch" href="/assets/js/12.0d8f43df.js"><link rel="prefetch" href="/assets/js/120.bb5be863.js"><link rel="prefetch" href="/assets/js/121.3d1db670.js"><link rel="prefetch" href="/assets/js/122.d29ed1b2.js"><link rel="prefetch" href="/assets/js/123.38cc4704.js"><link rel="prefetch" href="/assets/js/124.cc8549d4.js"><link rel="prefetch" href="/assets/js/125.6ee3e9c8.js"><link rel="prefetch" href="/assets/js/126.48710eba.js"><link rel="prefetch" href="/assets/js/127.d7a1fd83.js"><link rel="prefetch" href="/assets/js/128.e5017f6b.js"><link rel="prefetch" href="/assets/js/129.4c33e121.js"><link rel="prefetch" href="/assets/js/13.2dbde7aa.js"><link rel="prefetch" href="/assets/js/130.cda66247.js"><link rel="prefetch" href="/assets/js/131.ad76f669.js"><link rel="prefetch" href="/assets/js/132.aca88758.js"><link rel="prefetch" href="/assets/js/133.a1cf5903.js"><link rel="prefetch" href="/assets/js/134.b1386377.js"><link rel="prefetch" href="/assets/js/135.94edcf53.js"><link rel="prefetch" href="/assets/js/136.24be4170.js"><link rel="prefetch" href="/assets/js/137.db57772e.js"><link rel="prefetch" href="/assets/js/138.dc67bcaa.js"><link rel="prefetch" href="/assets/js/139.5453d1f6.js"><link rel="prefetch" href="/assets/js/14.2187dbf4.js"><link rel="prefetch" href="/assets/js/140.938e5c07.js"><link rel="prefetch" href="/assets/js/141.99c7cf2c.js"><link rel="prefetch" href="/assets/js/142.428e3958.js"><link rel="prefetch" href="/assets/js/143.68b01530.js"><link rel="prefetch" href="/assets/js/144.f67389cc.js"><link rel="prefetch" href="/assets/js/145.d952a130.js"><link rel="prefetch" href="/assets/js/146.b933dcad.js"><link rel="prefetch" href="/assets/js/147.2d8e4c0a.js"><link rel="prefetch" href="/assets/js/148.6d76ac94.js"><link rel="prefetch" href="/assets/js/149.6b4d6378.js"><link rel="prefetch" href="/assets/js/15.a53b356c.js"><link rel="prefetch" href="/assets/js/150.5bf39cb4.js"><link rel="prefetch" href="/assets/js/151.17af677c.js"><link rel="prefetch" href="/assets/js/152.7f1c2792.js"><link rel="prefetch" href="/assets/js/153.98dd0727.js"><link rel="prefetch" href="/assets/js/154.eb44bf23.js"><link rel="prefetch" href="/assets/js/155.5a9840ea.js"><link rel="prefetch" href="/assets/js/156.7ba01fd0.js"><link rel="prefetch" href="/assets/js/157.2296a048.js"><link rel="prefetch" href="/assets/js/158.6bb1f699.js"><link rel="prefetch" href="/assets/js/159.073bb8df.js"><link rel="prefetch" href="/assets/js/16.cef7bf44.js"><link rel="prefetch" href="/assets/js/160.25a837f9.js"><link rel="prefetch" href="/assets/js/161.93d886a1.js"><link rel="prefetch" href="/assets/js/162.5d2714b2.js"><link rel="prefetch" href="/assets/js/17.96f36904.js"><link rel="prefetch" href="/assets/js/18.fd04b310.js"><link rel="prefetch" href="/assets/js/19.3e1377d1.js"><link rel="prefetch" href="/assets/js/20.ac195ac8.js"><link rel="prefetch" href="/assets/js/21.c2d7729c.js"><link rel="prefetch" href="/assets/js/22.dd8c621b.js"><link rel="prefetch" href="/assets/js/23.ad7d0350.js"><link rel="prefetch" href="/assets/js/24.8559c4c3.js"><link rel="prefetch" href="/assets/js/25.783a8116.js"><link rel="prefetch" href="/assets/js/26.25e0e459.js"><link rel="prefetch" href="/assets/js/27.c0616e2a.js"><link rel="prefetch" href="/assets/js/28.30656c2e.js"><link rel="prefetch" href="/assets/js/29.2be5114c.js"><link rel="prefetch" href="/assets/js/3.be8c8f3b.js"><link rel="prefetch" href="/assets/js/30.230a74a7.js"><link rel="prefetch" href="/assets/js/31.760f46ad.js"><link rel="prefetch" href="/assets/js/32.c9533fef.js"><link rel="prefetch" href="/assets/js/33.dcacfb38.js"><link rel="prefetch" href="/assets/js/34.4370a466.js"><link rel="prefetch" href="/assets/js/35.bf299eea.js"><link rel="prefetch" href="/assets/js/36.336e435a.js"><link rel="prefetch" href="/assets/js/37.1d1d2eea.js"><link rel="prefetch" href="/assets/js/38.0d58b7d0.js"><link rel="prefetch" href="/assets/js/39.d43564ba.js"><link rel="prefetch" href="/assets/js/4.4a6cb970.js"><link rel="prefetch" href="/assets/js/40.bc4e4bde.js"><link rel="prefetch" href="/assets/js/41.b71231a5.js"><link rel="prefetch" href="/assets/js/42.9d46f400.js"><link rel="prefetch" href="/assets/js/43.50c5be69.js"><link rel="prefetch" href="/assets/js/44.60406e7f.js"><link rel="prefetch" href="/assets/js/45.ec3569ae.js"><link rel="prefetch" href="/assets/js/46.1bd3ce7b.js"><link rel="prefetch" href="/assets/js/47.1e1b5326.js"><link rel="prefetch" href="/assets/js/48.64c631ea.js"><link rel="prefetch" href="/assets/js/49.b4abacd8.js"><link rel="prefetch" href="/assets/js/5.e6d0b165.js"><link rel="prefetch" href="/assets/js/50.c3e320c0.js"><link rel="prefetch" href="/assets/js/51.5ec7fb8c.js"><link rel="prefetch" href="/assets/js/52.2d234f86.js"><link rel="prefetch" href="/assets/js/53.f3b69623.js"><link rel="prefetch" href="/assets/js/54.c85ff450.js"><link rel="prefetch" href="/assets/js/55.b07597b5.js"><link rel="prefetch" href="/assets/js/56.444129cf.js"><link rel="prefetch" href="/assets/js/57.df1329ba.js"><link rel="prefetch" href="/assets/js/58.5afb51cf.js"><link rel="prefetch" href="/assets/js/59.d98936d9.js"><link rel="prefetch" href="/assets/js/6.809376cd.js"><link rel="prefetch" href="/assets/js/60.02813ecf.js"><link rel="prefetch" href="/assets/js/61.37a4812d.js"><link rel="prefetch" href="/assets/js/62.5da94048.js"><link rel="prefetch" href="/assets/js/63.8e2c2bca.js"><link rel="prefetch" href="/assets/js/64.d290398f.js"><link rel="prefetch" href="/assets/js/65.44e28313.js"><link rel="prefetch" href="/assets/js/66.9acf0206.js"><link rel="prefetch" href="/assets/js/68.45bda7fc.js"><link rel="prefetch" href="/assets/js/69.9074feb0.js"><link rel="prefetch" href="/assets/js/7.5d7bce6e.js"><link rel="prefetch" href="/assets/js/70.b4cd2ddc.js"><link rel="prefetch" href="/assets/js/71.53219b13.js"><link rel="prefetch" href="/assets/js/72.af2a7290.js"><link rel="prefetch" href="/assets/js/73.c28fc506.js"><link rel="prefetch" href="/assets/js/74.64c81a90.js"><link rel="prefetch" href="/assets/js/75.05191ece.js"><link rel="prefetch" href="/assets/js/76.f516d464.js"><link rel="prefetch" href="/assets/js/77.c345180b.js"><link rel="prefetch" href="/assets/js/78.4a09d0ba.js"><link rel="prefetch" href="/assets/js/79.65f41bcf.js"><link rel="prefetch" href="/assets/js/8.f6cfdc07.js"><link rel="prefetch" href="/assets/js/80.b77151f3.js"><link rel="prefetch" href="/assets/js/81.824fa371.js"><link rel="prefetch" href="/assets/js/82.3f91c09b.js"><link rel="prefetch" href="/assets/js/83.9539f074.js"><link rel="prefetch" href="/assets/js/84.dd89f1de.js"><link rel="prefetch" href="/assets/js/85.15210b99.js"><link rel="prefetch" href="/assets/js/86.e14553e1.js"><link rel="prefetch" href="/assets/js/87.6dc95177.js"><link rel="prefetch" href="/assets/js/88.09c5e890.js"><link rel="prefetch" href="/assets/js/89.0d61f4d0.js"><link rel="prefetch" href="/assets/js/9.759f1986.js"><link rel="prefetch" href="/assets/js/90.a9b14d80.js"><link rel="prefetch" href="/assets/js/91.1a4aabe2.js"><link rel="prefetch" href="/assets/js/92.12070bdb.js"><link rel="prefetch" href="/assets/js/93.b5dc76d0.js"><link rel="prefetch" href="/assets/js/94.690498a6.js"><link rel="prefetch" href="/assets/js/95.b17961e6.js"><link rel="prefetch" href="/assets/js/96.a2f06f3e.js"><link rel="prefetch" href="/assets/js/97.64ef6721.js"><link rel="prefetch" href="/assets/js/98.443eba26.js"><link rel="prefetch" href="/assets/js/99.b6ba7c3a.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.e4d8b86b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">MSG</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Python文档" class="dropdown-title"><span class="title">Python文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="Python文档" class="mobile-dropdown-title"><span class="title">Python文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Python/1.Python-Basics/" class="nav-link router-link-active">
+  Python-基础
+</a></li><li class="dropdown-item"><!----> <a href="/Python/2. Python-object/" class="nav-link">
+  Python-面向对象
+</a></li><li class="dropdown-item"><!----> <a href="/Python/3. Python-module/" class="nav-link">
+  Python-模块与包
+</a></li><li class="dropdown-item"><!----> <a href="/Python/4. Python-network/" class="nav-link">
+  Python-网络
+</a></li><li class="dropdown-item"><!----> <a href="/Python/5. Python-frontend/" class="nav-link">
+  Python-前端
+</a></li><li class="dropdown-item"><!----> <a href="/Python/6. Python-MySQL/" class="nav-link">
+  Python-数据库
+</a></li><li class="dropdown-item"><!----> <a href="/Python/7. Python-Django/" class="nav-link">
+  Python-Django
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="容器文档" class="dropdown-title"><span class="title">容器文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="容器文档" class="mobile-dropdown-title"><span class="title">容器文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Container/docker/" class="nav-link">
+  docker文檔
+</a></li><li class="dropdown-item"><!----> <a href="/Container/Kubernetes/" class="nav-link">
+  Kubernetes文檔
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="GO文档" class="dropdown-title"><span class="title">GO文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="GO文档" class="mobile-dropdown-title"><span class="title">GO文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/GO/basics/" class="nav-link">
+  GO快速入门
+</a></li><li class="dropdown-item"><!----> <a href="/GO/module/" class="nav-link">
+  GO标准库/GO模块
+</a></li></ul></div></div><div class="nav-item"><a href="https://www.linux91.cn/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  博客
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Python文档" class="dropdown-title"><span class="title">Python文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="Python文档" class="mobile-dropdown-title"><span class="title">Python文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Python/1.Python-Basics/" class="nav-link router-link-active">
+  Python-基础
+</a></li><li class="dropdown-item"><!----> <a href="/Python/2. Python-object/" class="nav-link">
+  Python-面向对象
+</a></li><li class="dropdown-item"><!----> <a href="/Python/3. Python-module/" class="nav-link">
+  Python-模块与包
+</a></li><li class="dropdown-item"><!----> <a href="/Python/4. Python-network/" class="nav-link">
+  Python-网络
+</a></li><li class="dropdown-item"><!----> <a href="/Python/5. Python-frontend/" class="nav-link">
+  Python-前端
+</a></li><li class="dropdown-item"><!----> <a href="/Python/6. Python-MySQL/" class="nav-link">
+  Python-数据库
+</a></li><li class="dropdown-item"><!----> <a href="/Python/7. Python-Django/" class="nav-link">
+  Python-Django
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="容器文档" class="dropdown-title"><span class="title">容器文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="容器文档" class="mobile-dropdown-title"><span class="title">容器文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Container/docker/" class="nav-link">
+  docker文檔
+</a></li><li class="dropdown-item"><!----> <a href="/Container/Kubernetes/" class="nav-link">
+  Kubernetes文檔
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="GO文档" class="dropdown-title"><span class="title">GO文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="GO文档" class="mobile-dropdown-title"><span class="title">GO文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/GO/basics/" class="nav-link">
+  GO快速入门
+</a></li><li class="dropdown-item"><!----> <a href="/GO/module/" class="nav-link">
+  GO标准库/GO模块
+</a></li></ul></div></div><div class="nav-item"><a href="https://www.linux91.cn/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  博客
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Python-基础</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/Python/1.Python-Basics/" aria-current="page" class="sidebar-link">介绍</a></li><li><a href="/Python/1.Python-Basics/1.初学Python.html" class="sidebar-link">1.初学Python</a></li><li><a href="/Python/1.Python-Basics/2.git的使用.html" class="sidebar-link">2.git的使用</a></li><li><a href="/Python/1.Python-Basics/3.基础Python练习题.html" class="sidebar-link">3.基础Python练习题</a></li><li><a href="/Python/1.Python-Basics/4.int整型类型数据类型.html" class="sidebar-link">4.int整型类型数据类型</a></li><li><a href="/Python/1.Python-Basics/5.bool布尔值数据类型.html" class="sidebar-link">5.bool布尔值数据类型</a></li><li><a href="/Python/1.Python-Basics/6.str字符串数据类型.html" class="sidebar-link">6.str字符串数据类型</a></li><li><a href="/Python/1.Python-Basics/7.list 列表数据类型.html" class="sidebar-link">7.list 列表数据类型</a></li><li><a href="/Python/1.Python-Basics/8.tuple 元组数据类型.html" class="sidebar-link">8.tuple 元组数据类型</a></li><li><a href="/Python/1.Python-Basics/9.range函数.html" class="sidebar-link">9.range函数</a></li><li><a href="/Python/1.Python-Basics/10.dict 字典数据类型.html" class="sidebar-link">10.dict 字典数据类型</a></li><li><a href="/Python/1.Python-Basics/11.解构  解包.html" class="sidebar-link">11.解构  解包</a></li><li><a href="/Python/1.Python-Basics/12.is 跟 == 的区别.html" class="sidebar-link">12.is 跟 == 的区别</a></li><li><a href="/Python/1.Python-Basics/13. 编码跟解码.html" class="sidebar-link">13. 编码跟解码</a></li><li><a href="/Python/1.Python-Basics/14. set集合数据类型.html" class="sidebar-link">14. set集合数据类型</a></li><li><a href="/Python/1.Python-Basics/15. 深浅拷贝.html" class="sidebar-link">15. 深浅拷贝</a></li><li><a href="/Python/1.Python-Basics/16. 文件操作.html" class="sidebar-link">16. 文件操作</a></li><li><a href="/Python/1.Python-Basics/17. 初识函数.html" class="active sidebar-link">17. 初识函数</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/Python/1.Python-Basics/17. 初识函数.html#函数的调用过程" class="sidebar-link">函数的调用过程</a></li><li class="sidebar-sub-header"><a href="/Python/1.Python-Basics/17. 初识函数.html#给函数的调用者返回值" class="sidebar-link">给函数的调用者返回值</a></li><li class="sidebar-sub-header"><a href="/Python/1.Python-Basics/17. 初识函数.html#函数执行到return-就会结束" class="sidebar-link">函数执行到return，就会结束</a></li><li class="sidebar-sub-header"><a href="/Python/1.Python-Basics/17. 初识函数.html#函数的返回值可以有多个结果" class="sidebar-link">函数的返回值可以有多个结果</a></li><li class="sidebar-sub-header"><a href="/Python/1.Python-Basics/17. 初识函数.html#函数返回值总结" class="sidebar-link">函数返回值总结</a></li><li class="sidebar-sub-header"><a href="/Python/1.Python-Basics/17. 初识函数.html#函数的参数-实参" class="sidebar-link">函数的参数－实参</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/Python/1.Python-Basics/17. 初识函数.html#位置参数" class="sidebar-link">位置参数</a></li><li class="sidebar-sub-header"><a href="/Python/1.Python-Basics/17. 初识函数.html#关键字参数" class="sidebar-link">关键字参数</a></li><li class="sidebar-sub-header"><a href="/Python/1.Python-Basics/17. 初识函数.html#混合参数" class="sidebar-link">混合参数</a></li></ul></li><li class="sidebar-sub-header"><a href="/Python/1.Python-Basics/17. 初识函数.html#函数的参数-形参" class="sidebar-link">函数的参数－形参</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/Python/1.Python-Basics/17. 初识函数.html#位置参数-2" class="sidebar-link">位置参数</a></li><li class="sidebar-sub-header"><a href="/Python/1.Python-Basics/17. 初识函数.html#默认值参数" class="sidebar-link">默认值参数</a></li></ul></li></ul></li><li><a href="/Python/1.Python-Basics/18. 函数的进阶 .html" class="sidebar-link">18. 函数的进阶</a></li><li><a href="/Python/1.Python-Basics/19. 函数名，闭包，迭代器.html" class="sidebar-link">19. 函数名，闭包，迭代器</a></li><li><a href="/Python/1.Python-Basics/20. 生成器，生成器表达式，推导式.html" class="sidebar-link">20. 生成器，生成器表达式，推导式</a></li><li><a href="/Python/1.Python-Basics/21. 内置函数.html" class="sidebar-link">21. 内置函数</a></li><li><a href="/Python/1.Python-Basics/22. 内置函数进阶.html" class="sidebar-link">22. 内置函数进阶</a></li><li><a href="/Python/1.Python-Basics/23. 装饰器补充.html" class="sidebar-link">23. 装饰器补充</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="_17-初识函数"><a href="#_17-初识函数" class="header-anchor">#</a> 17. 初识函数</h1> <h1 id="什么是函数"><a href="#什么是函数" class="header-anchor">#</a> 什么是函数</h1> <p>函数可以定义封装一个事情或者功能，等到需要的时候直接拿去用</p> <p>函数：对代码块和功能的封装和定义</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">def</span> <span class="token function">so</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;你好&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;我好&quot;</span><span class="token punctuation">)</span>
+so<span class="token punctuation">(</span><span class="token punctuation">)</span>
+so<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+执行结果：
+你好
+我好
+你好
+我好
+</code></pre></div><p>​	以上实例，创建一个函数，并调用这函数二次</p> <h1 id="函数的定义"><a href="#函数的定义" class="header-anchor">#</a> 函数的定义</h1> <p>使用def关键字来定义函数</p> <p>函数名的命名规则 跟 变量的命名规则基本一样</p> <p>函数体：就是函数被执行后所需要执行的代码</p> <p>函数的语法格式：</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">def</span> 函数名<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    函数体
+</code></pre></div><h1 id="函数的注释"><a href="#函数的注释" class="header-anchor">#</a> 函数的注释</h1> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">def</span> <span class="token function">chi</span><span class="token punctuation">(</span>food<span class="token punctuation">,</span> drink<span class="token punctuation">)</span><span class="token punctuation">:</span> 
+    <span class="token triple-quoted-string string">&quot;&quot;&quot;    
+    这里是函数的注释 , 先写一下当前这个函数是干什么的 , ⽐比如我这个函数就是一个吃    
+    :param :param food: 参数 food 是什么意思    
+    :param :param drink: 参数 drink 是什么意思    
+    :return :return: 返回的是什么东东    
+    &quot;&quot;&quot;</span>   
+    <span class="token keyword">print</span><span class="token punctuation">(</span>food<span class="token punctuation">,</span> drink<span class="token punctuation">)</span>    
+    <span class="token keyword">return</span> <span class="token string">&quot;very good&quot;</span>
+</code></pre></div><h1 id="函数的调用"><a href="#函数的调用" class="header-anchor">#</a> 函数的调用</h1> <p>函数的调用：使用函数名可以调用函数</p> <p>格式：函数名()</p> <p><strong>这里创建一个实例，随便来个： 时间表</strong></p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">def</span> <span class="token function">time</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;8点起床，收拾，吃早餐&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;9点半坐车，去上班&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;12点午休时间，吃饭，午休&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;14点，上班时间&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;18点下班时间，收拾东西下班，坐车回家&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;18点半去集市买菜&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;19点到家煮饭&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;20点吃饭休息&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;21点半洗澡准备回房间休息&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;22点到房间看会书&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;23点半睡觉时间到&quot;</span><span class="token punctuation">)</span>
+time<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+执行结果：
+<span class="token number">8</span>点起床，收拾，吃早餐
+<span class="token number">9</span>点半坐车，去上班
+<span class="token number">12</span>点午休时间，吃饭，午休
+<span class="token number">14</span>点上班时间
+<span class="token number">18</span>点下班时间，收拾东西下班，坐车回家
+<span class="token number">18</span>点半去集市买菜
+<span class="token number">19</span>点到家煮饭
+<span class="token number">20</span>点吃饭休息
+<span class="token number">21</span>点半洗澡准备回房间休息
+<span class="token number">22</span>点到房间看会书
+<span class="token number">23</span>点半睡觉时间到
+</code></pre></div><h2 id="函数的调用过程"><a href="#函数的调用过程" class="header-anchor">#</a> 函数的调用过程</h2> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">def</span> <span class="token function">time</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment">#1  #3</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;8点起床，收拾，吃早餐&quot;</span><span class="token punctuation">)</span> <span class="token comment">#4</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;9点半坐车，去上班&quot;</span><span class="token punctuation">)</span> <span class="token comment">#5</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;12点午休时间，吃饭，午休&quot;</span><span class="token punctuation">)</span> <span class="token comment">#6</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;14点，上班时间&quot;</span><span class="token punctuation">)</span> <span class="token comment">#7</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;18点下班时间，收拾东西下班，坐车回家&quot;</span><span class="token punctuation">)</span> <span class="token comment">#8</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;18点半去集市买菜&quot;</span><span class="token punctuation">)</span> <span class="token comment">#9</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;19点到家煮饭&quot;</span><span class="token punctuation">)</span> <span class="token comment">#10</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;20点吃饭休息&quot;</span><span class="token punctuation">)</span> <span class="token comment">#11</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;21点半洗澡准备回房间休息&quot;</span><span class="token punctuation">)</span> <span class="token comment">#12</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;22点到房间看会书&quot;</span><span class="token punctuation">)</span> <span class="token comment">#13</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;23点半睡觉时间到&quot;</span><span class="token punctuation">)</span>  <span class="token comment">#14</span>
+time<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">#2  #15</span>
+
+执行过程：
+<span class="token number">1</span><span class="token punctuation">.</span> 定义函数time<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token number">2</span><span class="token punctuation">.</span> 调用函数time<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token number">3</span><span class="token punctuation">.</span> 执行函数time<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token number">4</span><span class="token punctuation">.</span> 打印：<span class="token number">8</span>点起床，收拾，吃早餐
+<span class="token number">5</span><span class="token punctuation">.</span> 打印：<span class="token number">9</span>点半坐车，去上班
+<span class="token number">6</span><span class="token punctuation">.</span> 打印：<span class="token number">12</span>点午休时间，吃饭，午休
+<span class="token number">7</span><span class="token punctuation">.</span> 打印：<span class="token number">14</span>点上班时间
+<span class="token number">8</span><span class="token punctuation">.</span> 打印：<span class="token number">18</span>点下班时间，收拾东西下班，坐车回家
+<span class="token number">9</span><span class="token punctuation">.</span> 打印：<span class="token number">18</span>点半去集市买菜
+<span class="token number">10</span><span class="token punctuation">.</span> 打印：<span class="token number">19</span>点到家煮饭
+<span class="token number">11</span><span class="token punctuation">.</span> 打印：<span class="token number">20</span>点吃饭休息
+<span class="token number">12</span><span class="token punctuation">.</span> 打印：<span class="token number">21</span>点半洗澡准备回房间休息
+<span class="token number">13</span><span class="token punctuation">.</span> 打印：<span class="token number">22</span>点到房间看会书
+<span class="token number">14</span><span class="token punctuation">.</span> 打印：<span class="token number">23</span>点半睡觉时间到
+<span class="token number">15</span><span class="token punctuation">.</span> 函数执行完毕，本次调用结果time<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><h1 id="函数的返回值"><a href="#函数的返回值" class="header-anchor">#</a> 函数的返回值</h1> <p>执行完函数之后，可以使用return来返回结果</p> <p>一旦函数执行到return，就不再执行下面的函数</p> <p>格式：</p> <div class="language-python extra-class"><pre class="language-python"><code>函数定义时：<span class="token keyword">return</span> 值
+调用函数时：变量 <span class="token operator">=</span> 函数<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><h2 id="给函数的调用者返回值"><a href="#给函数的调用者返回值" class="header-anchor">#</a> 给函数的调用者返回值</h2> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">def</span> <span class="token function">time</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;8点起床，收拾，吃早餐&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;9点半坐车，去上班&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;12点午休时间，吃饭，午休&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;14点，上班时间&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;18点下班时间，收拾东西下班，坐车回家&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;18点半去集市买菜&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;19点到家煮饭&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;20点吃饭休息&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;21点半洗澡准备回房间休息&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;22点到房间看会书&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;23点半睡觉时间到&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token string">&quot;每天的行程&quot;</span>
+so <span class="token operator">=</span> time<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>so<span class="token punctuation">)</span>
+
+执行结果：
+<span class="token number">8</span>点起床，收拾，吃早餐
+<span class="token number">9</span>点半坐车，去上班
+<span class="token number">12</span>点午休时间，吃饭，午休
+<span class="token number">14</span>点，上班时间
+<span class="token number">18</span>点下班时间，收拾东西下班，坐车回家
+<span class="token number">18</span>点半去集市买菜
+<span class="token number">19</span>点到家煮饭
+<span class="token number">20</span>点吃饭休息
+<span class="token number">21</span>点半洗澡准备回房间休息
+<span class="token number">22</span>点到房间看会书
+<span class="token number">23</span>点半睡觉时间到
+每天的行程
+</code></pre></div><p>或许有这种困惑，只是调用函数的返回值，那为什么会输出函数的执行过程，因为函数在赋值给变量的时候，会将自身执行一遍在把返回值返回到变量中，这样就造成了变量中的值是函数的执行过程加返回值，实际变量中的值只是返回值</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">def</span> <span class="token function">time</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;8点起床，收拾，吃早餐&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;9点半坐车，去上班&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;12点午休时间，吃饭，午休&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;14点，上班时间&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;18点下班时间，收拾东西下班，坐车回家&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;18点半去集市买菜&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;19点到家煮饭&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;20点吃饭休息&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;21点半洗澡准备回房间休息&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;22点到房间看会书&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;23点半睡觉时间到&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token string">&quot;每天的行程&quot;</span>
+so <span class="token operator">=</span> time<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;变量中的值只是函数的返回值&quot;</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>so<span class="token punctuation">)</span>
+
+执行结果：
+<span class="token number">8</span>点起床，收拾，吃早餐
+<span class="token number">9</span>点半坐车，去上班
+<span class="token number">12</span>点午休时间，吃饭，午休
+<span class="token number">14</span>点，上班时间
+<span class="token number">18</span>点下班时间，收拾东西下班，坐车回家
+<span class="token number">18</span>点半去集市买菜
+<span class="token number">19</span>点到家煮饭
+<span class="token number">20</span>点吃饭休息
+<span class="token number">21</span>点半洗澡准备回房间休息
+<span class="token number">22</span>点到房间看会书
+<span class="token number">23</span>点半睡觉时间到
+变量中的值只是函数的返回值
+每天的行程
+</code></pre></div><h2 id="函数执行到return-就会结束"><a href="#函数执行到return-就会结束" class="header-anchor">#</a> 函数执行到return，就会结束</h2> <p>如果函数在执行过程中遇到了return，就会到此为止，不会执行下面的代码块</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">def</span> <span class="token function">time</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;8点起床，收拾，吃早餐&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;9点半坐车，去上班&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;12点午休时间，吃饭，午休&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;14点，上班时间&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;18点下班时间，收拾东西下班，坐车回家&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;18点半去集市买菜&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;19点到家煮饭&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;20点吃饭休息&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;21点半洗澡准备回房间休息&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;22点到房间看会书&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;23点半睡觉时间到&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token string">&quot;每天的行程&quot;</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;我是不会被执行到&quot;</span><span class="token punctuation">)</span>
+so <span class="token operator">=</span> time<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>so<span class="token punctuation">)</span>
+
+执行结果：
+<span class="token number">8</span>点起床，收拾，吃早餐
+<span class="token number">9</span>点半坐车，去上班
+<span class="token number">12</span>点午休时间，吃饭，午休
+<span class="token number">14</span>点，上班时间
+<span class="token number">18</span>点下班时间，收拾东西下班，坐车回家
+<span class="token number">18</span>点半去集市买菜
+<span class="token number">19</span>点到家煮饭
+<span class="token number">20</span>点吃饭休息
+<span class="token number">21</span>点半洗澡准备回房间休息
+<span class="token number">22</span>点到房间看会书
+<span class="token number">23</span>点半睡觉时间到
+每天的行程
+</code></pre></div><h2 id="函数的返回值可以有多个结果"><a href="#函数的返回值可以有多个结果" class="header-anchor">#</a> 函数的返回值可以有多个结果</h2> <p>理论上，函数是可以拥有无限的返回结果值</p> <p>函数的返回值如果超过1个或多个，多个值需要用 , 逗号隔开，会以元组类型表示</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">def</span> <span class="token function">time</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;8点起床，收拾，吃早餐&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;9点半坐车，去上班&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;12点午休时间，吃饭，午休&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;14点，上班时间&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;18点下班时间，收拾东西下班，坐车回家&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;18点半去集市买菜&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;19点到家煮饭&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;20点吃饭休息&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;21点半洗澡准备回房间休息&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;22点到房间看会书&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;23点半睡觉时间到&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token string">&quot;每天的行程&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;请较准时的按时间表生活&quot;</span>
+so <span class="token operator">=</span> time<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>so<span class="token punctuation">)</span>
+
+执行结果：
+<span class="token number">8</span>点起床，收拾，吃早餐
+<span class="token number">9</span>点半坐车，去上班
+<span class="token number">12</span>点午休时间，吃饭，午休
+<span class="token number">14</span>点，上班时间
+<span class="token number">18</span>点下班时间，收拾东西下班，坐车回家
+<span class="token number">18</span>点半去集市买菜
+<span class="token number">19</span>点到家煮饭
+<span class="token number">20</span>点吃饭休息
+<span class="token number">21</span>点半洗澡准备回房间休息
+<span class="token number">22</span>点到房间看会书
+<span class="token number">23</span>点半睡觉时间到
+<span class="token punctuation">(</span><span class="token string">'每天的行程'</span><span class="token punctuation">,</span> <span class="token string">'请较准时的按时间表生活'</span><span class="token punctuation">)</span>
+</code></pre></div><h2 id="函数返回值总结"><a href="#函数返回值总结" class="header-anchor">#</a> 函数返回值总结</h2> <ol><li>如果函数执行过程中遇到return，函数执行到至结束，往后的代码块不会执行</li> <li>return 返回值
+<ol><li>如果return 什么都不写 或者 不写return，那么系统默认会帮你写，返回值为：None</li> <li>如果return 返回值写一个值，那么调用者可以接收一个结果</li> <li>如果retrun 返回值写了多个值，多个值需要用 , 逗号隔开，那么调用者可以接收到一个tuple元组类型的数据，调用都也可以直接解构成多少变量</li></ol></li></ol> <h1 id="函数的参数"><a href="#函数的参数" class="header-anchor">#</a> 函数的参数</h1> <p>可以通过函数的参数向函数传递一些信息</p> <p>参数，函数在调用的时候指定具体的一个变量的值，这就是参数</p> <ol><li>形参：写在函数声明的位置的变量叫形参，形式上的一个完整，表示函数需要接收值</li> <li>实参：在函数调用的时候给函数传递的值，叫实参，实际执行的时候给函数传递的信息，表示给函数传输数据</li> <li>传参：给函数传递信息的时候将实际参数(实参)交给形式参数(形参)的过程被称为传参</li></ol> <p>函数的参数个数是没有要求的 但是,在运行的时候. 形参和实参要匹配</p> <p>语法格式：</p> <div class="language-python extra-class"><pre class="language-python"><code>函数定义时：<span class="token keyword">def</span> 函数<span class="token punctuation">(</span>变量名<span class="token punctuation">)</span>
+调用函数时：函数<span class="token punctuation">(</span>传递的数据<span class="token punctuation">)</span>
+</code></pre></div><div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">def</span> <span class="token function">time</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment">#形参</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;8点起床，收拾，吃%s&quot;</span> <span class="token operator">%</span> name<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;9点半坐车，去上班&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;12点午休时间，吃饭，午休&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;14点，上班时间&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;18点下班时间，收拾东西下班，坐车回家&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;18点半去集市买菜&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;19点到家煮饭&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;20点吃饭休息&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;21点半洗澡准备回房间休息&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;22点到房间看会书&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;23点半睡觉时间到&quot;</span><span class="token punctuation">)</span>
+time<span class="token punctuation">(</span><span class="token string">&quot;小米粥&quot;</span><span class="token punctuation">)</span> <span class="token comment">#实参</span>
+
+执行结果：
+<span class="token number">8</span>点起床，收拾，吃小米粥
+<span class="token number">9</span>点半坐车，去上班
+<span class="token number">12</span>点午休时间，吃饭，午休
+<span class="token number">14</span>点，上班时间
+<span class="token number">18</span>点下班时间，收拾东西下班，坐车回家
+<span class="token number">18</span>点半去集市买菜
+<span class="token number">19</span>点到家煮饭
+<span class="token number">20</span>点吃饭休息
+<span class="token number">21</span>点半洗澡准备回房间休息
+<span class="token number">22</span>点到房间看会书
+<span class="token number">23</span>点半睡觉时间到
+</code></pre></div><h2 id="函数的参数-实参"><a href="#函数的参数-实参" class="header-anchor">#</a> 函数的参数－实参</h2> <ol><li>位置参数：按照位置的顺序将值分别赋值到函数中，在传参的过程中，系统会默认按照位置把实参赋值到形参</li> <li>关键字参数：关键字参数，不需要按照位置顺序来写实参，只需要记住形参的名字就可以</li> <li>混合参数：可以把位置参数跟关键字参数混合着用，也就是说在调用函数的时候可以给出位置参数，也可以指定关键字函数，关键字参数必须在位置参数后面</li></ol> <h3 id="位置参数"><a href="#位置参数" class="header-anchor">#</a> 位置参数</h3> <p>按照位置的顺序将值分别赋值到函数中，在传参的过程中，系统会默认按照位置把实参赋值到形参</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">def</span> <span class="token function">time</span><span class="token punctuation">(</span>ant<span class="token punctuation">,</span>lun<span class="token punctuation">,</span>din<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;8点起床，收拾，吃%s&quot;</span> <span class="token operator">%</span> ant<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;9点半坐车，去上班&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;12点午休时间，吃%s，午休&quot;</span> <span class="token operator">%</span> lun<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;14点，上班时间&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;18点下班时间，收拾东西下班，坐车回家&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;18点半去集市买菜&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;19点到家煮饭&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;20点吃%s ,休息&quot;</span> <span class="token operator">%</span> din<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;21点半洗澡准备回房间休息&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;22点到房间看会书&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;23点半睡觉时间到&quot;</span><span class="token punctuation">)</span>
+time<span class="token punctuation">(</span><span class="token string">&quot;小米粥&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;烧肉饭&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;糖醋排骨，空心菜&quot;</span><span class="token punctuation">)</span>
+
+执行结果：
+<span class="token number">8</span>点起床，收拾，吃小米粥
+<span class="token number">9</span>点半坐车，去上班
+<span class="token number">12</span>点午休时间，吃烧肉饭，午休
+<span class="token number">14</span>点，上班时间
+<span class="token number">18</span>点下班时间，收拾东西下班，坐车回家
+<span class="token number">18</span>点半去集市买菜
+<span class="token number">19</span>点到家煮饭
+<span class="token number">20</span>点吃糖醋排骨，空心菜 <span class="token punctuation">,</span>休息
+<span class="token number">21</span>点半洗澡准备回房间休息
+<span class="token number">22</span>点到房间看会书
+<span class="token number">23</span>点半睡觉时间到
+</code></pre></div><p>​	以上实例，在访问time()，按照位置的顺序分别把写好的几个值赋值到函数中的形参中</p> <h4 id="实例-编写函数-传递二个值对比"><a href="#实例-编写函数-传递二个值对比" class="header-anchor">#</a> 实例：编写函数，传递二个值对比</h4> <p>编写函数，给函数传递二个参数，并进行对比，返回大的值</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">def</span> <span class="token function">comp</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> a <span class="token operator">&gt;</span> b<span class="token punctuation">:</span>
+        <span class="token keyword">return</span> a
+    <span class="token keyword">return</span> b
+so <span class="token operator">=</span> comp<span class="token punctuation">(</span><span class="token number">15</span><span class="token punctuation">,</span><span class="token number">12</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>so<span class="token punctuation">)</span>
+
+执行结果：
+<span class="token number">15</span>
+</code></pre></div><h3 id="关键字参数"><a href="#关键字参数" class="header-anchor">#</a> 关键字参数</h3> <p>关键字参数，不需要按照位置顺序来写实参，只需要记住形参的名字就可以</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">def</span> <span class="token function">time</span><span class="token punctuation">(</span>ant<span class="token punctuation">,</span>lun<span class="token punctuation">,</span>din<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;8点起床，收拾，吃%s&quot;</span> <span class="token operator">%</span> ant<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;9点半坐车，去上班&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;12点午休时间，吃%s，午休&quot;</span> <span class="token operator">%</span> lun<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;14点，上班时间&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;18点下班时间，收拾东西下班，坐车回家&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;18点半去集市买菜&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;19点到家煮饭&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;20点吃%s ,休息&quot;</span> <span class="token operator">%</span> din<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;21点半洗澡准备回房间休息&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;22点到房间看会书&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;23点半睡觉时间到&quot;</span><span class="token punctuation">)</span>
+time<span class="token punctuation">(</span>lun<span class="token operator">=</span><span class="token string">&quot;烧肉饭&quot;</span><span class="token punctuation">,</span>din<span class="token operator">=</span><span class="token string">&quot;糖醋排骨，空心菜&quot;</span><span class="token punctuation">,</span>ant<span class="token operator">=</span><span class="token string">&quot;小米粥&quot;</span><span class="token punctuation">)</span>
+
+执行结果：
+<span class="token number">8</span>点起床，收拾，吃小米粥
+<span class="token number">9</span>点半坐车，去上班
+<span class="token number">12</span>点午休时间，吃烧肉饭，午休
+<span class="token number">14</span>点，上班时间
+<span class="token number">18</span>点下班时间，收拾东西下班，坐车回家
+<span class="token number">18</span>点半去集市买菜
+<span class="token number">19</span>点到家煮饭
+<span class="token number">20</span>点吃糖醋排骨，空心菜 <span class="token punctuation">,</span>休息
+<span class="token number">21</span>点半洗澡准备回房间休息
+<span class="token number">22</span>点到房间看会书
+<span class="token number">23</span>点半睡觉时间到
+</code></pre></div><p>​	以上实例，使用关键字参数的好处，不用记得形参的位置</p> <h3 id="混合参数"><a href="#混合参数" class="header-anchor">#</a> 混合参数</h3> <p>可以把位置参数跟关键字参数混合着用，也就是说在调用函数的时候可以给出位置参数，也可以指定关键字函数</p> <p>注意：在使用混合参数的时候，关键字参数必须在位置参数后面</p> <p>不建议使用混合参数，因为如果使用混合参数，要先用位置参数用完后才能使用关键字参数，位置参数还要有顺序的不能说中间有个关键字参数，这样会报错</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">def</span> <span class="token function">time</span><span class="token punctuation">(</span>ant<span class="token punctuation">,</span>lun<span class="token punctuation">,</span>din<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;8点起床，收拾，吃%s&quot;</span> <span class="token operator">%</span> ant<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;9点半坐，去上班&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;12点午休时间，吃%s，午休&quot;</span> <span class="token operator">%</span> lun<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;14点，上班时间&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;18点下班时间，收拾东西下班，坐车回家&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;18点半去集市买菜&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;19点到家煮饭&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;20点吃%s ,休息&quot;</span> <span class="token operator">%</span> din<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;21点半洗澡准备回房间休息&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;22点到房间看会书&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;23点半睡觉时间到&quot;</span><span class="token punctuation">)</span>
+<span class="token comment"># time(lun=&quot;烧肉饭&quot;,din=&quot;糖醋排骨，空心菜&quot;,ant=&quot;小米粥&quot;)</span>
+time<span class="token punctuation">(</span><span class="token string">&quot;豆浆油条&quot;</span><span class="token punctuation">,</span>din<span class="token operator">=</span><span class="token string">&quot;糖醋排骨，空心菜&quot;</span><span class="token punctuation">,</span>lun<span class="token operator">=</span><span class="token string">&quot;烧肉饭&quot;</span><span class="token punctuation">)</span>
+
+执行结果：
+<span class="token number">8</span>点起床，收拾，吃豆浆油条
+<span class="token number">9</span>点半坐，去上班
+<span class="token number">12</span>点午休时间，吃烧肉饭，午休
+<span class="token number">14</span>点，上班时间
+<span class="token number">18</span>点下班时间，收拾东西下班，坐车回家
+<span class="token number">18</span>点半去集市买菜
+<span class="token number">19</span>点到家煮饭
+<span class="token number">20</span>点吃糖醋排骨，空心菜 <span class="token punctuation">,</span>休息
+<span class="token number">21</span>点半洗澡准备回房间休息
+<span class="token number">22</span>点到房间看会书
+<span class="token number">23</span>点半睡觉时间到
+</code></pre></div><h2 id="函数的参数-形参"><a href="#函数的参数-形参" class="header-anchor">#</a> 函数的参数－形参</h2> <h3 id="位置参数-2"><a href="#位置参数-2" class="header-anchor">#</a> 位置参数</h3> <p>位置参数，按照位置来赋值，系统默认使用的函数参数</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">def</span> <span class="token function">time</span><span class="token punctuation">(</span>ant<span class="token punctuation">,</span>lun<span class="token punctuation">,</span>din<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;8点起床，收拾，吃%s&quot;</span> <span class="token operator">%</span> ant<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;9点半坐车，去上班&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;12点午休时间，吃%s，午休&quot;</span> <span class="token operator">%</span> lun<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;14点，上班时间&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;18点下班时间，收拾东西下班，坐车回家&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;18点半去集市买菜&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;19点到家煮饭&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;20点吃%s ,休息&quot;</span> <span class="token operator">%</span> din<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;21点半洗澡准备回房间休息&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;22点到房间看会书&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;23点半睡觉时间到&quot;</span><span class="token punctuation">)</span>
+time<span class="token punctuation">(</span><span class="token string">&quot;小米粥&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;烧肉饭&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;糖醋排骨，空心菜&quot;</span><span class="token punctuation">)</span>
+
+执行结果：
+<span class="token number">8</span>点起床，收拾，吃小米粥
+<span class="token number">9</span>点半坐车，去上班
+<span class="token number">12</span>点午休时间，吃烧肉饭，午休
+<span class="token number">14</span>点，上班时间
+<span class="token number">18</span>点下班时间，收拾东西下班，坐车回家
+<span class="token number">18</span>点半去集市买菜
+<span class="token number">19</span>点到家煮饭
+<span class="token number">20</span>点吃糖醋排骨，空心菜 <span class="token punctuation">,</span>休息
+<span class="token number">21</span>点半洗澡准备回房间休息
+<span class="token number">22</span>点到房间看会书
+<span class="token number">23</span>点半睡觉时间到
+</code></pre></div><h3 id="默认值参数"><a href="#默认值参数" class="header-anchor">#</a> 默认值参数</h3> <p>在函数声明的时候，就可以给出函数参数的默认值，在调用的时候可以给出具体的值，也可以不给值，使用默认值</p> <p>注意：必须先声明位置参数才能声明默认值参数</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">def</span> <span class="token function">time</span><span class="token punctuation">(</span>lun<span class="token punctuation">,</span>din<span class="token punctuation">,</span>ant<span class="token operator">=</span><span class="token string">&quot;豆浆油条&quot;</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;8点起床，收拾，吃%s&quot;</span> <span class="token operator">%</span> ant<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;9点半坐，去上班&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;12点午休时间，吃%s，午休&quot;</span> <span class="token operator">%</span> lun<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;14点，上班时间&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;18点下班时间，收拾东西下班，坐车回家&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;18点半去集市买菜&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;19点到家煮饭&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;20点吃%s ,休息&quot;</span> <span class="token operator">%</span> din<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;21点半洗澡准备回房间休息&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;22点到房间看会书&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;23点半睡觉时间到&quot;</span><span class="token punctuation">)</span>
+time<span class="token punctuation">(</span>din<span class="token operator">=</span><span class="token string">&quot;糖醋排骨，空心菜&quot;</span><span class="token punctuation">,</span>lun<span class="token operator">=</span><span class="token string">&quot;烧肉饭&quot;</span><span class="token punctuation">)</span>
+</code></pre></div><p>​	注意：千万要注意：需要先声明位置参数形参，才能声明默认值参数形参，不然会报错</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/Python/1.Python-Basics/16. 文件操作.html" class="prev">
+        16. 文件操作
+      </a></span> <span class="next"><a href="/Python/1.Python-Basics/18. 函数的进阶 .html">
+        18. 函数的进阶
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.d65bef42.js" defer></script><script src="/assets/js/2.2249178e.js" defer></script><script src="/assets/js/67.85688aa2.js" defer></script>
+  </body>
+</html>

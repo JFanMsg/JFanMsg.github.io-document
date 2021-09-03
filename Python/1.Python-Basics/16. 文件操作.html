@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>16. 文件操作 | MSG</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="在追寻技术的同时享受生活">
+    
+    <link rel="preload" href="/assets/css/0.styles.e4d8b86b.css" as="style"><link rel="preload" href="/assets/js/app.d65bef42.js" as="script"><link rel="preload" href="/assets/js/2.2249178e.js" as="script"><link rel="preload" href="/assets/js/66.9acf0206.js" as="script"><link rel="prefetch" href="/assets/js/10.4785e2e5.js"><link rel="prefetch" href="/assets/js/100.33fceff2.js"><link rel="prefetch" href="/assets/js/101.62e1e5d4.js"><link rel="prefetch" href="/assets/js/102.8551fe71.js"><link rel="prefetch" href="/assets/js/103.47754d79.js"><link rel="prefetch" href="/assets/js/104.4adf114f.js"><link rel="prefetch" href="/assets/js/105.6206a08a.js"><link rel="prefetch" href="/assets/js/106.1c4561f3.js"><link rel="prefetch" href="/assets/js/107.e1531a5a.js"><link rel="prefetch" href="/assets/js/108.c637743a.js"><link rel="prefetch" href="/assets/js/109.3f150913.js"><link rel="prefetch" href="/assets/js/11.bd8ec7a6.js"><link rel="prefetch" href="/assets/js/110.088c1ac3.js"><link rel="prefetch" href="/assets/js/111.66d8d491.js"><link rel="prefetch" href="/assets/js/112.231663ee.js"><link rel="prefetch" href="/assets/js/113.a38bc531.js"><link rel="prefetch" href="/assets/js/114.e165daea.js"><link rel="prefetch" href="/assets/js/115.994b087a.js"><link rel="prefetch" href="/assets/js/116.ea3cfdfb.js"><link rel="prefetch" href="/assets/js/117.7be5e4f3.js"><link rel="prefetch" href="/assets/js/118.ebb58ddb.js"><link rel="prefetch" href="/assets/js/119.90018646.js"><link rel="prefetch" href="/assets/js/12.0d8f43df.js"><link rel="prefetch" href="/assets/js/120.bb5be863.js"><link rel="prefetch" href="/assets/js/121.3d1db670.js"><link rel="prefetch" href="/assets/js/122.d29ed1b2.js"><link rel="prefetch" href="/assets/js/123.38cc4704.js"><link rel="prefetch" href="/assets/js/124.cc8549d4.js"><link rel="prefetch" href="/assets/js/125.6ee3e9c8.js"><link rel="prefetch" href="/assets/js/126.48710eba.js"><link rel="prefetch" href="/assets/js/127.d7a1fd83.js"><link rel="prefetch" href="/assets/js/128.e5017f6b.js"><link rel="prefetch" href="/assets/js/129.4c33e121.js"><link rel="prefetch" href="/assets/js/13.2dbde7aa.js"><link rel="prefetch" href="/assets/js/130.cda66247.js"><link rel="prefetch" href="/assets/js/131.ad76f669.js"><link rel="prefetch" href="/assets/js/132.aca88758.js"><link rel="prefetch" href="/assets/js/133.a1cf5903.js"><link rel="prefetch" href="/assets/js/134.b1386377.js"><link rel="prefetch" href="/assets/js/135.94edcf53.js"><link rel="prefetch" href="/assets/js/136.24be4170.js"><link rel="prefetch" href="/assets/js/137.db57772e.js"><link rel="prefetch" href="/assets/js/138.dc67bcaa.js"><link rel="prefetch" href="/assets/js/139.5453d1f6.js"><link rel="prefetch" href="/assets/js/14.2187dbf4.js"><link rel="prefetch" href="/assets/js/140.938e5c07.js"><link rel="prefetch" href="/assets/js/141.99c7cf2c.js"><link rel="prefetch" href="/assets/js/142.428e3958.js"><link rel="prefetch" href="/assets/js/143.68b01530.js"><link rel="prefetch" href="/assets/js/144.f67389cc.js"><link rel="prefetch" href="/assets/js/145.d952a130.js"><link rel="prefetch" href="/assets/js/146.b933dcad.js"><link rel="prefetch" href="/assets/js/147.2d8e4c0a.js"><link rel="prefetch" href="/assets/js/148.6d76ac94.js"><link rel="prefetch" href="/assets/js/149.6b4d6378.js"><link rel="prefetch" href="/assets/js/15.a53b356c.js"><link rel="prefetch" href="/assets/js/150.5bf39cb4.js"><link rel="prefetch" href="/assets/js/151.17af677c.js"><link rel="prefetch" href="/assets/js/152.7f1c2792.js"><link rel="prefetch" href="/assets/js/153.98dd0727.js"><link rel="prefetch" href="/assets/js/154.eb44bf23.js"><link rel="prefetch" href="/assets/js/155.5a9840ea.js"><link rel="prefetch" href="/assets/js/156.7ba01fd0.js"><link rel="prefetch" href="/assets/js/157.2296a048.js"><link rel="prefetch" href="/assets/js/158.6bb1f699.js"><link rel="prefetch" href="/assets/js/159.073bb8df.js"><link rel="prefetch" href="/assets/js/16.cef7bf44.js"><link rel="prefetch" href="/assets/js/160.25a837f9.js"><link rel="prefetch" href="/assets/js/161.93d886a1.js"><link rel="prefetch" href="/assets/js/162.5d2714b2.js"><link rel="prefetch" href="/assets/js/17.96f36904.js"><link rel="prefetch" href="/assets/js/18.fd04b310.js"><link rel="prefetch" href="/assets/js/19.3e1377d1.js"><link rel="prefetch" href="/assets/js/20.ac195ac8.js"><link rel="prefetch" href="/assets/js/21.c2d7729c.js"><link rel="prefetch" href="/assets/js/22.dd8c621b.js"><link rel="prefetch" href="/assets/js/23.ad7d0350.js"><link rel="prefetch" href="/assets/js/24.8559c4c3.js"><link rel="prefetch" href="/assets/js/25.783a8116.js"><link rel="prefetch" href="/assets/js/26.25e0e459.js"><link rel="prefetch" href="/assets/js/27.c0616e2a.js"><link rel="prefetch" href="/assets/js/28.30656c2e.js"><link rel="prefetch" href="/assets/js/29.2be5114c.js"><link rel="prefetch" href="/assets/js/3.be8c8f3b.js"><link rel="prefetch" href="/assets/js/30.230a74a7.js"><link rel="prefetch" href="/assets/js/31.760f46ad.js"><link rel="prefetch" href="/assets/js/32.c9533fef.js"><link rel="prefetch" href="/assets/js/33.dcacfb38.js"><link rel="prefetch" href="/assets/js/34.4370a466.js"><link rel="prefetch" href="/assets/js/35.bf299eea.js"><link rel="prefetch" href="/assets/js/36.336e435a.js"><link rel="prefetch" href="/assets/js/37.1d1d2eea.js"><link rel="prefetch" href="/assets/js/38.0d58b7d0.js"><link rel="prefetch" href="/assets/js/39.d43564ba.js"><link rel="prefetch" href="/assets/js/4.4a6cb970.js"><link rel="prefetch" href="/assets/js/40.bc4e4bde.js"><link rel="prefetch" href="/assets/js/41.b71231a5.js"><link rel="prefetch" href="/assets/js/42.9d46f400.js"><link rel="prefetch" href="/assets/js/43.50c5be69.js"><link rel="prefetch" href="/assets/js/44.60406e7f.js"><link rel="prefetch" href="/assets/js/45.ec3569ae.js"><link rel="prefetch" href="/assets/js/46.1bd3ce7b.js"><link rel="prefetch" href="/assets/js/47.1e1b5326.js"><link rel="prefetch" href="/assets/js/48.64c631ea.js"><link rel="prefetch" href="/assets/js/49.b4abacd8.js"><link rel="prefetch" href="/assets/js/5.e6d0b165.js"><link rel="prefetch" href="/assets/js/50.c3e320c0.js"><link rel="prefetch" href="/assets/js/51.5ec7fb8c.js"><link rel="prefetch" href="/assets/js/52.2d234f86.js"><link rel="prefetch" href="/assets/js/53.f3b69623.js"><link rel="prefetch" href="/assets/js/54.c85ff450.js"><link rel="prefetch" href="/assets/js/55.b07597b5.js"><link rel="prefetch" href="/assets/js/56.444129cf.js"><link rel="prefetch" href="/assets/js/57.df1329ba.js"><link rel="prefetch" href="/assets/js/58.5afb51cf.js"><link rel="prefetch" href="/assets/js/59.d98936d9.js"><link rel="prefetch" href="/assets/js/6.809376cd.js"><link rel="prefetch" href="/assets/js/60.02813ecf.js"><link rel="prefetch" href="/assets/js/61.37a4812d.js"><link rel="prefetch" href="/assets/js/62.5da94048.js"><link rel="prefetch" href="/assets/js/63.8e2c2bca.js"><link rel="prefetch" href="/assets/js/64.d290398f.js"><link rel="prefetch" href="/assets/js/65.44e28313.js"><link rel="prefetch" href="/assets/js/67.85688aa2.js"><link rel="prefetch" href="/assets/js/68.45bda7fc.js"><link rel="prefetch" href="/assets/js/69.9074feb0.js"><link rel="prefetch" href="/assets/js/7.5d7bce6e.js"><link rel="prefetch" href="/assets/js/70.b4cd2ddc.js"><link rel="prefetch" href="/assets/js/71.53219b13.js"><link rel="prefetch" href="/assets/js/72.af2a7290.js"><link rel="prefetch" href="/assets/js/73.c28fc506.js"><link rel="prefetch" href="/assets/js/74.64c81a90.js"><link rel="prefetch" href="/assets/js/75.05191ece.js"><link rel="prefetch" href="/assets/js/76.f516d464.js"><link rel="prefetch" href="/assets/js/77.c345180b.js"><link rel="prefetch" href="/assets/js/78.4a09d0ba.js"><link rel="prefetch" href="/assets/js/79.65f41bcf.js"><link rel="prefetch" href="/assets/js/8.f6cfdc07.js"><link rel="prefetch" href="/assets/js/80.b77151f3.js"><link rel="prefetch" href="/assets/js/81.824fa371.js"><link rel="prefetch" href="/assets/js/82.3f91c09b.js"><link rel="prefetch" href="/assets/js/83.9539f074.js"><link rel="prefetch" href="/assets/js/84.dd89f1de.js"><link rel="prefetch" href="/assets/js/85.15210b99.js"><link rel="prefetch" href="/assets/js/86.e14553e1.js"><link rel="prefetch" href="/assets/js/87.6dc95177.js"><link rel="prefetch" href="/assets/js/88.09c5e890.js"><link rel="prefetch" href="/assets/js/89.0d61f4d0.js"><link rel="prefetch" href="/assets/js/9.759f1986.js"><link rel="prefetch" href="/assets/js/90.a9b14d80.js"><link rel="prefetch" href="/assets/js/91.1a4aabe2.js"><link rel="prefetch" href="/assets/js/92.12070bdb.js"><link rel="prefetch" href="/assets/js/93.b5dc76d0.js"><link rel="prefetch" href="/assets/js/94.690498a6.js"><link rel="prefetch" href="/assets/js/95.b17961e6.js"><link rel="prefetch" href="/assets/js/96.a2f06f3e.js"><link rel="prefetch" href="/assets/js/97.64ef6721.js"><link rel="prefetch" href="/assets/js/98.443eba26.js"><link rel="prefetch" href="/assets/js/99.b6ba7c3a.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.e4d8b86b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">MSG</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Python文档" class="dropdown-title"><span class="title">Python文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="Python文档" class="mobile-dropdown-title"><span class="title">Python文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Python/1.Python-Basics/" class="nav-link router-link-active">
+  Python-基础
+</a></li><li class="dropdown-item"><!----> <a href="/Python/2. Python-object/" class="nav-link">
+  Python-面向对象
+</a></li><li class="dropdown-item"><!----> <a href="/Python/3. Python-module/" class="nav-link">
+  Python-模块与包
+</a></li><li class="dropdown-item"><!----> <a href="/Python/4. Python-network/" class="nav-link">
+  Python-网络
+</a></li><li class="dropdown-item"><!----> <a href="/Python/5. Python-frontend/" class="nav-link">
+  Python-前端
+</a></li><li class="dropdown-item"><!----> <a href="/Python/6. Python-MySQL/" class="nav-link">
+  Python-数据库
+</a></li><li class="dropdown-item"><!----> <a href="/Python/7. Python-Django/" class="nav-link">
+  Python-Django
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="容器文档" class="dropdown-title"><span class="title">容器文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="容器文档" class="mobile-dropdown-title"><span class="title">容器文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Container/docker/" class="nav-link">
+  docker文檔
+</a></li><li class="dropdown-item"><!----> <a href="/Container/Kubernetes/" class="nav-link">
+  Kubernetes文檔
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="GO文档" class="dropdown-title"><span class="title">GO文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="GO文档" class="mobile-dropdown-title"><span class="title">GO文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/GO/basics/" class="nav-link">
+  GO快速入门
+</a></li><li class="dropdown-item"><!----> <a href="/GO/module/" class="nav-link">
+  GO标准库/GO模块
+</a></li></ul></div></div><div class="nav-item"><a href="https://www.linux91.cn/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  博客
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Python文档" class="dropdown-title"><span class="title">Python文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="Python文档" class="mobile-dropdown-title"><span class="title">Python文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Python/1.Python-Basics/" class="nav-link router-link-active">
+  Python-基础
+</a></li><li class="dropdown-item"><!----> <a href="/Python/2. Python-object/" class="nav-link">
+  Python-面向对象
+</a></li><li class="dropdown-item"><!----> <a href="/Python/3. Python-module/" class="nav-link">
+  Python-模块与包
+</a></li><li class="dropdown-item"><!----> <a href="/Python/4. Python-network/" class="nav-link">
+  Python-网络
+</a></li><li class="dropdown-item"><!----> <a href="/Python/5. Python-frontend/" class="nav-link">
+  Python-前端
+</a></li><li class="dropdown-item"><!----> <a href="/Python/6. Python-MySQL/" class="nav-link">
+  Python-数据库
+</a></li><li class="dropdown-item"><!----> <a href="/Python/7. Python-Django/" class="nav-link">
+  Python-Django
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="容器文档" class="dropdown-title"><span class="title">容器文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="容器文档" class="mobile-dropdown-title"><span class="title">容器文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Container/docker/" class="nav-link">
+  docker文檔
+</a></li><li class="dropdown-item"><!----> <a href="/Container/Kubernetes/" class="nav-link">
+  Kubernetes文檔
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="GO文档" class="dropdown-title"><span class="title">GO文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="GO文档" class="mobile-dropdown-title"><span class="title">GO文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/GO/basics/" class="nav-link">
+  GO快速入门
+</a></li><li class="dropdown-item"><!----> <a href="/GO/module/" class="nav-link">
+  GO标准库/GO模块
+</a></li></ul></div></div><div class="nav-item"><a href="https://www.linux91.cn/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  博客
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Python-基础</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/Python/1.Python-Basics/" aria-current="page" class="sidebar-link">介绍</a></li><li><a href="/Python/1.Python-Basics/1.初学Python.html" class="sidebar-link">1.初学Python</a></li><li><a href="/Python/1.Python-Basics/2.git的使用.html" class="sidebar-link">2.git的使用</a></li><li><a href="/Python/1.Python-Basics/3.基础Python练习题.html" class="sidebar-link">3.基础Python练习题</a></li><li><a href="/Python/1.Python-Basics/4.int整型类型数据类型.html" class="sidebar-link">4.int整型类型数据类型</a></li><li><a href="/Python/1.Python-Basics/5.bool布尔值数据类型.html" class="sidebar-link">5.bool布尔值数据类型</a></li><li><a href="/Python/1.Python-Basics/6.str字符串数据类型.html" class="sidebar-link">6.str字符串数据类型</a></li><li><a href="/Python/1.Python-Basics/7.list 列表数据类型.html" class="sidebar-link">7.list 列表数据类型</a></li><li><a href="/Python/1.Python-Basics/8.tuple 元组数据类型.html" class="sidebar-link">8.tuple 元组数据类型</a></li><li><a href="/Python/1.Python-Basics/9.range函数.html" class="sidebar-link">9.range函数</a></li><li><a href="/Python/1.Python-Basics/10.dict 字典数据类型.html" class="sidebar-link">10.dict 字典数据类型</a></li><li><a href="/Python/1.Python-Basics/11.解构  解包.html" class="sidebar-link">11.解构  解包</a></li><li><a href="/Python/1.Python-Basics/12.is 跟 == 的区别.html" class="sidebar-link">12.is 跟 == 的区别</a></li><li><a href="/Python/1.Python-Basics/13. 编码跟解码.html" class="sidebar-link">13. 编码跟解码</a></li><li><a href="/Python/1.Python-Basics/14. set集合数据类型.html" class="sidebar-link">14. set集合数据类型</a></li><li><a href="/Python/1.Python-Basics/15. 深浅拷贝.html" class="sidebar-link">15. 深浅拷贝</a></li><li><a href="/Python/1.Python-Basics/16. 文件操作.html" class="active sidebar-link">16. 文件操作</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/Python/1.Python-Basics/16. 文件操作.html#开启文件句柄-open" class="sidebar-link">开启文件句柄 - open()</a></li><li class="sidebar-sub-header"><a href="/Python/1.Python-Basics/16. 文件操作.html#关闭文件句柄-close" class="sidebar-link">关闭文件句柄 - close()</a></li><li class="sidebar-sub-header"><a href="/Python/1.Python-Basics/16. 文件操作.html#刷新文件-flush" class="sidebar-link">刷新文件 - flush()</a></li><li class="sidebar-sub-header"><a href="/Python/1.Python-Basics/16. 文件操作.html#路径" class="sidebar-link">路径</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/Python/1.Python-Basics/16. 文件操作.html#相对路径" class="sidebar-link">相对路径</a></li><li class="sidebar-sub-header"><a href="/Python/1.Python-Basics/16. 文件操作.html#绝对路径" class="sidebar-link">绝对路径</a></li></ul></li><li class="sidebar-sub-header"><a href="/Python/1.Python-Basics/16. 文件操作.html#读取文件的方法和方式" class="sidebar-link">读取文件的方法和方式</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/Python/1.Python-Basics/16. 文件操作.html#指定范围读取-read-n" class="sidebar-link">指定范围读取 - read(ｎ)</a></li><li class="sidebar-sub-header"><a href="/Python/1.Python-Basics/16. 文件操作.html#一行一行读取-readline" class="sidebar-link">一行一行读取 - readline()</a></li><li class="sidebar-sub-header"><a href="/Python/1.Python-Basics/16. 文件操作.html#文件内容全部转成列表-readlines" class="sidebar-link">文件内容全部转成列表 - readlines()</a></li><li class="sidebar-sub-header"><a href="/Python/1.Python-Basics/16. 文件操作.html#循环读取-for循环" class="sidebar-link">循环读取 - for循环</a></li></ul></li><li class="sidebar-sub-header"><a href="/Python/1.Python-Basics/16. 文件操作.html#光标移动至开头" class="sidebar-link">光标移动至开头</a></li><li class="sidebar-sub-header"><a href="/Python/1.Python-Basics/16. 文件操作.html#光标移动至结尾" class="sidebar-link">光标移动至结尾</a></li><li class="sidebar-sub-header"><a href="/Python/1.Python-Basics/16. 文件操作.html#指定保留字符数截断" class="sidebar-link">指定保留字符数截断</a></li></ul></li><li><a href="/Python/1.Python-Basics/17. 初识函数.html" class="sidebar-link">17. 初识函数</a></li><li><a href="/Python/1.Python-Basics/18. 函数的进阶 .html" class="sidebar-link">18. 函数的进阶</a></li><li><a href="/Python/1.Python-Basics/19. 函数名，闭包，迭代器.html" class="sidebar-link">19. 函数名，闭包，迭代器</a></li><li><a href="/Python/1.Python-Basics/20. 生成器，生成器表达式，推导式.html" class="sidebar-link">20. 生成器，生成器表达式，推导式</a></li><li><a href="/Python/1.Python-Basics/21. 内置函数.html" class="sidebar-link">21. 内置函数</a></li><li><a href="/Python/1.Python-Basics/22. 内置函数进阶.html" class="sidebar-link">22. 内置函数进阶</a></li><li><a href="/Python/1.Python-Basics/23. 装饰器补充.html" class="sidebar-link">23. 装饰器补充</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="_16-文件操作"><a href="#_16-文件操作" class="header-anchor">#</a> 16. 文件操作</h1> <h1 id="初始文件操作"><a href="#初始文件操作" class="header-anchor">#</a> 初始文件操作</h1> <p>使用Python来读写文件是非常简单的操作，可以使用open()函数来打开一个文件</p> <p>获取文件句柄，然后通过文件句柄就可以进行各种各样的操作</p> <p>根据打开方式的不同能够执行的操作也有有相应的差异</p> <p>打开文件的方式：</p> <ol><li>r  （读取文件）
+<ol start="2"><li>w （写入，如果文件存在则清空所有内容，如果文件不存在则创建生成)</li> <li>a （追加写入文件内容，默认从结尾写入，不会清空文件原来数据，文件不存在则创建生成）</li> <li>r+ （读写操作，需要先读在写）</li> <li>w+ （写读操作，需要先写后读，这样就会读不出来，需要使用seek()函数，就可以读出来）</li> <li>a+（不常用）</li> <li>rb  （读取文件以bytes类型显示）</li> <li>wb （bytes类型数据写入，如果文件存在则清空所有内容，如果文件不存在则创建生成)</li> <li>ab  （追加写入bytes类型数据到文件内容，默认从结尾写入，不会清空文件原来数据，文件不存在则创建生成）</li> <li>r+b （不常用）</li> <li>w+b（不常用）</li> <li>a+b（不常用）</li></ol></li></ol> <h2 id="开启文件句柄-open"><a href="#开启文件句柄-open" class="header-anchor">#</a> 开启文件句柄 - open()</h2> <p>文件句柄是用来操作文件的</p> <p>格式：open(&quot;文件名&quot;,选项)</p> <p>选项：</p> <div class="language- extra-class"><pre><code>1. mode=&quot;&quot;             打开文件的方式权限
+2. encoding=&quot;&quot;        使用什么编码打开文件(解码)
+</code></pre></div><h2 id="关闭文件句柄-close"><a href="#关闭文件句柄-close" class="header-anchor">#</a> 关闭文件句柄 - close()</h2> <p>关闭文件句柄，建议操作文件完毕后，需要关闭文件句柄</p> <p>格式：变量.close()</p> <div class="language-python extra-class"><pre class="language-python"><code>so<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><h2 id="刷新文件-flush"><a href="#刷新文件-flush" class="header-anchor">#</a> 刷新文件 - flush()</h2> <p>如果在追加或定入文件后，如果没有系统有一定的延时，数据还没有完整追加或写入文件，就被关了，这样的后果想想就知道了</p> <p>可以使用flush()函数，强制刷新追加或定入文件，避免文件追加或写入不完整、</p> <p>格式：变量.flush()</p> <div class="language-python extra-class"><pre class="language-python"><code>so<span class="token punctuation">.</span>flush<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><h2 id="路径"><a href="#路径" class="header-anchor">#</a> 路径</h2> <p>文件存放的路径</p> <h3 id="相对路径"><a href="#相对路径" class="header-anchor">#</a> 相对路径</h3> <p>相对于你当前程序所在的文件目录</p> <ol><li>如果不写 / 等  就代表当前目录</li> <li>../    表示上一层目录</li></ol> <h3 id="绝对路径"><a href="#绝对路径" class="header-anchor">#</a> 绝对路径</h3> <ol><li>从磁盘根目录开始找起</li> <li>互联网的绝对路径</li></ol> <h1 id="只读-r-rb"><a href="#只读-r-rb" class="header-anchor">#</a> 只读(r,rb)</h1> <p>操作文件，以只读方式，如果文件不存在 报错</p> <p>格式：变量.read()</p> <p><strong>r 操作</strong></p> <p>r 是读取文件内容的操作</p> <div class="language-python extra-class"><pre class="language-python"><code>so <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">&quot;文件&quot;</span><span class="token punctuation">,</span>mode<span class="token operator">=</span><span class="token string">&quot;r&quot;</span><span class="token punctuation">,</span>encoding<span class="token operator">=</span><span class="token string">&quot;utf-8&quot;</span><span class="token punctuation">)</span>
+wo <span class="token operator">=</span> so<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>wo<span class="token punctuation">)</span>
+so<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+执行结果：
+手游欢迎你
+</code></pre></div><p>​	以上实例，记得使用完文件后要记得关闭文件句柄，文件存储在本目录下，如果存放在别的目录，建议使用相对路径</p> <p><strong>rb 操作</strong></p> <p>rb 读取出来的数据是bytes类型，所有在rb模式下，不能有encoding选项</p> <p>rb 的作用：在读取非文件的时候，比如读取MP3，图像，视频等信息的时候就需要用到</p> <p>rb 因为这种数据没办法直接显示出来 ，文件上传下载的时候还会用到</p> <p>直播中实际就是这种数据</p> <div class="language-python extra-class"><pre class="language-python"><code>so <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">&quot;文件&quot;</span><span class="token punctuation">,</span>mode<span class="token operator">=</span><span class="token string">&quot;rb&quot;</span><span class="token punctuation">)</span>
+wo <span class="token operator">=</span> so<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>wo<span class="token punctuation">)</span>
+so<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+执行结果：
+<span class="token string">b'\xe6\x89\x8b\xe6\xb8\xb8\xe6\xac\xa2\xe8\xbf\x8e\xe4\xbd\xa0'</span>
+</code></pre></div><h2 id="读取文件的方法和方式"><a href="#读取文件的方法和方式" class="header-anchor">#</a> 读取文件的方法和方式</h2> <h3 id="指定范围读取-read-n"><a href="#指定范围读取-read-n" class="header-anchor">#</a> 指定范围读取 - read(ｎ)</h3> <p>read(n) 读取n个字符</p> <p>如果是 rb 模式，读取出来的是 n 个字节</p> <p>以 1 为开头</p> <p>注意：开始读取是，是从头开始读的，如果再次读取，那么会在上一次读取的位置上在去读</p> <p>格式：变量 = 变量.read(n)</p> <h4 id="r-模式单次读取"><a href="#r-模式单次读取" class="header-anchor">#</a> r 模式单次读取</h4> <div class="language-python extra-class"><pre class="language-python"><code>so <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">&quot;文件&quot;</span><span class="token punctuation">,</span>mode<span class="token operator">=</span><span class="token string">&quot;r&quot;</span><span class="token punctuation">,</span>encoding<span class="token operator">=</span><span class="token string">&quot;utf-8&quot;</span><span class="token punctuation">)</span>
+wo <span class="token operator">=</span> so<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>wo<span class="token punctuation">)</span>
+so<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+执行结果：
+手游欢
+</code></pre></div><p>​	以上实例，使用指定范围 3 读取，从开头到第3个字符结束</p> <h4 id="rb-模式单次读取"><a href="#rb-模式单次读取" class="header-anchor">#</a> rb 模式单次读取</h4> <div class="language-python extra-class"><pre class="language-python"><code>so <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">&quot;文件&quot;</span><span class="token punctuation">,</span>mode<span class="token operator">=</span><span class="token string">&quot;rb&quot;</span><span class="token punctuation">)</span>
+wo <span class="token operator">=</span> so<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>wo<span class="token punctuation">)</span>
+so<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+执行结果：
+<span class="token string">b'\xe6\x89\x8b'</span>
+</code></pre></div><p>​	以上实例，效果跟上面的实例一样，只是得到的值为bytes类型的数据</p> <h4 id="r-模式的多次读取"><a href="#r-模式的多次读取" class="header-anchor">#</a> r 模式的多次读取</h4> <div class="language-python extra-class"><pre class="language-python"><code>so <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">&quot;文件&quot;</span><span class="token punctuation">,</span>mode<span class="token operator">=</span><span class="token string">&quot;r&quot;</span><span class="token punctuation">,</span>encoding<span class="token operator">=</span><span class="token string">&quot;utf-8&quot;</span><span class="token punctuation">)</span>
+wo <span class="token operator">=</span> so<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>
+wo1 <span class="token operator">=</span> so<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;第一次读取：&quot;</span><span class="token punctuation">,</span>wo<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;第二次读取：&quot;</span><span class="token punctuation">,</span>wo1<span class="token punctuation">)</span>
+so<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+执行结果：
+第一次读取： 手游
+第二次读取： 欢迎
+</code></pre></div><p>​	以上实例，开始读取是，是从头开始读的，如果再次读取，那么会在上一次读取的位置上在去读</p> <h3 id="一行一行读取-readline"><a href="#一行一行读取-readline" class="header-anchor">#</a> 一行一行读取 - readline()</h3> <p>一次读取一行数据</p> <p>注意：在readline() 结尾都会带有一个\n ，每次读取出来的数据尾部都会有一个\n，可以使用strip() 方法去掉 \n或空格</p> <p>默认是从第一行开始读，如果还要再次读，就会根据上一次读的位置来分配这次的位置</p> <p>如果使用strip()函数，去除的话，那么类型会变成列表</p> <p>格式：变量 = 变量.readline()</p> <div class="language-python extra-class"><pre class="language-python"><code>so <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">&quot;文件&quot;</span><span class="token punctuation">,</span>mode<span class="token operator">=</span><span class="token string">&quot;r&quot;</span><span class="token punctuation">,</span>encoding<span class="token operator">=</span><span class="token string">&quot;utf-8&quot;</span><span class="token punctuation">)</span>
+wo <span class="token operator">=</span> so<span class="token punctuation">.</span>readline<span class="token punctuation">(</span><span class="token punctuation">)</span>
+wo1 <span class="token operator">=</span> so<span class="token punctuation">.</span>readline<span class="token punctuation">(</span><span class="token punctuation">)</span>
+wo2 <span class="token operator">=</span> so<span class="token punctuation">.</span>readline<span class="token punctuation">(</span><span class="token punctuation">)</span>
+wo3 <span class="token operator">=</span> so<span class="token punctuation">.</span>readline<span class="token punctuation">(</span><span class="token punctuation">)</span>
+wo4 <span class="token operator">=</span> so<span class="token punctuation">.</span>readline<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;第一次读取：&quot;</span><span class="token punctuation">,</span>wo<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;第二次读取：&quot;</span><span class="token punctuation">,</span>wo1<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;第三次读取：&quot;</span><span class="token punctuation">,</span>wo2<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;第四次读取：&quot;</span><span class="token punctuation">,</span>wo3<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;第五次读取：&quot;</span><span class="token punctuation">,</span>wo4<span class="token punctuation">)</span>
+so<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+执行结果：
+第一次读取： <span class="token punctuation">[</span><span class="token string">'手'</span><span class="token punctuation">]</span>
+第二次读取： 游
+
+第三次读取： 欢
+
+第四次读取： 迎
+
+第五次读取： 你
+
+</code></pre></div><h4 id="for循环"><a href="#for循环" class="header-anchor">#</a> for循环</h4> <div class="language-python extra-class"><pre class="language-python"><code>so <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">&quot;文件&quot;</span><span class="token punctuation">,</span>mode<span class="token operator">=</span><span class="token string">&quot;r&quot;</span><span class="token punctuation">,</span>encoding<span class="token operator">=</span><span class="token string">&quot;utf-8&quot;</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> line <span class="token keyword">in</span> so<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>line<span class="token punctuation">)</span>
+so<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+执行结果：
+手游欢迎你
+
+手游欢迎你
+
+手游欢迎你
+
+手游欢迎你
+
+手游欢迎你
+
+手游欢迎你
+
+手游欢迎你
+</code></pre></div><h3 id="文件内容全部转成列表-readlines"><a href="#文件内容全部转成列表-readlines" class="header-anchor">#</a> 文件内容全部转成列表 - readlines()</h3> <p>将每一行形成一个元素放在一个列表中，将所有的内容都读取出来，请注意内存</p> <p>格式：变量 = 变量. readlines()</p> <div class="language-python extra-class"><pre class="language-python"><code>so <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">&quot;文件&quot;</span><span class="token punctuation">,</span>mode<span class="token operator">=</span><span class="token string">&quot;r&quot;</span><span class="token punctuation">,</span>encoding<span class="token operator">=</span><span class="token string">&quot;utf-8&quot;</span><span class="token punctuation">)</span>
+wo <span class="token operator">=</span> so<span class="token punctuation">.</span>readlines<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>wo<span class="token punctuation">)</span>
+so<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+执行结果：
+<span class="token punctuation">[</span><span class="token string">'手\n'</span><span class="token punctuation">,</span> <span class="token string">'游\n'</span><span class="token punctuation">,</span> <span class="token string">'欢\n'</span><span class="token punctuation">,</span> <span class="token string">'迎\n'</span><span class="token punctuation">,</span> <span class="token string">'你'</span><span class="token punctuation">]</span>
+</code></pre></div><p><strong>for循环</strong></p> <div class="language-python extra-class"><pre class="language-python"><code>so <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">&quot;文件&quot;</span><span class="token punctuation">,</span>mode<span class="token operator">=</span><span class="token string">&quot;r&quot;</span><span class="token punctuation">,</span>encoding<span class="token operator">=</span><span class="token string">&quot;utf-8&quot;</span><span class="token punctuation">)</span>
+wo <span class="token operator">=</span> so<span class="token punctuation">.</span>readlines<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> wo<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>i<span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+so<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+执行结果：
+手
+游
+欢
+迎
+你
+</code></pre></div><h3 id="循环读取-for循环"><a href="#循环读取-for循环" class="header-anchor">#</a> 循环读取 - for循环</h3> <p>通过for循环每次读取一行内容，不会产生内存溢出的问题</p> <div class="language-python extra-class"><pre class="language-python"><code>so <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">&quot;文件&quot;</span><span class="token punctuation">,</span>mode<span class="token operator">=</span><span class="token string">&quot;r&quot;</span><span class="token punctuation">,</span>encoding<span class="token operator">=</span><span class="token string">&quot;utf-8&quot;</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> so<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>i<span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+so<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+执行结果：
+手
+游
+欢
+迎
+你
+</code></pre></div><h1 id="只写-w-wb"><a href="#只写-w-wb" class="header-anchor">#</a> 只写(w,wb)</h1> <p>如果写入的时候没有对应的文件，就会创建文件</p> <p>如果文件存在，就会将原件中原来的内容删除，再写入新内容</p> <p>格式：变量.write(值)</p> <p><strong>w 模式</strong></p> <div class="language-python extra-class"><pre class="language-python"><code>so <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">&quot;美女&quot;</span><span class="token punctuation">,</span>mode<span class="token operator">=</span><span class="token string">&quot;w&quot;</span><span class="token punctuation">,</span>encoding<span class="token operator">=</span><span class="token string">&quot;utf-8&quot;</span><span class="token punctuation">)</span>
+so<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token string">&quot;化妆是人，遇水是鬼&quot;</span><span class="token punctuation">)</span>
+so<span class="token punctuation">.</span>flush<span class="token punctuation">(</span><span class="token punctuation">)</span>
+so<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+so <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">&quot;美女&quot;</span><span class="token punctuation">,</span>mode<span class="token operator">=</span><span class="token string">&quot;r&quot;</span><span class="token punctuation">,</span>encoding<span class="token operator">=</span><span class="token string">&quot;utf-8&quot;</span><span class="token punctuation">)</span>
+wo <span class="token operator">=</span> so<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>wo<span class="token punctuation">)</span>
+so<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+执行结果：
+化妆是人，遇水是鬼
+</code></pre></div><p>​	以上实例，执行完毕后，如果文件不存在，会在当前目录下创建文件并写入</p> <p><strong>wb 模式</strong></p> <p>wb模式，是将bytes类型的数据写入文件中，如果是值，需要使用encode()进行解码</p> <div class="language-python extra-class"><pre class="language-python"><code>so <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">&quot;美女&quot;</span><span class="token punctuation">,</span>mode<span class="token operator">=</span><span class="token string">&quot;wb&quot;</span><span class="token punctuation">)</span>
+so<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token string">&quot;化妆是人，遇水是鬼1&quot;</span><span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token string">&quot;utf-8&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+so<span class="token punctuation">.</span>flush<span class="token punctuation">(</span><span class="token punctuation">)</span>
+so<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+so <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">&quot;美女&quot;</span><span class="token punctuation">,</span>mode<span class="token operator">=</span><span class="token string">&quot;r&quot;</span><span class="token punctuation">,</span>encoding<span class="token operator">=</span><span class="token string">&quot;utf-8&quot;</span><span class="token punctuation">)</span>
+wo <span class="token operator">=</span> so<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>wo<span class="token punctuation">)</span>
+so<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+执行结果：
+化妆是人，遇水是鬼<span class="token number">1</span>
+</code></pre></div><p>​	以上实例，执行完毕后，如果文件不存在，会在当前目录下创建文件并写入</p> <h1 id="追加-a-ab"><a href="#追加-a-ab" class="header-anchor">#</a> 追加(a,ab)</h1> <p>追加，写入的内容会追加到文件的结尾处</p> <p>如果文件不存在，默认会生成文件并追加写入数据</p> <p>格式：变量.write(值)</p> <p><strong>a 模式</strong></p> <div class="language-python extra-class"><pre class="language-python"><code>so <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">&quot;美女&quot;</span><span class="token punctuation">,</span>mode<span class="token operator">=</span><span class="token string">&quot;a&quot;</span><span class="token punctuation">,</span>encoding<span class="token operator">=</span><span class="token string">&quot;utf-8&quot;</span><span class="token punctuation">)</span>
+so<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token string">&quot;你是人是鬼&quot;</span><span class="token punctuation">)</span>
+so<span class="token punctuation">.</span>flush<span class="token punctuation">(</span><span class="token punctuation">)</span>
+so<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+so <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">&quot;美女&quot;</span><span class="token punctuation">,</span>mode<span class="token operator">=</span><span class="token string">&quot;r&quot;</span><span class="token punctuation">,</span>encoding<span class="token operator">=</span><span class="token string">&quot;utf-8&quot;</span><span class="token punctuation">)</span>
+wo <span class="token operator">=</span> so<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>wo<span class="token punctuation">)</span>
+so<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+执行结果：
+化妆是人，遇水是鬼<span class="token number">1</span>你是人是鬼你是人是鬼
+</code></pre></div><p>​	以上实例，执行完毕后，如果文件不存在，会在当前目录下创建文件并追加 写入</p> <p><strong>ab 模式</strong></p> <p>ab模式，是将bytes类型的数据追加写入文件中，如果是值，需要使用encode()进行解码</p> <div class="language-python extra-class"><pre class="language-python"><code>so <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">&quot;美女&quot;</span><span class="token punctuation">,</span>mode<span class="token operator">=</span><span class="token string">&quot;ab&quot;</span><span class="token punctuation">)</span>
+so<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token string">&quot;你是人是鬼&quot;</span><span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token string">&quot;utf-8&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+so<span class="token punctuation">.</span>flush<span class="token punctuation">(</span><span class="token punctuation">)</span>
+so<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+so <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">&quot;美女&quot;</span><span class="token punctuation">,</span>mode<span class="token operator">=</span><span class="token string">&quot;r&quot;</span><span class="token punctuation">,</span>encoding<span class="token operator">=</span><span class="token string">&quot;utf-8&quot;</span><span class="token punctuation">)</span>
+wo <span class="token operator">=</span> so<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>wo<span class="token punctuation">)</span>
+so<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+执行结果：
+化妆是人，遇水是鬼<span class="token number">1</span>你是人是鬼
+</code></pre></div><p>​	以上实例，执行完毕后，如果文件不存在，会在当前目录下创建文件并追加 写入</p> <h1 id="读写-r"><a href="#读写-r" class="header-anchor">#</a> 读写(r+)</h1> <p>对于读写模式，必须是先读，因为默认光标是在开头的，写入就需要到结尾处</p> <p>注意：在r+模式中，必须是要先读取，然后再写入</p> <p>关于r+  有个深坑，在r+模式下，如果读取了内容，无论读取内容多少，光标显示的是多少，再写入都是在结尾进行的操作</p> <div class="language-python extra-class"><pre class="language-python"><code>so <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">&quot;美女&quot;</span><span class="token punctuation">,</span>mode<span class="token operator">=</span><span class="token string">&quot;r+&quot;</span><span class="token punctuation">,</span>encoding<span class="token operator">=</span><span class="token string">&quot;utf-8&quot;</span><span class="token punctuation">)</span>
+wo <span class="token operator">=</span> so<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
+so<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token string">&quot;你好，大家好&quot;</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>wo<span class="token punctuation">)</span>
+so<span class="token punctuation">.</span>flush<span class="token punctuation">(</span><span class="token punctuation">)</span>
+so<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+执行结果：
+你好，大家好
+</code></pre></div><h1 id="写读-w"><a href="#写读-w" class="header-anchor">#</a> 写读(w+)</h1> <p>对于写读模式，先将文件中所有内容清空，然后在定稿，最后读取，但是读取的内容是空的</p> <p>可以先写后，光标的位置就在文件内容的结尾，在读就没能读出什么东西来</p> <p>如果想要读得出东西来，就要使用seek()函数</p> <div class="language-python extra-class"><pre class="language-python"><code>so <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">&quot;美女&quot;</span><span class="token punctuation">,</span>mode<span class="token operator">=</span><span class="token string">&quot;w+&quot;</span><span class="token punctuation">,</span>encoding<span class="token operator">=</span><span class="token string">&quot;utf-8&quot;</span><span class="token punctuation">)</span>
+so<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token string">&quot;你好，大家好&quot;</span><span class="token punctuation">)</span>
+so<span class="token punctuation">.</span>seek<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+wo <span class="token operator">=</span> so<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>wo<span class="token punctuation">)</span>
+so<span class="token punctuation">.</span>flush<span class="token punctuation">(</span><span class="token punctuation">)</span>
+so<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+执行结果：
+你好，大家好
+</code></pre></div><h1 id="光标位置移动-seek"><a href="#光标位置移动-seek" class="header-anchor">#</a> 光标位置移动 - seek()</h1> <p>光标？，光标就是在操作文件中当前位置的所在处</p> <p>seek()，可以指定光标移动到n个位置中</p> <p>注意：移动的单位是byte字节，如果编码为UTF-8的中文部分，3个节点 = 一个中文</p> <p>移动到开头：seek(0)</p> <p>移动到结尾：seek(0,2)</p> <p>seek()的第一个参数是不可动的，固定为0</p> <p>seek()的第二个参数表示的是从那个位置进行偏移，如果不填，默认是0</p> <p>seek()的第二个参数：</p> <ul><li>0 ：为开头</li> <li>1：为当前位置</li> <li>2：为结尾</li></ul> <h2 id="光标移动至开头"><a href="#光标移动至开头" class="header-anchor">#</a> 光标移动至开头</h2> <div class="language-python extra-class"><pre class="language-python"><code>so <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">&quot;文件&quot;</span><span class="token punctuation">,</span>mode<span class="token operator">=</span><span class="token string">&quot;r+&quot;</span><span class="token punctuation">,</span>encoding<span class="token operator">=</span><span class="token string">&quot;utf-8&quot;</span><span class="token punctuation">)</span>
+so<span class="token punctuation">.</span>seek<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+wo <span class="token operator">=</span> so<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>wo<span class="token punctuation">)</span>
+so<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+执行结果：
+手游欢迎你
+</code></pre></div><h2 id="光标移动至结尾"><a href="#光标移动至结尾" class="header-anchor">#</a> 光标移动至结尾</h2> <div class="language-python extra-class"><pre class="language-python"><code>so <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">&quot;文件&quot;</span><span class="token punctuation">,</span>mode<span class="token operator">=</span><span class="token string">&quot;r+&quot;</span><span class="token punctuation">,</span>encoding<span class="token operator">=</span><span class="token string">&quot;utf-8&quot;</span><span class="token punctuation">)</span>
+so<span class="token punctuation">.</span>seek<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span>
+wo <span class="token operator">=</span> so<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>wo<span class="token punctuation">)</span>
+so<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+执行结果：
+
+</code></pre></div><h1 id="查看光标的当前位置-tell"><a href="#查看光标的当前位置-tell" class="header-anchor">#</a> 查看光标的当前位置 - tell()</h1> <p>可以通过tell()来查看光标的当前位置</p> <p>注意：通过tell() 查出来的是以byte字节为单位，如果编码为UTF-8的中文部分，3个节点 = 一个中文</p> <p>格式：变量.tell()</p> <div class="language-python extra-class"><pre class="language-python"><code>so <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">&quot;文件&quot;</span><span class="token punctuation">,</span>mode<span class="token operator">=</span><span class="token string">&quot;r+&quot;</span><span class="token punctuation">,</span>encoding<span class="token operator">=</span><span class="token string">&quot;utf-8&quot;</span><span class="token punctuation">)</span>
+so<span class="token punctuation">.</span>seek<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span>
+wo <span class="token operator">=</span> so<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>so<span class="token punctuation">.</span>tell<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+so<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+执行结果：
+<span class="token number">9</span>
+</code></pre></div><h1 id="截断文件内容-truncate"><a href="#截断文件内容-truncate" class="header-anchor">#</a> 截断文件内容 - truncate()</h1> <p>如果要使用截断操作，要先挪动光标，挪动到你想截断的僧，然后再进行截断</p> <p>默认是截断当前光标位置后的所有内容</p> <p>关于truncate(n), 如果给出了了n. 则从开头开头进⾏截断, 如果不给n, 则从当前位置截断. 后面的内容将会被删除</p> <p>格式：变量.truncate()</p> <p><strong>截断文件中除了前两位的字符，其他都截断</strong></p> <div class="language-python extra-class"><pre class="language-python"><code>so <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">&quot;文件&quot;</span><span class="token punctuation">,</span>mode<span class="token operator">=</span><span class="token string">&quot;r+&quot;</span><span class="token punctuation">,</span>encoding<span class="token operator">=</span><span class="token string">&quot;utf-8&quot;</span><span class="token punctuation">)</span>
+so<span class="token punctuation">.</span>seek<span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span>
+so<span class="token punctuation">.</span>truncate<span class="token punctuation">(</span><span class="token punctuation">)</span>
+so<span class="token punctuation">.</span>seek<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+wo <span class="token operator">=</span> so<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>wo<span class="token punctuation">)</span>
+so<span class="token punctuation">.</span>flush<span class="token punctuation">(</span><span class="token punctuation">)</span>
+so<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+执行结果：
+手游
+</code></pre></div><h2 id="指定保留字符数截断"><a href="#指定保留字符数截断" class="header-anchor">#</a> 指定保留字符数截断</h2> <p>注意：截断的单位是byte字节，如果编码为UTF-8的中文部分，3个节点 = 一个中文</p> <p><strong>保留前3位字符</strong></p> <div class="language-python extra-class"><pre class="language-python"><code>so <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">&quot;文件&quot;</span><span class="token punctuation">,</span>mode<span class="token operator">=</span><span class="token string">&quot;r+&quot;</span><span class="token punctuation">,</span>encoding<span class="token operator">=</span><span class="token string">&quot;utf-8&quot;</span><span class="token punctuation">)</span>
+so<span class="token punctuation">.</span>truncate<span class="token punctuation">(</span><span class="token number">9</span><span class="token punctuation">)</span>
+so<span class="token punctuation">.</span>seek<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+wo <span class="token operator">=</span> so<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>wo<span class="token punctuation">)</span>
+so<span class="token punctuation">.</span>flush<span class="token punctuation">(</span><span class="token punctuation">)</span>
+so<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+执行结果：
+手游欢
+</code></pre></div><h1 id="文件修改-通过-r-跟-w-模式-修改文件"><a href="#文件修改-通过-r-跟-w-模式-修改文件" class="header-anchor">#</a> 文件修改，通过 r+ 跟 w 模式 修改文件</h1> <div class="language-python extra-class"><pre class="language-python"><code>so <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">&quot;文件&quot;</span><span class="token punctuation">,</span>mode<span class="token operator">=</span><span class="token string">&quot;r+&quot;</span><span class="token punctuation">,</span>encoding<span class="token operator">=</span><span class="token string">&quot;utf-8&quot;</span><span class="token punctuation">)</span>
+wo <span class="token operator">=</span> so<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
+sh <span class="token operator">=</span> wo<span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">&quot;我&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;你&quot;</span><span class="token punctuation">)</span>
+ss <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">&quot;文件&quot;</span><span class="token punctuation">,</span>mode<span class="token operator">=</span><span class="token string">&quot;w&quot;</span><span class="token punctuation">,</span>encoding<span class="token operator">=</span><span class="token string">&quot;utf-8&quot;</span><span class="token punctuation">)</span>
+so<span class="token punctuation">.</span>write<span class="token punctuation">(</span>sh<span class="token punctuation">)</span>
+so<span class="token punctuation">.</span>flush<span class="token punctuation">(</span><span class="token punctuation">)</span>
+so<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+
+加载要修改的文件，打开文件模式为：r<span class="token operator">+</span>
+读取文件内容到内存中
+通过字符串函数：replace<span class="token punctuation">(</span><span class="token punctuation">)</span>， 修改你要修改的内容，实际修改在内存中修改
+在次加载要修改的文件，打开文件模式为：w
+写入在内存中修改完毕的数据，因为 w 模式的特殊性：写入会清空文件的所有内容，也相当覆盖
+刷新文件句柄
+关闭文件句柄
+</code></pre></div><p>​	以上实例，这种方式没办法使用for循环一行一行的读取修改，请使用者三思</p> <h1 id="文件的修改以及另一种打开文件句柄的方式"><a href="#文件的修改以及另一种打开文件句柄的方式" class="header-anchor">#</a> 文件的修改以及另一种打开文件句柄的方式</h1> <p>文件修改，实际只能将文件中的内容读取到内存中，将信息修改完毕，然后写入另一个文件中，把源文件删除，将新文件的名字改成老文件的名字</p> <p>文件修改需要应用一个新的打开文件方式，os模块</p> <p>如果要一次打开多个文件，可以使用 , 逗号来分隔 open</p> <p>格式：with open(&quot;文件名&quot;，mode=&quot;打开文件的方式权限&quot;，encoding=&quot;用什么编码格式打开文件&quot;) as 变量名 :</p> <p>格式：os.remove(文件名)  ## 删除文件</p> <p>格式：os.rename(&quot;文件名&quot;,&quot;新文件名&quot;)  ## 文件名更改</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">import</span> os
+<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">&quot;文件&quot;</span><span class="token punctuation">,</span>mode<span class="token operator">=</span><span class="token string">&quot;r&quot;</span><span class="token punctuation">,</span>encoding<span class="token operator">=</span><span class="token string">&quot;utf-8&quot;</span><span class="token punctuation">)</span> <span class="token keyword">as</span> so <span class="token punctuation">,</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">&quot;文件_os&quot;</span><span class="token punctuation">,</span>mode<span class="token operator">=</span><span class="token string">&quot;w&quot;</span><span class="token punctuation">,</span>encoding<span class="token operator">=</span><span class="token string">&quot;utf-8&quot;</span><span class="token punctuation">)</span> <span class="token keyword">as</span> wo<span class="token punctuation">:</span>
+    sh <span class="token operator">=</span> so<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    ssh <span class="token operator">=</span> sh<span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">&quot;你&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;我&quot;</span><span class="token punctuation">)</span>
+    wo<span class="token punctuation">.</span>write<span class="token punctuation">(</span>ssh<span class="token punctuation">)</span>
+os<span class="token punctuation">.</span>remove<span class="token punctuation">(</span><span class="token string">&quot;文件&quot;</span><span class="token punctuation">)</span>
+os<span class="token punctuation">.</span>rename<span class="token punctuation">(</span><span class="token string">&quot;文件_os&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;文件&quot;</span><span class="token punctuation">)</span>
+
+
+
+加载OS模块
+使用另一种打开文件的方式，打开二个文件，<span class="token number">1</span>：为要修改的文件，<span class="token number">2</span>：临时修改替换文件，用 <span class="token punctuation">,</span> 逗号分隔
+	读取要修改的文件
+    修改内存中读取过的文件数据，使用字符串函数，replace<span class="token punctuation">(</span><span class="token punctuation">)</span>替换
+    将修改完的数据写入 <span class="token number">2</span> 文件中<span class="token punctuation">(</span>临时修改替换文件<span class="token punctuation">)</span>
+使用os自带的函数，删除 <span class="token number">1</span> 文件（要修改的文件）
+使用os自带的函数，更改 <span class="token number">2</span> 文件的文件名 （临时修改替换文件）
+</code></pre></div><p>​	以上实例，读取文件的时候是将文件的所有内容一次读取，这样可能会有内存溢出，建议一行一行读取操作</p> <p><strong>一行一行读取修改文件内容</strong></p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">import</span> os
+<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">&quot;文件&quot;</span><span class="token punctuation">,</span>mode<span class="token operator">=</span><span class="token string">&quot;r&quot;</span><span class="token punctuation">,</span>encoding<span class="token operator">=</span><span class="token string">&quot;utf-8&quot;</span><span class="token punctuation">)</span> <span class="token keyword">as</span> so <span class="token punctuation">,</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">&quot;文件_os&quot;</span><span class="token punctuation">,</span>mode<span class="token operator">=</span><span class="token string">&quot;w&quot;</span><span class="token punctuation">,</span>encoding<span class="token operator">=</span><span class="token string">&quot;utf-8&quot;</span><span class="token punctuation">)</span> <span class="token keyword">as</span> wo<span class="token punctuation">:</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> so<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        ssh <span class="token operator">=</span> i<span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">&quot;你&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;我&quot;</span><span class="token punctuation">)</span>
+        wo<span class="token punctuation">.</span>write<span class="token punctuation">(</span>ssh<span class="token punctuation">)</span>
+os<span class="token punctuation">.</span>remove<span class="token punctuation">(</span><span class="token string">&quot;文件&quot;</span><span class="token punctuation">)</span>
+os<span class="token punctuation">.</span>rename<span class="token punctuation">(</span><span class="token string">&quot;文件_os&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;文件&quot;</span><span class="token punctuation">)</span>
+</code></pre></div><p>​	以上实例，只是把读取文件操作换成for循环来读取而已</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/Python/1.Python-Basics/15. 深浅拷贝.html" class="prev">
+        15. 深浅拷贝
+      </a></span> <span class="next"><a href="/Python/1.Python-Basics/17. 初识函数.html">
+        17. 初识函数
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.d65bef42.js" defer></script><script src="/assets/js/2.2249178e.js" defer></script><script src="/assets/js/66.9acf0206.js" defer></script>
+  </body>
+</html>

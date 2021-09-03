@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>66. 数据库之MySQL索引、优化 | MSG</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="在追寻技术的同时享受生活">
+    
+    <link rel="preload" href="/assets/css/0.styles.e4d8b86b.css" as="style"><link rel="preload" href="/assets/js/app.d65bef42.js" as="script"><link rel="preload" href="/assets/js/2.2249178e.js" as="script"><link rel="preload" href="/assets/js/137.db57772e.js" as="script"><link rel="prefetch" href="/assets/js/10.4785e2e5.js"><link rel="prefetch" href="/assets/js/100.33fceff2.js"><link rel="prefetch" href="/assets/js/101.62e1e5d4.js"><link rel="prefetch" href="/assets/js/102.8551fe71.js"><link rel="prefetch" href="/assets/js/103.47754d79.js"><link rel="prefetch" href="/assets/js/104.4adf114f.js"><link rel="prefetch" href="/assets/js/105.6206a08a.js"><link rel="prefetch" href="/assets/js/106.1c4561f3.js"><link rel="prefetch" href="/assets/js/107.e1531a5a.js"><link rel="prefetch" href="/assets/js/108.c637743a.js"><link rel="prefetch" href="/assets/js/109.3f150913.js"><link rel="prefetch" href="/assets/js/11.bd8ec7a6.js"><link rel="prefetch" href="/assets/js/110.088c1ac3.js"><link rel="prefetch" href="/assets/js/111.66d8d491.js"><link rel="prefetch" href="/assets/js/112.231663ee.js"><link rel="prefetch" href="/assets/js/113.a38bc531.js"><link rel="prefetch" href="/assets/js/114.e165daea.js"><link rel="prefetch" href="/assets/js/115.994b087a.js"><link rel="prefetch" href="/assets/js/116.ea3cfdfb.js"><link rel="prefetch" href="/assets/js/117.7be5e4f3.js"><link rel="prefetch" href="/assets/js/118.ebb58ddb.js"><link rel="prefetch" href="/assets/js/119.90018646.js"><link rel="prefetch" href="/assets/js/12.0d8f43df.js"><link rel="prefetch" href="/assets/js/120.bb5be863.js"><link rel="prefetch" href="/assets/js/121.3d1db670.js"><link rel="prefetch" href="/assets/js/122.d29ed1b2.js"><link rel="prefetch" href="/assets/js/123.38cc4704.js"><link rel="prefetch" href="/assets/js/124.cc8549d4.js"><link rel="prefetch" href="/assets/js/125.6ee3e9c8.js"><link rel="prefetch" href="/assets/js/126.48710eba.js"><link rel="prefetch" href="/assets/js/127.d7a1fd83.js"><link rel="prefetch" href="/assets/js/128.e5017f6b.js"><link rel="prefetch" href="/assets/js/129.4c33e121.js"><link rel="prefetch" href="/assets/js/13.2dbde7aa.js"><link rel="prefetch" href="/assets/js/130.cda66247.js"><link rel="prefetch" href="/assets/js/131.ad76f669.js"><link rel="prefetch" href="/assets/js/132.aca88758.js"><link rel="prefetch" href="/assets/js/133.a1cf5903.js"><link rel="prefetch" href="/assets/js/134.b1386377.js"><link rel="prefetch" href="/assets/js/135.94edcf53.js"><link rel="prefetch" href="/assets/js/136.24be4170.js"><link rel="prefetch" href="/assets/js/138.dc67bcaa.js"><link rel="prefetch" href="/assets/js/139.5453d1f6.js"><link rel="prefetch" href="/assets/js/14.2187dbf4.js"><link rel="prefetch" href="/assets/js/140.938e5c07.js"><link rel="prefetch" href="/assets/js/141.99c7cf2c.js"><link rel="prefetch" href="/assets/js/142.428e3958.js"><link rel="prefetch" href="/assets/js/143.68b01530.js"><link rel="prefetch" href="/assets/js/144.f67389cc.js"><link rel="prefetch" href="/assets/js/145.d952a130.js"><link rel="prefetch" href="/assets/js/146.b933dcad.js"><link rel="prefetch" href="/assets/js/147.2d8e4c0a.js"><link rel="prefetch" href="/assets/js/148.6d76ac94.js"><link rel="prefetch" href="/assets/js/149.6b4d6378.js"><link rel="prefetch" href="/assets/js/15.a53b356c.js"><link rel="prefetch" href="/assets/js/150.5bf39cb4.js"><link rel="prefetch" href="/assets/js/151.17af677c.js"><link rel="prefetch" href="/assets/js/152.7f1c2792.js"><link rel="prefetch" href="/assets/js/153.98dd0727.js"><link rel="prefetch" href="/assets/js/154.eb44bf23.js"><link rel="prefetch" href="/assets/js/155.5a9840ea.js"><link rel="prefetch" href="/assets/js/156.7ba01fd0.js"><link rel="prefetch" href="/assets/js/157.2296a048.js"><link rel="prefetch" href="/assets/js/158.6bb1f699.js"><link rel="prefetch" href="/assets/js/159.073bb8df.js"><link rel="prefetch" href="/assets/js/16.cef7bf44.js"><link rel="prefetch" href="/assets/js/160.25a837f9.js"><link rel="prefetch" href="/assets/js/161.93d886a1.js"><link rel="prefetch" href="/assets/js/162.5d2714b2.js"><link rel="prefetch" href="/assets/js/17.96f36904.js"><link rel="prefetch" href="/assets/js/18.fd04b310.js"><link rel="prefetch" href="/assets/js/19.3e1377d1.js"><link rel="prefetch" href="/assets/js/20.ac195ac8.js"><link rel="prefetch" href="/assets/js/21.c2d7729c.js"><link rel="prefetch" href="/assets/js/22.dd8c621b.js"><link rel="prefetch" href="/assets/js/23.ad7d0350.js"><link rel="prefetch" href="/assets/js/24.8559c4c3.js"><link rel="prefetch" href="/assets/js/25.783a8116.js"><link rel="prefetch" href="/assets/js/26.25e0e459.js"><link rel="prefetch" href="/assets/js/27.c0616e2a.js"><link rel="prefetch" href="/assets/js/28.30656c2e.js"><link rel="prefetch" href="/assets/js/29.2be5114c.js"><link rel="prefetch" href="/assets/js/3.be8c8f3b.js"><link rel="prefetch" href="/assets/js/30.230a74a7.js"><link rel="prefetch" href="/assets/js/31.760f46ad.js"><link rel="prefetch" href="/assets/js/32.c9533fef.js"><link rel="prefetch" href="/assets/js/33.dcacfb38.js"><link rel="prefetch" href="/assets/js/34.4370a466.js"><link rel="prefetch" href="/assets/js/35.bf299eea.js"><link rel="prefetch" href="/assets/js/36.336e435a.js"><link rel="prefetch" href="/assets/js/37.1d1d2eea.js"><link rel="prefetch" href="/assets/js/38.0d58b7d0.js"><link rel="prefetch" href="/assets/js/39.d43564ba.js"><link rel="prefetch" href="/assets/js/4.4a6cb970.js"><link rel="prefetch" href="/assets/js/40.bc4e4bde.js"><link rel="prefetch" href="/assets/js/41.b71231a5.js"><link rel="prefetch" href="/assets/js/42.9d46f400.js"><link rel="prefetch" href="/assets/js/43.50c5be69.js"><link rel="prefetch" href="/assets/js/44.60406e7f.js"><link rel="prefetch" href="/assets/js/45.ec3569ae.js"><link rel="prefetch" href="/assets/js/46.1bd3ce7b.js"><link rel="prefetch" href="/assets/js/47.1e1b5326.js"><link rel="prefetch" href="/assets/js/48.64c631ea.js"><link rel="prefetch" href="/assets/js/49.b4abacd8.js"><link rel="prefetch" href="/assets/js/5.e6d0b165.js"><link rel="prefetch" href="/assets/js/50.c3e320c0.js"><link rel="prefetch" href="/assets/js/51.5ec7fb8c.js"><link rel="prefetch" href="/assets/js/52.2d234f86.js"><link rel="prefetch" href="/assets/js/53.f3b69623.js"><link rel="prefetch" href="/assets/js/54.c85ff450.js"><link rel="prefetch" href="/assets/js/55.b07597b5.js"><link rel="prefetch" href="/assets/js/56.444129cf.js"><link rel="prefetch" href="/assets/js/57.df1329ba.js"><link rel="prefetch" href="/assets/js/58.5afb51cf.js"><link rel="prefetch" href="/assets/js/59.d98936d9.js"><link rel="prefetch" href="/assets/js/6.809376cd.js"><link rel="prefetch" href="/assets/js/60.02813ecf.js"><link rel="prefetch" href="/assets/js/61.37a4812d.js"><link rel="prefetch" href="/assets/js/62.5da94048.js"><link rel="prefetch" href="/assets/js/63.8e2c2bca.js"><link rel="prefetch" href="/assets/js/64.d290398f.js"><link rel="prefetch" href="/assets/js/65.44e28313.js"><link rel="prefetch" href="/assets/js/66.9acf0206.js"><link rel="prefetch" href="/assets/js/67.85688aa2.js"><link rel="prefetch" href="/assets/js/68.45bda7fc.js"><link rel="prefetch" href="/assets/js/69.9074feb0.js"><link rel="prefetch" href="/assets/js/7.5d7bce6e.js"><link rel="prefetch" href="/assets/js/70.b4cd2ddc.js"><link rel="prefetch" href="/assets/js/71.53219b13.js"><link rel="prefetch" href="/assets/js/72.af2a7290.js"><link rel="prefetch" href="/assets/js/73.c28fc506.js"><link rel="prefetch" href="/assets/js/74.64c81a90.js"><link rel="prefetch" href="/assets/js/75.05191ece.js"><link rel="prefetch" href="/assets/js/76.f516d464.js"><link rel="prefetch" href="/assets/js/77.c345180b.js"><link rel="prefetch" href="/assets/js/78.4a09d0ba.js"><link rel="prefetch" href="/assets/js/79.65f41bcf.js"><link rel="prefetch" href="/assets/js/8.f6cfdc07.js"><link rel="prefetch" href="/assets/js/80.b77151f3.js"><link rel="prefetch" href="/assets/js/81.824fa371.js"><link rel="prefetch" href="/assets/js/82.3f91c09b.js"><link rel="prefetch" href="/assets/js/83.9539f074.js"><link rel="prefetch" href="/assets/js/84.dd89f1de.js"><link rel="prefetch" href="/assets/js/85.15210b99.js"><link rel="prefetch" href="/assets/js/86.e14553e1.js"><link rel="prefetch" href="/assets/js/87.6dc95177.js"><link rel="prefetch" href="/assets/js/88.09c5e890.js"><link rel="prefetch" href="/assets/js/89.0d61f4d0.js"><link rel="prefetch" href="/assets/js/9.759f1986.js"><link rel="prefetch" href="/assets/js/90.a9b14d80.js"><link rel="prefetch" href="/assets/js/91.1a4aabe2.js"><link rel="prefetch" href="/assets/js/92.12070bdb.js"><link rel="prefetch" href="/assets/js/93.b5dc76d0.js"><link rel="prefetch" href="/assets/js/94.690498a6.js"><link rel="prefetch" href="/assets/js/95.b17961e6.js"><link rel="prefetch" href="/assets/js/96.a2f06f3e.js"><link rel="prefetch" href="/assets/js/97.64ef6721.js"><link rel="prefetch" href="/assets/js/98.443eba26.js"><link rel="prefetch" href="/assets/js/99.b6ba7c3a.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.e4d8b86b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">MSG</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Python文档" class="dropdown-title"><span class="title">Python文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="Python文档" class="mobile-dropdown-title"><span class="title">Python文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Python/1.Python-Basics/" class="nav-link">
+  Python-基础
+</a></li><li class="dropdown-item"><!----> <a href="/Python/2. Python-object/" class="nav-link">
+  Python-面向对象
+</a></li><li class="dropdown-item"><!----> <a href="/Python/3. Python-module/" class="nav-link">
+  Python-模块与包
+</a></li><li class="dropdown-item"><!----> <a href="/Python/4. Python-network/" class="nav-link">
+  Python-网络
+</a></li><li class="dropdown-item"><!----> <a href="/Python/5. Python-frontend/" class="nav-link">
+  Python-前端
+</a></li><li class="dropdown-item"><!----> <a href="/Python/6. Python-MySQL/" class="nav-link">
+  Python-数据库
+</a></li><li class="dropdown-item"><!----> <a href="/Python/7. Python-Django/" class="nav-link">
+  Python-Django
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="容器文档" class="dropdown-title"><span class="title">容器文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="容器文档" class="mobile-dropdown-title"><span class="title">容器文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Container/docker/" class="nav-link">
+  docker文檔
+</a></li><li class="dropdown-item"><!----> <a href="/Container/Kubernetes/" class="nav-link">
+  Kubernetes文檔
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="GO文档" class="dropdown-title"><span class="title">GO文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="GO文档" class="mobile-dropdown-title"><span class="title">GO文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/GO/basics/" class="nav-link">
+  GO快速入门
+</a></li><li class="dropdown-item"><!----> <a href="/GO/module/" class="nav-link">
+  GO标准库/GO模块
+</a></li></ul></div></div><div class="nav-item"><a href="https://www.linux91.cn/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  博客
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Python文档" class="dropdown-title"><span class="title">Python文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="Python文档" class="mobile-dropdown-title"><span class="title">Python文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Python/1.Python-Basics/" class="nav-link">
+  Python-基础
+</a></li><li class="dropdown-item"><!----> <a href="/Python/2. Python-object/" class="nav-link">
+  Python-面向对象
+</a></li><li class="dropdown-item"><!----> <a href="/Python/3. Python-module/" class="nav-link">
+  Python-模块与包
+</a></li><li class="dropdown-item"><!----> <a href="/Python/4. Python-network/" class="nav-link">
+  Python-网络
+</a></li><li class="dropdown-item"><!----> <a href="/Python/5. Python-frontend/" class="nav-link">
+  Python-前端
+</a></li><li class="dropdown-item"><!----> <a href="/Python/6. Python-MySQL/" class="nav-link">
+  Python-数据库
+</a></li><li class="dropdown-item"><!----> <a href="/Python/7. Python-Django/" class="nav-link">
+  Python-Django
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="容器文档" class="dropdown-title"><span class="title">容器文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="容器文档" class="mobile-dropdown-title"><span class="title">容器文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Container/docker/" class="nav-link">
+  docker文檔
+</a></li><li class="dropdown-item"><!----> <a href="/Container/Kubernetes/" class="nav-link">
+  Kubernetes文檔
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="GO文档" class="dropdown-title"><span class="title">GO文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="GO文档" class="mobile-dropdown-title"><span class="title">GO文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/GO/basics/" class="nav-link">
+  GO快速入门
+</a></li><li class="dropdown-item"><!----> <a href="/GO/module/" class="nav-link">
+  GO标准库/GO模块
+</a></li></ul></div></div><div class="nav-item"><a href="https://www.linux91.cn/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  博客
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Python-数据库</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/Python/6.%20Python-MySQL/" aria-current="page" class="sidebar-link">介绍</a></li><li><a href="/Python/6. Python-MySQL/61. 数据库之MySQL基础操作.html" class="sidebar-link">61. 数据库之MySQL基础操作</a></li><li><a href="/Python/6. Python-MySQL/62. 数据库之MySQL数据类型.html" class="sidebar-link">62. 数据库之MySQL数据类型</a></li><li><a href="/Python/6. Python-MySQL/63. 数据库之MySQL完整性约束.html" class="sidebar-link">63. 数据库之MySQL完整性约束</a></li><li><a href="/Python/6. Python-MySQL/64. 数据库之MySQL表数据的增删改.html" class="sidebar-link">64. 数据库之MySQL表数据的增删改</a></li><li><a href="/Python/6. Python-MySQL/65. 数据库之MySQL重中之重 - 表数据的查询.html" class="sidebar-link">65. 数据库之MySQL重中之重 - 表数据的查询</a></li><li><a href="/Python/6. Python-MySQL/66. 数据库之MySQL索引、优化.html" class="active sidebar-link">66. 数据库之MySQL索引、优化</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/Python/6. Python-MySQL/66. 数据库之MySQL索引、优化.html#常见的几种索引" class="sidebar-link">常见的几种索引</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/Python/6. Python-MySQL/66. 数据库之MySQL索引、优化.html#无索引和有索引的区别以及建立索引的目的" class="sidebar-link">无索引和有索引的区别以及建立索引的目的</a></li><li class="sidebar-sub-header"><a href="/Python/6. Python-MySQL/66. 数据库之MySQL索引、优化.html#索引的种类" class="sidebar-link">索引的种类</a></li></ul></li><li class="sidebar-sub-header"><a href="/Python/6. Python-MySQL/66. 数据库之MySQL索引、优化.html#普通索引" class="sidebar-link">普通索引</a></li><li class="sidebar-sub-header"><a href="/Python/6. Python-MySQL/66. 数据库之MySQL索引、优化.html#唯一索引" class="sidebar-link">唯一索引</a></li><li class="sidebar-sub-header"><a href="/Python/6. Python-MySQL/66. 数据库之MySQL索引、优化.html#主键索引" class="sidebar-link">主键索引</a></li><li class="sidebar-sub-header"><a href="/Python/6. Python-MySQL/66. 数据库之MySQL索引、优化.html#组合索引" class="sidebar-link">组合索引</a></li><li class="sidebar-sub-header"><a href="/Python/6. Python-MySQL/66. 数据库之MySQL索引、优化.html#索引名词" class="sidebar-link">索引名词</a></li><li class="sidebar-sub-header"><a href="/Python/6. Python-MySQL/66. 数据库之MySQL索引、优化.html#正确使用索引的情况" class="sidebar-link">正确使用索引的情况</a></li><li class="sidebar-sub-header"><a href="/Python/6. Python-MySQL/66. 数据库之MySQL索引、优化.html#生成300w条实例数据" class="sidebar-link">生成300w条实例数据</a></li><li class="sidebar-sub-header"><a href="/Python/6. Python-MySQL/66. 数据库之MySQL索引、优化.html#使用索引后-不建议使用以下" class="sidebar-link">使用索引后，不建议使用以下</a></li><li class="sidebar-sub-header"><a href="/Python/6. Python-MySQL/66. 数据库之MySQL索引、优化.html#什么是最左前缀呢-跟组合索引相关" class="sidebar-link">什么是最左前缀呢？- 跟组合索引相关</a></li><li class="sidebar-sub-header"><a href="/Python/6. Python-MySQL/66. 数据库之MySQL索引、优化.html#索引的注意事项" class="sidebar-link">索引的注意事项</a></li><li class="sidebar-sub-header"><a href="/Python/6. Python-MySQL/66. 数据库之MySQL索引、优化.html#最优的解决方案" class="sidebar-link">最优的解决方案</a></li></ul></li><li><a href="/Python/6. Python-MySQL/67. 数据库之Pymysql模块.html" class="sidebar-link">67. 数据库之Pymysql模块</a></li><li><a href="/Python/6. Python-MySQL/68. 数据库之MySQL练习题.html" class="sidebar-link">68. 数据库之MySQL练习题</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="_66-数据库之mysql索引、优化"><a href="#_66-数据库之mysql索引、优化" class="header-anchor">#</a> 66. 数据库之MySQL索引、优化</h1> <h1 id="索引"><a href="#索引" class="header-anchor">#</a> 索引</h1> <p><strong>索引的介绍</strong></p> <p>数据库中专门用于帮助用户快速查找数据的一种数据结构。类似于字典中的目录，查找字典内容时可以根据目录查找到数据的存放位置吗，然后直接获取。</p> <p><strong>索引的作用</strong></p> <p>约束和加速查找</p> <h2 id="常见的几种索引"><a href="#常见的几种索引" class="header-anchor">#</a> 常见的几种索引</h2> <ol><li>普通索引</li> <li>唯一索引</li> <li>主键索引</li> <li>联合索引（多列）
+<ol><li>联合主键索引</li> <li>联合唯一索引</li> <li>联合普通索引</li></ol></li></ol> <h3 id="无索引和有索引的区别以及建立索引的目的"><a href="#无索引和有索引的区别以及建立索引的目的" class="header-anchor">#</a> 无索引和有索引的区别以及建立索引的目的</h3> <p>无索引： 从前往后一条一条查询</p> <p>有索引：创建索引的本质，就是创建额外的文件（某种格式存储，查询的时候，先去格外的文件找，定好位置，然后再去</p> <p>原始表中直接查询。但是创建索引越多，会对硬盘也是有损耗。</p> <p><strong>建立索引的目的：</strong></p> <ol><li>额外的文件保存特殊的数据结构</li> <li>查询快，但是插入更新删除依然慢</li> <li>创建索引之后，必须命中索引才能有效</li></ol> <h3 id="索引的种类"><a href="#索引的种类" class="header-anchor">#</a> 索引的种类</h3> <p>hash索引和BTree索引</p> <ol><li>hash类型的索引：查询单条快，范围查询慢</li> <li>btree类型的索引：b+树，层数越多，数据量指数级增长（我们就用它，因为innodb默认支持它）</li></ol> <h2 id="普通索引"><a href="#普通索引" class="header-anchor">#</a> 普通索引</h2> <p>作用：仅有一个加速查找</p> <div class="language-sql extra-class"><pre class="language-sql"><code><span class="token comment">## 创建表时</span>
+<span class="token keyword">create</span> <span class="token keyword">table</span> userinfo<span class="token punctuation">(</span>
+                   nid <span class="token keyword">int</span> <span class="token operator">not</span> <span class="token boolean">null</span> <span class="token keyword">auto_increment</span> <span class="token keyword">primary</span> <span class="token keyword">key</span><span class="token punctuation">,</span>
+                   name <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">32</span><span class="token punctuation">)</span> <span class="token operator">not</span> <span class="token boolean">null</span><span class="token punctuation">,</span>
+                   email <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">64</span><span class="token punctuation">)</span> <span class="token operator">not</span> <span class="token boolean">null</span><span class="token punctuation">,</span>
+                   <span class="token keyword">index</span> ix_name<span class="token punctuation">(</span>name<span class="token punctuation">)</span>
+               <span class="token punctuation">)</span><span class="token punctuation">;</span>
+               
+<span class="token comment">## 给现成的表加索引</span>
+<span class="token keyword">create</span> <span class="token keyword">index</span> 索引的名字 <span class="token keyword">on</span> 表名<span class="token punctuation">(</span>列名<span class="token punctuation">)</span>
+
+<span class="token comment">## 删除索引</span>
+<span class="token keyword">drop</span> <span class="token keyword">index</span> 索引的名字 <span class="token keyword">on</span> 表名
+
+<span class="token comment">## 查看索引</span>
+<span class="token keyword">show</span> <span class="token keyword">index</span> <span class="token keyword">from</span> 表名
+</code></pre></div><h2 id="唯一索引"><a href="#唯一索引" class="header-anchor">#</a> 唯一索引</h2> <p>唯一索引有两个功能：加速查找和唯一约束（可含null）</p> <div class="language-sql extra-class"><pre class="language-sql"><code> <span class="token comment">## 创建表+唯一索引</span>
+   <span class="token keyword">create</span> <span class="token keyword">table</span> userinfo<span class="token punctuation">(</span>
+                   id <span class="token keyword">int</span> <span class="token operator">not</span> <span class="token boolean">null</span> <span class="token keyword">auto_increment</span> <span class="token keyword">primary</span> <span class="token keyword">key</span><span class="token punctuation">,</span>
+                   name <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">32</span><span class="token punctuation">)</span> <span class="token operator">not</span> <span class="token boolean">null</span><span class="token punctuation">,</span>
+                   email <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">64</span><span class="token punctuation">)</span> <span class="token operator">not</span> <span class="token boolean">null</span><span class="token punctuation">,</span>
+                   <span class="token keyword">unique</span>  <span class="token keyword">index</span>  ix_name<span class="token punctuation">(</span>name<span class="token punctuation">)</span>
+               <span class="token punctuation">)</span><span class="token punctuation">;</span>
+               
+               
+<span class="token comment">## 给现成的表加唯一索引</span>
+<span class="token keyword">create</span> <span class="token keyword">unique</span> <span class="token keyword">index</span> 索引名 <span class="token keyword">on</span> 表名<span class="token punctuation">(</span>列名<span class="token punctuation">)</span>
+
+
+<span class="token comment">## 删除唯一索引</span>
+<span class="token keyword">drop</span> <span class="token keyword">index</span> 索引名 <span class="token keyword">on</span> 表名<span class="token punctuation">;</span>
+</code></pre></div><h2 id="主键索引"><a href="#主键索引" class="header-anchor">#</a> 主键索引</h2> <p>主键索引有两个功能： 加速查找和唯一约束（不含null）</p> <p>主键索引，就是主键，在之前加主键时，就相当添加了主键索引</p> <div class="language-sql extra-class"><pre class="language-sql"><code><span class="token comment">## 创建表+主键索引</span>
+    <span class="token keyword">create</span> <span class="token keyword">table</span> userinfo<span class="token punctuation">(</span>
+
+                   id <span class="token keyword">int</span> <span class="token operator">not</span> <span class="token boolean">null</span> <span class="token keyword">auto_increment</span> <span class="token keyword">primary</span> <span class="token keyword">key</span><span class="token punctuation">,</span>
+                   name <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">32</span><span class="token punctuation">)</span> <span class="token operator">not</span> <span class="token boolean">null</span><span class="token punctuation">,</span>
+                   email <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">64</span><span class="token punctuation">)</span> <span class="token operator">not</span> <span class="token boolean">null</span><span class="token punctuation">,</span>
+                   <span class="token keyword">unique</span>  <span class="token keyword">index</span>  ix_name<span class="token punctuation">(</span>name<span class="token punctuation">)</span>
+           <span class="token punctuation">)</span>
+          <span class="token operator">or</span>
+
+           <span class="token keyword">create</span> <span class="token keyword">table</span> userinfo<span class="token punctuation">(</span>
+
+                   id <span class="token keyword">int</span> <span class="token operator">not</span> <span class="token boolean">null</span> <span class="token keyword">auto_increment</span><span class="token punctuation">,</span>
+                   name <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">32</span><span class="token punctuation">)</span> <span class="token operator">not</span> <span class="token boolean">null</span><span class="token punctuation">,</span>
+                   email <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">64</span><span class="token punctuation">)</span> <span class="token operator">not</span> <span class="token boolean">null</span><span class="token punctuation">,</span>
+                   <span class="token keyword">primary</span> <span class="token keyword">key</span><span class="token punctuation">(</span>nid<span class="token punctuation">)</span><span class="token punctuation">,</span>
+                   <span class="token keyword">unique</span>  <span class="token keyword">index</span>  ix_name<span class="token punctuation">(</span>name<span class="token punctuation">)</span>
+         <span class="token punctuation">)</span>
+
+
+<span class="token comment">## 给现成的表加主键索引</span>
+<span class="token keyword">alter</span> <span class="token keyword">table</span> 表名 <span class="token keyword">add</span> <span class="token keyword">primary</span> <span class="token keyword">key</span><span class="token punctuation">(</span>列名<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+<span class="token comment">## 删除主键索引</span>
+<span class="token keyword">alter</span> <span class="token keyword">table</span> 表名 <span class="token keyword">drop</span> <span class="token keyword">primary</span> <span class="token keyword">key</span><span class="token punctuation">;</span>
+<span class="token keyword">alter</span> <span class="token keyword">table</span> 表名  <span class="token keyword">modify</span>  列名 <span class="token keyword">int</span><span class="token punctuation">,</span> <span class="token keyword">drop</span> <span class="token keyword">primary</span> <span class="token keyword">key</span><span class="token punctuation">;</span>
+</code></pre></div><h2 id="组合索引"><a href="#组合索引" class="header-anchor">#</a> 组合索引</h2> <p>组合索引是将n个列组合成一个索引</p> <p>其应用场景为：频繁的同时使用n列来进行查询，如：where name = 'alex' and email = 'alex@qq.com'。</p> <div class="language-sql extra-class"><pre class="language-sql"><code><span class="token keyword">create</span> <span class="token keyword">index</span> 索引名 <span class="token keyword">on</span> 表名<span class="token punctuation">(</span>列名<span class="token number">1</span><span class="token punctuation">,</span>列名<span class="token number">2</span><span class="token punctuation">)</span>
+</code></pre></div><h2 id="索引名词"><a href="#索引名词" class="header-anchor">#</a> 索引名词</h2> <div class="language-sql extra-class"><pre class="language-sql"><code><span class="token comment">#覆盖索引：在索引文件中直接获取数据</span>
+        例如：
+        <span class="token keyword">select</span> name <span class="token keyword">from</span> userinfo <span class="token keyword">where</span> name <span class="token operator">=</span> <span class="token string">'alex50000'</span><span class="token punctuation">;</span>
+
+
+<span class="token comment">#索引合并：把多个单列索引合并成使用</span>
+        例如：
+        <span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span>  userinfo <span class="token keyword">where</span> name <span class="token operator">=</span> <span class="token string">'alex13131'</span> <span class="token operator">and</span> id <span class="token operator">=</span> <span class="token number">13131</span><span class="token punctuation">;</span>
+</code></pre></div><h2 id="正确使用索引的情况"><a href="#正确使用索引的情况" class="header-anchor">#</a> 正确使用索引的情况</h2> <p>数据库表中添加索引后确实会让查询速度起飞，但前提必须是正确的使用索引来查询，如果以错误的方式使用，则即使建立索引也会不奏效。</p> <p>使用索引，我们必须知道：</p> <ol><li>创建索引</li> <li>命中索引</li> <li>正确使用索引</li></ol> <h2 id="生成300w条实例数据"><a href="#生成300w条实例数据" class="header-anchor">#</a> 生成300w条实例数据</h2> <div class="language-sql extra-class"><pre class="language-sql"><code><span class="token comment">#1. 准备表</span>
+<span class="token keyword">create</span> <span class="token keyword">table</span> userinfo<span class="token punctuation">(</span>
+id <span class="token keyword">int</span><span class="token punctuation">,</span>
+name <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+gender <span class="token keyword">char</span><span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+email <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">#2. 创建存储过程，实现批量插入记录</span>
+<span class="token keyword">delimiter</span> $$ <span class="token comment">#声明存储过程的结束符号为$$</span>
+<span class="token keyword">create</span> <span class="token keyword">procedure</span> auto_insert1<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">BEGIN</span>
+    <span class="token keyword">declare</span> i <span class="token keyword">int</span> <span class="token keyword">default</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>i<span class="token operator">&lt;</span><span class="token number">3000000</span><span class="token punctuation">)</span><span class="token keyword">do</span>
+        <span class="token keyword">insert</span> <span class="token keyword">into</span> userinfo <span class="token keyword">values</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span>concat<span class="token punctuation">(</span><span class="token string">'alex'</span><span class="token punctuation">,</span>i<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token string">'male'</span><span class="token punctuation">,</span>concat<span class="token punctuation">(</span><span class="token string">'egon'</span><span class="token punctuation">,</span>i<span class="token punctuation">,</span><span class="token string">'@oldboy'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">set</span> i<span class="token operator">=</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">end</span> <span class="token keyword">while</span><span class="token punctuation">;</span>
+<span class="token keyword">END</span>$$ <span class="token comment">#$$结束</span>
+<span class="token keyword">delimiter</span> <span class="token punctuation">;</span> <span class="token comment">#重新声明分号为结束符号</span>
+
+<span class="token comment">#3. 查看存储过程</span>
+<span class="token keyword">show</span> <span class="token keyword">create</span> <span class="token keyword">procedure</span> auto_insert1\G 
+
+<span class="token comment">#4. 调用存储过程</span>
+<span class="token keyword">call</span> auto_insert1<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h2 id="使用索引后-不建议使用以下"><a href="#使用索引后-不建议使用以下" class="header-anchor">#</a> 使用索引后，不建议使用以下</h2> <div class="language-sql extra-class"><pre class="language-sql"><code>　　　　 <span class="token operator">-</span> <span class="token operator">like</span> <span class="token string">'%xx'</span>
+            <span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> userinfo <span class="token keyword">where</span> name <span class="token operator">like</span> <span class="token string">'%al'</span><span class="token punctuation">;</span>
+        <span class="token operator">-</span> 使用函数
+            <span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> userinfo <span class="token keyword">where</span> reverse<span class="token punctuation">(</span>name<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token string">'alex333'</span><span class="token punctuation">;</span>
+        <span class="token operator">-</span> <span class="token operator">or</span>
+            <span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> userinfo <span class="token keyword">where</span> id <span class="token operator">=</span> <span class="token number">1</span> <span class="token operator">or</span> email <span class="token operator">=</span> <span class="token string">'alex122@oldbody'</span><span class="token punctuation">;</span>
+            特别的：当<span class="token operator">or</span>条件中有未建立索引的列才失效，以下会走索引
+                    <span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> userinfo <span class="token keyword">where</span> id <span class="token operator">=</span> <span class="token number">1</span> <span class="token operator">or</span> name <span class="token operator">=</span> <span class="token string">'alex1222'</span><span class="token punctuation">;</span>
+                    <span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> userinfo <span class="token keyword">where</span> id <span class="token operator">=</span> <span class="token number">1</span> <span class="token operator">or</span> email <span class="token operator">=</span> <span class="token string">'alex122@oldbody'</span> <span class="token operator">and</span> name <span class="token operator">=</span> <span class="token string">'alex112'</span>
+        <span class="token operator">-</span> 类型不一致
+            如果列是字符串类型，传入条件是必须用引号引起来，不然<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+            <span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> userinfo <span class="token keyword">where</span> name <span class="token operator">=</span> <span class="token number">999</span><span class="token punctuation">;</span>
+        <span class="token operator">-</span> <span class="token operator">!=</span>
+            <span class="token keyword">select</span> <span class="token function">count</span><span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span> <span class="token keyword">from</span> userinfo <span class="token keyword">where</span> name <span class="token operator">!=</span> <span class="token string">'alex'</span>
+            特别的：如果是主键，则还是会走索引
+                <span class="token keyword">select</span> <span class="token function">count</span><span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span> <span class="token keyword">from</span> userinfo <span class="token keyword">where</span> id <span class="token operator">!=</span> <span class="token number">123</span>
+        <span class="token operator">-</span> <span class="token operator">&gt;</span>
+            <span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> userinfo <span class="token keyword">where</span> name <span class="token operator">&gt;</span> <span class="token string">'alex'</span>
+            特别的：如果是主键或索引是整数类型，则还是会走索引
+                <span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> userinfo <span class="token keyword">where</span> id <span class="token operator">&gt;</span> <span class="token number">123</span>
+                <span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> userinfo <span class="token keyword">where</span> num <span class="token operator">&gt;</span> <span class="token number">123</span>
+        <span class="token operator">-</span> <span class="token keyword">order</span> <span class="token keyword">by</span>
+            <span class="token keyword">select</span> email <span class="token keyword">from</span> userinfo <span class="token keyword">order</span> <span class="token keyword">by</span> name <span class="token keyword">desc</span><span class="token punctuation">;</span>
+            当根据索引排序时候，选择的映射如果不是索引，则不走索引
+            特别的：如果对主键排序，则还是走索引：
+                <span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> userinfo <span class="token keyword">order</span> <span class="token keyword">by</span> nid <span class="token keyword">desc</span><span class="token punctuation">;</span>
+         
+        <span class="token operator">-</span> 组合索引最左前缀
+            如果组合索引为：<span class="token punctuation">(</span>name<span class="token punctuation">,</span>email<span class="token punctuation">)</span>
+            name <span class="token operator">and</span> email       <span class="token comment">-- 使用索引</span>
+            name                 <span class="token comment">-- 使用索引</span>
+            email                <span class="token comment">-- 不使用索引</span>
+</code></pre></div><h2 id="什么是最左前缀呢-跟组合索引相关"><a href="#什么是最左前缀呢-跟组合索引相关" class="header-anchor">#</a> 什么是最左前缀呢？- 跟组合索引相关</h2> <div class="language-sql extra-class"><pre class="language-sql"><code>最左前缀匹配：
+        <span class="token keyword">create</span> <span class="token keyword">index</span> ix_name_email <span class="token keyword">on</span> userinfo<span class="token punctuation">(</span>name<span class="token punctuation">,</span>email<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                 <span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> userinfo <span class="token keyword">where</span> name <span class="token operator">=</span> <span class="token string">'alex'</span><span class="token punctuation">;</span>
+                 <span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> userinfo <span class="token keyword">where</span> name <span class="token operator">=</span> <span class="token string">'alex'</span> <span class="token operator">and</span> email<span class="token operator">=</span><span class="token string">'alex@oldBody'</span><span class="token punctuation">;</span>
+
+                 <span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> userinfo <span class="token keyword">where</span>  email<span class="token operator">=</span><span class="token string">'alex@oldBody'</span><span class="token punctuation">;</span>
+</code></pre></div><p>如果使用组合索引如上，name和email组合索引之后，查询:</p> <ol><li>name和email ---使用索引</li> <li>name        ---使用索引</li> <li>email       ---不适用索引</li> <li>对于同时搜索n个条件时，组合索引的性能好于多个单列索引</li> <li>组合索引的性能&gt;索引合并的性能</li></ol> <h2 id="索引的注意事项"><a href="#索引的注意事项" class="header-anchor">#</a> 索引的注意事项</h2> <ol><li>避免使用select *</li> <li>count(1)或count(列) 代替count(*)</li> <li>创建表时尽量使用char代替varchar</li> <li>表的字段顺序固定长度的字段优先</li> <li>组合索引代替多个单列索引（经常使用多个条件查询时）</li> <li>尽量使用短索引 （create index ix_title on tb(title(16));特殊的数据类型 text类型）</li> <li>使用连接（join）来代替子查询</li> <li>连表时注意条件类型需一致</li> <li>索引散列（重复少）不适用于建索引，例如：性别不合适</li></ol> <h1 id="执行计划可以按参数进行sql优化"><a href="#执行计划可以按参数进行sql优化" class="header-anchor">#</a> 执行计划可以按参数进行SQL优化</h1> <p>explain + 查询SQL - 用于显示SQL执行信息参数，根据参考信息可以进行SQL优化</p> <div class="language-sql extra-class"><pre class="language-sql"><code>mysql<span class="token operator">&gt;</span> <span class="token keyword">explain</span> <span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> userinfo<span class="token punctuation">;</span>
+    <span class="token operator">+</span><span class="token comment">----+-------------+----------+------+---------------+------+---------+------+---------+-------+</span>
+    <span class="token operator">|</span> id <span class="token operator">|</span> select_type <span class="token operator">|</span> <span class="token keyword">table</span>    <span class="token operator">|</span> <span class="token keyword">type</span> <span class="token operator">|</span> possible_keys <span class="token operator">|</span> <span class="token keyword">key</span>  <span class="token operator">|</span> key_len <span class="token operator">|</span> ref  <span class="token operator">|</span> <span class="token keyword">rows</span>    <span class="token operator">|</span> Extra <span class="token operator">|</span>
+    <span class="token operator">+</span><span class="token comment">----+-------------+----------+------+---------------+------+---------+------+---------+-------+</span>
+    <span class="token operator">|</span>  <span class="token number">1</span> <span class="token operator">|</span> <span class="token keyword">SIMPLE</span>      <span class="token operator">|</span> userinfo <span class="token operator">|</span> <span class="token keyword">ALL</span>  <span class="token operator">|</span> <span class="token boolean">NULL</span>          <span class="token operator">|</span> <span class="token boolean">NULL</span> <span class="token operator">|</span> <span class="token boolean">NULL</span>    <span class="token operator">|</span> <span class="token boolean">NULL</span> <span class="token operator">|</span> <span class="token number">2973016</span> <span class="token operator">|</span> <span class="token boolean">NULL</span>  <span class="token operator">|</span>
+    <span class="token operator">+</span><span class="token comment">----+-------------+----------+------+---------------+------+---------+------+---------+-------+</span>
+
+    mysql<span class="token operator">&gt;</span> <span class="token keyword">explain</span> <span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> <span class="token punctuation">(</span><span class="token keyword">select</span> id<span class="token punctuation">,</span>name <span class="token keyword">from</span> userinfo <span class="token keyword">where</span> id <span class="token operator">&lt;</span><span class="token number">20</span><span class="token punctuation">)</span> <span class="token keyword">as</span> A<span class="token punctuation">;</span>
+    <span class="token operator">+</span><span class="token comment">----+-------------+------------+-------+---------------+---------+---------+------+------+-------------+</span>
+    <span class="token operator">|</span> id <span class="token operator">|</span> select_type <span class="token operator">|</span> <span class="token keyword">table</span>      <span class="token operator">|</span> <span class="token keyword">type</span>  <span class="token operator">|</span> possible_keys <span class="token operator">|</span> <span class="token keyword">key</span>     <span class="token operator">|</span> key_len <span class="token operator">|</span> ref  <span class="token operator">|</span> <span class="token keyword">rows</span> <span class="token operator">|</span> Extra       <span class="token operator">|</span>
+    <span class="token operator">+</span><span class="token comment">----+-------------+------------+-------+---------------+---------+---------+------+------+-------------+</span>
+    <span class="token operator">|</span>  <span class="token number">1</span> <span class="token operator">|</span> <span class="token keyword">PRIMARY</span>     <span class="token operator">|</span> <span class="token operator">&lt;</span>derived2<span class="token operator">&gt;</span> <span class="token operator">|</span> <span class="token keyword">ALL</span>   <span class="token operator">|</span> <span class="token boolean">NULL</span>          <span class="token operator">|</span> <span class="token boolean">NULL</span>    <span class="token operator">|</span> <span class="token boolean">NULL</span>    <span class="token operator">|</span> <span class="token boolean">NULL</span> <span class="token operator">|</span>   <span class="token number">19</span> <span class="token operator">|</span> <span class="token boolean">NULL</span>        <span class="token operator">|</span>
+    <span class="token operator">|</span>  <span class="token number">2</span> <span class="token operator">|</span> DERIVED     <span class="token operator">|</span> userinfo   <span class="token operator">|</span> range <span class="token operator">|</span> <span class="token keyword">PRIMARY</span>       <span class="token operator">|</span> <span class="token keyword">PRIMARY</span> <span class="token operator">|</span> <span class="token number">4</span>       <span class="token operator">|</span> <span class="token boolean">NULL</span> <span class="token operator">|</span>   <span class="token number">19</span> <span class="token operator">|</span> <span class="token keyword">Using</span> <span class="token keyword">where</span> <span class="token operator">|</span>
+    <span class="token operator">+</span><span class="token comment">----+-------------+------------+-------+---------------+---------+---------+------+------+-------------+</span>
+    <span class="token number">2</span> <span class="token keyword">rows</span> <span class="token operator">in</span> <span class="token keyword">set</span> <span class="token punctuation">(</span><span class="token number">0.05</span> sec<span class="token punctuation">)</span>
+
+
+
+
+<span class="token comment">## 参数说明    </span>
+select_type：
+                查询类型
+                    <span class="token keyword">SIMPLE</span>          简单查询
+                    <span class="token keyword">PRIMARY</span>         最外层查询
+                    SUBQUERY        映射为子查询
+                    DERIVED         子查询
+                    <span class="token keyword">UNION</span>           联合
+                    <span class="token keyword">UNION</span> RESULT    使用联合的结果
+<span class="token keyword">table</span>：
+                正在访问的表名
+<span class="token keyword">type</span>：
+                查询时的访问方式，性能：<span class="token keyword">all</span> <span class="token operator">&lt;</span> <span class="token keyword">index</span> <span class="token operator">&lt;</span> range <span class="token operator">&lt;</span> index_merge <span class="token operator">&lt;</span> ref_or_null <span class="token operator">&lt;</span> ref <span class="token operator">&lt;</span> eq_ref <span class="token operator">&lt;</span> system<span class="token operator">/</span>const
+                <span class="token keyword">ALL</span>             全表扫描，对于数据表从头到尾找一遍
+                                <span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> userinfo<span class="token punctuation">;</span>
+                                特别的：如果有<span class="token keyword">limit</span>限制，则找到之后就不在继续向下扫描
+                                       <span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> userinfo <span class="token keyword">where</span> email <span class="token operator">=</span> <span class="token string">'alex112@oldboy'</span>
+                                       <span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> userinfo <span class="token keyword">where</span> email <span class="token operator">=</span> <span class="token string">'alex112@oldboy'</span> <span class="token keyword">limit</span> <span class="token number">1</span><span class="token punctuation">;</span>
+                                       虽然上述两个语句都会进行全表扫描，第二句使用了<span class="token keyword">limit</span>，则找到一个后就不再继续扫描。
+
+<span class="token keyword">INDEX</span> ：      全索引扫描，对索引从头到尾找一遍
+                                <span class="token keyword">select</span> nid <span class="token keyword">from</span> userinfo<span class="token punctuation">;</span>
+
+RANGE：        对索引列进行范围查找
+                                <span class="token keyword">select</span> <span class="token operator">*</span>  <span class="token keyword">from</span> userinfo <span class="token keyword">where</span> name <span class="token operator">&lt;</span> <span class="token string">'alex'</span><span class="token punctuation">;</span>
+                                PS:
+                                    <span class="token operator">between</span> <span class="token operator">and</span>
+                                    <span class="token operator">in</span>
+                                    <span class="token operator">&gt;</span>   <span class="token operator">&gt;=</span>  <span class="token operator">&lt;</span>   <span class="token operator">&lt;=</span>  操作
+                                    注意：<span class="token operator">!=</span> 和 <span class="token operator">&gt;</span> 符号
+
+
+INDEX_MERGE：  合并索引，使用多个单列索引搜索
+                                <span class="token keyword">select</span> <span class="token operator">*</span>  <span class="token keyword">from</span> userinfo <span class="token keyword">where</span> name <span class="token operator">=</span> <span class="token string">'alex'</span> <span class="token operator">or</span> nid <span class="token operator">in</span> <span class="token punctuation">(</span><span class="token number">11</span><span class="token punctuation">,</span><span class="token number">22</span><span class="token punctuation">,</span><span class="token number">33</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+REF：       根据索引查找一个或多个值
+                                <span class="token keyword">select</span> <span class="token operator">*</span>  <span class="token keyword">from</span> userinfo <span class="token keyword">where</span> name <span class="token operator">=</span> <span class="token string">'alex112'</span><span class="token punctuation">;</span>
+
+EQ_REF：    连接时使用<span class="token keyword">primary</span> <span class="token keyword">key</span> 或 <span class="token keyword">unique</span>类型
+                                <span class="token keyword">select</span> userinfo2<span class="token punctuation">.</span>id<span class="token punctuation">,</span>userinfo<span class="token punctuation">.</span>name <span class="token keyword">from</span> userinfo2 <span class="token keyword">left</span> <span class="token keyword">join</span> tuserinfo <span class="token keyword">on</span> userinfo2<span class="token punctuation">.</span>id <span class="token operator">=</span> userinfo<span class="token punctuation">.</span>id<span class="token punctuation">;</span>
+
+
+
+CONST：常量
+            表最多有一个匹配行<span class="token punctuation">,</span>因为仅有一行<span class="token punctuation">,</span>在这行的列值可被优化器剩余部分认为是常数<span class="token punctuation">,</span>const表很快<span class="token punctuation">,</span>因为它们只读取一次。
+                 <span class="token keyword">select</span> id <span class="token keyword">from</span> userinfo <span class="token keyword">where</span> id <span class="token operator">=</span> <span class="token number">2</span> <span class="token punctuation">;</span>
+
+SYSTEM：系统
+             表仅有一行<span class="token punctuation">(</span><span class="token operator">=</span>系统表<span class="token punctuation">)</span>。这是const联接类型的一个特例。
+                 <span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> <span class="token punctuation">(</span><span class="token keyword">select</span> id <span class="token keyword">from</span> userinfo <span class="token keyword">where</span> id <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token keyword">as</span> A<span class="token punctuation">;</span>
+
+
+possible_keys：可能使用的索引
+
+<span class="token keyword">key</span>：真实使用的
+
+key_len：　　MySQL中使用索引字节长度
+
+<span class="token keyword">rows</span>： mysql估计为了找到所需的行而要读取的行数 <span class="token comment">------ 只是预估值</span>
+
+extra：
+                该列包含MySQL解决查询的详细信息
+                “<span class="token keyword">Using</span> <span class="token keyword">index</span>”
+                    此值表示mysql将使用覆盖索引，以避免访问表。不要把覆盖索引和<span class="token keyword">index</span>访问类型弄混了。
+                “<span class="token keyword">Using</span> <span class="token keyword">where</span>”
+                    这意味着mysql服务器将在存储引擎检索行后再进行过滤，许多<span class="token keyword">where</span>条件里涉及索引中的列，当（并且如果）它读取索引时，就能被存储引擎检验，因此不是所有带<span class="token keyword">where</span>子句的查询都会显示“<span class="token keyword">Using</span> <span class="token keyword">where</span>”。有时“<span class="token keyword">Using</span> <span class="token keyword">where</span>”的出现就是一个暗示：查询可受益于不同的索引。
+                “<span class="token keyword">Using</span> <span class="token keyword">temporary</span>”
+                    这意味着mysql在对查询结果排序时会使用一个临时表。
+                “<span class="token keyword">Using</span> filesort”
+                    这意味着mysql会对结果使用一个外部索引排序，而不是按索引次序从表里读取行。mysql有两种文件排序算法，这两种排序方式都可以在内存或者磁盘上完成，<span class="token keyword">explain</span>不会告诉你mysql将使用哪一种文件排序，也不会告诉你排序会在内存里还是磁盘上完成。
+                “Range checked <span class="token keyword">for</span> each record<span class="token punctuation">(</span><span class="token keyword">index</span> map: N<span class="token punctuation">)</span>”
+                    这个意味着没有好用的索引，新的索引将在联接的每一行上重新估算，N是显示在possible_keys列中索引的位图，并且是冗余的
+</code></pre></div><h1 id="慢日志记录"><a href="#慢日志记录" class="header-anchor">#</a> 慢日志记录</h1> <p>开启慢查询日志，可以让MySQL记录下查询超过指定时间的语句，通过定位分析性能的瓶颈，才能更好的优化数据库系统的性能</p> <div class="language-sql extra-class"><pre class="language-sql"><code><span class="token comment">#(1) 进入MySql 查询是否开了慢查询</span>
+         <span class="token keyword">show</span> variables <span class="token operator">like</span> <span class="token string">'slow_query%'</span><span class="token punctuation">;</span>
+         参数解释：
+             slow_query_log 慢查询开启状态  <span class="token keyword">OFF</span> 未开启 <span class="token keyword">ON</span> 为开启
+        slow_query_log_file 慢查询日志存放的位置（这个目录需要MySQL的运行帐号的可写权限，一般设置为MySQL的数据存放目录）
+
+<span class="token comment">#（2）查看慢查询超时时间</span>
+       <span class="token keyword">show</span> variables <span class="token operator">like</span> <span class="token string">'long%'</span><span class="token punctuation">;</span>
+       ong_query_time 查询超过多少秒才记录   默认<span class="token number">10</span>秒 
+
+<span class="token comment">#（3）开启慢日志（1）（是否开启慢查询日志，1表示开启，0表示关闭。）</span>
+           <span class="token keyword">set</span> <span class="token keyword">global</span> slow_query_log<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
+
+<span class="token comment">#（4）再次查看</span>
+              <span class="token keyword">show</span> variables <span class="token operator">like</span> <span class="token string">'%slow_query_log%'</span><span class="token punctuation">;</span>
+
+<span class="token comment">#（5）开启慢日志（2）：（推荐）</span>
+         在my<span class="token punctuation">.</span>cnf 文件中
+         找到<span class="token punctuation">[</span>mysqld<span class="token punctuation">]</span>下面添加：
+           slow_query_log <span class="token operator">=</span><span class="token number">1</span>
+   　　　　 slow_query_log_file<span class="token operator">=</span>C:\mysql<span class="token operator">-</span><span class="token number">5.6</span><span class="token number">.40</span><span class="token operator">-</span>winx64\<span class="token keyword">data</span>\localhost<span class="token operator">-</span>slow<span class="token punctuation">.</span>log
+    　　　  long_query_time <span class="token operator">=</span> <span class="token number">1</span>
+
+    参数说明：
+        slow_query_log 慢查询开启状态  <span class="token number">1</span> 为开启
+        slow_query_log_file 慢查询日志存放的位置
+        long_query_time 查询超过多少秒才记录   默认<span class="token number">10</span>秒 修改为<span class="token number">1</span>秒
+</code></pre></div><h1 id="分页性能相关方案"><a href="#分页性能相关方案" class="header-anchor">#</a> 分页性能相关方案</h1> <p>先回顾一下，如何取当前表中的前10条记录，每十条取一次.......</p> <div class="language-sql extra-class"><pre class="language-sql"><code>第<span class="token number">1</span>页：
+<span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> userinfo <span class="token keyword">limit</span> <span class="token number">0</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">;</span>
+第<span class="token number">2</span>页：
+<span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> userinfo <span class="token keyword">limit</span> <span class="token number">10</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">;</span>
+第<span class="token number">3</span>页：
+<span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> userinfo <span class="token keyword">limit</span> <span class="token number">20</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">;</span>
+第<span class="token number">4</span>页：
+<span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> userinfo <span class="token keyword">limit</span> <span class="token number">30</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">;</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+第<span class="token number">2000010</span>页
+<span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> userinfo <span class="token keyword">limit</span> <span class="token number">2000000</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">;</span>
+
+PS:会发现，越往后查询，需要的时间约长，是因为越往后查，全文扫描查询，会去数据表中扫描查询。
+</code></pre></div><h2 id="最优的解决方案"><a href="#最优的解决方案" class="header-anchor">#</a> 最优的解决方案</h2> <div class="language-sql extra-class"><pre class="language-sql"><code>（<span class="token number">1</span>）只有上一页和下一页
+        做一个记录：记录当前页的最大id或最小id
+        下一页：
+        <span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> userinfo <span class="token keyword">where</span> id<span class="token operator">&gt;</span>max_id <span class="token keyword">limit</span> <span class="token number">10</span><span class="token punctuation">;</span>
+
+        上一页：
+        <span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> userinfo <span class="token keyword">where</span> id<span class="token operator">&lt;</span>min_id <span class="token keyword">order</span> <span class="token keyword">by</span> id <span class="token keyword">desc</span> <span class="token keyword">limit</span> <span class="token number">10</span><span class="token punctuation">;</span>
+
+
+  <span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span> 中间有页码的情况
+           <span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> userinfo <span class="token keyword">where</span> id <span class="token operator">in</span><span class="token punctuation">(</span>
+               <span class="token keyword">select</span> id <span class="token keyword">from</span> <span class="token punctuation">(</span><span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> userinfo <span class="token keyword">where</span> id <span class="token operator">&gt;</span> pre_max_id <span class="token keyword">limit</span> <span class="token punctuation">(</span>cur_max_id<span class="token operator">-</span>pre_max_id<span class="token punctuation">)</span><span class="token operator">*</span><span class="token number">10</span><span class="token punctuation">)</span> <span class="token keyword">as</span> A <span class="token keyword">order</span> <span class="token keyword">by</span> A<span class="token punctuation">.</span>id <span class="token keyword">desc</span> <span class="token keyword">limit</span> <span class="token number">10</span>
+           <span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/Python/6. Python-MySQL/65. 数据库之MySQL重中之重 - 表数据的查询.html" class="prev">
+        65. 数据库之MySQL重中之重 - 表数据的查询
+      </a></span> <span class="next"><a href="/Python/6. Python-MySQL/67. 数据库之Pymysql模块.html">
+        67. 数据库之Pymysql模块
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.d65bef42.js" defer></script><script src="/assets/js/2.2249178e.js" defer></script><script src="/assets/js/137.db57772e.js" defer></script>
+  </body>
+</html>

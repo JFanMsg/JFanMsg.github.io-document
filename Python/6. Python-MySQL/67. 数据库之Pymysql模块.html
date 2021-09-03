@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>67. 数据库之Pymysql模块 | MSG</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="在追寻技术的同时享受生活">
+    
+    <link rel="preload" href="/assets/css/0.styles.e4d8b86b.css" as="style"><link rel="preload" href="/assets/js/app.d65bef42.js" as="script"><link rel="preload" href="/assets/js/2.2249178e.js" as="script"><link rel="preload" href="/assets/js/138.dc67bcaa.js" as="script"><link rel="prefetch" href="/assets/js/10.4785e2e5.js"><link rel="prefetch" href="/assets/js/100.33fceff2.js"><link rel="prefetch" href="/assets/js/101.62e1e5d4.js"><link rel="prefetch" href="/assets/js/102.8551fe71.js"><link rel="prefetch" href="/assets/js/103.47754d79.js"><link rel="prefetch" href="/assets/js/104.4adf114f.js"><link rel="prefetch" href="/assets/js/105.6206a08a.js"><link rel="prefetch" href="/assets/js/106.1c4561f3.js"><link rel="prefetch" href="/assets/js/107.e1531a5a.js"><link rel="prefetch" href="/assets/js/108.c637743a.js"><link rel="prefetch" href="/assets/js/109.3f150913.js"><link rel="prefetch" href="/assets/js/11.bd8ec7a6.js"><link rel="prefetch" href="/assets/js/110.088c1ac3.js"><link rel="prefetch" href="/assets/js/111.66d8d491.js"><link rel="prefetch" href="/assets/js/112.231663ee.js"><link rel="prefetch" href="/assets/js/113.a38bc531.js"><link rel="prefetch" href="/assets/js/114.e165daea.js"><link rel="prefetch" href="/assets/js/115.994b087a.js"><link rel="prefetch" href="/assets/js/116.ea3cfdfb.js"><link rel="prefetch" href="/assets/js/117.7be5e4f3.js"><link rel="prefetch" href="/assets/js/118.ebb58ddb.js"><link rel="prefetch" href="/assets/js/119.90018646.js"><link rel="prefetch" href="/assets/js/12.0d8f43df.js"><link rel="prefetch" href="/assets/js/120.bb5be863.js"><link rel="prefetch" href="/assets/js/121.3d1db670.js"><link rel="prefetch" href="/assets/js/122.d29ed1b2.js"><link rel="prefetch" href="/assets/js/123.38cc4704.js"><link rel="prefetch" href="/assets/js/124.cc8549d4.js"><link rel="prefetch" href="/assets/js/125.6ee3e9c8.js"><link rel="prefetch" href="/assets/js/126.48710eba.js"><link rel="prefetch" href="/assets/js/127.d7a1fd83.js"><link rel="prefetch" href="/assets/js/128.e5017f6b.js"><link rel="prefetch" href="/assets/js/129.4c33e121.js"><link rel="prefetch" href="/assets/js/13.2dbde7aa.js"><link rel="prefetch" href="/assets/js/130.cda66247.js"><link rel="prefetch" href="/assets/js/131.ad76f669.js"><link rel="prefetch" href="/assets/js/132.aca88758.js"><link rel="prefetch" href="/assets/js/133.a1cf5903.js"><link rel="prefetch" href="/assets/js/134.b1386377.js"><link rel="prefetch" href="/assets/js/135.94edcf53.js"><link rel="prefetch" href="/assets/js/136.24be4170.js"><link rel="prefetch" href="/assets/js/137.db57772e.js"><link rel="prefetch" href="/assets/js/139.5453d1f6.js"><link rel="prefetch" href="/assets/js/14.2187dbf4.js"><link rel="prefetch" href="/assets/js/140.938e5c07.js"><link rel="prefetch" href="/assets/js/141.99c7cf2c.js"><link rel="prefetch" href="/assets/js/142.428e3958.js"><link rel="prefetch" href="/assets/js/143.68b01530.js"><link rel="prefetch" href="/assets/js/144.f67389cc.js"><link rel="prefetch" href="/assets/js/145.d952a130.js"><link rel="prefetch" href="/assets/js/146.b933dcad.js"><link rel="prefetch" href="/assets/js/147.2d8e4c0a.js"><link rel="prefetch" href="/assets/js/148.6d76ac94.js"><link rel="prefetch" href="/assets/js/149.6b4d6378.js"><link rel="prefetch" href="/assets/js/15.a53b356c.js"><link rel="prefetch" href="/assets/js/150.5bf39cb4.js"><link rel="prefetch" href="/assets/js/151.17af677c.js"><link rel="prefetch" href="/assets/js/152.7f1c2792.js"><link rel="prefetch" href="/assets/js/153.98dd0727.js"><link rel="prefetch" href="/assets/js/154.eb44bf23.js"><link rel="prefetch" href="/assets/js/155.5a9840ea.js"><link rel="prefetch" href="/assets/js/156.7ba01fd0.js"><link rel="prefetch" href="/assets/js/157.2296a048.js"><link rel="prefetch" href="/assets/js/158.6bb1f699.js"><link rel="prefetch" href="/assets/js/159.073bb8df.js"><link rel="prefetch" href="/assets/js/16.cef7bf44.js"><link rel="prefetch" href="/assets/js/160.25a837f9.js"><link rel="prefetch" href="/assets/js/161.93d886a1.js"><link rel="prefetch" href="/assets/js/162.5d2714b2.js"><link rel="prefetch" href="/assets/js/17.96f36904.js"><link rel="prefetch" href="/assets/js/18.fd04b310.js"><link rel="prefetch" href="/assets/js/19.3e1377d1.js"><link rel="prefetch" href="/assets/js/20.ac195ac8.js"><link rel="prefetch" href="/assets/js/21.c2d7729c.js"><link rel="prefetch" href="/assets/js/22.dd8c621b.js"><link rel="prefetch" href="/assets/js/23.ad7d0350.js"><link rel="prefetch" href="/assets/js/24.8559c4c3.js"><link rel="prefetch" href="/assets/js/25.783a8116.js"><link rel="prefetch" href="/assets/js/26.25e0e459.js"><link rel="prefetch" href="/assets/js/27.c0616e2a.js"><link rel="prefetch" href="/assets/js/28.30656c2e.js"><link rel="prefetch" href="/assets/js/29.2be5114c.js"><link rel="prefetch" href="/assets/js/3.be8c8f3b.js"><link rel="prefetch" href="/assets/js/30.230a74a7.js"><link rel="prefetch" href="/assets/js/31.760f46ad.js"><link rel="prefetch" href="/assets/js/32.c9533fef.js"><link rel="prefetch" href="/assets/js/33.dcacfb38.js"><link rel="prefetch" href="/assets/js/34.4370a466.js"><link rel="prefetch" href="/assets/js/35.bf299eea.js"><link rel="prefetch" href="/assets/js/36.336e435a.js"><link rel="prefetch" href="/assets/js/37.1d1d2eea.js"><link rel="prefetch" href="/assets/js/38.0d58b7d0.js"><link rel="prefetch" href="/assets/js/39.d43564ba.js"><link rel="prefetch" href="/assets/js/4.4a6cb970.js"><link rel="prefetch" href="/assets/js/40.bc4e4bde.js"><link rel="prefetch" href="/assets/js/41.b71231a5.js"><link rel="prefetch" href="/assets/js/42.9d46f400.js"><link rel="prefetch" href="/assets/js/43.50c5be69.js"><link rel="prefetch" href="/assets/js/44.60406e7f.js"><link rel="prefetch" href="/assets/js/45.ec3569ae.js"><link rel="prefetch" href="/assets/js/46.1bd3ce7b.js"><link rel="prefetch" href="/assets/js/47.1e1b5326.js"><link rel="prefetch" href="/assets/js/48.64c631ea.js"><link rel="prefetch" href="/assets/js/49.b4abacd8.js"><link rel="prefetch" href="/assets/js/5.e6d0b165.js"><link rel="prefetch" href="/assets/js/50.c3e320c0.js"><link rel="prefetch" href="/assets/js/51.5ec7fb8c.js"><link rel="prefetch" href="/assets/js/52.2d234f86.js"><link rel="prefetch" href="/assets/js/53.f3b69623.js"><link rel="prefetch" href="/assets/js/54.c85ff450.js"><link rel="prefetch" href="/assets/js/55.b07597b5.js"><link rel="prefetch" href="/assets/js/56.444129cf.js"><link rel="prefetch" href="/assets/js/57.df1329ba.js"><link rel="prefetch" href="/assets/js/58.5afb51cf.js"><link rel="prefetch" href="/assets/js/59.d98936d9.js"><link rel="prefetch" href="/assets/js/6.809376cd.js"><link rel="prefetch" href="/assets/js/60.02813ecf.js"><link rel="prefetch" href="/assets/js/61.37a4812d.js"><link rel="prefetch" href="/assets/js/62.5da94048.js"><link rel="prefetch" href="/assets/js/63.8e2c2bca.js"><link rel="prefetch" href="/assets/js/64.d290398f.js"><link rel="prefetch" href="/assets/js/65.44e28313.js"><link rel="prefetch" href="/assets/js/66.9acf0206.js"><link rel="prefetch" href="/assets/js/67.85688aa2.js"><link rel="prefetch" href="/assets/js/68.45bda7fc.js"><link rel="prefetch" href="/assets/js/69.9074feb0.js"><link rel="prefetch" href="/assets/js/7.5d7bce6e.js"><link rel="prefetch" href="/assets/js/70.b4cd2ddc.js"><link rel="prefetch" href="/assets/js/71.53219b13.js"><link rel="prefetch" href="/assets/js/72.af2a7290.js"><link rel="prefetch" href="/assets/js/73.c28fc506.js"><link rel="prefetch" href="/assets/js/74.64c81a90.js"><link rel="prefetch" href="/assets/js/75.05191ece.js"><link rel="prefetch" href="/assets/js/76.f516d464.js"><link rel="prefetch" href="/assets/js/77.c345180b.js"><link rel="prefetch" href="/assets/js/78.4a09d0ba.js"><link rel="prefetch" href="/assets/js/79.65f41bcf.js"><link rel="prefetch" href="/assets/js/8.f6cfdc07.js"><link rel="prefetch" href="/assets/js/80.b77151f3.js"><link rel="prefetch" href="/assets/js/81.824fa371.js"><link rel="prefetch" href="/assets/js/82.3f91c09b.js"><link rel="prefetch" href="/assets/js/83.9539f074.js"><link rel="prefetch" href="/assets/js/84.dd89f1de.js"><link rel="prefetch" href="/assets/js/85.15210b99.js"><link rel="prefetch" href="/assets/js/86.e14553e1.js"><link rel="prefetch" href="/assets/js/87.6dc95177.js"><link rel="prefetch" href="/assets/js/88.09c5e890.js"><link rel="prefetch" href="/assets/js/89.0d61f4d0.js"><link rel="prefetch" href="/assets/js/9.759f1986.js"><link rel="prefetch" href="/assets/js/90.a9b14d80.js"><link rel="prefetch" href="/assets/js/91.1a4aabe2.js"><link rel="prefetch" href="/assets/js/92.12070bdb.js"><link rel="prefetch" href="/assets/js/93.b5dc76d0.js"><link rel="prefetch" href="/assets/js/94.690498a6.js"><link rel="prefetch" href="/assets/js/95.b17961e6.js"><link rel="prefetch" href="/assets/js/96.a2f06f3e.js"><link rel="prefetch" href="/assets/js/97.64ef6721.js"><link rel="prefetch" href="/assets/js/98.443eba26.js"><link rel="prefetch" href="/assets/js/99.b6ba7c3a.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.e4d8b86b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">MSG</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Python文档" class="dropdown-title"><span class="title">Python文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="Python文档" class="mobile-dropdown-title"><span class="title">Python文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Python/1.Python-Basics/" class="nav-link">
+  Python-基础
+</a></li><li class="dropdown-item"><!----> <a href="/Python/2. Python-object/" class="nav-link">
+  Python-面向对象
+</a></li><li class="dropdown-item"><!----> <a href="/Python/3. Python-module/" class="nav-link">
+  Python-模块与包
+</a></li><li class="dropdown-item"><!----> <a href="/Python/4. Python-network/" class="nav-link">
+  Python-网络
+</a></li><li class="dropdown-item"><!----> <a href="/Python/5. Python-frontend/" class="nav-link">
+  Python-前端
+</a></li><li class="dropdown-item"><!----> <a href="/Python/6. Python-MySQL/" class="nav-link">
+  Python-数据库
+</a></li><li class="dropdown-item"><!----> <a href="/Python/7. Python-Django/" class="nav-link">
+  Python-Django
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="容器文档" class="dropdown-title"><span class="title">容器文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="容器文档" class="mobile-dropdown-title"><span class="title">容器文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Container/docker/" class="nav-link">
+  docker文檔
+</a></li><li class="dropdown-item"><!----> <a href="/Container/Kubernetes/" class="nav-link">
+  Kubernetes文檔
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="GO文档" class="dropdown-title"><span class="title">GO文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="GO文档" class="mobile-dropdown-title"><span class="title">GO文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/GO/basics/" class="nav-link">
+  GO快速入门
+</a></li><li class="dropdown-item"><!----> <a href="/GO/module/" class="nav-link">
+  GO标准库/GO模块
+</a></li></ul></div></div><div class="nav-item"><a href="https://www.linux91.cn/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  博客
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Python文档" class="dropdown-title"><span class="title">Python文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="Python文档" class="mobile-dropdown-title"><span class="title">Python文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Python/1.Python-Basics/" class="nav-link">
+  Python-基础
+</a></li><li class="dropdown-item"><!----> <a href="/Python/2. Python-object/" class="nav-link">
+  Python-面向对象
+</a></li><li class="dropdown-item"><!----> <a href="/Python/3. Python-module/" class="nav-link">
+  Python-模块与包
+</a></li><li class="dropdown-item"><!----> <a href="/Python/4. Python-network/" class="nav-link">
+  Python-网络
+</a></li><li class="dropdown-item"><!----> <a href="/Python/5. Python-frontend/" class="nav-link">
+  Python-前端
+</a></li><li class="dropdown-item"><!----> <a href="/Python/6. Python-MySQL/" class="nav-link">
+  Python-数据库
+</a></li><li class="dropdown-item"><!----> <a href="/Python/7. Python-Django/" class="nav-link">
+  Python-Django
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="容器文档" class="dropdown-title"><span class="title">容器文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="容器文档" class="mobile-dropdown-title"><span class="title">容器文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Container/docker/" class="nav-link">
+  docker文檔
+</a></li><li class="dropdown-item"><!----> <a href="/Container/Kubernetes/" class="nav-link">
+  Kubernetes文檔
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="GO文档" class="dropdown-title"><span class="title">GO文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="GO文档" class="mobile-dropdown-title"><span class="title">GO文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/GO/basics/" class="nav-link">
+  GO快速入门
+</a></li><li class="dropdown-item"><!----> <a href="/GO/module/" class="nav-link">
+  GO标准库/GO模块
+</a></li></ul></div></div><div class="nav-item"><a href="https://www.linux91.cn/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  博客
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Python-数据库</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/Python/6.%20Python-MySQL/" aria-current="page" class="sidebar-link">介绍</a></li><li><a href="/Python/6. Python-MySQL/61. 数据库之MySQL基础操作.html" class="sidebar-link">61. 数据库之MySQL基础操作</a></li><li><a href="/Python/6. Python-MySQL/62. 数据库之MySQL数据类型.html" class="sidebar-link">62. 数据库之MySQL数据类型</a></li><li><a href="/Python/6. Python-MySQL/63. 数据库之MySQL完整性约束.html" class="sidebar-link">63. 数据库之MySQL完整性约束</a></li><li><a href="/Python/6. Python-MySQL/64. 数据库之MySQL表数据的增删改.html" class="sidebar-link">64. 数据库之MySQL表数据的增删改</a></li><li><a href="/Python/6. Python-MySQL/65. 数据库之MySQL重中之重 - 表数据的查询.html" class="sidebar-link">65. 数据库之MySQL重中之重 - 表数据的查询</a></li><li><a href="/Python/6. Python-MySQL/66. 数据库之MySQL索引、优化.html" class="sidebar-link">66. 数据库之MySQL索引、优化</a></li><li><a href="/Python/6. Python-MySQL/67. 数据库之Pymysql模块.html" class="active sidebar-link">67. 数据库之Pymysql模块</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/Python/6. Python-MySQL/67. 数据库之Pymysql模块.html#增加" class="sidebar-link">增加</a></li><li class="sidebar-sub-header"><a href="/Python/6. Python-MySQL/67. 数据库之Pymysql模块.html#删除" class="sidebar-link">删除</a></li><li class="sidebar-sub-header"><a href="/Python/6. Python-MySQL/67. 数据库之Pymysql模块.html#修改" class="sidebar-link">修改</a></li><li class="sidebar-sub-header"><a href="/Python/6. Python-MySQL/67. 数据库之Pymysql模块.html#fetchone-获取下一行数据" class="sidebar-link">fetchone()  - 获取下一行数据</a></li><li class="sidebar-sub-header"><a href="/Python/6. Python-MySQL/67. 数据库之Pymysql模块.html#fetchall-获取所有行数据源" class="sidebar-link">fetchall() - 获取所有行数据源</a></li><li class="sidebar-sub-header"><a href="/Python/6. Python-MySQL/67. 数据库之Pymysql模块.html#fetchmany-获取指定行数的数据" class="sidebar-link">fetchmany() - 获取指定行数的数据</a></li><li class="sidebar-sub-header"><a href="/Python/6. Python-MySQL/67. 数据库之Pymysql模块.html#修改返回值-返回数据的数据类型" class="sidebar-link">修改返回值，返回数据的数据类型</a></li><li class="sidebar-sub-header"><a href="/Python/6. Python-MySQL/67. 数据库之Pymysql模块.html#对查询时监控sql的指针进行操作" class="sidebar-link">对查询时监控sql的指针进行操作</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/Python/6. Python-MySQL/67. 数据库之Pymysql模块.html#实例" class="sidebar-link">实例</a></li></ul></li></ul></li><li><a href="/Python/6. Python-MySQL/68. 数据库之MySQL练习题.html" class="sidebar-link">68. 数据库之MySQL练习题</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="_67-数据库之pymysql模块"><a href="#_67-数据库之pymysql模块" class="header-anchor">#</a> 67. 数据库之Pymysql模块</h1> <h1 id="pymysql的下载"><a href="#pymysql的下载" class="header-anchor">#</a> <strong>pymysql的下载</strong></h1> <p>之前我们都是通过MySQL自带的命令行客户端工具mysql来操作数据库，那如何在python程序中操作数据库呢？这就用到了pymysql模块，该模块本质就是一个套接字客户端软件，使用前需要事先安装。</p> <p><strong>第一种方式</strong></p> <div class="language-python extra-class"><pre class="language-python"><code>pip3 install pymysql
+</code></pre></div><p><strong>第二种方式</strong></p> <p>使用pycharm编辑器内部进行安装</p> <p>怎么安装，就不写详细了，可自行百度，pycharm安装模块</p> <h1 id="pymysql的使用"><a href="#pymysql的使用" class="header-anchor">#</a> <strong>pymysql的使用</strong></h1> <div class="language-python extra-class"><pre class="language-python"><code><span class="token comment"># 实现：使用Python实现用户登录，如果用户存在则登录成功（假设该用户已在数据库中）</span>
+
+
+<span class="token keyword">import</span> pymysql
+user <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">'请输入用户名：'</span><span class="token punctuation">)</span>
+
+pwd <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">'请输入密码：'</span><span class="token punctuation">)</span>
+
+
+
+<span class="token comment"># 1.连接</span>
+conn <span class="token operator">=</span> pymysql<span class="token punctuation">.</span>connect<span class="token punctuation">(</span>host<span class="token operator">=</span><span class="token string">'127.0.0.1'</span><span class="token punctuation">,</span> port<span class="token operator">=</span><span class="token number">3306</span><span class="token punctuation">,</span> user<span class="token operator">=</span><span class="token string">'root'</span><span class="token punctuation">,</span> password<span class="token operator">=</span><span class="token string">''</span><span class="token punctuation">,</span> db<span class="token operator">=</span><span class="token string">'db8'</span><span class="token punctuation">,</span> charset<span class="token operator">=</span><span class="token string">'utf8'</span><span class="token punctuation">)</span>
+
+
+<span class="token comment"># 2.创建游标</span>
+cursor <span class="token operator">=</span> conn<span class="token punctuation">.</span>cursor<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment">#注意%s需要加引号</span>
+sql <span class="token operator">=</span> <span class="token string">&quot;select * from userinfo where username='%s' and pwd='%s'&quot;</span> <span class="token operator">%</span><span class="token punctuation">(</span>user<span class="token punctuation">,</span> pwd<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>sql<span class="token punctuation">)</span>
+
+<span class="token comment"># 3.执行sql语句</span>
+cursor<span class="token punctuation">.</span>execute<span class="token punctuation">(</span>sql<span class="token punctuation">)</span>
+
+result<span class="token operator">=</span>cursor<span class="token punctuation">.</span>execute<span class="token punctuation">(</span>sql<span class="token punctuation">)</span> <span class="token comment">#执行sql语句，返回sql查询成功的记录数目</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span>
+
+
+<span class="token comment"># 关闭连接，游标和连接都要关闭</span>
+cursor<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+conn<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">if</span> result<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'登陆成功'</span><span class="token punctuation">)</span>
+<span class="token keyword">else</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'登录失败'</span><span class="token punctuation">)</span>
+</code></pre></div><h1 id="execute-之防止sql注入"><a href="#execute-之防止sql注入" class="header-anchor">#</a> execute()之防止sql注入</h1> <p><strong>sql注入</strong></p> <div class="language-python extra-class"><pre class="language-python"><code>最后那一个空格，在一条sql语句中如果遇到select <span class="token operator">*</span> <span class="token keyword">from</span> userinfo where username<span class="token operator">=</span><span class="token string">'mjj'</span> <span class="token operator">-</span><span class="token operator">-</span> asadasdas<span class="token string">' and pwd='</span>' 则<span class="token operator">-</span><span class="token operator">-</span>之后的条件被注释掉了<span class="token punctuation">(</span>注意<span class="token operator">-</span><span class="token operator">-</span>后面还有一个空格<span class="token punctuation">)</span>
+
+<span class="token comment">#1、sql注入之：用户存在，绕过密码</span>
+mjj' <span class="token operator">-</span><span class="token operator">-</span> 任意字符
+
+<span class="token comment">#2、sql注入之：用户不存在，绕过用户与密码</span>
+xxx' <span class="token keyword">or</span> <span class="token number">1</span><span class="token operator">=</span><span class="token number">1</span> <span class="token operator">-</span><span class="token operator">-</span> 任意字符
+</code></pre></div><p><img src="https://s2.ax1x.com/2019/11/25/MXjz7D.png" alt="MXjz7D.png"></p> <p><strong>解决方法</strong></p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token comment"># 原来是我们对sql进行字符串拼接</span>
+<span class="token comment"># sql=&quot;select * from userinfo where name='%s' and password='%s'&quot; %(username,pwd)</span>
+<span class="token comment"># print(sql)</span>
+<span class="token comment"># result=cursor.execute(sql)</span>
+
+<span class="token comment">#改写为（execute帮我们做字符串拼接，我们无需且一定不能再为%s加引号了）</span>
+sql<span class="token operator">=</span><span class="token string">&quot;select * from userinfo where name=%s and password=%s&quot;</span> <span class="token comment">#！！！注意%s需要去掉引号，因为pymysql会自动为我们加上</span>
+result<span class="token operator">=</span>cursor<span class="token punctuation">.</span>execute<span class="token punctuation">(</span>sql<span class="token punctuation">,</span><span class="token punctuation">[</span>user<span class="token punctuation">,</span>pwd<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment">#pymysql模块自动帮我们解决sql注入的问题，只要我们按照pymysql的规矩来。</span>
+
+<span class="token comment">## execute还可以使用字典类型来传递数据，使用需要修改参数，如何使用自行百度，一般都是使用列表或元组</span>
+</code></pre></div><h1 id="增、删、改-conn-commit"><a href="#增、删、改-conn-commit" class="header-anchor">#</a> 增、删、改：conn.commit()</h1> <p><strong>commit()方法：在数据库里增、删、改的时候，必须要进行提交，否则插入的数据不生效。</strong></p> <h2 id="增加"><a href="#增加" class="header-anchor">#</a> 增加</h2> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">import</span> pymysql
+username <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">'请输入用户名：'</span><span class="token punctuation">)</span>
+
+pwd <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">'请输入密码：'</span><span class="token punctuation">)</span>
+
+
+
+<span class="token comment"># 1.连接</span>
+conn <span class="token operator">=</span> pymysql<span class="token punctuation">.</span>connect<span class="token punctuation">(</span>host<span class="token operator">=</span><span class="token string">'localhost'</span><span class="token punctuation">,</span> port<span class="token operator">=</span><span class="token number">3306</span><span class="token punctuation">,</span> user<span class="token operator">=</span><span class="token string">'root'</span><span class="token punctuation">,</span> password<span class="token operator">=</span><span class="token string">''</span><span class="token punctuation">,</span> db<span class="token operator">=</span><span class="token string">'db8'</span><span class="token punctuation">,</span> charset<span class="token operator">=</span><span class="token string">'utf8'</span><span class="token punctuation">)</span>
+
+
+<span class="token comment"># 2.创建游标</span>
+cursor <span class="token operator">=</span> conn<span class="token punctuation">.</span>cursor<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+
+<span class="token comment"># 操作</span>
+<span class="token comment"># 增</span>
+sql <span class="token operator">=</span> <span class="token string">&quot;insert into userinfo(username,pwd) values (%s,%s)&quot;</span>
+
+
+effect_row <span class="token operator">=</span> cursor<span class="token punctuation">.</span>execute<span class="token punctuation">(</span>sql<span class="token punctuation">,</span><span class="token punctuation">(</span>username<span class="token punctuation">,</span>pwd<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment">#同时插入多条数据</span>
+cursor<span class="token punctuation">.</span>executemany<span class="token punctuation">(</span>sql<span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token punctuation">(</span><span class="token string">'李四'</span>，<span class="token string">'110'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>（<span class="token string">'王五'</span>，<span class="token string">'119'</span>）<span class="token punctuation">]</span><span class="token punctuation">)</span> 
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>effect_row<span class="token punctuation">)</span><span class="token comment">#</span>
+
+
+<span class="token comment">#一定记得commit</span>
+conn<span class="token punctuation">.</span>commit<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 4.关闭游标</span>
+cursor<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 5.关闭连接</span>
+conn<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><h2 id="删除"><a href="#删除" class="header-anchor">#</a> 删除</h2> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">import</span> pymysql
+username <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">'请输入用户名：'</span><span class="token punctuation">)</span>
+
+pwd <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">'请输入密码：'</span><span class="token punctuation">)</span>
+
+
+
+<span class="token comment"># 1.连接</span>
+conn <span class="token operator">=</span> pymysql<span class="token punctuation">.</span>connect<span class="token punctuation">(</span>host<span class="token operator">=</span><span class="token string">'localhost'</span><span class="token punctuation">,</span> port<span class="token operator">=</span><span class="token number">3306</span><span class="token punctuation">,</span> user<span class="token operator">=</span><span class="token string">'root'</span><span class="token punctuation">,</span> password<span class="token operator">=</span><span class="token string">''</span><span class="token punctuation">,</span> db<span class="token operator">=</span><span class="token string">'db8'</span><span class="token punctuation">,</span> charset<span class="token operator">=</span><span class="token string">'utf8'</span><span class="token punctuation">)</span>
+
+
+<span class="token comment"># 2.创建游标</span>
+cursor <span class="token operator">=</span> conn<span class="token punctuation">.</span>cursor<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 删</span>
+sql <span class="token operator">=</span> <span class="token string">&quot;delete from userinfo  where id = 2&quot;</span>
+effect_row <span class="token operator">=</span> cursor<span class="token punctuation">.</span>execute<span class="token punctuation">(</span>sql<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>effect_row<span class="token punctuation">)</span>
+
+
+<span class="token comment">#一定记得commit</span>
+conn<span class="token punctuation">.</span>commit<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 4.关闭游标</span>
+cursor<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 5.关闭连接</span>
+conn<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><h2 id="修改"><a href="#修改" class="header-anchor">#</a> 修改</h2> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">import</span> pymysql
+username <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">'请输入用户名：'</span><span class="token punctuation">)</span>
+
+pwd <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">'请输入密码：'</span><span class="token punctuation">)</span>
+
+
+
+<span class="token comment"># 1.连接</span>
+conn <span class="token operator">=</span> pymysql<span class="token punctuation">.</span>connect<span class="token punctuation">(</span>host<span class="token operator">=</span><span class="token string">'localhost'</span><span class="token punctuation">,</span> port<span class="token operator">=</span><span class="token number">3306</span><span class="token punctuation">,</span> user<span class="token operator">=</span><span class="token string">'root'</span><span class="token punctuation">,</span> password<span class="token operator">=</span><span class="token string">''</span><span class="token punctuation">,</span> db<span class="token operator">=</span><span class="token string">'db8'</span><span class="token punctuation">,</span> charset<span class="token operator">=</span><span class="token string">'utf8'</span><span class="token punctuation">)</span>
+
+
+<span class="token comment"># 2.创建游标</span>
+cursor <span class="token operator">=</span> conn<span class="token punctuation">.</span>cursor<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 改</span>
+sql <span class="token operator">=</span> <span class="token string">&quot;update userinfo set username = %s  where id = 2&quot;</span>
+effect_row <span class="token operator">=</span> cursor<span class="token punctuation">.</span>execute<span class="token punctuation">(</span>sql<span class="token punctuation">,</span>username<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>effect_row<span class="token punctuation">)</span>
+
+
+<span class="token comment">#一定记得commit</span>
+conn<span class="token punctuation">.</span>commit<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 4.关闭游标</span>
+cursor<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 5.关闭连接</span>
+conn<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><h1 id="查-fetchone、fetchmany、fetchall"><a href="#查-fetchone、fetchmany、fetchall" class="header-anchor">#</a> 查：fetchone、fetchmany、fetchall</h1> <ol><li>fetchone():获取下一行数据，第一次为首行；</li> <li>fetchall():获取所有行数据源</li> <li>fetchmany(4):获取4行数据</li></ol> <h2 id="fetchone-获取下一行数据"><a href="#fetchone-获取下一行数据" class="header-anchor">#</a> fetchone()  - 获取下一行数据</h2> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">import</span> pymysql
+
+<span class="token comment"># 1.连接</span>
+conn <span class="token operator">=</span> pymysql<span class="token punctuation">.</span>connect<span class="token punctuation">(</span>host<span class="token operator">=</span><span class="token string">'localhost'</span><span class="token punctuation">,</span> port<span class="token operator">=</span><span class="token number">3306</span><span class="token punctuation">,</span> user<span class="token operator">=</span><span class="token string">'root'</span><span class="token punctuation">,</span> password<span class="token operator">=</span><span class="token string">''</span><span class="token punctuation">,</span> db<span class="token operator">=</span><span class="token string">'db8'</span><span class="token punctuation">,</span> charset<span class="token operator">=</span><span class="token string">'utf8'</span><span class="token punctuation">)</span>
+
+
+<span class="token comment"># 2.创建游标</span>
+cursor <span class="token operator">=</span> conn<span class="token punctuation">.</span>cursor<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+sql <span class="token operator">=</span> <span class="token string">'select * from userinfo'</span>
+cursor<span class="token punctuation">.</span>execute<span class="token punctuation">(</span>sql<span class="token punctuation">)</span>
+
+
+<span class="token comment"># 查询第一行的数据</span>
+row <span class="token operator">=</span> cursor<span class="token punctuation">.</span>fetchone<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>row<span class="token punctuation">)</span> <span class="token comment"># (1, 'mjj', '123')</span>
+
+<span class="token comment"># 查询第二行数据</span>
+row <span class="token operator">=</span> cursor<span class="token punctuation">.</span>fetchone<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>row<span class="token punctuation">)</span> <span class="token comment"># (3, '张三', '110')</span>
+
+<span class="token comment"># 4.关闭游标</span>
+cursor<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 5.关闭连接</span>
+conn<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><h2 id="fetchall-获取所有行数据源"><a href="#fetchall-获取所有行数据源" class="header-anchor">#</a> fetchall() - 获取所有行数据源</h2> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">import</span> pymysql
+
+<span class="token comment"># 1.连接</span>
+conn <span class="token operator">=</span> pymysql<span class="token punctuation">.</span>connect<span class="token punctuation">(</span>host<span class="token operator">=</span><span class="token string">'localhost'</span><span class="token punctuation">,</span> port<span class="token operator">=</span><span class="token number">3306</span><span class="token punctuation">,</span> user<span class="token operator">=</span><span class="token string">'root'</span><span class="token punctuation">,</span> password<span class="token operator">=</span><span class="token string">''</span><span class="token punctuation">,</span> db<span class="token operator">=</span><span class="token string">'db8'</span><span class="token punctuation">,</span> charset<span class="token operator">=</span><span class="token string">'utf8'</span><span class="token punctuation">)</span>
+
+
+<span class="token comment"># 2.创建游标</span>
+cursor <span class="token operator">=</span> conn<span class="token punctuation">.</span>cursor<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+sql <span class="token operator">=</span> <span class="token string">'select * from userinfo'</span>
+cursor<span class="token punctuation">.</span>execute<span class="token punctuation">(</span>sql<span class="token punctuation">)</span>
+
+<span class="token comment"># 获取所有的数据</span>
+rows <span class="token operator">=</span> cursor<span class="token punctuation">.</span>fetchall<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>rows<span class="token punctuation">)</span>
+
+<span class="token comment"># 4.关闭游标</span>
+cursor<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 5.关闭连接</span>
+conn<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment">#运行结果</span>
+<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'mjj'</span><span class="token punctuation">,</span> <span class="token string">'123'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token string">'张三'</span><span class="token punctuation">,</span> <span class="token string">'110'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token string">'李四'</span><span class="token punctuation">,</span> <span class="token string">'119'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div><h2 id="fetchmany-获取指定行数的数据"><a href="#fetchmany-获取指定行数的数据" class="header-anchor">#</a> fetchmany() - 获取指定行数的数据</h2> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">import</span> pymysql
+
+<span class="token comment"># 1.连接</span>
+conn <span class="token operator">=</span> pymysql<span class="token punctuation">.</span>connect<span class="token punctuation">(</span>host<span class="token operator">=</span><span class="token string">'localhost'</span><span class="token punctuation">,</span> port<span class="token operator">=</span><span class="token number">3306</span><span class="token punctuation">,</span> user<span class="token operator">=</span><span class="token string">'root'</span><span class="token punctuation">,</span> password<span class="token operator">=</span><span class="token string">''</span><span class="token punctuation">,</span> db<span class="token operator">=</span><span class="token string">'db8'</span><span class="token punctuation">,</span> charset<span class="token operator">=</span><span class="token string">'utf8'</span><span class="token punctuation">)</span>
+
+
+<span class="token comment"># 2.创建游标</span>
+cursor <span class="token operator">=</span> conn<span class="token punctuation">.</span>cursor<span class="token punctuation">(</span>cursor<span class="token operator">=</span>pymysql<span class="token punctuation">.</span>cursors<span class="token punctuation">.</span>DictCursor<span class="token punctuation">)</span>
+
+sql <span class="token operator">=</span> <span class="token string">'select * from userinfo'</span>
+cursor<span class="token punctuation">.</span>execute<span class="token punctuation">(</span>sql<span class="token punctuation">)</span>
+
+
+
+<span class="token comment"># 获取2条数据</span>
+rows <span class="token operator">=</span> cursor<span class="token punctuation">.</span>fetchmany<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>rows<span class="token punctuation">)</span>
+
+<span class="token comment"># 4.关闭游标</span>
+
+<span class="token comment"># rows = cursor.fetchall()</span>
+<span class="token comment"># print(rows)</span>
+cursor<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 5.关闭连接</span>
+conn<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment">#结果如下：</span>
+<span class="token punctuation">[</span><span class="token punctuation">{</span><span class="token string">'id'</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'username'</span><span class="token punctuation">:</span> <span class="token string">'mjj'</span><span class="token punctuation">,</span> <span class="token string">'pwd'</span><span class="token punctuation">:</span> <span class="token string">'123'</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token string">'id'</span><span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token string">'username'</span><span class="token punctuation">:</span> <span class="token string">'张三'</span><span class="token punctuation">,</span> <span class="token string">'pwd'</span><span class="token punctuation">:</span> <span class="token string">'110'</span><span class="token punctuation">}</span><span class="token punctuation">]</span>
+</code></pre></div><h2 id="修改返回值-返回数据的数据类型"><a href="#修改返回值-返回数据的数据类型" class="header-anchor">#</a> 修改返回值，返回数据的数据类型</h2> <p>默认情况下，我们获取到的返回值是元组，只能看到每行的数据，却不知道每一列代表的是什么，这个时候可以使用以下方式来返回字典，每一行的数据都会生成一个字典</p> <div class="language-python extra-class"><pre class="language-python"><code>cursor <span class="token operator">=</span> conn<span class="token punctuation">.</span>cursor<span class="token punctuation">(</span>cursor<span class="token operator">=</span>pymysql<span class="token punctuation">.</span>cursors<span class="token punctuation">.</span>DictCursor<span class="token punctuation">)</span>  
+<span class="token comment">#在实例化的时候，将属性cursor设置为pymysql.cursors.DictCursor</span>
+</code></pre></div><h2 id="对查询时监控sql的指针进行操作"><a href="#对查询时监控sql的指针进行操作" class="header-anchor">#</a> 对查询时监控sql的指针进行操作</h2> <p>在fetchone示例中，在获取行数据的时候，可以理解开始的时候，有一个行指针指着第一行的上方，获取一行，它就向下移动一行，所以当行指针到最后一行的时候，就不能再获取到行的内容，所以我们可以使用如下方法来移动行指针</p> <div class="language-python extra-class"><pre class="language-python"><code>cursor<span class="token punctuation">.</span>scroll<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>mode<span class="token operator">=</span><span class="token string">'relative'</span><span class="token punctuation">)</span>    
+<span class="token comment"># 相对当前位置移动</span>
+
+cursor<span class="token punctuation">.</span>scroll<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span>mode<span class="token operator">=</span><span class="token string">'absolute'</span><span class="token punctuation">)</span>   
+<span class="token comment"># 相对绝对位置移动，从开头位置开始移动</span>
+
+
+<span class="token comment"># 第一个值为移动的行数，整数为向下移动，负数为向上移动，mode指定了是相对当前位置移动，还是相对于首行移动</span>
+</code></pre></div><h3 id="实例"><a href="#实例" class="header-anchor">#</a> 实例</h3> <div class="language-python extra-class"><pre class="language-python"><code><span class="token comment"># 1.Python实现用户登录</span>
+<span class="token comment"># 2.Mysql保存数据</span>
+
+<span class="token keyword">import</span> pymysql
+
+<span class="token comment"># 1.连接</span>
+conn <span class="token operator">=</span> pymysql<span class="token punctuation">.</span>connect<span class="token punctuation">(</span>host<span class="token operator">=</span><span class="token string">'localhost'</span><span class="token punctuation">,</span> port<span class="token operator">=</span><span class="token number">3306</span><span class="token punctuation">,</span> user<span class="token operator">=</span><span class="token string">'root'</span><span class="token punctuation">,</span> password<span class="token operator">=</span><span class="token string">''</span><span class="token punctuation">,</span> db<span class="token operator">=</span><span class="token string">'db8'</span><span class="token punctuation">,</span> charset<span class="token operator">=</span><span class="token string">'utf8'</span><span class="token punctuation">)</span>
+
+
+<span class="token comment"># 2.创建游标</span>
+cursor <span class="token operator">=</span> conn<span class="token punctuation">.</span>cursor<span class="token punctuation">(</span>cursor<span class="token operator">=</span>pymysql<span class="token punctuation">.</span>cursors<span class="token punctuation">.</span>DictCursor<span class="token punctuation">)</span>
+
+sql <span class="token operator">=</span> <span class="token string">'select * from userinfo'</span>
+cursor<span class="token punctuation">.</span>execute<span class="token punctuation">(</span>sql<span class="token punctuation">)</span>
+
+
+<span class="token comment"># 查询第一行的数据</span>
+row <span class="token operator">=</span> cursor<span class="token punctuation">.</span>fetchone<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>row<span class="token punctuation">)</span> <span class="token comment"># (1, 'mjj', '123')</span>
+
+<span class="token comment"># 查询第二行数据</span>
+row <span class="token operator">=</span> cursor<span class="token punctuation">.</span>fetchone<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment"># (3, '张三', '110')</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>row<span class="token punctuation">)</span>
+
+cursor<span class="token punctuation">.</span>scroll<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span>mode<span class="token operator">=</span><span class="token string">'relative'</span><span class="token punctuation">)</span> <span class="token comment">#设置之后，光标相对于当前位置往前移动了一行，所以打印的结果为第二行的数据</span>
+row <span class="token operator">=</span> cursor<span class="token punctuation">.</span>fetchone<span class="token punctuation">(</span><span class="token punctuation">)</span> 
+<span class="token keyword">print</span><span class="token punctuation">(</span>row<span class="token punctuation">)</span>
+
+cursor<span class="token punctuation">.</span>scroll<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span>mode<span class="token operator">=</span><span class="token string">'absolute'</span><span class="token punctuation">)</span> <span class="token comment">#设置之后，光标相对于首行没有任何变化，所以打印的结果为第一行数据</span>
+row <span class="token operator">=</span> cursor<span class="token punctuation">.</span>fetchone<span class="token punctuation">(</span><span class="token punctuation">)</span> 
+<span class="token keyword">print</span><span class="token punctuation">(</span>row<span class="token punctuation">)</span>
+
+<span class="token comment"># 4.关闭游标</span>
+cursor<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 5.关闭连接</span>
+conn<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment">#结果如下</span>
+
+<span class="token punctuation">{</span><span class="token string">'id'</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'username'</span><span class="token punctuation">:</span> <span class="token string">'mjj'</span><span class="token punctuation">,</span> <span class="token string">'pwd'</span><span class="token punctuation">:</span> <span class="token string">'123'</span><span class="token punctuation">}</span>
+<span class="token punctuation">{</span><span class="token string">'id'</span><span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token string">'username'</span><span class="token punctuation">:</span> <span class="token string">'张三'</span><span class="token punctuation">,</span> <span class="token string">'pwd'</span><span class="token punctuation">:</span> <span class="token string">'110'</span><span class="token punctuation">}</span>
+<span class="token punctuation">{</span><span class="token string">'id'</span><span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token string">'username'</span><span class="token punctuation">:</span> <span class="token string">'张三'</span><span class="token punctuation">,</span> <span class="token string">'pwd'</span><span class="token punctuation">:</span> <span class="token string">'110'</span><span class="token punctuation">}</span>
+<span class="token punctuation">{</span><span class="token string">'id'</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'username'</span><span class="token punctuation">:</span> <span class="token string">'mjj'</span><span class="token punctuation">,</span> <span class="token string">'pwd'</span><span class="token punctuation">:</span> <span class="token string">'123'</span><span class="token punctuation">}</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/Python/6. Python-MySQL/66. 数据库之MySQL索引、优化.html" class="prev">
+        66. 数据库之MySQL索引、优化
+      </a></span> <span class="next"><a href="/Python/6. Python-MySQL/68. 数据库之MySQL练习题.html">
+        68. 数据库之MySQL练习题
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.d65bef42.js" defer></script><script src="/assets/js/2.2249178e.js" defer></script><script src="/assets/js/138.dc67bcaa.js" defer></script>
+  </body>
+</html>

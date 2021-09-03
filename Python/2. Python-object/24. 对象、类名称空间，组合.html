@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>24. 对象、类名称空间，组合 | MSG</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="在追寻技术的同时享受生活">
+    
+    <link rel="preload" href="/assets/css/0.styles.e4d8b86b.css" as="style"><link rel="preload" href="/assets/js/app.d65bef42.js" as="script"><link rel="preload" href="/assets/js/2.2249178e.js" as="script"><link rel="preload" href="/assets/js/84.dd89f1de.js" as="script"><link rel="prefetch" href="/assets/js/10.4785e2e5.js"><link rel="prefetch" href="/assets/js/100.33fceff2.js"><link rel="prefetch" href="/assets/js/101.62e1e5d4.js"><link rel="prefetch" href="/assets/js/102.8551fe71.js"><link rel="prefetch" href="/assets/js/103.47754d79.js"><link rel="prefetch" href="/assets/js/104.4adf114f.js"><link rel="prefetch" href="/assets/js/105.6206a08a.js"><link rel="prefetch" href="/assets/js/106.1c4561f3.js"><link rel="prefetch" href="/assets/js/107.e1531a5a.js"><link rel="prefetch" href="/assets/js/108.c637743a.js"><link rel="prefetch" href="/assets/js/109.3f150913.js"><link rel="prefetch" href="/assets/js/11.bd8ec7a6.js"><link rel="prefetch" href="/assets/js/110.088c1ac3.js"><link rel="prefetch" href="/assets/js/111.66d8d491.js"><link rel="prefetch" href="/assets/js/112.231663ee.js"><link rel="prefetch" href="/assets/js/113.a38bc531.js"><link rel="prefetch" href="/assets/js/114.e165daea.js"><link rel="prefetch" href="/assets/js/115.994b087a.js"><link rel="prefetch" href="/assets/js/116.ea3cfdfb.js"><link rel="prefetch" href="/assets/js/117.7be5e4f3.js"><link rel="prefetch" href="/assets/js/118.ebb58ddb.js"><link rel="prefetch" href="/assets/js/119.90018646.js"><link rel="prefetch" href="/assets/js/12.0d8f43df.js"><link rel="prefetch" href="/assets/js/120.bb5be863.js"><link rel="prefetch" href="/assets/js/121.3d1db670.js"><link rel="prefetch" href="/assets/js/122.d29ed1b2.js"><link rel="prefetch" href="/assets/js/123.38cc4704.js"><link rel="prefetch" href="/assets/js/124.cc8549d4.js"><link rel="prefetch" href="/assets/js/125.6ee3e9c8.js"><link rel="prefetch" href="/assets/js/126.48710eba.js"><link rel="prefetch" href="/assets/js/127.d7a1fd83.js"><link rel="prefetch" href="/assets/js/128.e5017f6b.js"><link rel="prefetch" href="/assets/js/129.4c33e121.js"><link rel="prefetch" href="/assets/js/13.2dbde7aa.js"><link rel="prefetch" href="/assets/js/130.cda66247.js"><link rel="prefetch" href="/assets/js/131.ad76f669.js"><link rel="prefetch" href="/assets/js/132.aca88758.js"><link rel="prefetch" href="/assets/js/133.a1cf5903.js"><link rel="prefetch" href="/assets/js/134.b1386377.js"><link rel="prefetch" href="/assets/js/135.94edcf53.js"><link rel="prefetch" href="/assets/js/136.24be4170.js"><link rel="prefetch" href="/assets/js/137.db57772e.js"><link rel="prefetch" href="/assets/js/138.dc67bcaa.js"><link rel="prefetch" href="/assets/js/139.5453d1f6.js"><link rel="prefetch" href="/assets/js/14.2187dbf4.js"><link rel="prefetch" href="/assets/js/140.938e5c07.js"><link rel="prefetch" href="/assets/js/141.99c7cf2c.js"><link rel="prefetch" href="/assets/js/142.428e3958.js"><link rel="prefetch" href="/assets/js/143.68b01530.js"><link rel="prefetch" href="/assets/js/144.f67389cc.js"><link rel="prefetch" href="/assets/js/145.d952a130.js"><link rel="prefetch" href="/assets/js/146.b933dcad.js"><link rel="prefetch" href="/assets/js/147.2d8e4c0a.js"><link rel="prefetch" href="/assets/js/148.6d76ac94.js"><link rel="prefetch" href="/assets/js/149.6b4d6378.js"><link rel="prefetch" href="/assets/js/15.a53b356c.js"><link rel="prefetch" href="/assets/js/150.5bf39cb4.js"><link rel="prefetch" href="/assets/js/151.17af677c.js"><link rel="prefetch" href="/assets/js/152.7f1c2792.js"><link rel="prefetch" href="/assets/js/153.98dd0727.js"><link rel="prefetch" href="/assets/js/154.eb44bf23.js"><link rel="prefetch" href="/assets/js/155.5a9840ea.js"><link rel="prefetch" href="/assets/js/156.7ba01fd0.js"><link rel="prefetch" href="/assets/js/157.2296a048.js"><link rel="prefetch" href="/assets/js/158.6bb1f699.js"><link rel="prefetch" href="/assets/js/159.073bb8df.js"><link rel="prefetch" href="/assets/js/16.cef7bf44.js"><link rel="prefetch" href="/assets/js/160.25a837f9.js"><link rel="prefetch" href="/assets/js/161.93d886a1.js"><link rel="prefetch" href="/assets/js/162.5d2714b2.js"><link rel="prefetch" href="/assets/js/17.96f36904.js"><link rel="prefetch" href="/assets/js/18.fd04b310.js"><link rel="prefetch" href="/assets/js/19.3e1377d1.js"><link rel="prefetch" href="/assets/js/20.ac195ac8.js"><link rel="prefetch" href="/assets/js/21.c2d7729c.js"><link rel="prefetch" href="/assets/js/22.dd8c621b.js"><link rel="prefetch" href="/assets/js/23.ad7d0350.js"><link rel="prefetch" href="/assets/js/24.8559c4c3.js"><link rel="prefetch" href="/assets/js/25.783a8116.js"><link rel="prefetch" href="/assets/js/26.25e0e459.js"><link rel="prefetch" href="/assets/js/27.c0616e2a.js"><link rel="prefetch" href="/assets/js/28.30656c2e.js"><link rel="prefetch" href="/assets/js/29.2be5114c.js"><link rel="prefetch" href="/assets/js/3.be8c8f3b.js"><link rel="prefetch" href="/assets/js/30.230a74a7.js"><link rel="prefetch" href="/assets/js/31.760f46ad.js"><link rel="prefetch" href="/assets/js/32.c9533fef.js"><link rel="prefetch" href="/assets/js/33.dcacfb38.js"><link rel="prefetch" href="/assets/js/34.4370a466.js"><link rel="prefetch" href="/assets/js/35.bf299eea.js"><link rel="prefetch" href="/assets/js/36.336e435a.js"><link rel="prefetch" href="/assets/js/37.1d1d2eea.js"><link rel="prefetch" href="/assets/js/38.0d58b7d0.js"><link rel="prefetch" href="/assets/js/39.d43564ba.js"><link rel="prefetch" href="/assets/js/4.4a6cb970.js"><link rel="prefetch" href="/assets/js/40.bc4e4bde.js"><link rel="prefetch" href="/assets/js/41.b71231a5.js"><link rel="prefetch" href="/assets/js/42.9d46f400.js"><link rel="prefetch" href="/assets/js/43.50c5be69.js"><link rel="prefetch" href="/assets/js/44.60406e7f.js"><link rel="prefetch" href="/assets/js/45.ec3569ae.js"><link rel="prefetch" href="/assets/js/46.1bd3ce7b.js"><link rel="prefetch" href="/assets/js/47.1e1b5326.js"><link rel="prefetch" href="/assets/js/48.64c631ea.js"><link rel="prefetch" href="/assets/js/49.b4abacd8.js"><link rel="prefetch" href="/assets/js/5.e6d0b165.js"><link rel="prefetch" href="/assets/js/50.c3e320c0.js"><link rel="prefetch" href="/assets/js/51.5ec7fb8c.js"><link rel="prefetch" href="/assets/js/52.2d234f86.js"><link rel="prefetch" href="/assets/js/53.f3b69623.js"><link rel="prefetch" href="/assets/js/54.c85ff450.js"><link rel="prefetch" href="/assets/js/55.b07597b5.js"><link rel="prefetch" href="/assets/js/56.444129cf.js"><link rel="prefetch" href="/assets/js/57.df1329ba.js"><link rel="prefetch" href="/assets/js/58.5afb51cf.js"><link rel="prefetch" href="/assets/js/59.d98936d9.js"><link rel="prefetch" href="/assets/js/6.809376cd.js"><link rel="prefetch" href="/assets/js/60.02813ecf.js"><link rel="prefetch" href="/assets/js/61.37a4812d.js"><link rel="prefetch" href="/assets/js/62.5da94048.js"><link rel="prefetch" href="/assets/js/63.8e2c2bca.js"><link rel="prefetch" href="/assets/js/64.d290398f.js"><link rel="prefetch" href="/assets/js/65.44e28313.js"><link rel="prefetch" href="/assets/js/66.9acf0206.js"><link rel="prefetch" href="/assets/js/67.85688aa2.js"><link rel="prefetch" href="/assets/js/68.45bda7fc.js"><link rel="prefetch" href="/assets/js/69.9074feb0.js"><link rel="prefetch" href="/assets/js/7.5d7bce6e.js"><link rel="prefetch" href="/assets/js/70.b4cd2ddc.js"><link rel="prefetch" href="/assets/js/71.53219b13.js"><link rel="prefetch" href="/assets/js/72.af2a7290.js"><link rel="prefetch" href="/assets/js/73.c28fc506.js"><link rel="prefetch" href="/assets/js/74.64c81a90.js"><link rel="prefetch" href="/assets/js/75.05191ece.js"><link rel="prefetch" href="/assets/js/76.f516d464.js"><link rel="prefetch" href="/assets/js/77.c345180b.js"><link rel="prefetch" href="/assets/js/78.4a09d0ba.js"><link rel="prefetch" href="/assets/js/79.65f41bcf.js"><link rel="prefetch" href="/assets/js/8.f6cfdc07.js"><link rel="prefetch" href="/assets/js/80.b77151f3.js"><link rel="prefetch" href="/assets/js/81.824fa371.js"><link rel="prefetch" href="/assets/js/82.3f91c09b.js"><link rel="prefetch" href="/assets/js/83.9539f074.js"><link rel="prefetch" href="/assets/js/85.15210b99.js"><link rel="prefetch" href="/assets/js/86.e14553e1.js"><link rel="prefetch" href="/assets/js/87.6dc95177.js"><link rel="prefetch" href="/assets/js/88.09c5e890.js"><link rel="prefetch" href="/assets/js/89.0d61f4d0.js"><link rel="prefetch" href="/assets/js/9.759f1986.js"><link rel="prefetch" href="/assets/js/90.a9b14d80.js"><link rel="prefetch" href="/assets/js/91.1a4aabe2.js"><link rel="prefetch" href="/assets/js/92.12070bdb.js"><link rel="prefetch" href="/assets/js/93.b5dc76d0.js"><link rel="prefetch" href="/assets/js/94.690498a6.js"><link rel="prefetch" href="/assets/js/95.b17961e6.js"><link rel="prefetch" href="/assets/js/96.a2f06f3e.js"><link rel="prefetch" href="/assets/js/97.64ef6721.js"><link rel="prefetch" href="/assets/js/98.443eba26.js"><link rel="prefetch" href="/assets/js/99.b6ba7c3a.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.e4d8b86b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">MSG</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Python文档" class="dropdown-title"><span class="title">Python文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="Python文档" class="mobile-dropdown-title"><span class="title">Python文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Python/1.Python-Basics/" class="nav-link">
+  Python-基础
+</a></li><li class="dropdown-item"><!----> <a href="/Python/2. Python-object/" class="nav-link">
+  Python-面向对象
+</a></li><li class="dropdown-item"><!----> <a href="/Python/3. Python-module/" class="nav-link">
+  Python-模块与包
+</a></li><li class="dropdown-item"><!----> <a href="/Python/4. Python-network/" class="nav-link">
+  Python-网络
+</a></li><li class="dropdown-item"><!----> <a href="/Python/5. Python-frontend/" class="nav-link">
+  Python-前端
+</a></li><li class="dropdown-item"><!----> <a href="/Python/6. Python-MySQL/" class="nav-link">
+  Python-数据库
+</a></li><li class="dropdown-item"><!----> <a href="/Python/7. Python-Django/" class="nav-link">
+  Python-Django
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="容器文档" class="dropdown-title"><span class="title">容器文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="容器文档" class="mobile-dropdown-title"><span class="title">容器文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Container/docker/" class="nav-link">
+  docker文檔
+</a></li><li class="dropdown-item"><!----> <a href="/Container/Kubernetes/" class="nav-link">
+  Kubernetes文檔
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="GO文档" class="dropdown-title"><span class="title">GO文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="GO文档" class="mobile-dropdown-title"><span class="title">GO文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/GO/basics/" class="nav-link">
+  GO快速入门
+</a></li><li class="dropdown-item"><!----> <a href="/GO/module/" class="nav-link">
+  GO标准库/GO模块
+</a></li></ul></div></div><div class="nav-item"><a href="https://www.linux91.cn/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  博客
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Python文档" class="dropdown-title"><span class="title">Python文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="Python文档" class="mobile-dropdown-title"><span class="title">Python文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Python/1.Python-Basics/" class="nav-link">
+  Python-基础
+</a></li><li class="dropdown-item"><!----> <a href="/Python/2. Python-object/" class="nav-link">
+  Python-面向对象
+</a></li><li class="dropdown-item"><!----> <a href="/Python/3. Python-module/" class="nav-link">
+  Python-模块与包
+</a></li><li class="dropdown-item"><!----> <a href="/Python/4. Python-network/" class="nav-link">
+  Python-网络
+</a></li><li class="dropdown-item"><!----> <a href="/Python/5. Python-frontend/" class="nav-link">
+  Python-前端
+</a></li><li class="dropdown-item"><!----> <a href="/Python/6. Python-MySQL/" class="nav-link">
+  Python-数据库
+</a></li><li class="dropdown-item"><!----> <a href="/Python/7. Python-Django/" class="nav-link">
+  Python-Django
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="容器文档" class="dropdown-title"><span class="title">容器文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="容器文档" class="mobile-dropdown-title"><span class="title">容器文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Container/docker/" class="nav-link">
+  docker文檔
+</a></li><li class="dropdown-item"><!----> <a href="/Container/Kubernetes/" class="nav-link">
+  Kubernetes文檔
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="GO文档" class="dropdown-title"><span class="title">GO文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="GO文档" class="mobile-dropdown-title"><span class="title">GO文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/GO/basics/" class="nav-link">
+  GO快速入门
+</a></li><li class="dropdown-item"><!----> <a href="/GO/module/" class="nav-link">
+  GO标准库/GO模块
+</a></li></ul></div></div><div class="nav-item"><a href="https://www.linux91.cn/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  博客
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Python-面向对象</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/Python/2.%20Python-object/" aria-current="page" class="sidebar-link">介绍</a></li><li><a href="/Python/2. Python-object/23. 面向对象初始.html" class="sidebar-link">23. 面向对象初始</a></li><li><a href="/Python/2. Python-object/24. 对象、类名称空间，组合.html" class="active sidebar-link">24. 对象、类名称空间，组合</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/Python/2. Python-object/24. 对象、类名称空间，组合.html#要求" class="sidebar-link">要求</a></li><li class="sidebar-sub-header"><a href="/Python/2. Python-object/24. 对象、类名称空间，组合.html#答案" class="sidebar-link">答案</a></li><li class="sidebar-sub-header"><a href="/Python/2. Python-object/24. 对象、类名称空间，组合.html#实验" class="sidebar-link">实验</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/Python/2. Python-object/24. 对象、类名称空间，组合.html#从网上截个来的" class="sidebar-link">从网上截个来的</a></li><li class="sidebar-sub-header"><a href="/Python/2. Python-object/24. 对象、类名称空间，组合.html#博主写的" class="sidebar-link">博主写的</a></li></ul></li></ul></li><li><a href="/Python/2. Python-object/25. 继承.html" class="sidebar-link">25. 继承</a></li><li><a href="/Python/2. Python-object/26. 抽象,接口类、多态、鸭子类型、封装.html" class="sidebar-link">26. 抽象,接口类、多态、鸭子类型、封装</a></li><li><a href="/Python/2. Python-object/27. 对象、类方法、静态方法.html" class="sidebar-link">27. 对象、类方法、静态方法</a></li><li><a href="/Python/2. Python-object/28. 反射.html" class="sidebar-link">28. 反射</a></li><li><a href="/Python/2. Python-object/28.1 练习题.html" class="sidebar-link">28.1 练习题</a></li><li><a href="/Python/2. Python-object/29. 内置方法.html" class="sidebar-link">29. 内置方法</a></li><li><a href="/Python/2. Python-object/30. 内置函数-面向对象.html" class="sidebar-link">30. 内置函数-面向对象</a></li><li><a href="/Python/2. Python-object/31. 面向对象总结 .html" class="sidebar-link">31. 面向对象总结</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="_24-对象、类名称空间-组合"><a href="#_24-对象、类名称空间-组合" class="header-anchor">#</a> 24. 对象、类名称空间，组合</h1> <br> <h1 id="对象-类名称空间"><a href="#对象-类名称空间" class="header-anchor">#</a> 对象/类名称空间</h1> <p>说到对象/类名称空间，那就要先了解一下类跟对象的运行结构</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">class</span> <span class="token class-name">so</span><span class="token punctuation">:</span>
+    name <span class="token operator">=</span> <span class="token string">&quot;人类&quot;</span>
+    age <span class="token operator">=</span> <span class="token string">&quot;一百岁左右&quot;</span>
+    faile <span class="token operator">=</span> <span class="token string">&quot;信仰&quot;</span>
+
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>nameb<span class="token punctuation">,</span>ageb<span class="token punctuation">,</span>faileb<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>nameb <span class="token operator">=</span> nameb
+        self<span class="token punctuation">.</span>ageb <span class="token operator">=</span> ageb
+        self<span class="token punctuation">.</span>faileb <span class="token operator">=</span> faileb
+
+    <span class="token keyword">def</span> <span class="token function">wo</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;人与人的区别到底是什么&quot;</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">eo</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;你说的，明天会更好&quot;</span><span class="token punctuation">)</span>
+ll <span class="token operator">=</span> so<span class="token punctuation">(</span><span class="token string">&quot;江心&quot;</span><span class="token punctuation">,</span><span class="token number">18</span><span class="token punctuation">,</span><span class="token string">&quot;唯我&quot;</span><span class="token punctuation">)</span> 
+
+
+<span class="token comment">##这里就用话来简单写点执行过程</span>
+
+<span class="token comment">#============================当程序执行时遇到类时产生的类名称空间存储的数据============================</span>
+程序执行，从头到尾
+遇到so类，执行so类以下可以被执行的代码<span class="token operator">-</span><span class="token operator">-</span>这里被执行就会生成一个类名称空间
+遇到name变量，执行并记录在类名称空间中
+遇到age变量，执行并记录在类名称空间中
+遇到faile变量，执行并记录在类名称空间中
+遇到__init__方法，记录保存内存地址
+遇到wo方法，记录保存内存地址
+遇到eo方法，记录保存内存地址
+
+
+<span class="token comment">#============================当类加()执行赋值给变量时，会执行实例化过程============================</span>
+当类进入实例化过程时会生成一个空间，称为实例化空间，也叫做对象名称空间
+将生成的实例化空间的内存地址返回给init函数中的self参数
+将so<span class="token punctuation">(</span><span class="token punctuation">)</span>括号中的数据传递给init方法中的参数，并执行记录在实例化空间
+当传递完毕，实例化空间会自动生成一个指示牌<span class="token punctuation">(</span>用于保存类对象指针<span class="token punctuation">)</span>，有了指示牌实例化空间才能找到类名称空间，开始封闭空间，并把内存地址赋值给变量ll
+
+注意：如果有多个实例化过程，那么产生的多个实例化空间之间都是单独的个体对象
+
+</code></pre></div><br> <br> <h1 id="查询顺序"><a href="#查询顺序" class="header-anchor">#</a> 查询顺序</h1> <p>类跟对象查询数据的顺序</p> <div class="language-python extra-class"><pre class="language-python"><code>nameb <span class="token operator">=</span> <span class="token string">&quot;凡&quot;</span>
+<span class="token keyword">class</span> <span class="token class-name">so</span><span class="token punctuation">:</span>
+    name <span class="token operator">=</span> <span class="token string">&quot;人类&quot;</span>
+    age <span class="token operator">=</span> <span class="token string">&quot;一百岁左右&quot;</span>
+    faile <span class="token operator">=</span> <span class="token string">&quot;信仰&quot;</span>
+
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>nameb<span class="token punctuation">,</span>ageb<span class="token punctuation">,</span>faileb<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>nameb <span class="token operator">=</span> nameb
+        self<span class="token punctuation">.</span>ageb <span class="token operator">=</span> ageb
+        self<span class="token punctuation">.</span>faileb <span class="token operator">=</span> faileb
+
+    <span class="token keyword">def</span> <span class="token function">wo</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;人与人的区别到底是什么&quot;</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">eo</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;你说的，明天会更好&quot;</span><span class="token punctuation">)</span>
+</code></pre></div><br> <ol><li><p>对象.属性 : 先从对象空间找,如果找不到,再从类空间找,再找不到,再从父类找....</p> <div class="language-python extra-class"><pre class="language-python"><code>ll <span class="token operator">=</span> so<span class="token punctuation">(</span><span class="token string">&quot;江心&quot;</span><span class="token punctuation">,</span><span class="token number">18</span><span class="token punctuation">,</span><span class="token string">&quot;唯我&quot;</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>ll<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+
+执行结果：
+人类
+</code></pre></div><p>​	以上实例，对象如果在当前方法中找不到，那就会去类空间找</p></li></ol> <br> <ol start="2"><li><p>类名.属性 : 先从本类空间找,如果找不到,再从父类找....</p> <div class="language-python extra-class"><pre class="language-python"><code>ll <span class="token operator">=</span> so<span class="token punctuation">(</span><span class="token string">&quot;江心&quot;</span><span class="token punctuation">,</span><span class="token number">18</span><span class="token punctuation">,</span><span class="token string">&quot;唯我&quot;</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>so<span class="token punctuation">.</span>nameb<span class="token punctuation">)</span>
+
+执行结果：
+AttributeError<span class="token punctuation">:</span> <span class="token builtin">type</span> <span class="token builtin">object</span> <span class="token string">'so'</span> has no attribute <span class="token string">'nameb'</span>  <span class="token comment">#报错</span>
+</code></pre></div><p>​	以上实例，类如果在当前类中找不到，就会去父类找，如果找不到报错</p></li></ol> <br> <br> <h1 id="小练习"><a href="#小练习" class="header-anchor">#</a> 小练习</h1> <p>计算程序中实例化多少次</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">class</span> <span class="token class-name">so</span><span class="token punctuation">:</span>
+    name <span class="token operator">=</span> <span class="token string">&quot;人类&quot;</span>
+    age <span class="token operator">=</span> <span class="token string">&quot;一百岁左右&quot;</span>
+    faile <span class="token operator">=</span> <span class="token string">&quot;信仰&quot;</span>
+    count <span class="token operator">=</span> <span class="token number">0</span>
+
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>nameb<span class="token punctuation">,</span>ageb<span class="token punctuation">,</span>faileb<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>nameb <span class="token operator">=</span> nameb
+        self<span class="token punctuation">.</span>ageb <span class="token operator">=</span> ageb
+        self<span class="token punctuation">.</span>faileb <span class="token operator">=</span> faileb
+        so<span class="token punctuation">.</span>count <span class="token operator">+=</span> <span class="token number">1</span>
+
+    <span class="token keyword">def</span> <span class="token function">wo</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;人与人的区别到底是什么&quot;</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">eo</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;你说的，明天会更好&quot;</span><span class="token punctuation">)</span>
+ll1 <span class="token operator">=</span> so<span class="token punctuation">(</span><span class="token string">&quot;江心&quot;</span><span class="token punctuation">,</span><span class="token number">18</span><span class="token punctuation">,</span><span class="token string">&quot;唯我&quot;</span><span class="token punctuation">)</span>
+ll2 <span class="token operator">=</span> so<span class="token punctuation">(</span><span class="token string">&quot;江凡&quot;</span><span class="token punctuation">,</span><span class="token number">13</span><span class="token punctuation">,</span><span class="token string">&quot;唯我&quot;</span><span class="token punctuation">)</span>
+ll3 <span class="token operator">=</span> so<span class="token punctuation">(</span><span class="token string">&quot;江空&quot;</span><span class="token punctuation">,</span><span class="token number">23</span><span class="token punctuation">,</span><span class="token string">&quot;唯我&quot;</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>so<span class="token punctuation">.</span>count<span class="token punctuation">)</span>
+</code></pre></div><p>注意：在对象引用类中的静态变量时，只能查询，不能增删改操作，如果要使用对象进行修改类中的变量，那么可以修改成功，在实例化一个对象来查看这个类的变量时，就会发现这个类的变量还是原先的值</p> <p>总结：可以使用对象进行操作，不过操作的结果是记录在了该对象的实例化空间，不会影响到类空间里面记录的静态数据</p> <br> <br> <h1 id="进阶题-看组合之前必须先做"><a href="#进阶题-看组合之前必须先做" class="header-anchor">#</a> 进阶题 (看组合之前必须先做)</h1> <h2 id="要求"><a href="#要求" class="header-anchor">#</a> 要求</h2> <div class="language-python extra-class"><pre class="language-python"><code>模拟英雄联盟写一个游戏人物的类
+  要求<span class="token punctuation">:</span>
+  <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>创建一个 Game_role的类<span class="token punctuation">.</span>
+  <span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span> 构造方法中给对象封装name<span class="token punctuation">,</span>ad<span class="token punctuation">(</span>攻击力<span class="token punctuation">)</span><span class="token punctuation">,</span>hp<span class="token punctuation">(</span>血量<span class="token punctuation">)</span><span class="token punctuation">.</span>三个属性<span class="token punctuation">.</span>
+  <span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span> 创建一个attack方法<span class="token punctuation">,</span>此方法是实例化两个对象<span class="token punctuation">,</span>互相攻击的功能<span class="token punctuation">:</span>
+      例<span class="token punctuation">:</span> 实例化一个对象 盖伦<span class="token punctuation">,</span>ad为<span class="token number">10</span><span class="token punctuation">,</span> hp为<span class="token number">100</span>
+      实例化另个一个对象 剑豪 ad为<span class="token number">20</span><span class="token punctuation">,</span> hp为<span class="token number">80</span>
+      盖伦通过attack方法攻击剑豪<span class="token punctuation">,</span>此方法要完成 <span class="token string">'谁攻击谁,谁掉了多少血,  还剩多少血'</span>的提示功能<span class="token punctuation">.</span>
+</code></pre></div><br> <h2 id="答案"><a href="#答案" class="header-anchor">#</a> 答案</h2> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">class</span> <span class="token class-name">so</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>name<span class="token punctuation">,</span>ad<span class="token punctuation">,</span>hp<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>name <span class="token operator">=</span> name
+        self<span class="token punctuation">.</span>ad <span class="token operator">=</span> ad
+        self<span class="token punctuation">.</span>hp <span class="token operator">=</span> hp
+
+    <span class="token keyword">def</span> <span class="token function">wo</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>amdc<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        amdc<span class="token punctuation">.</span>hp <span class="token operator">=</span> amdc<span class="token punctuation">.</span>hp <span class="token operator">-</span> self<span class="token punctuation">.</span>ad
+        <span class="token keyword">print</span><span class="token punctuation">(</span>
+        <span class="token triple-quoted-string string">&quot;&quot;&quot;
+            攻击提示：
+                你的英雄%s攻击了对方英雄%s
+                对方英雄%s，掉了%s滴血
+                对方英雄%s，还剩下%s滴血
+        &quot;&quot;&quot;</span>
+        <span class="token operator">%</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>name<span class="token punctuation">,</span>amdc<span class="token punctuation">.</span>name<span class="token punctuation">,</span>amdc<span class="token punctuation">.</span>name<span class="token punctuation">,</span>self<span class="token punctuation">.</span>ad<span class="token punctuation">,</span>amdc<span class="token punctuation">.</span>name<span class="token punctuation">,</span>amdc<span class="token punctuation">.</span>hp<span class="token punctuation">)</span>
+        <span class="token punctuation">)</span>
+
+amdc1 <span class="token operator">=</span> so<span class="token punctuation">(</span><span class="token string">&quot;盖伦&quot;</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">100</span><span class="token punctuation">)</span>
+amdc2 <span class="token operator">=</span> so<span class="token punctuation">(</span><span class="token string">&quot;剑豪&quot;</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">,</span><span class="token number">80</span><span class="token punctuation">)</span>
+amdc1<span class="token punctuation">.</span>wo<span class="token punctuation">(</span>amdc2<span class="token punctuation">)</span>
+</code></pre></div><br> <br> <h1 id="组合"><a href="#组合" class="header-anchor">#</a> 组合</h1> <p>组合是什么：给一个类的对象封装一个属性，这个属性是另一个类的对象，组合的原理就完全包含在这话中，接下来要深入下面的实验来理解组合的用法</p> <br> <h2 id="实验"><a href="#实验" class="header-anchor">#</a> 实验</h2> <p>在上面进阶题为基础，新增武器系统</p> <br> <h3 id="从网上截个来的"><a href="#从网上截个来的" class="header-anchor">#</a> 从网上截个来的</h3> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">class</span> <span class="token class-name">GameRole</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token punctuation">,</span> ad<span class="token punctuation">,</span> hp<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>name <span class="token operator">=</span> name
+        self<span class="token punctuation">.</span>ad <span class="token operator">=</span> ad
+        self<span class="token punctuation">.</span>hp <span class="token operator">=</span> hp
+
+    <span class="token keyword">def</span> <span class="token function">attack</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>p<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        p<span class="token punctuation">.</span>hp <span class="token operator">=</span> p<span class="token punctuation">.</span>hp <span class="token operator">-</span> self<span class="token punctuation">.</span>ad
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'%s 攻击 %s,%s 掉了%s血,还剩%s血'</span> <span class="token operator">%</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>name<span class="token punctuation">,</span>p<span class="token punctuation">.</span>name<span class="token punctuation">,</span>p<span class="token punctuation">.</span>name<span class="token punctuation">,</span>self<span class="token punctuation">.</span>ad<span class="token punctuation">,</span>p<span class="token punctuation">.</span>hp<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">armament_weapon</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>wea<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>wea <span class="token operator">=</span> wea
+
+
+<span class="token keyword">class</span> <span class="token class-name">Weapon</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>name<span class="token punctuation">,</span>ad<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>name <span class="token operator">=</span> name
+        self<span class="token punctuation">.</span>ad <span class="token operator">=</span> ad
+    <span class="token keyword">def</span> <span class="token function">fight</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>p1<span class="token punctuation">,</span>p2<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        p2<span class="token punctuation">.</span>hp <span class="token operator">=</span> p2<span class="token punctuation">.</span>hp <span class="token operator">-</span> self<span class="token punctuation">.</span>ad
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'%s 用%s打了%s,%s 掉了%s血,还剩%s血'</span>\
+              <span class="token operator">%</span> <span class="token punctuation">(</span>p1<span class="token punctuation">.</span>name<span class="token punctuation">,</span>self<span class="token punctuation">.</span>name<span class="token punctuation">,</span>p2<span class="token punctuation">.</span>name<span class="token punctuation">,</span>p2<span class="token punctuation">.</span>name<span class="token punctuation">,</span>self<span class="token punctuation">.</span>ad<span class="token punctuation">,</span>p2<span class="token punctuation">.</span>hp<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+p1 <span class="token operator">=</span> GameRole<span class="token punctuation">(</span><span class="token string">'大阳哥'</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">,</span><span class="token number">500</span><span class="token punctuation">)</span>
+p2 <span class="token operator">=</span> GameRole<span class="token punctuation">(</span><span class="token string">'印度阿宁'</span><span class="token punctuation">,</span><span class="token number">50</span><span class="token punctuation">,</span><span class="token number">200</span><span class="token punctuation">)</span>
+axe <span class="token operator">=</span> Weapon<span class="token punctuation">(</span><span class="token string">'三板斧'</span><span class="token punctuation">,</span><span class="token number">60</span><span class="token punctuation">)</span>
+broadsword <span class="token operator">=</span> Weapon<span class="token punctuation">(</span><span class="token string">'屠龙宝刀'</span><span class="token punctuation">,</span><span class="token number">100</span><span class="token punctuation">)</span>
+p1<span class="token punctuation">.</span>armament_weapon<span class="token punctuation">(</span>axe<span class="token punctuation">)</span>  <span class="token comment"># 给大阳哥 装备了三板斧这个对象.</span>
+p1<span class="token punctuation">.</span>wea<span class="token punctuation">.</span>fight<span class="token punctuation">(</span>p1<span class="token punctuation">,</span>p2<span class="token punctuation">)</span>
+</code></pre></div><p><strong>比较重点的点</strong></p> <ol><li>axe：是通过实例化出来的变量，就是说这个变量中其实是实例化空间的内存地址</li> <li>先把axe变量传递给GameRole类中的armament_weapon方法中</li> <li>在通过p1来调用armament_weapon方法中的wea变量来调用Weapon类中的fight方法</li></ol> <br> <h3 id="博主写的"><a href="#博主写的" class="header-anchor">#</a> 博主写的</h3> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">class</span> <span class="token class-name">weapon</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>name<span class="token punctuation">,</span>ap<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>name <span class="token operator">=</span> name
+        self<span class="token punctuation">.</span>ap <span class="token operator">=</span> ap
+
+<span class="token keyword">class</span> <span class="token class-name">so</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>name<span class="token punctuation">,</span>ad<span class="token punctuation">,</span>hp<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>name <span class="token operator">=</span> name
+        self<span class="token punctuation">.</span>ad <span class="token operator">=</span> ad
+        self<span class="token punctuation">.</span>hp <span class="token operator">=</span> hp
+
+    <span class="token keyword">def</span> <span class="token function">wo</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>amdc<span class="token punctuation">,</span>wea<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>weapon<span class="token punctuation">(</span>wea<span class="token punctuation">)</span>
+        amdc<span class="token punctuation">.</span>hp <span class="token operator">=</span> amdc<span class="token punctuation">.</span>hp <span class="token operator">-</span> <span class="token punctuation">(</span>self<span class="token punctuation">.</span>ad <span class="token operator">+</span> self<span class="token punctuation">.</span>weapon<span class="token punctuation">.</span>ap <span class="token punctuation">)</span>
+        ad <span class="token operator">=</span> self<span class="token punctuation">.</span>ad <span class="token operator">+</span> self<span class="token punctuation">.</span>weapon<span class="token punctuation">.</span>ap
+        <span class="token keyword">print</span><span class="token punctuation">(</span>
+        <span class="token triple-quoted-string string">&quot;&quot;&quot;
+            攻击提示：
+                你的英雄%s使用%s攻击对方英雄%s
+                对方英雄%s，掉了%s滴血
+                对方英雄%s，还剩下%s滴血
+        &quot;&quot;&quot;</span>
+        <span class="token operator">%</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>name<span class="token punctuation">,</span>self<span class="token punctuation">.</span>weapon<span class="token punctuation">.</span>name<span class="token punctuation">,</span>amdc<span class="token punctuation">.</span>name<span class="token punctuation">,</span>amdc<span class="token punctuation">.</span>name<span class="token punctuation">,</span>ad<span class="token punctuation">,</span>amdc<span class="token punctuation">.</span>name<span class="token punctuation">,</span>amdc<span class="token punctuation">.</span>hp<span class="token punctuation">)</span>
+        <span class="token punctuation">)</span>
+    <span class="token keyword">def</span> <span class="token function">weapon</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>wea<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>weapon <span class="token operator">=</span> wea
+
+dagger <span class="token operator">=</span> weapon<span class="token punctuation">(</span><span class="token string">&quot;短剑&quot;</span><span class="token punctuation">,</span><span class="token number">60</span><span class="token punctuation">)</span>
+dorans <span class="token operator">=</span> weapon<span class="token punctuation">(</span><span class="token string">&quot;多兰之刃&quot;</span><span class="token punctuation">,</span><span class="token number">120</span><span class="token punctuation">)</span>
+stormblade <span class="token operator">=</span> weapon<span class="token punctuation">(</span><span class="token string">&quot;暴风之剑&quot;</span><span class="token punctuation">,</span><span class="token number">180</span><span class="token punctuation">)</span>
+amdc1 <span class="token operator">=</span> so<span class="token punctuation">(</span><span class="token string">&quot;盖伦&quot;</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">100</span><span class="token punctuation">)</span>
+amdc2 <span class="token operator">=</span> so<span class="token punctuation">(</span><span class="token string">&quot;剑豪&quot;</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">,</span><span class="token number">80</span><span class="token punctuation">)</span>
+
+amdc2<span class="token punctuation">.</span>wo<span class="token punctuation">(</span>amdc1<span class="token punctuation">,</span>dagger<span class="token punctuation">)</span>
+</code></pre></div><p>​	以上的实验跟上一个的实验小异大同</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/Python/2. Python-object/23. 面向对象初始.html" class="prev">
+        23. 面向对象初始
+      </a></span> <span class="next"><a href="/Python/2. Python-object/25. 继承.html">
+        25. 继承
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.d65bef42.js" defer></script><script src="/assets/js/2.2249178e.js" defer></script><script src="/assets/js/84.dd89f1de.js" defer></script>
+  </body>
+</html>

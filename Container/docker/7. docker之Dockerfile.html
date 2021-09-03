@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>7. docker之Dockerfile | MSG</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="在追寻技术的同时享受生活">
+    
+    <link rel="preload" href="/assets/css/0.styles.e4d8b86b.css" as="style"><link rel="preload" href="/assets/js/app.d65bef42.js" as="script"><link rel="preload" href="/assets/js/2.2249178e.js" as="script"><link rel="preload" href="/assets/js/21.c2d7729c.js" as="script"><link rel="prefetch" href="/assets/js/10.4785e2e5.js"><link rel="prefetch" href="/assets/js/100.33fceff2.js"><link rel="prefetch" href="/assets/js/101.62e1e5d4.js"><link rel="prefetch" href="/assets/js/102.8551fe71.js"><link rel="prefetch" href="/assets/js/103.47754d79.js"><link rel="prefetch" href="/assets/js/104.4adf114f.js"><link rel="prefetch" href="/assets/js/105.6206a08a.js"><link rel="prefetch" href="/assets/js/106.1c4561f3.js"><link rel="prefetch" href="/assets/js/107.e1531a5a.js"><link rel="prefetch" href="/assets/js/108.c637743a.js"><link rel="prefetch" href="/assets/js/109.3f150913.js"><link rel="prefetch" href="/assets/js/11.bd8ec7a6.js"><link rel="prefetch" href="/assets/js/110.088c1ac3.js"><link rel="prefetch" href="/assets/js/111.66d8d491.js"><link rel="prefetch" href="/assets/js/112.231663ee.js"><link rel="prefetch" href="/assets/js/113.a38bc531.js"><link rel="prefetch" href="/assets/js/114.e165daea.js"><link rel="prefetch" href="/assets/js/115.994b087a.js"><link rel="prefetch" href="/assets/js/116.ea3cfdfb.js"><link rel="prefetch" href="/assets/js/117.7be5e4f3.js"><link rel="prefetch" href="/assets/js/118.ebb58ddb.js"><link rel="prefetch" href="/assets/js/119.90018646.js"><link rel="prefetch" href="/assets/js/12.0d8f43df.js"><link rel="prefetch" href="/assets/js/120.bb5be863.js"><link rel="prefetch" href="/assets/js/121.3d1db670.js"><link rel="prefetch" href="/assets/js/122.d29ed1b2.js"><link rel="prefetch" href="/assets/js/123.38cc4704.js"><link rel="prefetch" href="/assets/js/124.cc8549d4.js"><link rel="prefetch" href="/assets/js/125.6ee3e9c8.js"><link rel="prefetch" href="/assets/js/126.48710eba.js"><link rel="prefetch" href="/assets/js/127.d7a1fd83.js"><link rel="prefetch" href="/assets/js/128.e5017f6b.js"><link rel="prefetch" href="/assets/js/129.4c33e121.js"><link rel="prefetch" href="/assets/js/13.2dbde7aa.js"><link rel="prefetch" href="/assets/js/130.cda66247.js"><link rel="prefetch" href="/assets/js/131.ad76f669.js"><link rel="prefetch" href="/assets/js/132.aca88758.js"><link rel="prefetch" href="/assets/js/133.a1cf5903.js"><link rel="prefetch" href="/assets/js/134.b1386377.js"><link rel="prefetch" href="/assets/js/135.94edcf53.js"><link rel="prefetch" href="/assets/js/136.24be4170.js"><link rel="prefetch" href="/assets/js/137.db57772e.js"><link rel="prefetch" href="/assets/js/138.dc67bcaa.js"><link rel="prefetch" href="/assets/js/139.5453d1f6.js"><link rel="prefetch" href="/assets/js/14.2187dbf4.js"><link rel="prefetch" href="/assets/js/140.938e5c07.js"><link rel="prefetch" href="/assets/js/141.99c7cf2c.js"><link rel="prefetch" href="/assets/js/142.428e3958.js"><link rel="prefetch" href="/assets/js/143.68b01530.js"><link rel="prefetch" href="/assets/js/144.f67389cc.js"><link rel="prefetch" href="/assets/js/145.d952a130.js"><link rel="prefetch" href="/assets/js/146.b933dcad.js"><link rel="prefetch" href="/assets/js/147.2d8e4c0a.js"><link rel="prefetch" href="/assets/js/148.6d76ac94.js"><link rel="prefetch" href="/assets/js/149.6b4d6378.js"><link rel="prefetch" href="/assets/js/15.a53b356c.js"><link rel="prefetch" href="/assets/js/150.5bf39cb4.js"><link rel="prefetch" href="/assets/js/151.17af677c.js"><link rel="prefetch" href="/assets/js/152.7f1c2792.js"><link rel="prefetch" href="/assets/js/153.98dd0727.js"><link rel="prefetch" href="/assets/js/154.eb44bf23.js"><link rel="prefetch" href="/assets/js/155.5a9840ea.js"><link rel="prefetch" href="/assets/js/156.7ba01fd0.js"><link rel="prefetch" href="/assets/js/157.2296a048.js"><link rel="prefetch" href="/assets/js/158.6bb1f699.js"><link rel="prefetch" href="/assets/js/159.073bb8df.js"><link rel="prefetch" href="/assets/js/16.cef7bf44.js"><link rel="prefetch" href="/assets/js/160.25a837f9.js"><link rel="prefetch" href="/assets/js/161.93d886a1.js"><link rel="prefetch" href="/assets/js/162.5d2714b2.js"><link rel="prefetch" href="/assets/js/17.96f36904.js"><link rel="prefetch" href="/assets/js/18.fd04b310.js"><link rel="prefetch" href="/assets/js/19.3e1377d1.js"><link rel="prefetch" href="/assets/js/20.ac195ac8.js"><link rel="prefetch" href="/assets/js/22.dd8c621b.js"><link rel="prefetch" href="/assets/js/23.ad7d0350.js"><link rel="prefetch" href="/assets/js/24.8559c4c3.js"><link rel="prefetch" href="/assets/js/25.783a8116.js"><link rel="prefetch" href="/assets/js/26.25e0e459.js"><link rel="prefetch" href="/assets/js/27.c0616e2a.js"><link rel="prefetch" href="/assets/js/28.30656c2e.js"><link rel="prefetch" href="/assets/js/29.2be5114c.js"><link rel="prefetch" href="/assets/js/3.be8c8f3b.js"><link rel="prefetch" href="/assets/js/30.230a74a7.js"><link rel="prefetch" href="/assets/js/31.760f46ad.js"><link rel="prefetch" href="/assets/js/32.c9533fef.js"><link rel="prefetch" href="/assets/js/33.dcacfb38.js"><link rel="prefetch" href="/assets/js/34.4370a466.js"><link rel="prefetch" href="/assets/js/35.bf299eea.js"><link rel="prefetch" href="/assets/js/36.336e435a.js"><link rel="prefetch" href="/assets/js/37.1d1d2eea.js"><link rel="prefetch" href="/assets/js/38.0d58b7d0.js"><link rel="prefetch" href="/assets/js/39.d43564ba.js"><link rel="prefetch" href="/assets/js/4.4a6cb970.js"><link rel="prefetch" href="/assets/js/40.bc4e4bde.js"><link rel="prefetch" href="/assets/js/41.b71231a5.js"><link rel="prefetch" href="/assets/js/42.9d46f400.js"><link rel="prefetch" href="/assets/js/43.50c5be69.js"><link rel="prefetch" href="/assets/js/44.60406e7f.js"><link rel="prefetch" href="/assets/js/45.ec3569ae.js"><link rel="prefetch" href="/assets/js/46.1bd3ce7b.js"><link rel="prefetch" href="/assets/js/47.1e1b5326.js"><link rel="prefetch" href="/assets/js/48.64c631ea.js"><link rel="prefetch" href="/assets/js/49.b4abacd8.js"><link rel="prefetch" href="/assets/js/5.e6d0b165.js"><link rel="prefetch" href="/assets/js/50.c3e320c0.js"><link rel="prefetch" href="/assets/js/51.5ec7fb8c.js"><link rel="prefetch" href="/assets/js/52.2d234f86.js"><link rel="prefetch" href="/assets/js/53.f3b69623.js"><link rel="prefetch" href="/assets/js/54.c85ff450.js"><link rel="prefetch" href="/assets/js/55.b07597b5.js"><link rel="prefetch" href="/assets/js/56.444129cf.js"><link rel="prefetch" href="/assets/js/57.df1329ba.js"><link rel="prefetch" href="/assets/js/58.5afb51cf.js"><link rel="prefetch" href="/assets/js/59.d98936d9.js"><link rel="prefetch" href="/assets/js/6.809376cd.js"><link rel="prefetch" href="/assets/js/60.02813ecf.js"><link rel="prefetch" href="/assets/js/61.37a4812d.js"><link rel="prefetch" href="/assets/js/62.5da94048.js"><link rel="prefetch" href="/assets/js/63.8e2c2bca.js"><link rel="prefetch" href="/assets/js/64.d290398f.js"><link rel="prefetch" href="/assets/js/65.44e28313.js"><link rel="prefetch" href="/assets/js/66.9acf0206.js"><link rel="prefetch" href="/assets/js/67.85688aa2.js"><link rel="prefetch" href="/assets/js/68.45bda7fc.js"><link rel="prefetch" href="/assets/js/69.9074feb0.js"><link rel="prefetch" href="/assets/js/7.5d7bce6e.js"><link rel="prefetch" href="/assets/js/70.b4cd2ddc.js"><link rel="prefetch" href="/assets/js/71.53219b13.js"><link rel="prefetch" href="/assets/js/72.af2a7290.js"><link rel="prefetch" href="/assets/js/73.c28fc506.js"><link rel="prefetch" href="/assets/js/74.64c81a90.js"><link rel="prefetch" href="/assets/js/75.05191ece.js"><link rel="prefetch" href="/assets/js/76.f516d464.js"><link rel="prefetch" href="/assets/js/77.c345180b.js"><link rel="prefetch" href="/assets/js/78.4a09d0ba.js"><link rel="prefetch" href="/assets/js/79.65f41bcf.js"><link rel="prefetch" href="/assets/js/8.f6cfdc07.js"><link rel="prefetch" href="/assets/js/80.b77151f3.js"><link rel="prefetch" href="/assets/js/81.824fa371.js"><link rel="prefetch" href="/assets/js/82.3f91c09b.js"><link rel="prefetch" href="/assets/js/83.9539f074.js"><link rel="prefetch" href="/assets/js/84.dd89f1de.js"><link rel="prefetch" href="/assets/js/85.15210b99.js"><link rel="prefetch" href="/assets/js/86.e14553e1.js"><link rel="prefetch" href="/assets/js/87.6dc95177.js"><link rel="prefetch" href="/assets/js/88.09c5e890.js"><link rel="prefetch" href="/assets/js/89.0d61f4d0.js"><link rel="prefetch" href="/assets/js/9.759f1986.js"><link rel="prefetch" href="/assets/js/90.a9b14d80.js"><link rel="prefetch" href="/assets/js/91.1a4aabe2.js"><link rel="prefetch" href="/assets/js/92.12070bdb.js"><link rel="prefetch" href="/assets/js/93.b5dc76d0.js"><link rel="prefetch" href="/assets/js/94.690498a6.js"><link rel="prefetch" href="/assets/js/95.b17961e6.js"><link rel="prefetch" href="/assets/js/96.a2f06f3e.js"><link rel="prefetch" href="/assets/js/97.64ef6721.js"><link rel="prefetch" href="/assets/js/98.443eba26.js"><link rel="prefetch" href="/assets/js/99.b6ba7c3a.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.e4d8b86b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">MSG</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Python文档" class="dropdown-title"><span class="title">Python文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="Python文档" class="mobile-dropdown-title"><span class="title">Python文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Python/1.Python-Basics/" class="nav-link">
+  Python-基础
+</a></li><li class="dropdown-item"><!----> <a href="/Python/2. Python-object/" class="nav-link">
+  Python-面向对象
+</a></li><li class="dropdown-item"><!----> <a href="/Python/3. Python-module/" class="nav-link">
+  Python-模块与包
+</a></li><li class="dropdown-item"><!----> <a href="/Python/4. Python-network/" class="nav-link">
+  Python-网络
+</a></li><li class="dropdown-item"><!----> <a href="/Python/5. Python-frontend/" class="nav-link">
+  Python-前端
+</a></li><li class="dropdown-item"><!----> <a href="/Python/6. Python-MySQL/" class="nav-link">
+  Python-数据库
+</a></li><li class="dropdown-item"><!----> <a href="/Python/7. Python-Django/" class="nav-link">
+  Python-Django
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="容器文档" class="dropdown-title"><span class="title">容器文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="容器文档" class="mobile-dropdown-title"><span class="title">容器文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Container/docker/" class="nav-link router-link-active">
+  docker文檔
+</a></li><li class="dropdown-item"><!----> <a href="/Container/Kubernetes/" class="nav-link">
+  Kubernetes文檔
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="GO文档" class="dropdown-title"><span class="title">GO文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="GO文档" class="mobile-dropdown-title"><span class="title">GO文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/GO/basics/" class="nav-link">
+  GO快速入门
+</a></li><li class="dropdown-item"><!----> <a href="/GO/module/" class="nav-link">
+  GO标准库/GO模块
+</a></li></ul></div></div><div class="nav-item"><a href="https://www.linux91.cn/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  博客
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Python文档" class="dropdown-title"><span class="title">Python文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="Python文档" class="mobile-dropdown-title"><span class="title">Python文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Python/1.Python-Basics/" class="nav-link">
+  Python-基础
+</a></li><li class="dropdown-item"><!----> <a href="/Python/2. Python-object/" class="nav-link">
+  Python-面向对象
+</a></li><li class="dropdown-item"><!----> <a href="/Python/3. Python-module/" class="nav-link">
+  Python-模块与包
+</a></li><li class="dropdown-item"><!----> <a href="/Python/4. Python-network/" class="nav-link">
+  Python-网络
+</a></li><li class="dropdown-item"><!----> <a href="/Python/5. Python-frontend/" class="nav-link">
+  Python-前端
+</a></li><li class="dropdown-item"><!----> <a href="/Python/6. Python-MySQL/" class="nav-link">
+  Python-数据库
+</a></li><li class="dropdown-item"><!----> <a href="/Python/7. Python-Django/" class="nav-link">
+  Python-Django
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="容器文档" class="dropdown-title"><span class="title">容器文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="容器文档" class="mobile-dropdown-title"><span class="title">容器文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Container/docker/" class="nav-link router-link-active">
+  docker文檔
+</a></li><li class="dropdown-item"><!----> <a href="/Container/Kubernetes/" class="nav-link">
+  Kubernetes文檔
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="GO文档" class="dropdown-title"><span class="title">GO文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="GO文档" class="mobile-dropdown-title"><span class="title">GO文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/GO/basics/" class="nav-link">
+  GO快速入门
+</a></li><li class="dropdown-item"><!----> <a href="/GO/module/" class="nav-link">
+  GO标准库/GO模块
+</a></li></ul></div></div><div class="nav-item"><a href="https://www.linux91.cn/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  博客
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>docker文档</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/Container/docker/" aria-current="page" class="sidebar-link">介绍</a></li><li><a href="/Container/docker/1. docker之概述.html" class="sidebar-link">1. docker之概述</a></li><li><a href="/Container/docker/2. docker之安装.html" class="sidebar-link">2. docker之安装</a></li><li><a href="/Container/docker/3. docker之镜像.html" class="sidebar-link">3. docker之镜像</a></li><li><a href="/Container/docker/4. docker之容器.html" class="sidebar-link">4. docker之容器</a></li><li><a href="/Container/docker/5. docker之容器数据存储，数据挂载.html" class="sidebar-link">5. docker之容器数据存储，数据挂载</a></li><li><a href="/Container/docker/5.1 docker持久化之volume模块数据共享.html" class="sidebar-link">5.1 docker持久化之volume模块数据共享</a></li><li><a href="/Container/docker/6. docker之容器网络.html" class="sidebar-link">6. docker之容器网络</a></li><li><a href="/Container/docker/7. docker之Dockerfile.html" class="active sidebar-link">7. docker之Dockerfile</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/Container/docker/7. docker之Dockerfile.html#from-构建新镜像是基于哪个镜像" class="sidebar-link">FROM：构建新镜像是基于哪个镜像</a></li><li class="sidebar-sub-header"><a href="/Container/docker/7. docker之Dockerfile.html#maintainer-镜像维护者姓名或邮箱地址" class="sidebar-link">MAINTAINER：镜像维护者姓名或邮箱地址</a></li><li class="sidebar-sub-header"><a href="/Container/docker/7. docker之Dockerfile.html#run-构建镜像时运行的shell命令" class="sidebar-link">RUN：构建镜像时运行的shell命令</a></li><li class="sidebar-sub-header"><a href="/Container/docker/7. docker之Dockerfile.html#add-将本地文件添加到容器中" class="sidebar-link">ADD：将本地文件添加到容器中</a></li><li class="sidebar-sub-header"><a href="/Container/docker/7. docker之Dockerfile.html#copy-功能类似add" class="sidebar-link">COPY：功能类似ADD</a></li><li class="sidebar-sub-header"><a href="/Container/docker/7. docker之Dockerfile.html#cmd-构建容器后调用" class="sidebar-link">CMD：构建容器后调用</a></li><li class="sidebar-sub-header"><a href="/Container/docker/7. docker之Dockerfile.html#entrypoint-配置容器" class="sidebar-link">ENTRYPOINT：配置容器</a></li><li class="sidebar-sub-header"><a href="/Container/docker/7. docker之Dockerfile.html#label-用于为镜像添加元数据" class="sidebar-link">LABEL：用于为镜像添加元数据</a></li><li class="sidebar-sub-header"><a href="/Container/docker/7. docker之Dockerfile.html#env-设置环境变量" class="sidebar-link">ENV：设置环境变量</a></li><li class="sidebar-sub-header"><a href="/Container/docker/7. docker之Dockerfile.html#expose-指定于外界交互的端口" class="sidebar-link">EXPOSE：指定于外界交互的端口</a></li><li class="sidebar-sub-header"><a href="/Container/docker/7. docker之Dockerfile.html#volume-用于指定持久化目录" class="sidebar-link">VOLUME：用于指定持久化目录</a></li><li class="sidebar-sub-header"><a href="/Container/docker/7. docker之Dockerfile.html#workdir-工作目录-类似于cd命令" class="sidebar-link">WORKDIR：工作目录，类似于cd命令</a></li><li class="sidebar-sub-header"><a href="/Container/docker/7. docker之Dockerfile.html#user-指定运行容器时的用户名或-uid" class="sidebar-link">USER：指定运行容器时的用户名或 UID</a></li><li class="sidebar-sub-header"><a href="/Container/docker/7. docker之Dockerfile.html#arg-用于指定传递给构建运行时的变量" class="sidebar-link">ARG：用于指定传递给构建运行时的变量</a></li><li class="sidebar-sub-header"><a href="/Container/docker/7. docker之Dockerfile.html#onbuild-用于设置镜像触发器" class="sidebar-link">ONBUILD：用于设置镜像触发器</a></li><li class="sidebar-sub-header"><a href="/Container/docker/7. docker之Dockerfile.html#格式" class="sidebar-link">格式</a></li><li class="sidebar-sub-header"><a href="/Container/docker/7. docker之Dockerfile.html#常用选项" class="sidebar-link">常用选项</a></li><li class="sidebar-sub-header"><a href="/Container/docker/7. docker之Dockerfile.html#其它选项" class="sidebar-link">其它选项</a></li><li class="sidebar-sub-header"><a href="/Container/docker/7. docker之Dockerfile.html#dockerfile之nginx" class="sidebar-link">dockerfile之nginx</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/Container/docker/7. docker之Dockerfile.html#dockerfile-nginx文件" class="sidebar-link">dockerfile_nginx文件</a></li><li class="sidebar-sub-header"><a href="/Container/docker/7. docker之Dockerfile.html#nginx-conf" class="sidebar-link">nginx.conf</a></li></ul></li><li class="sidebar-sub-header"><a href="/Container/docker/7. docker之Dockerfile.html#dockerfile之php" class="sidebar-link">dockerfile之php</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/Container/docker/7. docker之Dockerfile.html#dockerfilephp" class="sidebar-link">dockerfilephp</a></li><li class="sidebar-sub-header"><a href="/Container/docker/7. docker之Dockerfile.html#php-fpm-conf" class="sidebar-link">php-fpm.conf</a></li><li class="sidebar-sub-header"><a href="/Container/docker/7. docker之Dockerfile.html#php-ini" class="sidebar-link">php.ini</a></li></ul></li><li class="sidebar-sub-header"><a href="/Container/docker/7. docker之Dockerfile.html#关于mysql" class="sidebar-link">关于Mysql</a></li><li class="sidebar-sub-header"><a href="/Container/docker/7. docker之Dockerfile.html#生成镜像" class="sidebar-link">生成镜像</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/Container/docker/7. docker之Dockerfile.html#生成nginx镜像" class="sidebar-link">生成nginx镜像</a></li><li class="sidebar-sub-header"><a href="/Container/docker/7. docker之Dockerfile.html#生成php镜像" class="sidebar-link">生成php镜像</a></li><li class="sidebar-sub-header"><a href="/Container/docker/7. docker之Dockerfile.html#生成mysql镜像" class="sidebar-link">生成mysql镜像</a></li></ul></li><li class="sidebar-sub-header"><a href="/Container/docker/7. docker之Dockerfile.html#构建wordpress博客实例" class="sidebar-link">构建wordpress博客实例</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/Container/docker/7. docker之Dockerfile.html#创建容器网络" class="sidebar-link">创建容器网络</a></li><li class="sidebar-sub-header"><a href="/Container/docker/7. docker之Dockerfile.html#创建mysql容器" class="sidebar-link">创建MysqL容器</a></li><li class="sidebar-sub-header"><a href="/Container/docker/7. docker之Dockerfile.html#创建php容器" class="sidebar-link">创建PHP容器</a></li><li class="sidebar-sub-header"><a href="/Container/docker/7. docker之Dockerfile.html#创建nginx容器" class="sidebar-link">创建nginx容器</a></li><li class="sidebar-sub-header"><a href="/Container/docker/7. docker之Dockerfile.html#部署wordpress博客" class="sidebar-link">部署wordpress博客</a></li><li class="sidebar-sub-header"><a href="/Container/docker/7. docker之Dockerfile.html#配置wordpress博客" class="sidebar-link">配置wordpress博客</a></li></ul></li></ul></li><li><a href="/Container/docker/8. docker之Harbor企业级镜像仓库.html" class="sidebar-link">8. docker之Harbor企业级镜像仓库</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="_7-docker之dockerfile"><a href="#_7-docker之dockerfile" class="header-anchor">#</a> 7. docker之Dockerfile</h1> <h1 id="dockerfile格式"><a href="#dockerfile格式" class="header-anchor">#</a> <strong>Dockerfile格式</strong></h1> <p>Dockerfile分为四个部分，基础镜像信息、维护者信息、镜像操作指令和容器启动时执行指令。</p> <p>字符’#’ 为 Dockerfile 中的注释</p> <h1 id="dockerfile指令"><a href="#dockerfile指令" class="header-anchor">#</a> <strong>Dockerfile指令</strong></h1> <p><img src="https://gitee.com/linux91/document-img/raw/master/img/JCyhdI.png" alt="JCyhdI.png"></p> <p><strong>详细请看下面</strong></p> <ol><li>**FROM：**构建新镜像是基于哪个镜像</li> <li>**MAINTAINER：**镜像维护者姓名或邮箱地址</li> <li>**RUN：**构建镜像时运行的shell命令</li> <li>**ADD：**将本地文件添加到容器中，tar类型文件会自动解压(网络压缩资源不会被解压)，可以访问网络资源，类似wget</li> <li>**COPY：**功能类似ADD，但是是不会自动解压文件，也不能访问网络资源</li> <li>**CMD：**构建容器后调用，也就是在容器启动时才进行调用。</li> <li>**ENTRYPOINT：**配置容器，使其可执行化。配合CMD可省去&quot;application&quot;，只使用参数。</li> <li>**LABEL：**用于为镜像添加元数据</li> <li>**ENV：**设置环境变量</li> <li>**EXPOSE：**指定于外界交互的端口</li> <li>**VOLUME：**用于指定持久化目录</li> <li>**WORKDIR：**工作目录，类似于cd命令</li> <li>**USER：**指定运行容器时的用户名或 UID，后续的 RUN 也会使用指定用户。使用USER指定用户时，可以使用用户名、UID或GID，或是两者的组合。当服务不需要管理员权限时，可以通过该命令指定运行用户。并且可以在之前创建所需要的用户</li> <li>**ARG：**用于指定传递给构建运行时的变量</li> <li>**ONBUILD：**用于设置镜像触发器</li></ol> <h2 id="from-构建新镜像是基于哪个镜像"><a href="#from-构建新镜像是基于哪个镜像" class="header-anchor">#</a> **FROM：**构建新镜像是基于哪个镜像</h2> <div class="language-shell extra-class"><pre class="language-shell"><code>格式：
+　　FROM <span class="token operator">&lt;</span>image<span class="token operator">&gt;</span>
+　　FROM <span class="token operator">&lt;</span>image<span class="token operator">&gt;</span>:<span class="token operator">&lt;</span>tag<span class="token operator">&gt;</span>
+　　FROM <span class="token operator">&lt;</span>image<span class="token operator">&gt;</span>@<span class="token operator">&lt;</span>digest<span class="token operator">&gt;</span>
+
+例：FROM centos:latest
+<span class="token comment">##tag或digest是可选的，如果不使用这两个值时，会使用latest版本的基础镜像</span>
+</code></pre></div><h2 id="maintainer-镜像维护者姓名或邮箱地址"><a href="#maintainer-镜像维护者姓名或邮箱地址" class="header-anchor">#</a> **MAINTAINER：**镜像维护者姓名或邮箱地址</h2> <div class="language-shell extra-class"><pre class="language-shell"><code>格式：MAINTAINER <span class="token operator">&lt;</span>name<span class="token operator">&gt;</span>
+
+例：
+MAINTAINER Attitude
+MAINTAINER Attitude@163.com
+</code></pre></div><h2 id="run-构建镜像时运行的shell命令"><a href="#run-构建镜像时运行的shell命令" class="header-anchor">#</a> **RUN：**构建镜像时运行的shell命令</h2> <div class="language-shell extra-class"><pre class="language-shell"><code>格式：RUN <span class="token operator">&lt;</span>command<span class="token operator">&gt;</span>
+
+例： RUN yum update
+
+<span class="token comment">##RUN指令创建的中间镜像会被缓存，并会在下次构建中使用。如果不想使用这些缓存镜像，可以在构建时指定--no-cache参数，如：docker build --no-cache</span>
+</code></pre></div><h2 id="add-将本地文件添加到容器中"><a href="#add-将本地文件添加到容器中" class="header-anchor">#</a> **ADD：**将本地文件添加到容器中</h2> <p>将本地文件添加到容器中，tar类型文件会自动解压(网络压缩资源不会被解压)，可以访问网络资源，类似wget</p> <div class="language-shell extra-class"><pre class="language-shell"><code>格式：
+    ADD <span class="token operator">&lt;</span>src<span class="token operator">&gt;</span><span class="token punctuation">..</span>. <span class="token operator">&lt;</span>dest<span class="token operator">&gt;</span>
+    ADD <span class="token punctuation">[</span><span class="token string">&quot;&lt;src&gt;&quot;</span>,<span class="token punctuation">..</span>. <span class="token string">&quot;&lt;dest&gt;&quot;</span><span class="token punctuation">]</span> 用于支持包含空格的路径
+例：
+    ADD hom* /mydir/          <span class="token comment"># 添加所有以&quot;hom&quot;开头的文件</span>
+    ADD hom?.txt /mydir/      <span class="token comment"># ? 替代一个单字符,例如：&quot;home.txt&quot;</span>
+    ADD <span class="token builtin class-name">test</span> relativeDir/     <span class="token comment"># 添加 &quot;test&quot; 到 `WORKDIR`/relativeDir/</span>
+    ADD <span class="token builtin class-name">test</span> /absoluteDir/    <span class="token comment"># 添加 &quot;test&quot; 到 /absoluteDir/</span>
+</code></pre></div><h2 id="copy-功能类似add"><a href="#copy-功能类似add" class="header-anchor">#</a> **COPY：**功能类似ADD</h2> <p>功能类似ADD，但是是不会自动解压文件，也不能访问网络资源</p> <div class="language-shell extra-class"><pre class="language-shell"><code>格式：
+    COPY <span class="token operator">&lt;</span>src<span class="token operator">&gt;</span><span class="token operator">&lt;</span>dest<span class="token operator">&gt;</span>
+例：
+    COPY run.sh /usr/bin
+</code></pre></div><h2 id="cmd-构建容器后调用"><a href="#cmd-构建容器后调用" class="header-anchor">#</a> **CMD：**构建容器后调用</h2> <p>构建容器后调用，也就是在容器启动时才进行调用。</p> <div class="language-shell extra-class"><pre class="language-shell"><code>格式：
+    CMD <span class="token punctuation">[</span><span class="token string">&quot;executable&quot;</span>,<span class="token string">&quot;param1&quot;</span>,<span class="token string">&quot;param2&quot;</span><span class="token punctuation">]</span> <span class="token punctuation">(</span>执行可执行文件，优先<span class="token punctuation">)</span>
+    CMD <span class="token punctuation">[</span><span class="token string">&quot;param1&quot;</span>,<span class="token string">&quot;param2&quot;</span><span class="token punctuation">]</span> <span class="token punctuation">(</span>设置了ENTRYPOINT，则直接调用ENTRYPOINT添加参数<span class="token punctuation">)</span>
+    CMD <span class="token builtin class-name">command</span> param1 param2 <span class="token punctuation">(</span>执行shell内部命令<span class="token punctuation">)</span>
+示例：
+    CMD <span class="token builtin class-name">echo</span> <span class="token string">&quot;This is a test.&quot;</span> <span class="token operator">|</span> <span class="token function">wc</span> -
+    CMD <span class="token punctuation">[</span><span class="token string">&quot;/usr/bin/wc&quot;</span>,<span class="token string">&quot;--help&quot;</span><span class="token punctuation">]</span>
+
+<span class="token comment">##CMD不同于RUN，CMD用于指定在容器启动时所要执行的命令，而RUN用于指定镜像构建时所要执行的命令。</span>
+</code></pre></div><h2 id="entrypoint-配置容器"><a href="#entrypoint-配置容器" class="header-anchor">#</a> **ENTRYPOINT：**配置容器</h2> <p>配置容器，使其可执行化。配合CMD可省去&quot;application&quot;，只使用参数。</p> <div class="language-shell extra-class"><pre class="language-shell"><code>格式：
+    ENTRYPOINT <span class="token punctuation">[</span><span class="token string">&quot;executable&quot;</span>, <span class="token string">&quot;param1&quot;</span>, <span class="token string">&quot;param2&quot;</span><span class="token punctuation">]</span> <span class="token punctuation">(</span>可执行文件, 优先<span class="token punctuation">)</span>
+    ENTRYPOINT <span class="token builtin class-name">command</span> param1 param2 <span class="token punctuation">(</span>shell内部命令<span class="token punctuation">)</span>
+示例：
+    FROM ubuntu
+    ENTRYPOINT <span class="token punctuation">[</span><span class="token string">&quot;top&quot;</span>, <span class="token string">&quot;-b&quot;</span><span class="token punctuation">]</span>
+    CMD <span class="token punctuation">[</span><span class="token string">&quot;-c&quot;</span><span class="token punctuation">]</span>
+
+<span class="token comment">###</span>
+ENTRYPOINT与CMD非常类似，不同的是通过，docker run，执行的命令不会覆ENTRYPOINT，
+而docker run 命令中指定的任何参数，都会被当做参数再次传递给ENTRYPOINT。Dockerfile中只允许有一个ENTRYPOINT命令，多指定时会覆盖前面的设置，而只执行最后的ENTRYPOINT指令。
+</code></pre></div><h2 id="label-用于为镜像添加元数据"><a href="#label-用于为镜像添加元数据" class="header-anchor">#</a> **LABEL：**用于为镜像添加元数据</h2> <div class="language-shell extra-class"><pre class="language-shell"><code>格式：
+    LABEL <span class="token operator">&lt;</span>key<span class="token operator">&gt;=</span><span class="token operator">&lt;</span>value<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>key<span class="token operator">&gt;=</span><span class="token operator">&lt;</span>value<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>key<span class="token operator">&gt;=</span><span class="token operator">&lt;</span>value<span class="token operator">&gt;</span> <span class="token punctuation">..</span>.
+示例：
+　　LABEL <span class="token assign-left variable">version</span><span class="token operator">=</span><span class="token string">&quot;1.0&quot;</span> <span class="token assign-left variable">description</span><span class="token operator">=</span><span class="token string">&quot;这是一个Web服务器&quot;</span> <span class="token assign-left variable">by</span><span class="token operator">=</span><span class="token string">&quot;IT笔录&quot;</span>
+
+<span class="token comment">##使用LABEL指定元数据时，一条LABEL指定可以指定一或多条元数据，指定多条元数据时不同元数据之间通过空格分隔。推荐将所有的元数据通过一条LABEL指令指定，以免生成过多的中间镜像。</span>
+</code></pre></div><h2 id="env-设置环境变量"><a href="#env-设置环境变量" class="header-anchor">#</a> **ENV：**设置环境变量</h2> <div class="language-shell extra-class"><pre class="language-shell"><code>格式：
+    ENV <span class="token operator">&lt;</span>key<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>value<span class="token operator">&gt;</span>  <span class="token comment">#&lt;key&gt;之后的所有内容均会被视为其&lt;value&gt;的组成部分，因此，一次只能设置一个变量</span>
+    ENV <span class="token operator">&lt;</span>key<span class="token operator">&gt;=</span><span class="token operator">&lt;</span>value<span class="token operator">&gt;</span> <span class="token punctuation">..</span>.  <span class="token comment">#可以设置多个变量，每个变量为一个&quot;&lt;key&gt;=&lt;value&gt;&quot;的键值对，如果&lt;key&gt;中包含空格，可以使用\来进行转义，也可以通过&quot;&quot;来进行标示；另外，反斜线也可以用于续行</span>
+示例：
+    ENV myName John Doe
+    ENV myDog Rex The Dog
+    ENV <span class="token assign-left variable">myCat</span><span class="token operator">=</span>fluffy
+</code></pre></div><h2 id="expose-指定于外界交互的端口"><a href="#expose-指定于外界交互的端口" class="header-anchor">#</a> **EXPOSE：**指定于外界交互的端口</h2> <div class="language-shell extra-class"><pre class="language-shell"><code>格式：
+    EXPOSE <span class="token operator">&lt;</span>port<span class="token operator">&gt;</span> <span class="token punctuation">[</span><span class="token operator">&lt;</span>port<span class="token operator">&gt;</span><span class="token punctuation">..</span>.<span class="token punctuation">]</span>
+示例：
+    EXPOSE <span class="token number">80</span> <span class="token number">443</span>
+    EXPOSE <span class="token number">8080</span>
+    EXPOSE <span class="token number">11211</span>/tcp <span class="token number">11211</span>/udp
+
+<span class="token comment">## EXPOSE并不会让容器的端口访问到主机。要使其可访问，需要在 docker run 运行容器时通过 -p 来发布这些端口，或通过 -P 参数来发布EXPOSE导出的所有端口</span>
+</code></pre></div><h2 id="volume-用于指定持久化目录"><a href="#volume-用于指定持久化目录" class="header-anchor">#</a> **VOLUME：**用于指定持久化目录</h2> <div class="language-shell extra-class"><pre class="language-shell"><code>格式：
+    VOLUME <span class="token punctuation">[</span><span class="token string">&quot;/path/to/dir&quot;</span><span class="token punctuation">]</span>
+示例：
+    VOLUME <span class="token punctuation">[</span><span class="token string">&quot;/data&quot;</span><span class="token punctuation">]</span>
+    VOLUME <span class="token punctuation">[</span><span class="token string">&quot;/var/www&quot;</span>, <span class="token string">&quot;/var/log/apache2&quot;</span>, <span class="token string">&quot;/etc/apache2&quot;</span>
+
+<span class="token comment">###</span>
+一个卷可以存在于一个或多个容器的指定目录，该目录可以绕过联合文件系统，并具有以下功能：
+<span class="token number">1</span> 卷可以容器间共享和重用
+<span class="token number">2</span> 容器并不一定要和其它容器共享卷
+<span class="token number">3</span> 修改卷后会立即生效
+<span class="token number">4</span> 对卷的修改不会对镜像产生影响
+<span class="token number">5</span> 卷会一直存在，直到没有任何容器在使用它
+</code></pre></div><h2 id="workdir-工作目录-类似于cd命令"><a href="#workdir-工作目录-类似于cd命令" class="header-anchor">#</a> **WORKDIR：**工作目录，类似于cd命令</h2> <div class="language-shell extra-class"><pre class="language-shell"><code>格式：
+    WORKDIR /path/to/workdir
+示例：
+    WORKDIR /a  <span class="token punctuation">(</span>这时工作目录为/a<span class="token punctuation">)</span>
+    WORKDIR b  <span class="token punctuation">(</span>这时工作目录为/a/b<span class="token punctuation">)</span>
+    WORKDIR c  <span class="token punctuation">(</span>这时工作目录为/a/b/c<span class="token punctuation">)</span>
+
+<span class="token comment">##通过WORKDIR设置工作目录后，Dockerfile中其后的命令RUN、CMD、ENTRYPOINT、ADD、COPY等命令都会在该目录下执行，在使用 docker run 运行容器时，可以通过-w参数覆盖构建时所设置的工作目录。</span>
+</code></pre></div><h2 id="user-指定运行容器时的用户名或-uid"><a href="#user-指定运行容器时的用户名或-uid" class="header-anchor">#</a> <strong>USER</strong>：指定运行容器时的用户名或 UID</h2> <p>指定运行容器时的用户名或 UID，后续的 RUN 也会使用指定用户。使用USER指定用户时，可以使用用户名、UID或GID，或是两者的组合。当服务不需要管理员权限时，可以通过该命令指定运行用户。并且可以在之前创建所需要的用户</p> <div class="language-shell extra-class"><pre class="language-shell"><code> 格式:
+　　<span class="token environment constant">USER</span> user
+　　<span class="token environment constant">USER</span> user:group
+　　<span class="token environment constant">USER</span> uid
+　　<span class="token environment constant">USER</span> uid:gid
+　　<span class="token environment constant">USER</span> user:gid
+　　<span class="token environment constant">USER</span> uid:group
+
+ 示例：
+　　<span class="token environment constant">USER</span> www
+
+<span class="token comment">##使用USER指定用户后，Dockerfile中其后的命令RUN、CMD、ENTRYPOINT都将使用该用户。镜像构建完成后，通过docker run运行容器时，可以通过-u参数来覆盖所指定的用户。</span>
+</code></pre></div><h2 id="arg-用于指定传递给构建运行时的变量"><a href="#arg-用于指定传递给构建运行时的变量" class="header-anchor">#</a> **ARG：**用于指定传递给构建运行时的变量</h2> <div class="language-shell extra-class"><pre class="language-shell"><code>格式：
+    ARG <span class="token operator">&lt;</span>name<span class="token operator">&gt;</span><span class="token punctuation">[</span><span class="token operator">=</span><span class="token operator">&lt;</span>default value<span class="token operator">&gt;</span><span class="token punctuation">]</span>
+示例：
+    ARG site
+    ARG <span class="token assign-left variable">build_user</span><span class="token operator">=</span>www
+</code></pre></div><h2 id="onbuild-用于设置镜像触发器"><a href="#onbuild-用于设置镜像触发器" class="header-anchor">#</a> **ONBUILD：**用于设置镜像触发器</h2> <div class="language-shell extra-class"><pre class="language-shell"><code>格式：
+　　ONBUILD <span class="token punctuation">[</span>INSTRUCTION<span class="token punctuation">]</span>
+示例：
+　　ONBUILD ADD <span class="token builtin class-name">.</span> /app/src
+　　ONBUILD RUN /usr/local/bin/python-build --dir /app/src
+
+<span class="token comment">##当所构建的镜像被用做其它镜像的基础镜像，该镜像中的触发器将会被钥触发</span>
+</code></pre></div><h1 id="build镜像"><a href="#build镜像" class="header-anchor">#</a> <strong>Build镜像</strong></h1> <h2 id="格式"><a href="#格式" class="header-anchor">#</a> 格式</h2> <p>docker build [OPTIONS] PATH | URL | - [flags]</p> <h2 id="常用选项"><a href="#常用选项" class="header-anchor">#</a> 常用选项</h2> <p>-t, --tag list ：镜像名称</p> <p>-f, --file string ：指定Dockerfile文件位置</p> <div class="language-java extra-class"><pre class="language-java"><code>使用方式
+docker build <span class="token operator">-</span>t shykes<span class="token operator">/</span>myapp <span class="token punctuation">.</span> 
+docker build <span class="token operator">-</span>t shykes<span class="token operator">/</span>myapp <span class="token operator">-</span>f <span class="token operator">/</span>path<span class="token operator">/</span><span class="token class-name">Dockerfile</span> <span class="token operator">/</span>path 
+docker build <span class="token operator">-</span>t shykes<span class="token operator">/</span>myapp http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>www<span class="token punctuation">.</span>example<span class="token punctuation">.</span>com<span class="token operator">/</span><span class="token class-name">Dockerfile</span>
+</code></pre></div><h2 id="其它选项"><a href="#其它选项" class="header-anchor">#</a> 其它选项</h2> <div class="language-shell extra-class"><pre class="language-shell"><code>--build-arg：设置构建时的变量
+--no-cache：默认false。设置该选项，将不使用Build Cache构建镜像
+--pull：默认false。设置该选项，总是尝试pull镜像的最新版本
+--compress：默认false。设置该选项，将使用gzip压缩构建的上下文
+--disable-content-trust：默认true。设置该选项，将对镜像进行验证
+--isolation：默认--isolation<span class="token operator">=</span><span class="token string">&quot;default&quot;</span>，即Linux命名空间；其他还有process或hyperv
+--label：为生成的镜像设置metadata
+--squash：默认false。设置该选项，将新构建出的多个层压缩为一个新层，但是将无法在多个镜像之间共享新层；设置该选项，实际上是创建了新image，同时保留原有image。
+--network：默认default。设置该选项，Set the networking mode <span class="token keyword">for</span> the RUN instructions during build
+--quiet, -q：默认false。设置该选项，Suppress the build output and print image ID on success
+--force-rm：默认false。设置该选项，总是删除掉中间环节的容器
+--rm：默认--rm<span class="token operator">=</span>true，即整个构建过程成功后删除中间环节的容器
+</code></pre></div><h1 id="dockerfile构建lnmp平台"><a href="#dockerfile构建lnmp平台" class="header-anchor">#</a> Dockerfile构建LNMP平台</h1> <h2 id="dockerfile之nginx"><a href="#dockerfile之nginx" class="header-anchor">#</a> <strong>dockerfile之nginx</strong></h2> <p>nginx版本：nginx-1.14.0.tar.gz</p> <p>持久化资源目录：/usr/local/nginx/html</p> <h3 id="dockerfile-nginx文件"><a href="#dockerfile-nginx文件" class="header-anchor">#</a> dockerfile_nginx文件</h3> <div class="language-java extra-class"><pre class="language-java"><code>FROM centos<span class="token operator">:</span><span class="token number">7</span>
+MAINTAINER MSG
+COPY nginx<span class="token operator">-</span><span class="token number">1.14</span><span class="token number">.0</span><span class="token punctuation">.</span>tar<span class="token punctuation">.</span>gz <span class="token operator">/</span>
+RUN yum <span class="token operator">-</span>y install wget <span class="token operator">&amp;&amp;</span> cd <span class="token operator">/</span>etc<span class="token operator">/</span>yum<span class="token punctuation">.</span>repos<span class="token punctuation">.</span>d<span class="token operator">/</span> <span class="token operator">&amp;&amp;</span> mv <span class="token class-name">CentOS</span><span class="token operator">-</span><span class="token class-name">Base</span><span class="token punctuation">.</span>repo <span class="token class-name">CentOS</span><span class="token operator">-</span><span class="token class-name">Base</span><span class="token punctuation">.</span>repo<span class="token punctuation">.</span>J <span class="token operator">&amp;&amp;</span> wget http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>mirrors<span class="token punctuation">.</span><span class="token number">163.</span>com<span class="token operator">/</span><span class="token punctuation">.</span>help<span class="token operator">/</span><span class="token class-name">CentOS7</span><span class="token operator">-</span><span class="token class-name">Base</span><span class="token operator">-</span><span class="token number">163.</span>repo <span class="token operator">&amp;&amp;</span> mv <span class="token class-name">CentOS7</span><span class="token operator">-</span><span class="token class-name">Base</span><span class="token operator">-</span><span class="token number">163.</span>repo <span class="token class-name">CentOS</span><span class="token operator">-</span><span class="token class-name">Base</span><span class="token punctuation">.</span>repo <span class="token operator">&amp;&amp;</span> yum makecache <span class="token operator">&amp;&amp;</span> yum <span class="token operator">-</span>y install unzip epel<span class="token operator">-</span>release gcc gcc<span class="token operator">-</span>c<span class="token operator">++</span> autoconf automake zlib zlib<span class="token operator">-</span>devel openssl openssl<span class="token operator">-</span>devel pcre<span class="token operator">*</span> <span class="token operator">&amp;&amp;</span> yum clean all <span class="token operator">&amp;&amp;</span> rm <span class="token operator">-</span>rf <span class="token operator">/</span><span class="token keyword">var</span><span class="token operator">/</span>cache<span class="token operator">/</span>yum<span class="token operator">/</span> <span class="token operator">&amp;&amp;</span> cd <span class="token operator">/</span> <span class="token operator">&amp;&amp;</span> tar zxf nginx<span class="token operator">-</span><span class="token number">1.14</span><span class="token number">.0</span><span class="token punctuation">.</span>tar<span class="token punctuation">.</span>gz <span class="token operator">&amp;&amp;</span> cd nginx<span class="token operator">-</span><span class="token number">1.14</span><span class="token number">.0</span><span class="token operator">/</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">.</span>/configure <span class="token operator">--</span>prefix<span class="token operator">=</span><span class="token operator">/</span>usr<span class="token operator">/</span>local<span class="token operator">/</span>nginx <span class="token operator">--</span><span class="token keyword">with</span><span class="token operator">-</span>http_dav_module <span class="token operator">--</span><span class="token keyword">with</span><span class="token operator">-</span>http_stub_status_module <span class="token operator">--</span><span class="token keyword">with</span><span class="token operator">-</span>http_addition_module <span class="token operator">--</span><span class="token keyword">with</span><span class="token operator">-</span>http_sub_module <span class="token operator">--</span><span class="token keyword">with</span><span class="token operator">-</span>http_flv_module <span class="token operator">--</span><span class="token keyword">with</span><span class="token operator">-</span>http_mp4_module <span class="token operator">--</span><span class="token keyword">with</span><span class="token operator">-</span>http_ssl_module <span class="token operator">&amp;&amp;</span> make <span class="token operator">-</span>j <span class="token number">4</span> <span class="token operator">&amp;&amp;</span> make install <span class="token operator">&amp;&amp;</span> rm <span class="token operator">-</span>rf <span class="token operator">/</span>usr<span class="token operator">/</span>local<span class="token operator">/</span>nginx<span class="token operator">/</span>html<span class="token comment">/* &amp;&amp;  cd / &amp;&amp; rm -rf nginx* &amp;&amp; ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+ENV PATH $PATH:/usr/local/nginx/sbin
+COPY nginx.conf /usr/local/nginx/conf/nginx.conf
+WORKDIR /usr/local/nginx
+EXPOSE 80
+CMD [&quot;nginx&quot;, &quot;-g&quot;, &quot;daemon off;&quot;]
+</span></code></pre></div><h3 id="nginx-conf"><a href="#nginx-conf" class="header-anchor">#</a> nginx.conf</h3> <div class="language-java extra-class"><pre class="language-java"><code>user                 nobody<span class="token punctuation">;</span>
+worker_processes     <span class="token number">4</span><span class="token punctuation">;</span>
+worker_rlimit_nofile <span class="token number">65535</span><span class="token punctuation">;</span>
+error_log  logs<span class="token operator">/</span>error<span class="token punctuation">.</span>log  notice<span class="token punctuation">;</span>
+
+pid        <span class="token operator">/</span><span class="token keyword">var</span><span class="token operator">/</span>run<span class="token operator">/</span>nginx<span class="token punctuation">.</span>pid<span class="token punctuation">;</span>
+events <span class="token punctuation">{</span>
+    use epoll<span class="token punctuation">;</span>
+    worker_connections  <span class="token number">4096</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+http <span class="token punctuation">{</span>
+
+    include       mime<span class="token punctuation">.</span>types<span class="token punctuation">;</span>
+    default_type  application<span class="token operator">/</span>octet<span class="token operator">-</span>stream<span class="token punctuation">;</span>
+
+    log_format  main <span class="token string">'$remote_addr - $remote_user [$time_local] &quot;$request&quot; '</span>
+                      <span class="token string">'$status $body_bytes_sent &quot;$http_referer&quot; '</span>
+                      <span class="token string">'&quot;$http_user_agent&quot; &quot;$http_x_forwarded_for&quot;'</span><span class="token punctuation">;</span>
+    access_log off<span class="token punctuation">;</span>
+    keepalive_timeout  <span class="token number">65</span><span class="token punctuation">;</span>
+
+    client_max_body_size         <span class="token number">64</span>m<span class="token punctuation">;</span>
+    server <span class="token punctuation">{</span>
+        listen <span class="token number">80</span><span class="token punctuation">;</span>
+        index index<span class="token punctuation">.</span>php index<span class="token punctuation">.</span>html<span class="token punctuation">;</span>
+
+        access_log logs<span class="token operator">/</span>www<span class="token punctuation">.</span>ctnrs<span class="token punctuation">.</span>com_access<span class="token punctuation">.</span>log<span class="token punctuation">;</span>
+        error_log logs<span class="token operator">/</span>www<span class="token punctuation">.</span>ctnrs<span class="token punctuation">.</span>com_error<span class="token punctuation">.</span>log<span class="token punctuation">;</span>
+
+        # location <span class="token operator">~</span> <span class="token punctuation">.</span>*\<span class="token punctuation">.</span><span class="token punctuation">(</span>js<span class="token operator">|</span>css<span class="token operator">|</span>html<span class="token operator">|</span>png<span class="token operator">|</span>gif<span class="token operator">|</span>jpg<span class="token operator">|</span>jpeg<span class="token punctuation">)</span>$ <span class="token punctuation">{</span>
+        location <span class="token operator">/</span> <span class="token punctuation">{</span>
+            root <span class="token operator">/</span>usr<span class="token operator">/</span>local<span class="token operator">/</span>nginx<span class="token operator">/</span>html<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        location <span class="token operator">~</span><span class="token operator">*</span> \<span class="token punctuation">.</span>php$ <span class="token punctuation">{</span>
+            root <span class="token operator">/</span>usr<span class="token operator">/</span>local<span class="token operator">/</span>nginx<span class="token operator">/</span>html<span class="token punctuation">;</span>
+            fastcgi_pass lnmp_php<span class="token operator">:</span><span class="token number">9000</span><span class="token punctuation">;</span>
+            fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name<span class="token punctuation">;</span>
+            include fastcgi_params<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="dockerfile之php"><a href="#dockerfile之php" class="header-anchor">#</a> <strong>dockerfile之php</strong></h2> <p>nginx版本：php-5.6.36.tar.gz</p> <p>持久化资源目录：/usr/local/nginx/html</p> <p>别问为什么php也要持久化，百度下就知道了</p> <h3 id="dockerfilephp"><a href="#dockerfilephp" class="header-anchor">#</a> dockerfilephp</h3> <div class="language-java extra-class"><pre class="language-java"><code>FROM centos<span class="token operator">:</span><span class="token number">7</span>
+MAINTAINER MSG
+COPY php<span class="token operator">-</span><span class="token number">5.6</span><span class="token number">.36</span><span class="token punctuation">.</span>tar<span class="token punctuation">.</span>gz <span class="token operator">/</span>
+RUN yum <span class="token operator">-</span>y install wget <span class="token operator">&amp;&amp;</span>  cd <span class="token operator">/</span>etc<span class="token operator">/</span>yum<span class="token punctuation">.</span>repos<span class="token punctuation">.</span>d<span class="token operator">/</span> <span class="token operator">&amp;&amp;</span> mv <span class="token class-name">CentOS</span><span class="token operator">-</span><span class="token class-name">Base</span><span class="token punctuation">.</span>repo <span class="token class-name">CentOS</span><span class="token operator">-</span><span class="token class-name">Base</span><span class="token punctuation">.</span>repo<span class="token punctuation">.</span>J <span class="token operator">&amp;&amp;</span> wget http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>mirrors<span class="token punctuation">.</span><span class="token number">163.</span>com<span class="token operator">/</span><span class="token punctuation">.</span>help<span class="token operator">/</span><span class="token class-name">CentOS7</span><span class="token operator">-</span><span class="token class-name">Base</span><span class="token operator">-</span><span class="token number">163.</span>repo <span class="token operator">&amp;&amp;</span> mv <span class="token class-name">CentOS7</span><span class="token operator">-</span><span class="token class-name">Base</span><span class="token operator">-</span><span class="token number">163.</span>repo <span class="token class-name">CentOS</span><span class="token operator">-</span><span class="token class-name">Base</span><span class="token punctuation">.</span>repo <span class="token operator">&amp;&amp;</span> yum makecache <span class="token operator">&amp;&amp;</span> yum install epel<span class="token operator">-</span>release <span class="token operator">-</span>y <span class="token operator">&amp;&amp;</span> yum install <span class="token operator">-</span>y gcc gcc<span class="token operator">-</span>c<span class="token operator">++</span> make gd<span class="token operator">-</span>devel libxml2<span class="token operator">-</span>devel libcurl<span class="token operator">-</span>devel libjpeg<span class="token operator">-</span>devel libpng<span class="token operator">-</span>devel openssl<span class="token operator">-</span>devel libmcrypt<span class="token operator">-</span>devel libxslt<span class="token operator">-</span>devel libtidy<span class="token operator">-</span>devel autoconf iproute net<span class="token operator">-</span>tools telnet wget curl <span class="token operator">&amp;&amp;</span> yum clean all <span class="token operator">&amp;&amp;</span> rm <span class="token operator">-</span>rf <span class="token operator">/</span><span class="token keyword">var</span><span class="token operator">/</span>cache<span class="token operator">/</span>yum<span class="token comment">/* &amp;&amp; cd / &amp;&amp; tar zxf php-5.6.36.tar.gz &amp;&amp; cd php-5.6.36 &amp;&amp; ./configure --prefix=/usr/local/php --with-config-file-path=/usr/local/php/etc --enable-fpm --enable-opcache --with-mysql --with-mysqli --with-pdo-mysql --with-openssl --with-zlib --with-curl --with-gd --with-jpeg-dir --with-png-dir --with-freetype-dir --enable-mbstring --with-mcrypt --enable-hash &amp;&amp; make -j 4 &amp;&amp; make install &amp;&amp; cp php.ini-production /usr/local/php/etc/php.ini &amp;&amp; cp sapi/fpm/php-fpm.conf /usr/local/php/etc/php-fpm.conf &amp;&amp; sed -i &quot;90a \daemonize = no&quot; /usr/local/php/etc/php-fpm.conf &amp;&amp; mkdir /usr/local/php/log &amp;&amp;  cd / &amp;&amp; rm -rf php* &amp;&amp; ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+
+ENV PATH $PATH:/usr/local/php/sbin
+COPY php.ini /usr/local/php/etc/
+COPY php-fpm.conf /usr/local/php/etc/
+WORKDIR /usr/local/php
+EXPOSE 9000
+CMD [&quot;php-fpm&quot;]
+</span></code></pre></div><h3 id="php-fpm-conf"><a href="#php-fpm-conf" class="header-anchor">#</a> php-fpm.conf</h3> <div class="language-java extra-class"><pre class="language-java"><code><span class="token punctuation">[</span>global<span class="token punctuation">]</span>
+pid <span class="token operator">=</span> <span class="token operator">/</span><span class="token keyword">var</span><span class="token operator">/</span>run<span class="token operator">/</span>php<span class="token operator">-</span>fpm<span class="token punctuation">.</span>pid
+error_log <span class="token operator">=</span> <span class="token operator">/</span>usr<span class="token operator">/</span>local<span class="token operator">/</span>php<span class="token operator">/</span>log<span class="token operator">/</span>php<span class="token operator">-</span>fpm<span class="token punctuation">.</span>log
+log_level <span class="token operator">=</span> warning
+emergency_restart_interval <span class="token operator">=</span> <span class="token number">24</span>h
+process_control_timeout <span class="token operator">=</span> <span class="token number">5</span>s
+daemonize <span class="token operator">=</span> no 
+rlimit_files <span class="token operator">=</span> <span class="token number">10240</span>
+<span class="token punctuation">[</span>www<span class="token punctuation">]</span>
+user <span class="token operator">=</span> nobody
+group <span class="token operator">=</span> nobody
+listen <span class="token operator">=</span> <span class="token number">0.0</span><span class="token number">.0</span><span class="token number">.0</span><span class="token operator">:</span><span class="token number">9000</span>
+listen<span class="token punctuation">.</span>owner <span class="token operator">=</span> nobody
+listen<span class="token punctuation">.</span>group <span class="token operator">=</span> nobody
+pm <span class="token operator">=</span> dynamic
+pm<span class="token punctuation">.</span>max_children <span class="token operator">=</span> <span class="token number">200</span>
+pm<span class="token punctuation">.</span>start_servers <span class="token operator">=</span> <span class="token number">50</span>
+pm<span class="token punctuation">.</span>min_spare_servers <span class="token operator">=</span> <span class="token number">50</span>
+pm<span class="token punctuation">.</span>max_spare_servers <span class="token operator">=</span> <span class="token number">100</span>
+pm<span class="token punctuation">.</span>max_requests <span class="token operator">=</span> <span class="token number">51200</span>
+pm<span class="token punctuation">.</span>status_path <span class="token operator">=</span> <span class="token operator">/</span>status
+slowlog <span class="token operator">=</span> log<span class="token operator">/</span>$pool<span class="token punctuation">.</span>log<span class="token punctuation">.</span>slow
+request_slowlog_timeout <span class="token operator">=</span> <span class="token number">10</span>
+request_terminate_timeout <span class="token operator">=</span> <span class="token number">600</span> 
+rlimit_files <span class="token operator">=</span> <span class="token number">10240</span>
+</code></pre></div><h3 id="php-ini"><a href="#php-ini" class="header-anchor">#</a> php.ini</h3> <div class="language-java extra-class"><pre class="language-java"><code><span class="token punctuation">[</span>PHP<span class="token punctuation">]</span>
+engine <span class="token operator">=</span> <span class="token class-name">On</span>
+short_open_tag <span class="token operator">=</span> <span class="token class-name">Off</span>
+asp_tags <span class="token operator">=</span> <span class="token class-name">Off</span>
+precision <span class="token operator">=</span> <span class="token number">14</span>
+output_buffering <span class="token operator">=</span> <span class="token number">4096</span>
+zlib<span class="token punctuation">.</span>output_compression <span class="token operator">=</span> <span class="token class-name">Off</span>
+implicit_flush <span class="token operator">=</span> <span class="token class-name">Off</span>
+unserialize_callback_func <span class="token operator">=</span>
+serialize_precision <span class="token operator">=</span> <span class="token number">17</span>
+disable_functions <span class="token operator">=</span>
+disable_classes <span class="token operator">=</span>
+zend<span class="token punctuation">.</span>enable_gc <span class="token operator">=</span> <span class="token class-name">On</span>
+expose_php <span class="token operator">=</span> <span class="token class-name">On</span>
+max_execution_time <span class="token operator">=</span> <span class="token number">30</span>
+max_input_time <span class="token operator">=</span> <span class="token number">60</span>
+memory_limit <span class="token operator">=</span> <span class="token number">128</span>M
+error_reporting <span class="token operator">=</span> E_ALL <span class="token operator">&amp;</span> <span class="token operator">~</span>E_DEPRECATED <span class="token operator">&amp;</span> <span class="token operator">~</span><span class="token class-name">E_STRICT</span>
+display_errors <span class="token operator">=</span> <span class="token class-name">Off</span>
+display_startup_errors <span class="token operator">=</span> <span class="token class-name">Off</span>
+log_errors <span class="token operator">=</span> <span class="token class-name">On</span>
+log_errors_max_len <span class="token operator">=</span> <span class="token number">1024</span>
+ignore_repeated_errors <span class="token operator">=</span> <span class="token class-name">Off</span>
+ignore_repeated_source <span class="token operator">=</span> <span class="token class-name">Off</span>
+report_memleaks <span class="token operator">=</span> <span class="token class-name">On</span>
+track_errors <span class="token operator">=</span> <span class="token class-name">Off</span>
+html_errors <span class="token operator">=</span> <span class="token class-name">On</span>
+variables_order <span class="token operator">=</span> <span class="token string">&quot;GPCS&quot;</span>
+request_order <span class="token operator">=</span> <span class="token string">&quot;GP&quot;</span>
+register_argc_argv <span class="token operator">=</span> <span class="token class-name">Off</span>
+auto_globals_jit <span class="token operator">=</span> <span class="token class-name">On</span>
+post_max_size <span class="token operator">=</span> <span class="token number">100</span>M
+auto_prepend_file <span class="token operator">=</span>
+auto_append_file <span class="token operator">=</span>
+default_mimetype <span class="token operator">=</span> <span class="token string">&quot;text/html&quot;</span>
+default_charset <span class="token operator">=</span> <span class="token string">&quot;UTF-8&quot;</span>
+doc_root <span class="token operator">=</span>
+user_dir <span class="token operator">=</span>
+enable_dl <span class="token operator">=</span> <span class="token class-name">Off</span>
+file_uploads <span class="token operator">=</span> <span class="token class-name">On</span>
+upload_max_filesize <span class="token operator">=</span> <span class="token number">100</span>M
+max_file_uploads <span class="token operator">=</span> <span class="token number">20</span>
+allow_url_fopen <span class="token operator">=</span> <span class="token class-name">On</span>
+allow_url_include <span class="token operator">=</span> <span class="token class-name">Off</span>
+default_socket_timeout <span class="token operator">=</span> <span class="token number">60</span>
+<span class="token punctuation">[</span>CLI <span class="token class-name">Server</span><span class="token punctuation">]</span>
+cli_server<span class="token punctuation">.</span>color <span class="token operator">=</span> <span class="token class-name">On</span>
+<span class="token punctuation">[</span><span class="token class-name">Date</span><span class="token punctuation">]</span>
+date<span class="token punctuation">.</span>timezone <span class="token operator">=</span> <span class="token class-name">Asia</span><span class="token operator">/</span><span class="token class-name">Shanghai</span>
+<span class="token punctuation">[</span>filter<span class="token punctuation">]</span>
+<span class="token punctuation">[</span>iconv<span class="token punctuation">]</span>
+<span class="token punctuation">[</span>intl<span class="token punctuation">]</span>
+<span class="token punctuation">[</span>sqlite3<span class="token punctuation">]</span>
+<span class="token punctuation">[</span><span class="token class-name">Pcre</span><span class="token punctuation">]</span>
+<span class="token punctuation">[</span><span class="token class-name">Pdo</span><span class="token punctuation">]</span>
+<span class="token punctuation">[</span><span class="token class-name">Pdo_mysql</span><span class="token punctuation">]</span>
+pdo_mysql<span class="token punctuation">.</span>cache_size <span class="token operator">=</span> <span class="token number">2000</span>
+pdo_mysql<span class="token punctuation">.</span>default_socket<span class="token operator">=</span>
+<span class="token punctuation">[</span><span class="token class-name">Phar</span><span class="token punctuation">]</span>
+<span class="token punctuation">[</span>mail function<span class="token punctuation">]</span>
+SMTP <span class="token operator">=</span> localhost
+smtp_port <span class="token operator">=</span> <span class="token number">25</span>
+mail<span class="token punctuation">.</span>add_x_header <span class="token operator">=</span> <span class="token class-name">On</span>
+<span class="token punctuation">[</span>SQL<span class="token punctuation">]</span>
+sql<span class="token punctuation">.</span>safe_mode <span class="token operator">=</span> <span class="token class-name">Off</span>
+<span class="token punctuation">[</span>ODBC<span class="token punctuation">]</span>
+odbc<span class="token punctuation">.</span>allow_persistent <span class="token operator">=</span> <span class="token class-name">On</span>
+odbc<span class="token punctuation">.</span>check_persistent <span class="token operator">=</span> <span class="token class-name">On</span>
+odbc<span class="token punctuation">.</span>max_persistent <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span>
+odbc<span class="token punctuation">.</span>max_links <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span>
+odbc<span class="token punctuation">.</span>defaultlrl <span class="token operator">=</span> <span class="token number">4096</span>
+odbc<span class="token punctuation">.</span>defaultbinmode <span class="token operator">=</span> <span class="token number">1</span>
+<span class="token punctuation">[</span><span class="token class-name">Interbase</span><span class="token punctuation">]</span>
+ibase<span class="token punctuation">.</span>allow_persistent <span class="token operator">=</span> <span class="token number">1</span>
+ibase<span class="token punctuation">.</span>max_persistent <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span>
+ibase<span class="token punctuation">.</span>max_links <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span>
+ibase<span class="token punctuation">.</span>timestampformat <span class="token operator">=</span> <span class="token string">&quot;%Y-%m-%d %H:%M:%S&quot;</span>
+ibase<span class="token punctuation">.</span>dateformat <span class="token operator">=</span> <span class="token string">&quot;%Y-%m-%d&quot;</span>
+ibase<span class="token punctuation">.</span>timeformat <span class="token operator">=</span> <span class="token string">&quot;%H:%M:%S&quot;</span>
+<span class="token punctuation">[</span><span class="token class-name">MySQL</span><span class="token punctuation">]</span>
+mysql<span class="token punctuation">.</span>allow_local_infile <span class="token operator">=</span> <span class="token class-name">On</span>
+mysql<span class="token punctuation">.</span>allow_persistent <span class="token operator">=</span> <span class="token class-name">On</span>
+mysql<span class="token punctuation">.</span>cache_size <span class="token operator">=</span> <span class="token number">2000</span>
+mysql<span class="token punctuation">.</span>max_persistent <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span>
+mysql<span class="token punctuation">.</span>max_links <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span>
+mysql<span class="token punctuation">.</span>default_port <span class="token operator">=</span>
+mysql<span class="token punctuation">.</span>default_socket <span class="token operator">=</span>
+mysql<span class="token punctuation">.</span>default_host <span class="token operator">=</span>
+mysql<span class="token punctuation">.</span>default_user <span class="token operator">=</span>
+mysql<span class="token punctuation">.</span>default_password <span class="token operator">=</span>
+mysql<span class="token punctuation">.</span>connect_timeout <span class="token operator">=</span> <span class="token number">60</span>
+mysql<span class="token punctuation">.</span>trace_mode <span class="token operator">=</span> <span class="token class-name">Off</span>
+<span class="token punctuation">[</span><span class="token class-name">MySQLi</span><span class="token punctuation">]</span>
+mysqli<span class="token punctuation">.</span>max_persistent <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span>
+mysqli<span class="token punctuation">.</span>allow_persistent <span class="token operator">=</span> <span class="token class-name">On</span>
+mysqli<span class="token punctuation">.</span>max_links <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span>
+mysqli<span class="token punctuation">.</span>cache_size <span class="token operator">=</span> <span class="token number">2000</span>
+mysqli<span class="token punctuation">.</span>default_port <span class="token operator">=</span> <span class="token number">3306</span>
+mysqli<span class="token punctuation">.</span>default_socket <span class="token operator">=</span>
+mysqli<span class="token punctuation">.</span>default_host <span class="token operator">=</span>
+mysqli<span class="token punctuation">.</span>default_user <span class="token operator">=</span>
+mysqli<span class="token punctuation">.</span>default_pw <span class="token operator">=</span>
+mysqli<span class="token punctuation">.</span>reconnect <span class="token operator">=</span> <span class="token class-name">Off</span>
+<span class="token punctuation">[</span>mysqlnd<span class="token punctuation">]</span>
+mysqlnd<span class="token punctuation">.</span>collect_statistics <span class="token operator">=</span> <span class="token class-name">On</span>
+mysqlnd<span class="token punctuation">.</span>collect_memory_statistics <span class="token operator">=</span> <span class="token class-name">Off</span>
+<span class="token punctuation">[</span>OCI8<span class="token punctuation">]</span>
+<span class="token punctuation">[</span><span class="token class-name">PostgreSQL</span><span class="token punctuation">]</span>
+pgsql<span class="token punctuation">.</span>allow_persistent <span class="token operator">=</span> <span class="token class-name">On</span>
+pgsql<span class="token punctuation">.</span>auto_reset_persistent <span class="token operator">=</span> <span class="token class-name">Off</span>
+pgsql<span class="token punctuation">.</span>max_persistent <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span>
+pgsql<span class="token punctuation">.</span>max_links <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span>
+pgsql<span class="token punctuation">.</span>ignore_notice <span class="token operator">=</span> <span class="token number">0</span>
+pgsql<span class="token punctuation">.</span>log_notice <span class="token operator">=</span> <span class="token number">0</span>
+<span class="token punctuation">[</span><span class="token class-name">Sybase</span><span class="token operator">-</span>CT<span class="token punctuation">]</span>
+sybct<span class="token punctuation">.</span>allow_persistent <span class="token operator">=</span> <span class="token class-name">On</span>
+sybct<span class="token punctuation">.</span>max_persistent <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span>
+sybct<span class="token punctuation">.</span>max_links <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span>
+sybct<span class="token punctuation">.</span>min_server_severity <span class="token operator">=</span> <span class="token number">10</span>
+sybct<span class="token punctuation">.</span>min_client_severity <span class="token operator">=</span> <span class="token number">10</span>
+<span class="token punctuation">[</span>bcmath<span class="token punctuation">]</span>
+bcmath<span class="token punctuation">.</span>scale <span class="token operator">=</span> <span class="token number">0</span>
+<span class="token punctuation">[</span>browscap<span class="token punctuation">]</span>
+<span class="token punctuation">[</span><span class="token class-name">Session</span><span class="token punctuation">]</span>
+session<span class="token punctuation">.</span>save_handler <span class="token operator">=</span> files
+session<span class="token punctuation">.</span>use_strict_mode <span class="token operator">=</span> <span class="token number">0</span>
+session<span class="token punctuation">.</span>use_cookies <span class="token operator">=</span> <span class="token number">1</span>
+session<span class="token punctuation">.</span>use_only_cookies <span class="token operator">=</span> <span class="token number">1</span>
+session<span class="token punctuation">.</span>name <span class="token operator">=</span> PHPSESSID
+session<span class="token punctuation">.</span>auto_start <span class="token operator">=</span> <span class="token number">0</span>
+session<span class="token punctuation">.</span>cookie_lifetime <span class="token operator">=</span> <span class="token number">0</span>
+session<span class="token punctuation">.</span>cookie_path <span class="token operator">=</span> <span class="token operator">/</span>
+session<span class="token punctuation">.</span>cookie_domain <span class="token operator">=</span>
+session<span class="token punctuation">.</span>cookie_httponly <span class="token operator">=</span>
+session<span class="token punctuation">.</span>serialize_handler <span class="token operator">=</span> php
+session<span class="token punctuation">.</span>gc_probability <span class="token operator">=</span> <span class="token number">1</span>
+session<span class="token punctuation">.</span>gc_divisor <span class="token operator">=</span> <span class="token number">1000</span>
+session<span class="token punctuation">.</span>gc_maxlifetime <span class="token operator">=</span> <span class="token number">1440</span>
+session<span class="token punctuation">.</span>referer_check <span class="token operator">=</span>
+session<span class="token punctuation">.</span>cache_limiter <span class="token operator">=</span> nocache
+session<span class="token punctuation">.</span>cache_expire <span class="token operator">=</span> <span class="token number">180</span>
+session<span class="token punctuation">.</span>use_trans_sid <span class="token operator">=</span> <span class="token number">0</span>
+session<span class="token punctuation">.</span>hash_function <span class="token operator">=</span> <span class="token number">0</span>
+session<span class="token punctuation">.</span>hash_bits_per_character <span class="token operator">=</span> <span class="token number">5</span>
+url_rewriter<span class="token punctuation">.</span>tags <span class="token operator">=</span> <span class="token string">&quot;a=href,area=href,frame=src,input=src,form=fakeentry&quot;</span>
+<span class="token punctuation">[</span>MSSQL<span class="token punctuation">]</span>
+mssql<span class="token punctuation">.</span>allow_persistent <span class="token operator">=</span> <span class="token class-name">On</span>
+mssql<span class="token punctuation">.</span>max_persistent <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span>
+mssql<span class="token punctuation">.</span>max_links <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span>
+mssql<span class="token punctuation">.</span>min_error_severity <span class="token operator">=</span> <span class="token number">10</span>
+mssql<span class="token punctuation">.</span>min_message_severity <span class="token operator">=</span> <span class="token number">10</span>
+mssql<span class="token punctuation">.</span>compatibility_mode <span class="token operator">=</span> <span class="token class-name">Off</span>
+mssql<span class="token punctuation">.</span>secure_connection <span class="token operator">=</span> <span class="token class-name">Off</span>
+<span class="token punctuation">[</span><span class="token class-name">Assertion</span><span class="token punctuation">]</span>
+<span class="token punctuation">[</span>COM<span class="token punctuation">]</span>
+<span class="token punctuation">[</span>mbstring<span class="token punctuation">]</span>
+<span class="token punctuation">[</span>gd<span class="token punctuation">]</span>
+<span class="token punctuation">[</span>exif<span class="token punctuation">]</span>
+<span class="token punctuation">[</span><span class="token class-name">Tidy</span><span class="token punctuation">]</span>
+tidy<span class="token punctuation">.</span>clean_output <span class="token operator">=</span> <span class="token class-name">Off</span>
+<span class="token punctuation">[</span>soap<span class="token punctuation">]</span>
+soap<span class="token punctuation">.</span>wsdl_cache_enabled<span class="token operator">=</span><span class="token number">1</span>
+soap<span class="token punctuation">.</span>wsdl_cache_dir<span class="token operator">=</span><span class="token string">&quot;/tmp&quot;</span>
+soap<span class="token punctuation">.</span>wsdl_cache_ttl<span class="token operator">=</span><span class="token number">86400</span>
+soap<span class="token punctuation">.</span>wsdl_cache_limit <span class="token operator">=</span> <span class="token number">5</span>
+<span class="token punctuation">[</span>sysvshm<span class="token punctuation">]</span>
+<span class="token punctuation">[</span>ldap<span class="token punctuation">]</span>
+ldap<span class="token punctuation">.</span>max_links <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span>
+<span class="token punctuation">[</span>mcrypt<span class="token punctuation">]</span>
+<span class="token punctuation">[</span>dba<span class="token punctuation">]</span>
+<span class="token punctuation">[</span>opcache<span class="token punctuation">]</span>
+opcache<span class="token punctuation">.</span>enable<span class="token operator">=</span><span class="token number">1</span>
+opcache<span class="token punctuation">.</span>enable_cli<span class="token operator">=</span><span class="token number">0</span>
+opcache<span class="token punctuation">.</span>memory_consumption<span class="token operator">=</span><span class="token number">128</span>
+opcache<span class="token punctuation">.</span>interned_strings_buffer<span class="token operator">=</span><span class="token number">8</span>
+opcache<span class="token punctuation">.</span>max_accelerated_files<span class="token operator">=</span><span class="token number">20000</span>
+opcache<span class="token punctuation">.</span>use_cwd<span class="token operator">=</span><span class="token number">1</span>
+opcache<span class="token punctuation">.</span>validate_timestamps<span class="token operator">=</span><span class="token number">1</span>
+opcache<span class="token punctuation">.</span>revalidate_freq<span class="token operator">=</span><span class="token number">0</span>
+<span class="token punctuation">[</span>curl<span class="token punctuation">]</span>
+<span class="token punctuation">[</span>openssl<span class="token punctuation">]</span>
+</code></pre></div><h2 id="关于mysql"><a href="#关于mysql" class="header-anchor">#</a> <strong>关于Mysql</strong></h2> <p><strong>关于mysql，我采用的是官方的镜像，因为在制作mysql镜像时，老是出错，系统空间不足，反应超时，连接出错等，奇葩错误</strong></p> <h2 id="生成镜像"><a href="#生成镜像" class="header-anchor">#</a> <strong>生成镜像</strong></h2> <p>生成的镜像就存储在当前docker程序中</p> <h3 id="生成nginx镜像"><a href="#生成nginx镜像" class="header-anchor">#</a> 生成nginx镜像</h3> <div class="language-shell extra-class"><pre class="language-shell"><code>docker build -t nginx:v1 -f dockerfile_nginx <span class="token builtin class-name">.</span>
+</code></pre></div><h3 id="生成php镜像"><a href="#生成php镜像" class="header-anchor">#</a> 生成php镜像</h3> <div class="language-shell extra-class"><pre class="language-shell"><code>docker build -t php:v1 -f dockerfile_php <span class="token builtin class-name">.</span>
+</code></pre></div><h3 id="生成mysql镜像"><a href="#生成mysql镜像" class="header-anchor">#</a> 生成mysql镜像</h3> <div class="language-shell extra-class"><pre class="language-shell"><code>docker image pull mysql:5.7
+</code></pre></div><h2 id="构建wordpress博客实例"><a href="#构建wordpress博客实例" class="header-anchor">#</a> <strong>构建wordpress博客实例</strong></h2> <h3 id="创建容器网络"><a href="#创建容器网络" class="header-anchor">#</a> 创建容器网络</h3> <div class="language-shell extra-class"><pre class="language-shell"><code>docker network create lnmp
+</code></pre></div><h3 id="创建mysql容器"><a href="#创建mysql容器" class="header-anchor">#</a> 创建MysqL容器</h3> <div class="language-java extra-class"><pre class="language-java"><code>docker run <span class="token operator">-</span>d <span class="token operator">--</span>name lnmp_mysql <span class="token operator">--</span>net lnmp <span class="token operator">--</span>mount src<span class="token operator">=</span>mysql_vol<span class="token punctuation">,</span>dst<span class="token operator">=</span><span class="token operator">/</span><span class="token keyword">var</span><span class="token operator">/</span>lib<span class="token operator">/</span>mysql <span class="token operator">-</span>e MYSQL_ROOT_PASSWORD<span class="token operator">=</span><span class="token number">123456</span> <span class="token operator">-</span>e MYSQL_DATABASE<span class="token operator">=</span>wordpress mysql<span class="token operator">:</span><span class="token number">5.7</span> <span class="token operator">--</span>character<span class="token operator">-</span>set<span class="token operator">-</span>server<span class="token operator">=</span>utf8
+</code></pre></div><h3 id="创建php容器"><a href="#创建php容器" class="header-anchor">#</a> 创建PHP容器</h3> <div class="language-shell extra-class"><pre class="language-shell"><code>docker run -d --name lnmp_php --net lnmp --mount <span class="token assign-left variable">src</span><span class="token operator">=</span>nginx_ls,dst<span class="token operator">=</span>/usr/local/nginx/html/ php:v1
+</code></pre></div><h3 id="创建nginx容器"><a href="#创建nginx容器" class="header-anchor">#</a> 创建nginx容器</h3> <div class="language-shell extra-class"><pre class="language-shell"><code>docker container run -d -p89:80 --name lnmp_nginx --net lnmp --mount <span class="token assign-left variable">src</span><span class="token operator">=</span>nginx_ls,dst<span class="token operator">=</span>/usr/local/nginx/html/ nginx:v1
+</code></pre></div><h3 id="部署wordpress博客"><a href="#部署wordpress博客" class="header-anchor">#</a> 部署wordpress博客</h3> <p>wordpress博客版本：wordpress-4.9.4-zh_CN.tar.gz</p> <p>自行查找nginx_ls数据卷的资源目录，把版本包放置nginx_ls数据卷中</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">tar</span> -zxf wordpress-4.9.4-zh_CN.tar.gz 
+<span class="token function">mv</span> wordpress/* <span class="token builtin class-name">.</span>
+<span class="token function">rm</span> -rf wordpress wordpress-4.9.4-zh_CN.tar.gz
+</code></pre></div><h3 id="配置wordpress博客"><a href="#配置wordpress博客" class="header-anchor">#</a> <strong>配置wordpress博客</strong></h3> <h4 id="进入wordpress博客web界面"><a href="#进入wordpress博客web界面" class="header-anchor">#</a> 进入wordpress博客web界面</h4> <div class="language-shell extra-class"><pre class="language-shell"><code>本机IP加:89
+</code></pre></div><p><a href="https://imgchr.com/i/JF0aKH" target="_blank" rel="noopener noreferrer"><img src="https://s1.ax1x.com/2020/04/16/JF0aKH.png" alt="JF0aKH.png"><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <h4 id="配置数据库信息"><a href="#配置数据库信息" class="header-anchor">#</a> 配置数据库信息</h4> <ol><li>数据库名跟密码：在创建mysql容器的时候已经配置好
+<ol><li>MYSQL_ROOT_PASSWORD=123456 -e MYSQL_DATABASE=wordpress</li></ol></li> <li>用户名：mysql容器默认用户名为 &quot;root&quot;</li> <li>数据库主机
+<ol><li>如果不使用容器正常填写是mysql机器的IP地址</li> <li>使用容器跟自定义网段，就填写Mysql容器的主机名</li></ol></li></ol> <p><img src="https://s1.ax1x.com/2020/04/16/JFBUYV.png" alt="JFBUYV.png"></p> <h4 id="需要手动配置wp-config-php"><a href="#需要手动配置wp-config-php" class="header-anchor">#</a> 需要手动配置wp-config.php</h4> <p>将标红框中的代码全部复制，然后在nginx_ls数据卷的目录中创建wp-config.php，再把刚刚复制的代码拷贝进去</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token builtin class-name">cd</span> /var/lib/docker/volumes/nginx_ls/_data
+<span class="token function">vim</span> wp-config.php
+</code></pre></div><p><a href="https://imgchr.com/i/JFDSmj" target="_blank" rel="noopener noreferrer"><img src="https://s1.ax1x.com/2020/04/16/JFDSmj.png" alt="JFDSmj.png"><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <h4 id="配置站点信息"><a href="#配置站点信息" class="header-anchor">#</a> 配置站点信息</h4> <p>接下的内容自行填写</p> <p><img src="https://s1.ax1x.com/2020/04/16/JFs6Ts.png" alt="JFs6Ts.png"></p> <p><strong>完结，这样子就通过dockefile来创建一个LNMP平台+博客系统</strong></p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/Container/docker/6. docker之容器网络.html" class="prev">
+        6. docker之容器网络
+      </a></span> <span class="next"><a href="/Container/docker/8. docker之Harbor企业级镜像仓库.html">
+        8. docker之Harbor企业级镜像仓库
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.d65bef42.js" defer></script><script src="/assets/js/2.2249178e.js" defer></script><script src="/assets/js/21.c2d7729c.js" defer></script>
+  </body>
+</html>
